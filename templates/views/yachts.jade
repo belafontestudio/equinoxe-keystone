@@ -1,0 +1,74 @@
+extends ../layouts/default
+
+mixin yacht(yacht)
+	.post(data-ks-editable=editable(user, { list: 'Yacht', id: yacht.id }))
+		h2: a(href='/yacht/' + yacht.slug)= yacht.title
+		p.lead.text-muted Posted 
+			if yacht.publishedDate
+				| on #{yacht._.publishedDate.format('MMMM Do, YYYY')} 
+			if yacht.categories && yacht.categories.length
+				| in 
+				each cat, i in yacht.categories
+					a(href='/yachts/' + cat.key)= cat.name
+					if i < yacht.categories.length - 1
+						| , 
+					else
+						|  
+			if yacht.author
+				| by #{yacht.author.name.first}
+		
+		p!= yacht.content.brief
+		if yacht.content.extended
+			p.read-more: a(href='/yacht/' + yacht.slug) Read more...
+
+block intro
+	.container
+		h1= data.category ? data.category.name : 'Yachts'
+
+block content
+	.container: .row
+		.col-sm-8.col-md-9
+			if filters.category && !data.category
+				h3.text-muted Invalid Category.
+			else
+				if data.yachts.results.length
+					if data.yachts.totalPages > 1
+						h4.text-weight-normal Showing 
+							strong #{data.yachts.first}
+							|  to 
+							strong #{data.yachts.last}
+							|  of 
+							strong #{data.yachts.total}
+							|  yachts.
+					else
+						h4.text-weight-normal Showing #{utils.plural(data.yachts.results.length, '* yacht')}.
+					.blog
+						each yacht in data.yachts.results
+							+yacht(yacht)
+					
+					if data.yachts.totalPages > 1
+						ul.pagination
+							if data.yachts.previous
+								li: a(href='?page=' + data.yachts.previous): span.glyphicon.glyphicon-chevron-left
+							else
+								li.disabled: a(href='?page=' + 1): span.glyphicon.glyphicon-chevron-left
+							each p, i in data.yachts.pages
+								li(class=data.yachts.currentPage == p ? 'active' : null)
+									a(href='?page=' + (p == '...' ? (i ? data.yachts.totalPages : 1) : p ))= p
+							if data.yachts.next
+								li: a(href='?page=' + data.yachts.next): span.glyphicon.glyphicon-chevron-right
+							else
+								li.disabled: a(href='?page=' + data.yachts.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
+				else
+					if data.category
+						h3.text-muted There are no yachts in the category #{data.category.name}.
+					else
+						h3.text-muted There are no yachts yet.
+		
+		if data.categories.length
+			.col-sm-4.col-md-3
+				h2 Categories
+				.list-group(style='margin-top: 70px;')
+					a(href='/blog', class=!data.category ? 'active' : false).list-group-item All Categories
+					each cat in data.categories
+						a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name

@@ -1,0 +1,20 @@
+extends ../layouts/default
+
+block content
+	.container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+		article
+			p: a(href='/yachts') &larr; back to the yachts
+			hr
+			if !data.yacht
+				h2 Invalid Yacht.
+			else
+				header
+					h1= data.yacht.title
+					h5 Posted 
+						if data.yacht.publishedDate
+							| on #{data.yacht._.publishedDate.format('MMMM Do, YYYY')} 
+						
+						if data.yacht.author
+							| by #{data.yacht.author.name.first}
+				.post
+					!= data.yacht.content.full
