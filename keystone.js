@@ -3,7 +3,8 @@
 require('dotenv').load();
 
 // Require keystone
-var keystone = require('keystone');
+var keystone = require('keystone'),
+	i18n= require('i18n');
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -28,6 +29,8 @@ keystone.init({
 
 });
 
+
+
 // Load your project's Models
 
 keystone.import('models');
@@ -41,6 +44,14 @@ keystone.set('locals', {
 	env: keystone.get('env'),
 	utils: keystone.utils,
 	editable: keystone.content.editable
+});
+
+// Configure i18n
+ 
+i18n.configure({
+	locales:['en', 'it'],
+	defaultLocale: 'it',
+	directory: __dirname + '/locales'
 });
 
 // Load your project's Routes

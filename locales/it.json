@@ -1,0 +1,13 @@
+{
+	"%d gatto": {
+		"one": "%d gatto",
+		"other": "%d gatti"
+	},
+	"text to test": "text to test",
+	"hello": "hello <b>my friend</b>",
+	"%d cat": {
+		"one": "%d cat",
+		"other": "%d cats"
+	},
+	"Hello": "CIAO"
+}

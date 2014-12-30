@@ -3,7 +3,10 @@ extends ../layouts/default
 block content
 	.container: .jumbotron
 		img(src='/images/logo.svg', width='160')
-		h1 Welcome
+		h1= getCatalog()
+		h1= setLocale('it')
+		h1= __('hello')
+		h1= getLocale()
 		p This is your new <a href='http://keystonejs.com', target='_blank'>KeystoneJS</a> website.
 		p It includes the latest versions of
 			| <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>

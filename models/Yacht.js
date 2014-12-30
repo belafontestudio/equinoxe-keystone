@@ -15,6 +15,7 @@ Yacht.add({
 	title: { type: String, required: true },
 	author: { type: Types.Relationship, ref: 'User', index: true },
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
+	type: { type: Types.Select, options: 'Motor, Sails, Motorsail', default: 'Motor', index: true },
 	lenght: { type: Types.Number, index: true },
 	cost: { type: Types.Money, index: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },

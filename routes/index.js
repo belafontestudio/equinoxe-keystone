@@ -20,8 +20,12 @@
 
 var _ = require('underscore'),
 	keystone = require('keystone'),
+	i18n = require("i18n"),
 	middleware = require('./middleware'),
 	importRoutes = keystone.importer(__dirname);
+
+// Add-in i18n support
+keystone.pre('routes', i18n.init);
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -34,7 +38,7 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
-	
+
 	// Views
 	app.get('/', routes.views.index);
 	app.get('/yachts/:category?', routes.views.yachts);
