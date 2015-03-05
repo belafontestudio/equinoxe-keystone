@@ -25,6 +25,7 @@ html
 			script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
 			script(src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
 		//-[endif]
+		link(href="/cropper/dist/cropper.css", rel="stylesheet")
 
 		//- Include template-specific stylesheets by extending the css block
 		block css
@@ -92,7 +93,8 @@ html
 		//- jQuery 1.11.1 is included by default, and required by both Bootstrap
 		//- and the KeystoneJS Content Editor. If you are not targeting IE8,
 		//- you can upgrade to 2.1.1 (also bundled) for better performance.
-		script(src='/js/lib/jquery/jquery-1.11.1.min.js')
+		script(src='/js/lib/jquery/jquery-2.1.1.min.js')
+		script(src='/cropper/dist/cropper.js')
 
 		//- Customise which Bootstrap javascript files are served by including
 		//- them specifically here, instead of bootstrap-3.2.0.min.js

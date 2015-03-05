@@ -11,12 +11,12 @@ var keystone = require('keystone'),
 // and documentation.
 
 keystone.init({
-
+	'mongo': process.env.MONGO_URI || "mongodb://localhost/equinoxe",
 	'name': 'Equinoxe',
 	'brand': 'Equinoxe',
 	
 	'sass': 'public',
-	'static': 'public',
+	'static': ['public','bower_components'],
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
@@ -25,8 +25,14 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'cookie secret': 'Sbbm~T!9?"=iNzpNUb@kL]nT!y2t22TE=#JWSPh&Hb)R{gV,Z/5+~.Ir"SfOpC~r'
-
+	'cookie secret': 'Sbbm~T!9?"=iNzpNUb@kL]nT!y2t22TE=#JWSPh&Hb)R{gV,Z/5+~.Ir"SfOpC~r',
+	'wysiwyg override toolbar': true,
+	'wysiwyg menubar': false,
+	'wysiwyg skin': 'lightgray',
+	'wysiwyg additional buttons': 'pastetext,paste',
+	'wysiwyg additional plugins': 'paste',
+	'wysiwyg additional options': {"paste_retain_style_properties": "color font-size"},
+	'wysiwyg cloudinary images': true,
 });
 
 
