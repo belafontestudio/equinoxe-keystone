@@ -59,7 +59,11 @@ Yacht.add({
 	
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
 
-	
+	cover: { type: Types.LocalFile, dest: 'public/uploads/images', prefix: '/uploads/images/', datePrefix: "YYMMDDHHMMSS",
+	format: function(item, file){
+
+		return '<div class="cropper"><img src="'+file.href+'" style="max-width: 300px"></div>'
+	}},
 
 	
 	content: {
