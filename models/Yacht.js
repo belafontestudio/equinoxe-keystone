@@ -59,15 +59,9 @@ Yacht.add({
 	
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
 
-	cover: { type: Types.LocalImage, dest: 'public/uploads/images', prefix: '/uploads/images/', datePrefix: "YYMMDDHHMMSS",
-	format: function(item, file){
-
-		return '<img src="'+file.href+'" style="max-width: 300px">'
-	}},
 	
-	pdf: {type: Types.CloudinaryImage, resource_type: "raw",
-    raw_convert: "aspose"},
-	gallery: { type: Types.CloudinaryImages },
+
+	
 	content: {
 		description: { type: Types.Html, wysiwyg: true, height: 400 },
 		"description full specs": { type: Types.Html, wysiwyg: true, height: 1000 }
