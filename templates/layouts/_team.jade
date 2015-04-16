@@ -1,0 +1,29 @@
+block section
+  section.center
+    .main-text
+      h1.smaller 
+        block title-smaller
+          | The title
+    .clear
+    block yacht-size
+      ul#yacht-size
+        li.team
+          div.container-img.team-members
+            block photo-team1
+              | photo
+          h2
+            block team-name1 
+              | name
+          p.description-text
+            block team-description1
+              | description
+        li.team.second-column
+          div.container-img.team-members
+            block photo-team2
+              | photo
+          h2
+            block team-name2 
+              | name
+          p.description-text
+            block team-description2
+              | description

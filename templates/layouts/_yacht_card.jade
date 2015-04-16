@@ -1,0 +1,35 @@
+block single-yacht
+  a.card(href="single_yacht.html")
+    li
+      div.container-yachtcard-img
+        block img-yacht-card
+          | img
+      h3.yacht-name
+        block single-yacht-name
+          | name
+      ul.yacht-specs
+        li
+          span
+            | charter:
+          block single-yacht-charter
+            | price
+        li
+          span
+            | sale:
+          block single-yacht-sale
+            | price
+        li
+          span
+            | length:
+          block single-yacht-length
+            | size
+        li
+          span
+            | built:
+          block single-yacht-built
+            | year
+        li
+          span
+            | guests:
+          block single-yacht-guests
+            | number

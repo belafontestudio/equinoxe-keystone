@@ -1,0 +1,40 @@
+div(id="contact-us-modal", style="display:none;")
+    .logo
+      img(src='../images/sprite/logo.svg', alt='Equinoxe-Logo')
+    .clear
+    form.form-horizontal
+      fieldset
+        // Text input
+        .control-group.name
+          label.control-label(for='textinput') Name
+          .controls
+            input#textinput.input-xlarge(name='textinput', type='text', placeholder='Marc', required='')
+            
+        // Text input
+        .control-group.surname
+          label.control-label(for='textinput') Surname
+          .controls
+            input#textinput.input-xlarge(name='textinput', type='text', placeholder='Rosenberg', required='')
+          
+        // Text input
+        .control-group.phonenum
+          label.control-label(for='textinput') Phone Number
+          .controls
+            input#textinput.input-xlarge(name='textinput', type='text', placeholder='placeholder', required='')
+            
+        // Text input
+        .control-group.mail
+          label.control-label(for='textinput') Email
+          .controls
+            input#textinput.input-xlarge(name='textinput', type='text', placeholder='johnappleseed@yahoo.it', required='')
+           
+        // Textarea
+        .control-group.text-area
+          label.control-label(for='textarea') Message
+          .controls
+            textarea#textarea(placeholder='Your message',name='textarea').
+        <!-- Button -->
+        .control-group.submit
+          .controls
+            input(type="submit" value="Submit")
+

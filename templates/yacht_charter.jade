@@ -1,0 +1,27 @@
+extends ./layouts/_general.jade
+block external-scripts
+  script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBl3hDHGkv8Ohrz_AY7vlWRNSB_W5Esa9M&sensor=false&extension=.js') 
+  script(src="/maplabel.js") 
+block menu 
+  include ./partials/_menu.jade
+block body
+  #onepage
+    div.main-photo
+      block main-photo
+        div(class="img-holder", data-image="/images/landing/DIONE_STAR_10OTT2014_6763.jpg")
+          section.center-parallax
+            .section
+              .filtro
+              include partials/_yacht_charter_intro.jade
+
+    //- div.bottom-spacer
+    //- .section
+    //-   include partials/_yacht_size.jade
+    //- div.bottom-spacer
+    //- .section
+    //-   include partials/_quote_charter.jade
+    //- div.bottom-spacer
+    //- .section.inner-map
+    //-   include partials/_yacht_charter_map.jade
+
+

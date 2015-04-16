@@ -1,0 +1,184 @@
+div.filter-opened-section
+  #slider-guest
+    div.icon-guest-min, div.icon-guest-max
+      position absolute
+      display inline
+      width 100%
+      bottom 62px !important
+      height 31px
+      img
+        position absolute
+        height 100%
+        width auto
+    div.icon-guest-min
+      img
+        left 0 !important
+    div.icon-guest-max
+      img
+        right 0 !important
+  a.close-filter
+    position absolute
+    top 15px
+    right 15px
+    z-index 6
+  a.close-filter:hover
+    opacity 0.5
+.filter-mobile
+  position relative
+  width 100%
+  div#slider-single, div.slider-bar
+    max-width 80%
+    margin 0 auto
+  ul#yacht-size-mobile
+    left 0 !important
+    width 100% !important
+    height 290px
+    margin 28px auto !important
+    position relative !important
+    li#filter-yacht, li#filter-super-yacht, li#filter-mega-yacht
+      position absolute
+     li#filter-mega-yacht, li#filter-super-yacht
+      display none
+    li
+      width 100% !important
+      margin 0
+      h2, p
+        text-align center
+      div.container-img
+        height 214px !important
+        position relative
+        width 100%
+        img.yacht, img.super-yacht, img.mega-yacht
+          left 50% !important
+          width auto !important
+          position absolute !important
+          bottom 0 !important
+        img.yacht
+          margin-left -52px !important
+          height 55%
+        img.super-yacht
+          margin-left -81px !important
+          height 80%
+        img.mega-yacht
+          margin-left -103px !important
+          height 100%
+          
+        
+  
+.filter-monitor
+  display none
+section.center.price-slider, section.center.sale-charter, section.center.propulsion, section.center.filter-mobile
+  padding-left 0 !important
+  padding-right 0 !important
+section.center.sale-charter
+  width 80%
+  height auto
+  position relative
+  top 50%
+  margin-top -65px
+  a#sale, a#charter
+    left 0
+    width 100%
+    text-align center
+    position relative
+    display inline-block
+    margin 0 auto
+    font-size rem(40px)
+    line-height rem(40px)
+    text-transform uppercase
+  a#sale
+    margin-bottom -2px
+section.center.propulsion
+  top 50%
+  margin-top -65px
+section.center
+  ul#yacht-size.filter
+    margin 0
+    margin-top 15px
+    width 100%
+    max-height 400px
+    left 0
+    li
+      text-align center !important
+      div.container-img
+        height 214px !important
+        position relative
+        overflow hidden
+        img.yacht
+          left 29%
+          height 55%
+          width auto
+          position absolute
+          bottom 0
+        img.super-yacht
+          left 18%
+          height 80%
+          width auto
+          position absolute
+          bottom 0
+        img.mega-yacht
+          left 10%
+          height 100%
+          width auto
+          position absolute
+          bottom 0
+  ul#call-to-action-menu.filter
+    margin 0
+    // margin-top 19%
+    width 100%
+    max-height 400px
+    left 0
+    li
+      width 33.33%
+      margin 0
+      img.motor
+        width 34% !important
+      img.sail
+        width 21.6% !important
+      img.gulet
+        width 26.9% !important
+        
+  div#slider, div#slider-numbers, div.slider-bar
+    max-width 80%
+    margin 0 auto
+  div#slider-numbers
+    margin-top 180px
+    p
+      position relative
+      margin 0 0 10px 0
+      font-size rem(25px)
+      line-height rem(25px)
+      text-transform uppercase
+    p.min-price,p.min-guest
+      float left
+    p.max-price,p.max-guest
+      float right
+      text-align right
+  div#slider, div.slider-bar
+    .ui-widget-header
+      background yellow
+
++above(900px)
+  section.center.sale-charter
+    width 80%
+    top 50%
+    margin-top -35px
+    a#sale, a#charter
+      width 50%
+    a#sale
+      margin-bottom 0
+      margin-right -2px
+  .filter-mobile
+    div#slider-single, div.slider-bar
+      max-width 50%
+  section.center
+    div#slider, div#slider-numbers, div.slider-bar
+      max-width 50%
++above(1200px)
+  .filter-mobile
+    display none
+  .filter-monitor
+    display inline-block
+    width 100%
+
+

@@ -1,0 +1,59 @@
+div(id="enquire-modal", style="display:none;")
+    .logo
+      img(src='../images/sprite/logo.svg', alt='Equinoxe-Logo')
+    .clear
+    form.form-horizontal
+      fieldset
+        // Text input
+        .control-group.name
+          label.control-label(for='textinput') Name
+          .controls
+            input#textinput.input-xlarge(name='textinput', type='text', placeholder='Marc', required='')
+            
+        // Text input
+        .control-group.surname
+          label.control-label(for='textinput') Surname
+          .controls
+            input#textinput.input-xlarge(name='textinput', type='text', placeholder='Rosenberg', required='')
+          
+        // Multiple Checkboxes
+        .control-group.checkboxes
+          label.control-label(for='checkboxes') Service
+          .controls
+            label.checkbox(for='checkboxes-0')
+              input#checkboxes-0(type='checkbox', name='checkboxes', value='Yacht Charter')
+              | Yacht Charter
+            label.checkbox(for='checkboxes-1')
+              input#checkboxes-1(type='checkbox', name='checkboxes', value='Yacht Sale')
+              | Yacht Sale
+            label.checkbox(for='checkboxes-2')
+              input#checkboxes-2(type='checkbox', name='checkboxes', value='Yacht Purchase')
+              | Yacht Purchase
+            label.checkbox(for='checkboxes-3')
+              input#checkboxes-3(type='checkbox', name='checkboxes', value='Expeditions')
+              | Expeditions
+            label.checkbox(for='checkboxes-4')
+              input#checkboxes-4(type='checkbox', name='checkboxes', value='Bareboat')
+              | Bareboat
+        // Text input
+        .control-group.phonenum
+          label.control-label(for='textinput') Phone Number
+          .controls
+            input#textinput.input-xlarge(name='textinput', type='text', placeholder='placeholder', required='')
+            
+        // Text input
+        .control-group.mail
+          label.control-label(for='textinput') Email
+          .controls
+            input#textinput.input-xlarge(name='textinput', type='text', placeholder='johnappleseed@yahoo.it', required='')
+           
+        // Textarea
+        .control-group.text-area
+          label.control-label(for='textarea') Message
+          .controls
+            textarea#textarea(placeholder='Your message',name='textarea').
+        <!-- Button -->
+        .control-group.submit
+          .controls
+            input(type="submit" value="Submit")
+

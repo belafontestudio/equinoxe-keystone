@@ -1,0 +1,20 @@
+block single-yacht
+  a.card(href="single_expedition.html")
+    li
+      div.container-yachtcard-img
+        block img-yacht-card
+          | img
+      h3.yacht-name
+        block exp-destination
+          | name
+      ul.yacht-specs
+        li
+          span
+            | price:
+          block exp-price
+            | price
+        li
+          span
+            | guests:
+          block exp-guests
+            | number

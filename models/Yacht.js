@@ -14,6 +14,19 @@ var Yacht = new keystone.List('Yacht', {
 Yacht.add({
 
 	name: { type: Types.Text, required: true },
+
+	cover: { type: Types.LocalImage, dest: 'public/uploads/images/yachts/covers', prefix: '/uploads/images/yachts/covers/',collapse: true, allowedTypes: ['image/jpeg','image/gif','image/png'],
+	pre: {width:1920,height:1080},format: function(item, file){
+
+		return '<img src="'+file.href+'" style="max-width: 300px">'
+	}},
+	thumbnail: { type: Types.LocalImage, dest: 'public/uploads/images/yachts/thumbnails', prefix: '/uploads/images/yachts/thumbnails/',collapse: true, allowedTypes: ['image/jpeg','image/gif','image/png'],
+	pre: {width:480,height:270},format: function(item, file){
+
+		return '<img src="'+file.href+'" style="max-width: 300px">'}},
+
+	featured: { type: Types.Boolean },
+
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	type: { type: Types.Select, options: 'Power, Sails, Gulet, Catamaran', default: 'Power', index: true },
 	availability: { type: Types.Select, options: 'Sale, Charter', default: 'Charter', index: true },
@@ -50,7 +63,7 @@ Yacht.add({
 	
 	location: { type: Types.Text, index: true },
 
-	featured: { type: Types.Boolean },
+	
 
 	"message/offers": { type: Types.Text, index: true },
 	location: { type: Types.Text, index: true },
@@ -61,12 +74,30 @@ Yacht.add({
 
 	
 
+
+	interiors: { 
 	
+	img1: { type: Types.LocalImage, dest: 'public/uploads/images/yachts/gallery/interiors', prefix: '/uploads/images/yachts/gallery/interiors',collapse: true, allowedTypes: ['image/jpeg','image/gif','image/png'],
+	pre: {width:1920,height:1080},format: function(item, file){
+		return '<img src="'+file.href+'" style="max-width: 300px">'}},
+	cap1 : { type: Types.Text, index: true }
+	},
+	exteriors: { 
+	
+	img1: { type: Types.LocalImage, dest: 'public/uploads/images/yachts/gallery/exteriors', prefix: '/uploads/images/yachts/gallery/exteriors',collapse: true, allowedTypes: ['image/jpeg','image/gif','image/png'],
+	pre: {width:1920,height:1080},format: function(item, file){
+		return '<img src="'+file.href+'" style="max-width: 300px">'}},
+	cap1 : { type: Types.Text, index: true }
+	},
+
 	content: {
+		"water sports": { type: Types.Html, wysiwyg: true, height: 400 },
 		description: { type: Types.Html, wysiwyg: true, height: 400 },
 		"description full specs": { type: Types.Html, wysiwyg: true, height: 1000 }
 	}
 });
+
+
 
 Yacht.schema.virtual('content.full').get(function() {
 	return this.content.extended || this.content.brief;

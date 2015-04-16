@@ -41,6 +41,7 @@ exports = module.exports = function(app) {
 
 	// Views
 	app.get('/', routes.views.index);
+	
 	app.get('/yachts/:category?', routes.views.yachts);
 	app.get('/yachts/:yacht', routes.views.yacht);
 	app.get('/yacht/:yacht', routes.views.yacht);
