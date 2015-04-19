@@ -22,7 +22,8 @@ var _ = require('underscore'),
 	keystone = require('keystone'),
 	i18n = require("i18n"),
 	middleware = require('./middleware'),
-	importRoutes = keystone.importer(__dirname);
+	importRoutes = keystone.importer(__dirname),
+	serveIndex = require('serve-index')
 
 // Add-in i18n support
 keystone.pre('routes', i18n.init);
@@ -41,11 +42,13 @@ exports = module.exports = function(app) {
 
 	// Views
 	app.get('/', routes.views.index);
-	
 	app.get('/yachts/:category?', routes.views.yachts);
 	app.get('/yachts/:yacht', routes.views.yacht);
 	app.get('/yacht/:yacht', routes.views.yacht);
-	
+	app.use('/app-storage',serveIndex(process.env.CLOUD_DIR, {'icons': true}));
+	app.get('/app-storage', middleware.requireUser);
+	app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
+	app.get('/media/list', middleware.requireUser, routes.views.medialist);
 	
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

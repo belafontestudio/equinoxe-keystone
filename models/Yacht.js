@@ -15,15 +15,15 @@ Yacht.add({
 
 	name: { type: Types.Text, required: true },
 
-	cover: { type: Types.LocalImage, dest: 'public/uploads/images/yachts/covers', prefix: '/uploads/images/yachts/covers/',collapse: true, allowedTypes: ['image/jpeg','image/gif','image/png'],
+	cover: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/covers', prefix: '/uploads/images/yachts/covers',collapse: true, allowedTypes: ['image/jpeg','image/gif','image/png'],
 	pre: {width:1920,height:1080},format: function(item, file){
 
-		return '<img src="'+file.href+'" style="max-width: 300px">'
+		return '<img src="'+file.href+'" style="max-width: 500px">'
 	}},
-	thumbnail: { type: Types.LocalImage, dest: 'public/uploads/images/yachts/thumbnails', prefix: '/uploads/images/yachts/thumbnails/',collapse: true, allowedTypes: ['image/jpeg','image/gif','image/png'],
+	thumbnail: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/thumbnails', prefix: '/uploads/images/yachts/thumbnails/',collapse: true, allowedTypes: ['image/jpeg','image/gif','image/png'],
 	pre: {width:480,height:270},format: function(item, file){
 
-		return '<img src="'+file.href+'" style="max-width: 300px">'}},
+		return '<img src="'+file.href+'" style="max-width: 4700px">'}},
 
 	featured: { type: Types.Boolean },
 
@@ -73,18 +73,25 @@ Yacht.add({
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
 
 	
-
+	test: {
+	type: Types.LocalFile,
+	dest: process.env.CLOUD_DIR,
+	prefix: process.env.CLOUD_DIR,
+	format: function(item, file){
+		return '<img src="/files/'+file.filename+'" style="max-width: 300px">'
+	}
+},
 
 	interiors: { 
 	
-	img1: { type: Types.LocalImage, dest: 'public/uploads/images/yachts/gallery/interiors', prefix: '/uploads/images/yachts/gallery/interiors',collapse: true, allowedTypes: ['image/jpeg','image/gif','image/png'],
+	img1: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/gallery/interiors', prefix: process.env.CLOUD_DIR+'/uploads/images/yachts/gallery/interiors',collapse: true, allowedTypes: ['image/jpeg','image/gif','image/png'],
 	pre: {width:1920,height:1080},format: function(item, file){
 		return '<img src="'+file.href+'" style="max-width: 300px">'}},
 	cap1 : { type: Types.Text, index: true }
 	},
 	exteriors: { 
 	
-	img1: { type: Types.LocalImage, dest: 'public/uploads/images/yachts/gallery/exteriors', prefix: '/uploads/images/yachts/gallery/exteriors',collapse: true, allowedTypes: ['image/jpeg','image/gif','image/png'],
+	img1: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/gallery/exteriors', prefix: process.env.CLOUD_DIR+'/uploads/images/yachts/gallery/exteriors',collapse: true, allowedTypes: ['image/jpeg','image/gif','image/png'],
 	pre: {width:1920,height:1080},format: function(item, file){
 		return '<img src="'+file.href+'" style="max-width: 300px">'}},
 	cap1 : { type: Types.Text, index: true }

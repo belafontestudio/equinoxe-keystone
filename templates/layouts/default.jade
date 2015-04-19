@@ -19,11 +19,12 @@ html
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass 
 		link(href="/styles/font-awesome.css", rel="stylesheet")
 		link(href="/static/vendor.css", rel="stylesheet")
-		link(href="/styles/site.css", rel="stylesheet")
+		
 		link(href="/styles/application.css", rel="stylesheet")
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
+			//link(href="/styles/site.css", rel="stylesheet")
 			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
 
 		//- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries

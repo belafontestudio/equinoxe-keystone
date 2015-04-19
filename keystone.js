@@ -2,6 +2,7 @@
 // customising the .env file in your project's root folder.
 require('dotenv').load();
 
+
 // Require keystone
 var keystone = require('keystone'),
 	i18n= require('i18n');
@@ -16,7 +17,7 @@ keystone.init({
 	'brand': 'Equinoxe',
 	
 	'sass': 'public',
-	'static': ['public','bower_components'],
+	'static': ['public','bower_components',process.env.CLOUD_DIR],
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
