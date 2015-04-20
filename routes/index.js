@@ -47,9 +47,17 @@ exports = module.exports = function(app) {
 	app.get('/yacht/:yacht', routes.views.yacht);
 	app.use('/app-storage',serveIndex(process.env.CLOUD_DIR, {'icons': true}));
 	app.get('/app-storage', middleware.requireUser);
-	app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
+	//app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
 	app.get('/media/list', middleware.requireUser, routes.views.medialist);
-	
+
+
+	app.get('/yacht_brokerage', routes.views.yachtBrokerage);
+	app.get('/yacht_charter', routes.views.yachtCharter);
+	app.get('/expeditions_planning', routes.views.expeditionsPlanning);
+	app.get('/bareboat', routes.views.bareboat);
+	app.get('/services', routes.views.services);
+	app.get('/heritage', routes.views.heritage);
+
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

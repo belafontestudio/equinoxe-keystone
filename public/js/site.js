@@ -292,7 +292,8 @@ function mobileSlide(){
       
 function checkPage(size){
     var pathArray = window.location.pathname.split( '/' );
-    if (pathArray[2] === undefined){
+    console.log(pathArray)
+    if (pathArray[1] === ""){
         
         if (size == "web"){
             webSlide();

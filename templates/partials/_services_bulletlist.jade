@@ -1,7 +1,9 @@
-extends ../layouts/_multiple_range_selector.jade
-
-block title-smaller
-.clear
+block section
+  section.center
+    .main-text
+      h1.smaller 
+        | At your service
+    .clear
     block yacht-size
       ul#yacht-size
         li.bulletlist
@@ -9,28 +11,38 @@ block title-smaller
           h2
             span.number-list
               | 1. 
-            | First Title
+            | Flights
           p.description-text
-            | Aboard all of our luxurious charter yachts, from the performance sailing yachts to the new breed of charter megayachts, there is more on offer than mouth-watering cuisine, exemplary service, diverse destinations and world-class accommodation.
+            | We will take care of your round-trip flights and all local transfers with your airline of choice or with private jets. 
+
           block button1
-            a.button(href="#") Discover
         li.bulletlist
           div.container-img
           h2
             span.number-list
               | 2. 
-            | Second Title
+            | Insurance
           p.description-text
-            | Aboard all of our luxurious charter yachts, from the performance sailing yachts to the new breed of charter megayachts, there is more on offer than mouth-watering cuisine, exemplary service, diverse destinations and world-class accommodation.
+            | Holidays at sea are a carefree time: we can provide all-purpose insurance for you, your family and friends; you just need to relax and enjoy your time on board.
+
           block button2
-            a.button(href="#") Discover
         li.bulletlist
           div.container-img
           h2
             span.number-list
               | 3. 
-            | Third Title
+            | Assistance
           p.description-text
-            | Aboard all of our luxurious charter yachts, from the performance sailing yachts to the new breed of charter megayachts, there is more on offer than mouth-watering cuisine, exemplary service, diverse destinations and world-class accommodation.
+            | When you charter a yacht with Equinoxe you also get an all-round consultant and a worldwide network of reliable professionals ready at your call.
+
           block button3
-            a.button(href="#") Discover
+        li.bulletlist
+          div.container-img
+          h2
+            span.number-list
+              | 4. 
+            | Control
+          p.description-text
+            | We only deal with skilled and trustworthy boat owning companies. We constantly monitor and update our fleet.
+          block button4
+

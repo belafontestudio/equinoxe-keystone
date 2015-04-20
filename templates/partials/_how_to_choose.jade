@@ -1,8 +1,10 @@
-extends ../layouts/_multiple_range_selector.jade
-
-block title-smaller
-  | How To Choose Your Yacht:
-.clear
+block section
+  section.center
+    .main-text
+      h1.smaller 
+        block title-smaller
+          | Wanna sell? We can handle that.
+    .clear
     block yacht-size
       ul#yacht-size
         li
@@ -10,25 +12,26 @@ block title-smaller
           h2
             span.number-list
               | 1. 
-            | First Title
+            | Results
+
           p.description-text
-            | Aboard all of our luxurious charter yachts, from the performance sailing yachts to the new breed of charter megayachts, there is more on offer than mouth-watering cuisine, exemplary service, diverse destinations and world-class accommodation.
+            | More than 500 yachts sold over 30 years.
           block button1
         li
           div.container-img
           h2
             span.number-list
               | 2. 
-            | Second Title
+            | Consultancy
           p.description-text
-            | Aboard all of our luxurious charter yachts, from the performance sailing yachts to the new breed of charter megayachts, there is more on offer than mouth-watering cuisine, exemplary service, diverse destinations and world-class accommodation.
+            | General contracting, project management, survey.
           block button2
         li
           div.container-img
           h2
             span.number-list
               | 3. 
-            | Third Title
+            | Team
           p.description-text
-            | Aboard all of our luxurious charter yachts, from the performance sailing yachts to the new breed of charter megayachts, there is more on offer than mouth-watering cuisine, exemplary service, diverse destinations and world-class accommodation.
+            | Our co-founders and partners Corrado Di Majo, Alessandro Ussi, are internationally renowned and respected.
           block button3

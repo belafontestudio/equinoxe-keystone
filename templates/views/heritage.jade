@@ -1,22 +1,31 @@
-extends ./layouts/_general.jade
+extends ../layouts/default
 block modals
-      include ./partials/_enquire_modal.jade
-      include ./partials/_contact_us_modal.jade
+      include ../partials/_enquire_modal.jade
+      include ../partials/_contact_us_modal.jade
 block external-scripts
   script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBl3hDHGkv8Ohrz_AY7vlWRNSB_W5Esa9M&sensor=false&extension=.js') 
   script(src="/maplabel.js") 
 block menu 
-  include ./partials/_menu.jade
+  include ../partials/_menu.jade
 block body
   #onepage
+    .section
+      include ../partials/_heritage_info.jade
+
+
+
     div.main-photo
       block main-photo
         div(class="img-holder", data-image="/images/landing/oriz_heritage.jpg")
           section.center-parallax
             .section
               .filtro
-              include partials/_heritage_intro.jade
-
+              include ../partials/_heritage_intro.jade
+    .section
+      include ../partials/_27years_of_experience.jade
+    .section
+      include ../partials/_team.jade
+    div.bottom-spacer
     //- div.bottom-spacer
     //- .section
     //-   include partials/_27years_of_experience.jade

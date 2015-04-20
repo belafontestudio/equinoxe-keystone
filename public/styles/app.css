@@ -79,6 +79,16 @@ div#landing-menu .center .scroll {
   position: relative;
   height: 40px;
 }
+
+img.info{
+  width: 100%
+}
+.main-text.info{
+  margin-top: 120px !important;
+}
+.onmap{
+  position: absolute !important;
+}
 div#landing-menu .center ul {
   display: block;
 }
