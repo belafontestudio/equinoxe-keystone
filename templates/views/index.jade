@@ -1,7 +1,6 @@
 extends ../layouts/default
-block external-scripts
-    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBl3hDHGkv8Ohrz_AY7vlWRNSB_W5Esa9M&sensor=false&extension=.js&callback=initialize') 
-    //script(src="/js/maplabel.js")
+block menu 
+    include ../partials/_menu.jade
 block content
     
     //- h1= getCatalog()
@@ -9,8 +8,7 @@ block content
     //- h1= __('hello')
     //- h1= getLocale()
     
-    block menu 
-      include ../partials/_menu.jade
+    
     block body
       #onepage
 

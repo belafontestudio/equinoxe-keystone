@@ -10,14 +10,140 @@
 @import '_filters'
 
 
+
+
+
+.down
+    display: block
+    width: 60px
+    height: 60px
+    position: absolute
+    bottom: 20px
+    left: 50%
+    margin-left: -30px
+    background url("/images/sprite/go_down.png") no-repeat 0 0 
+    z-index: 2
+    &:hover
+        background-position: 0 -60px
+
+.main-text.info
+    text-align center
+    column(8/12)
+    shift(2/12)
+    p
+        font-size 44px
+            
+.buttons
+    column(12/12)
+    text-align center
+    margin 30px 0  80px 0
+    a.enquire-button 
+        text-decoration none
+        border: 2px solid yellow;
+        padding: 15px 30px;
+        color: white
+            
+        
+    a.enquire-button:hover 
+        background-color: yellow;
+        color: white
+
+.img-holder-scroll img
+    //position absolute !important
+
+//loader
+.loader 
+  position: fixed
+  left: 0px
+  top: 0px
+  width: 100%
+  height: 100%
+  z-index: 9999
+  background: midnight
+
+
+.darker
+  background-color midnight
+
+.loading
+  margin: 20% auto
+  border-bottom: 6px solid #fff
+  border-left: 6px solid #fff
+  border-right: 6px solid #fff
+  border-top: 6px solid yellow
+  border-radius: 100%
+  height: 125px
+  width: 125px
+  -webkit-animation: spin .6s infinite linear
+  -moz-animation: spin .6s infinite linear
+  -ms-animation: spin .6s infinite linear
+  -o-animation: spin .6s infinite linear
+  animation: spin .6s infinite linear
+
+@keyframes spin
+  from
+    -webkit-transform: rotate(0deg)
+    -moz-transform: rotate(0deg)
+    -o-transform: rotate(0deg)
+    -ms-transform: rotate(0deg)
+    transform: rotate(0deg)
+  to
+    -webkit-transform: rotate(359deg)
+    -moz-transform: rotate(359deg)
+    -o-transform: rotate(359deg)
+    -ms-transform: rotate(359deg)
+    transform: rotate(359deg)
+
+
+@-moz-keyframes spin
+  from
+    -moz-transform: rotate(0deg)
+    transform: rotate(0deg)
+  to
+    -moz-transform: rotate(359deg)
+    transform: rotate(359deg)
+
+
+@-webkit-keyframes spin
+  from
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+  to
+    -webkit-transform: rotate(359deg)
+    transform: rotate(359deg)
+
+
+@-ms-keyframes spin
+  from
+    -ms-transform: rotate(0deg)
+    transform: rotate(0deg)
+  to
+    -ms-transform: rotate(359deg)
+    transform: rotate(359deg)
+
+
+@-o-keyframes spin
+  from
+    -o-transform: rotate(0deg)
+    transform: rotate(0deg)
+  to
+    -o-transform: rotate(359deg)
+    transform: rotate(359deg)
+
+
+.spacer
+    padding-top: 100px
+    padding-bottom: 100px
+
 //temporary
 #simple-menu
     display: block
-#landing-menu
+.subMenu
     display: none
 section.center-parallax
     margin-top: 200px
-
+    z-index 900
+    
 div.filtro
     background-color: black
     position absolute
@@ -55,9 +181,7 @@ div.filter-opened-section
             
 img.info
     width: 100%
-.main-text.info{
-  margin-top: 120px !important;
-}
+
 .onmap{
   position: absolute !important;
 }
@@ -86,7 +210,11 @@ img.info
         
     a
         transform(translateZ(1px))
-        
+.section.inner-last-yacht
+    width 100%
+    height 400px
+    overflow hidden     
+    position relative 
 .section.inner-map
     width 100%
     height 600px
@@ -124,8 +252,9 @@ div.bottom-spacer
     position relative
     display inline-block
     clear both
-    margin 0 0 200px 0
-div#landing-menu 
+    height 200px
+    column(12/12)
+.subMenu
      height 60px
      z-index 3
      
@@ -135,6 +264,13 @@ div#landing-menu
         margin-left 80px !important
         li
             padding: 0 20px
+            &:hover, &.slide
+                a
+                    border-bottom 1px solid yellow
+            &.active
+                a
+                    color yellow 
+                    
         
         a
             outline 0
@@ -147,10 +283,68 @@ div#landing-menu
             letter-spacing 1px
             text-transform uppercase
             text-decoration none
-            &.active, &:hover, &:active
-                color yellow 
+
+                
+       
+        li a.enquire-button 
+            border: 2px solid yellow;
+            padding: 15px 30px;
+            color: white
+            
+        
+        li a.enquire-button:hover 
+            background-color: yellow;
+            color: white
+    
+.banner--clone 
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: midnight;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    ul#anchor-menu
+        li
+            padding: 0 20px
+            &:hover, &.slide
+                a
+                    border-bottom 1px solid yellow
+                    
             &.active
-                border-bottom 1px solid yellow
+                a
+                    color yellow
+            
+            a
+                color white
+
+                &:hover
+                     
+                    border-bottom 1px solid yellow
+                &.active
+                    color yellow
+           
+        li 
+            a.enquire-button 
+                border: 2px solid yellow ;
+                padding: 15px 30px;
+                color: yellow
+            
+        
+        li 
+            a.enquire-button:hover 
+                background-color: yellow;
+                color: white
+
+.banner--stick {
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+}
+
 div#sidr
     z-index 4
                 
@@ -220,9 +414,8 @@ a#simple-menu
     opacity 1
     transition(opacity, 1s)
 
-   
-// section.center.latest-grid
-    
+section.center.latest-grid
+    position absolute    
     
 
     
@@ -285,13 +478,16 @@ section.center, section.center-parallax
         column(12/12)
         list-style-type none
         padding 0
+        -webkit-transform: translateZ(1px)
         li 
             column(12/12)
             text-align center !important
             margin-bottom 12px
+            -webkit-transform: translateZ(1px)
             a
                 width 100%
                 left 0
+                -webkit-transform: translateZ(1px)
     ul#call-to-action-menu
         column(12/12)
         list-style-type none
@@ -373,6 +569,11 @@ section.center, section.center-parallax
             p.description-text
                 font-weight lighter
                 margin-top 30px
+                a
+                    font-weight bold
+                    color yellow
+                    &:hover
+                        text-decoration underline
             a.button
                     width 70%
                     margin 0
@@ -473,7 +674,7 @@ section.center, section.center-parallax
         background-color yellow
     a.button.home
         position relative
-        top 100px
+        top 120px
         
         
     div.quote
@@ -619,7 +820,7 @@ section.center, section.center-parallax
         display none
 +below(768px)       
     ul#yacht-size
-        margin-bottom 80px !important
+        //margin-bottom 80px !important
 +above(480px)
     .slide.mobile-slide
         display none
@@ -637,7 +838,7 @@ section.center, section.center-parallax
         div.main-text.home
             margin-top 50px
         div.logo
-            margin-top 135px
+            margin-top 120px
             column(6/12)
             shift(3/12)
         ul#call-to-action-menu-button
@@ -669,12 +870,12 @@ section.center, section.center-parallax
     
             
     section.center.latest-grid
-        position absolute
-        top 60px !important
+        
+        //top 60px !important
     section.center, section.center-parallax
         center(1400px, 0px)
         div.main-text.home
-            margin-top 60px
+            margin-top 50px
             shift(3/12)
         div.logo
             column(4/12)
@@ -705,6 +906,11 @@ section.center, section.center-parallax
         div.main-text
             column(6/12)
             shift(2/12)
+        .main-text.info
+            text-align center
+            column(10/12)
+            shift(2/12)
+
         div.main-text.left
             column(4/12)
             shift(0/12)
@@ -734,6 +940,8 @@ section.center, section.center-parallax
                 shift(1/9)
             li.bulletlist
                 column(3/9,cycle:3)  
+            li.bulletlist2
+                column(4/9,cycle:2)  
             li
                 column(3/9)
                 text-align left !important
@@ -856,7 +1064,7 @@ section.center, section.center-parallax
 +above(900px)
     #simple-menu
         display: none
-    #landing-menu
+    .subMenu
         display: block
     section.center, section.center-parallax
         ul#yachts-list-grid, ul#filter-menu
@@ -892,7 +1100,7 @@ section.center, section.center-parallax
         
 +above(1080px)
     section.center.latest-grid
-        top 70px !important
+        //top 70px !important
     section.center, section.center-parallax
         h1
             font-size rem(85px)
@@ -914,7 +1122,7 @@ section.center, section.center-parallax
                 font-size rem(20px)
                 line-height rem(28px)
         div.main-text.home
-            margin-top 70px
+            margin-top 60px
             p
                 font-size rem(23px)
                 line-height rem(31px)
@@ -960,13 +1168,13 @@ section.center, section.center-parallax
 
 +above(1300px)
     section.center.latest-grid
-        top 80px !important
+        //top 80px !important
     section.center, section.center-parallax
         div.logo
             column(4/12)
             shift(4/12)
         div.main-text.home
-            margin-top 80px
+            margin-top 50px
             p
                 font-size rem(29px)
                 line-height rem(37px)

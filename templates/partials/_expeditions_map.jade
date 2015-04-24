@@ -2,7 +2,7 @@ extends ../layouts/_map.jade
 block title 
   | There’s a whole world to explore
 block description
-  | Click on a colored circle to see available experiences in the area.
+  | See where we can bring you.
 block map 
   script.
         // This example creates circles on the map, representing
@@ -10,29 +10,21 @@ block map
 
         // First, create an object containing LatLng and population for each city.
         var citymap = {};
-        citymap['chicago'] = {
-          center: new google.maps.LatLng(41.878113, -87.629798),
-          text: new google.maps.LatLng(43.328113, -87.629798),
-          population: 2714856,
-          name: "1"
+        citymap['Galapagos'] = {
+          center: new google.maps.LatLng(-8.0474555, -104.8756828),
+          population: 100,
         };
-        citymap['newyork'] = {
-          center: new google.maps.LatLng(40.714352, -74.005973),
-          text: new google.maps.LatLng(42.164352, -74.005973),
-          population: 8405837,
-          name: "6"
+        citymap['Maldive'] = {
+          center: new google.maps.LatLng(1.977247,73.5361034),
+          population: 100,
         };
-        citymap['losangeles'] = {
-          center: new google.maps.LatLng(34.052234, -118.243684),
-          text: new google.maps.LatLng(35.502234, -118.243684),
-          population: 3857799,
-          name: "3"
+        citymap['Antartide'] = {
+          center: new google.maps.LatLng(-66.9400838,0),
+          population: 100,
         };
-        citymap['vancouver'] = {
-          center: new google.maps.LatLng(49.25, -123.1),
-          text: new google.maps.LatLng(51, -123.1),
-          population: 603502,
-          name: "13"
+        citymap['Artide'] = {
+          center: new google.maps.LatLng(66.9400848,-68.2950541),
+          population: 100,
         };
 
         var cityCircle;
@@ -41,7 +33,8 @@ block map
         var map;
         function init() {
               var mapOptions = {
-                    center: new google.maps.LatLng(40.714352, -74.005973),
+                    backgroundColor: "#103158",
+                    center: new google.maps.LatLng(0, 0),
                     zoom: 3,
                     zoomControl: false,
                     disableDoubleClickZoom: true,
@@ -63,16 +56,7 @@ block map
         // Construct the circle for each value in citymap.
         // Note: We scale the area of the circle based on the population.
         for (var city in citymap) {
-              var mapLabel = new MapLabel({
-                   text: citymap[city].name,
-                   position: citymap[city].text,
-                   map: map,
-                   fontSize:26,
-                   fontColor: "#F4BB3B",
-                   strokeWeight: 0,
-                   fontFamily: "Alegreya Sans",
-                   align: 'center'
-                 });
+              
               var populationOptions = {
                     strokeColor: '#F4BB3B',
                     strokeOpacity: 1,
@@ -81,7 +65,7 @@ block map
                     fillOpacity: 0,
                     map: map,
                     center: citymap[city].center,
-                    radius: Math.sqrt(citymap[city].population) * 500
+                    radius: citymap[city].population * 10000
               };
               // Add the circle for this city to the map.
               cityCircle = new google.maps.Circle(populationOptions);
@@ -115,7 +99,7 @@ block map
 
         p
           block description
-            | Click on a colored circle to see available experiences in the area.
+            | See where we can bring you.
 
   #expedition-map.map
 

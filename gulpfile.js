@@ -1,6 +1,5 @@
 var BatchStream = require('batch-stream2')
 var gulp = require('gulp')
-var coffee = require('gulp-coffee')
 var uglify = require('gulp-uglify')
 var cssmin = require('gulp-minify-css')
 var bower = require('gulp-bower-files')
@@ -16,12 +15,11 @@ var rename = require('gulp-rename')
 var src = {
   styl: ['public/**/*.styl'],
   css: ['public/**/*.css'],
-  coffee: ['public/**/*.coffee'],
   js: ['public/**/*.js'],
   bower: ['bower.json', '.bowerrc']
 }
 src.styles = src.styl.concat(src.css)
-src.scripts = src.coffee.concat(src.js)
+
 
 var publishdir = 'public'
 var dist = {
@@ -58,7 +56,7 @@ gulp.task('bower', function() {
 
 function buildCSS() {
   return gulp.src(src.styles)
-    .pipe(stylus({use: ['nib']}))
+    .pipe(stylus({use: [jeet(),nib()]}))
     .pipe(concat('app.css'))
     .pipe(gulp.dest(dist.css))
 }
@@ -66,10 +64,8 @@ function buildCSS() {
 function buildJS() {
   return gulp.src(src.scripts)
     .pipe(include())
-    .pipe(coffee())
     .pipe(browserify({
       insertGlobals: true,
-      extensions: ['.coffee'],
       debug: true
     }))
     .pipe(concat('app.js'))

@@ -57,6 +57,7 @@ exports = module.exports = function(app) {
 	app.get('/bareboat', routes.views.bareboat);
 	app.get('/services', routes.views.services);
 	app.get('/heritage', routes.views.heritage);
+	app.get('/yachts_list', routes.views.yachtList);
 
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

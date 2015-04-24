@@ -1,4 +1,16 @@
 var slidesInterval;
+ // Set options
+        var options = {
+            offset: 700,
+            classes: {
+                clone:   'banner--clone',
+                stick:   'banner--stick',
+                unstick: 'banner--unstick'
+            }
+        };
+
+        // Initialise with options
+var headhesive = new Headhesive('.subMenu', options);
 
 //Resize
 $( window ).resize(function() {
@@ -8,24 +20,20 @@ $( window ).resize(function() {
     $.fn.fullpage.reBuild();
   }
   centerImagesInGrid();
+  resizeMap();
 });
 
 
 var imgLoad = imagesLoaded( 'body' );
 
-imgLoad.on( 'done', function( instance ) {
-  
-  centerImagesInGrid();
-  var pathArray = window.location.pathname.split( '/' );
-  if (pathArray[2] == "single_yacht.html"){
-    $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0});  
-    }else if (pathArray[2] == "single_expedition.html"){
-      $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0});  
-    }else{
-      $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0});
-    }
-});
 
+
+
+function resizeMap(){
+    var windowHeight = $(window).height();
+   
+    $(".section.inner-map").height(windowHeight);
+}
 
 enquire.register("screen and (max-width:480px)", {
 
@@ -134,10 +142,31 @@ function rangeSlider(){
     $( "p.max-price" ).text( "€" + $( "#slider-range" ).slider( "values", 1 )+ "k");
 }
 $(document).ready(function() {
+      var top_ofset = $('header').height() - 1;
+        $(document).on('click', 'a.down', function(e) {
+            e.preventDefault(); 
+            $('html, body').animate({
+            scrollTop: $( $(this).attr('href') ).offset().top - top_ofset
+          }, 1000);
+        });
+   
 
-    
+    imgLoad.on( 'done', function( instance ) {
+  
+      centerImagesInGrid();
+      var pathArray = window.location.pathname.split( '/' );
+      if (pathArray[2] == "single_yacht.html"){
+        $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0});  
+        }else if (pathArray[2] == "single_expedition.html"){
+          $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0});  
+        }else{
+            console.log("imgscroll")
+          $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0});
+          $('.img-holder-scroll').imageScroll({coverRatio: 1,extraHeight: 0,parallax: false});
+        }
+    });
 
-
+    resizeMap();
     filterMenu();
     rangeSlider();
     guestSlider();
@@ -292,7 +321,7 @@ function mobileSlide(){
       
 function checkPage(size){
     var pathArray = window.location.pathname.split( '/' );
-    console.log(pathArray)
+    //console.log(pathArray)
     if (pathArray[1] === ""){
         
         if (size == "web"){
@@ -373,7 +402,7 @@ function hideStatements(target){
 };
 
 function centerImagesInGrid(){
-    height = $(window).height();
+    height = 400;
     var container_width = $('ul#latest-yachts-imgbackground li').width();
     $('ul#latest-yachts-imgbackground li img').height(height);
 
@@ -390,11 +419,15 @@ function homeSlides(){
     $('p#statement1').fadeIn(1000);
     $('div#cta1').fadeIn(1000);
     $('a#m1').addClass("active");
+    var menu = $('.subMenu:eq(1)');
 
-    $('li.item').each(function(){
+    $(menu).find('li.item').each(function(){
+
         $(this).find('a').hover(function(e){
             var id = e.target.id;
+
             var target = id.slice(-1);
+            console.log(target)
             hideStatements(target);
             hideCTA(target);
             hideSlides(target);
@@ -416,7 +449,7 @@ function timerSlidesHome(counter){
         if( counter == $('li.item').length+1){
             counter = 1;
         }
-        console.log(counter);
+        
         hideStatements(counter);
         hideCTA(counter);
         hideSlides(counter);
@@ -426,18 +459,14 @@ function timerSlidesHome(counter){
       }, 10000);
 }
 function activeItem(target){
-    var counter = 1;
-
-        $('#anchor-menu li.item').each(function(){
-            $link = $(this).find('a')
+    var counter = 0;
+        var menu = $('.subMenu:eq(1)');
+        $(menu).find('li.item').each(function(){
             if (counter != target){
-                $link.removeClass("active");
-                 
+                $(this).removeClass("slide");
             }else{
-                $link.addClass("active");
-                
+                $(this).addClass("slide");
             }
-            
             counter++;
         });
 };

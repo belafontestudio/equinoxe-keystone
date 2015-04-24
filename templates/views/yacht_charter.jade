@@ -1,7 +1,5 @@
 extends ../layouts/default
-block external-scripts
-  script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBl3hDHGkv8Ohrz_AY7vlWRNSB_W5Esa9M&sensor=false&extension=.js') 
-  script(src="/maplabel.js") 
+
 block menu 
   include ../partials/_menu.jade
 block body
@@ -13,28 +11,34 @@ block body
             .section
               .filtro
               include ../partials/_yacht_charter_intro.jade
-    .section
+          a.down(href="#charter_section")
+    .section#charter_section
       div.main-photo
         div(class="img-holder", data-image="/images/landing/oriz_brokerage.jpg")
           section.center-parallax
             .section
               .filtro
               include ../partials/_power_charter_intro.jade
+    .section.inner-last-yacht
+      include ../partials/_latest_yacht_power.jade
     .section
       div.main-photo
-        div(class="img-holder", data-image="/images/landing/oriz_brokerage.jpg")
+        div(class="img-holder", data-image="/images/landing/noheea.png")
           section.center-parallax
             .section
               .filtro
               include ../partials/_sail_charter_intro.jade
+    .section.inner-last-yacht
+      include ../partials/_latest_yacht_sail.jade
     .section
       div.main-photo
-        div(class="img-holder", data-image="/images/landing/oriz_brokerage.jpg")
+        div(class="img-holder", data-image="/images/landing/kadena.jpg")
           section.center-parallax
             .section
               .filtro
               include ../partials/_gulet_charter_intro.jade
-    div.bottom-spacer
+    .section.inner-last-yacht
+      include ../partials/_latest_yacht_gulet.jade
     //- div.bottom-spacer
     //- .section
     //-   include partials/_yacht_size.jade

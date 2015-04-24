@@ -4,17 +4,7 @@
     .center
       .scroll
         ul#anchor-menu
+          each link in navLinks
+            li.item(class=(section == link.key ? 'active' : null)): a(href=link.href id=link.id)= link.label
           li
-            a#m0(href="/") Home
-          li.item
-            a#m1(data-menuanchor="sale-purchase",href="/yacht_brokerage") Yacht brokerage
-          li.item
-            a#m2(data-menuanchor="yacht-charter",href="/yacht_charter") Yacht charter
-          li.item
-            a#m3(data-menuanchor="expeditions",href="/expeditions_planning") Expeditions
-          li.item
-            a#m4(data-menuanchor="bareboat",href="/bareboat") Bareboat
-          li.item
-            a#m5(data-menuanchor="services",href="/services") Land & services
-          li.item
-            a#m6(data-menuanchor="heritage",href="/heritage") Heritage
+            a.enquire-button(href="#enquire-modal", rel="modal:open") Enquire
