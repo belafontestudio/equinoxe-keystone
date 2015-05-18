@@ -29,10 +29,10 @@ exports.initLocals = function(req, res, next) {
 		{ label: 'Home',		key: 'home',   id: "m0",		href: '/' },
 		{ label: 'Yacht brokerage',		key: 'yacht_brokerage',   id: "m1",		href: '/yacht_brokerage' },
 		{ label: 'Yacht charter',		key: 'yacht_charter',   id: "m2",		href: '/yacht_charter' },
-		{ label: 'Bareboat',		key: 'bareboat',   id: "m3",		href: '/bareboat' },
-		{ label: 'Expeditions',		key: 'expeditions_planning',   id: "m4",		href: '/expeditions_planning' },
-		{ label: 'Services',		key: 'services',   id: "m5",		href: '/services' },
-		{ label: 'Heritage',		key: 'heritage',   id: "m6",		href: '/heritage' },
+		{ label: 'Bareboat',		key: 'bareboat',   id: "m4",		href: '/bareboat' },
+		{ label: 'Expeditions',		key: 'expeditions_planning',   id: "m5",		href: '/expeditions_planning' },
+		{ label: 'Land & services',		key: 'services',   id: "m6",		href: '/services' },
+		{ label: 'Heritage',		key: 'heritage',   id: "m7",		href: '/heritage' },
 	];
 	
 	locals.user = req.user;

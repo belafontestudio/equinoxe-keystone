@@ -1,35 +1,51 @@
 block single-yacht
-  a.card(href="single_yacht.html")
-    li
-      div.container-yachtcard-img
-        block img-yacht-card
-          | img
-      h3.yacht-name
-        block single-yacht-name
-          | name
-      ul.yacht-specs
-        li
-          span
-            | charter:
-          block single-yacht-charter
-            | price
-        li
-          span
-            | sale:
-          block single-yacht-sale
-            | price
-        li
-          span
-            | length:
-          block single-yacht-length
-            | size
-        li
-          span
-            | built:
-          block single-yacht-built
-            | year
-        li
-          span
-            | guests:
-          block single-yacht-guests
-            | number
+    li.card
+        a(href= "/yacht/"+yacht.slug)
+        div.container-yachtcard-img
+          block img-yacht-card
+            | img
+        h3.yacht-name
+          block single-yacht-name
+            | name
+        ul.yacht-specs
+          if yacht["price per week from"] || yacht.price
+            li
+              if yacht.availability == "Charter"
+                span
+                  | Price from:
+                = yacht["price per week from"]+yacht.currency 
+              if yacht.availability == "Sale"
+                if yacht.price
+                  span
+                    | Price:
+                  = yacht.price+yacht.currency
+          if yacht.lenght
+            li
+              span
+                | length:
+              = yacht.lenght + " m"
+          if yacht.builder && yacht.availability == "Sale"
+            li
+              span
+                | builder:
+              = yacht.builder
+          if yacht.build || yacht.refit 
+            li
+              if yacht.refit && yacht.build
+                span
+                  | built:
+                = yacht.build+" / refit "+yacht.refit
+              else
+                  if yacht.refit
+                    span
+                      | refit:
+                    = yacht.refit
+                  else if yacht.build
+                    span
+                      | built:
+                    = yacht.build 
+          li
+            span
+              | guests:
+            block single-yacht-guests
+              | number

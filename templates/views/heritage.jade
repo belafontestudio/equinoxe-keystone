@@ -13,19 +13,20 @@ block body
       include ../partials/_heritage_info.jade
 
 
-
-    div.main-photo
-      block main-photo
-        div(class="img-holder", data-image="/images/landing/oriz_heritage.jpg")
-          section.center-parallax
-            .section
-              .filtro
-              include ../partials/_heritage_intro.jade
+    .section
+      div.main-photo
+        block main-photo
+          div(class="img-holder", data-image="/images/landing/oriz_heritage.jpg")
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_heritage_intro.jade
     .section.spacer#founders
       include ../partials/_27years_of_experience.jade
     .section.spacer
       include ../partials/_team.jade
-    div.bottom-spacer
+    .section.darker
+      include ../partials/_footer.jade 
     //- div.bottom-spacer
     //- .section
     //-   include partials/_27years_of_experience.jade

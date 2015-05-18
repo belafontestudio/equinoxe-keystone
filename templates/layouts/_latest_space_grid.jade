@@ -1,12 +1,14 @@
 block section
-  section.center.latest-grid
+  section.center.latest-grid.spacer
     .main-text.left
       h1.smaller2
         block title-smaller2
-          | Title:</br>—
+          | Title:
     .clear
-    ul#latest-yachts
+    ul.latest-space-yachts
       li
+        block photo1
+          | first image
         h2.main-title
           block yacht-name1
             | Name
@@ -28,8 +30,12 @@ block section
             block guests1
               | Number
           .clear
-        a.button(href="../pages/single_yacht.html") Discover
+        .buttons
+          a.button(href="../pages/single_yacht.html") Discover
       li
+        
+        block photo2
+          | second image
         h2.main-title
           block yacht-name2
             | Name
@@ -51,8 +57,12 @@ block section
             block guests2
               | Number
           .clear
-        a.button(href="../pages/single_yacht.html") Discover
+        .buttons
+          a.button(href="../pages/single_yacht.html") Discover
       li
+        
+        block photo3
+          | third image
         h2.main-title
           block yacht-name3
             | Name
@@ -74,14 +84,6 @@ block section
             block guests3
               | Number
           .clear
-        a.button(href="../pages/single_yacht.html") Discover
-  ul#latest-yachts-imgbackground
-    li#latest1
-      block photo1
-        | first image
-    li#latest2
-      block photo2
-        | second image
-    li#latest3
-      block photo3
-        | third image
+        .buttons
+          a.button(href="../pages/single_yacht.html") Discover
+

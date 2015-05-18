@@ -14,6 +14,7 @@ exports = module.exports = function(req, res) {
 		
 		var response = '<pre>FILES IN ' + process.env.CLOUD_DIR + ': \n';
 		response += '------------------\n\n';
+		var counter = 0
 
 		var readDir = function (dpath) {
 			var filenames = fs.readdirSync(dpath);
@@ -26,11 +27,14 @@ exports = module.exports = function(req, res) {
 				} else {
 					response += filename + '\n';
 				}
+				counter++;
 			});
 		};
 
 		readDir(root);
-		 
+		response += '\n\n------------------\n\n';
+		response += "TOTAL FILES "+counter; 
+		
 
 
 		res.end(response);

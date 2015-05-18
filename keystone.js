@@ -17,7 +17,7 @@ keystone.init({
 	'brand': 'Equinoxe',
 	
 	'sass': 'public',
-	'static': ['public','bower_components',process.env.CLOUD_DIR],
+	'static': ['public','bower_components',process.env.CLOUD_DIR,process.env.TEMP_DIR],
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
@@ -33,7 +33,7 @@ keystone.init({
 	'wysiwyg additional buttons': 'pastetext,paste',
 	'wysiwyg additional plugins': 'paste',
 	'wysiwyg additional options': {"paste_retain_style_properties": "color font-size"},
-	'wysiwyg cloudinary images': true,
+	'wysiwyg cloudinary images': false,
 });
 
 
@@ -57,7 +57,7 @@ keystone.set('locals', {
  
 i18n.configure({
 	locales:['en', 'it'],
-	defaultLocale: 'it',
+	defaultLocale: 'en',
 	directory: __dirname + '/locales'
 });
 

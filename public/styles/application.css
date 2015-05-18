@@ -441,7 +441,7 @@ div#contact-us-modal fieldset textarea {
   background-color: transparent;
   padding: 8px;
   margin-bottom: 15px;
-  color: #fff;
+  color: #103158;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   outline: none !important;
@@ -455,7 +455,7 @@ div#contact-us-modal fieldset textarea:focus {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   outline: none !important;
-  color: #f4bb3b;
+  color: #103158;
 }
 div#enquire-modal fieldset div.control-group,
 div#contact-us-modal fieldset div.control-group {
@@ -813,7 +813,7 @@ section.center div.slider-bar {
   margin: 0 auto;
 }
 section.center div#slider-numbers {
-  margin-top: 180px;
+  margin-top: 100px;
 }
 section.center div#slider-numbers p {
   position: relative;
@@ -869,6 +869,212 @@ section.center div.slider-bar .ui-widget-header {
     display: inline-block;
     width: 100%;
   }
+}
+#gallery1,
+#gallery2 {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  min-height: 500px;
+}
+.skippr-nav-element-block {
+  width: 30px;
+}
+.skippr-nav-element-active {
+  background-color: #f4bb3b;
+}
+div.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+div.background .mare {
+  background-image: url("/images/backgrounds/mare.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.latest-space-yachts li {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 31.3333333333333%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.latest-space-yachts li:before,
+.latest-space-yachts li:after {
+  content: '';
+  display: table;
+}
+.latest-space-yachts li:after {
+  clear: both;
+}
+.latest-space-yachts li:last-child {
+  margin-right: 0%;
+}
+.latest-space-yachts li img {
+  width: 100%;
+  height: auto;
+}
+footer {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid #f4bb3b;
+  padding-top: 80px;
+  *zoom: 1;
+  width: auto;
+  max-width: 100%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  font-family: "Alegreya Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  color: #fff;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 1px;
+}
+footer:before,
+footer:after {
+  content: '';
+  display: table;
+}
+footer:after {
+  clear: both;
+}
+footer .container {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+footer .container:before,
+footer .container:after {
+  content: '';
+  display: table;
+}
+footer .container:after {
+  clear: both;
+}
+footer .container:last-child {
+  margin-right: 0%;
+}
+footer .left {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 22.75%;
+  margin-left: 17.1666666666667%;
+  margin-right: 3%;
+}
+footer .left:before,
+footer .left:after {
+  content: '';
+  display: table;
+}
+footer .left:after {
+  clear: both;
+}
+footer .left:last-child {
+  margin-right: 0%;
+}
+footer .left img {
+  width: 100%;
+}
+footer .left ul {
+  margin-top: 50px;
+}
+footer .left ul li {
+  padding: 10px 0;
+}
+footer .left ul li.bold {
+  font-weight: 700;
+}
+footer .right {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 39.9166666666667%;
+  margin-left: 8.5833333333333%;
+  margin-right: 3%;
+}
+footer .right:before,
+footer .right:after {
+  content: '';
+  display: table;
+}
+footer .right:after {
+  clear: both;
+}
+footer .right:last-child {
+  margin-right: 0%;
+}
+footer .right img {
+  width: 100%;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+footer p.secondmenu {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+footer p.secondmenu:before,
+footer p.secondmenu:after {
+  content: '';
+  display: table;
+}
+footer p.secondmenu:after {
+  clear: both;
+}
+footer p.secondmenu:last-child {
+  margin-right: 0%;
+}
+footer p.secondmenu a {
+  color: #f4bb3b;
+}
+footer p.secondmenu a:hover {
+  color: #fff;
+}
+.section {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.section:before,
+.section:after {
+  content: '';
+  display: table;
+}
+.section:after {
+  clear: both;
+}
+.section:last-child {
+  margin-right: 0%;
 }
 .down {
   display: block;
@@ -953,6 +1159,8 @@ section.center div.slider-bar .ui-widget-header {
 }
 .darker {
   background-color: #091d34;
+  position: relative;
+  z-index: 2;
 }
 .loading {
   margin: 20% auto;
@@ -1060,6 +1268,10 @@ section.center-parallax {
   margin-top: 200px;
   z-index: 900;
 }
+section.center-parallax a.button {
+  position: relative;
+  left: 17.1666666666667%;
+}
 div.filtro {
   background-color: #000;
   position: absolute;
@@ -1125,6 +1337,13 @@ img.info {
 .statement,
 .cta {
   display: none;
+}
+.cta {
+  position: relative;
+  height: 80px;
+}
+.statement {
+  height: 150px;
 }
 .slide {
   padding: 0;
@@ -1263,7 +1482,7 @@ ul#anchor-menu li {
   padding: 0 20px;
 }
 ul#anchor-menu li:hover a,
-ul#anchor-menu li.slide a {
+ul#anchor-menu li.current a {
   border-bottom: 1px solid #f4bb3b;
 }
 ul#anchor-menu li.active a {
@@ -1294,6 +1513,7 @@ ul#anchor-menu li a.enquire-button:hover {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
   background: #091d34;
   -webkit-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
@@ -1314,7 +1534,7 @@ ul#anchor-menu li a.enquire-button:hover {
   padding: 0 20px;
 }
 .banner--clone ul#anchor-menu li:hover a,
-.banner--clone ul#anchor-menu li.slide a {
+.banner--clone ul#anchor-menu licurrent a {
   border-bottom: 1px solid #f4bb3b;
 }
 .banner--clone ul#anchor-menu li.active a {
@@ -1435,9 +1655,6 @@ a#simple-menu {
   -o-transition: opacity 1s;
   -ms-transition: opacity 1s;
   transition: opacity 1s;
-}
-section.center.latest-grid {
-  position: absolute;
 }
 section.center,
 section.center-parallax {
@@ -1649,6 +1866,10 @@ section.center-parallax ul#call-to-action-menu-button li a {
   width: 100%;
   left: 0;
   -webkit-transform: translateZ(1px);
+}
+section.center ul#call-to-action-menu-button li a.active,
+section.center-parallax ul#call-to-action-menu-button li a.active {
+  color: #f4bb3b;
 }
 section.center ul#call-to-action-menu,
 section.center-parallax ul#call-to-action-menu {
@@ -2025,10 +2246,10 @@ section.center ul#filter-menu,
 section.center-parallax ul#filter-menu {
   margin-top: 60px;
 }
-section.center ul#yachts-list-grid a.card,
-section.center-parallax ul#yachts-list-grid a.card,
-section.center ul#filter-menu a.card,
-section.center-parallax ul#filter-menu a.card {
+section.center ul#yachts-list-grid li.card,
+section.center-parallax ul#yachts-list-grid li.card,
+section.center ul#filter-menu li.card,
+section.center-parallax ul#filter-menu li.card {
   *zoom: 1;
   float: left;
   clear: none;
@@ -2036,28 +2257,29 @@ section.center-parallax ul#filter-menu a.card {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
+  background-color: #103158;
 }
-section.center ul#yachts-list-grid a.card:before,
-section.center-parallax ul#yachts-list-grid a.card:before,
-section.center ul#filter-menu a.card:before,
-section.center-parallax ul#filter-menu a.card:before,
-section.center ul#yachts-list-grid a.card:after,
-section.center-parallax ul#yachts-list-grid a.card:after,
-section.center ul#filter-menu a.card:after,
-section.center-parallax ul#filter-menu a.card:after {
+section.center ul#yachts-list-grid li.card:before,
+section.center-parallax ul#yachts-list-grid li.card:before,
+section.center ul#filter-menu li.card:before,
+section.center-parallax ul#filter-menu li.card:before,
+section.center ul#yachts-list-grid li.card:after,
+section.center-parallax ul#yachts-list-grid li.card:after,
+section.center ul#filter-menu li.card:after,
+section.center-parallax ul#filter-menu li.card:after {
   content: '';
   display: table;
 }
-section.center ul#yachts-list-grid a.card:after,
-section.center-parallax ul#yachts-list-grid a.card:after,
-section.center ul#filter-menu a.card:after,
-section.center-parallax ul#filter-menu a.card:after {
+section.center ul#yachts-list-grid li.card:after,
+section.center-parallax ul#yachts-list-grid li.card:after,
+section.center ul#filter-menu li.card:after,
+section.center-parallax ul#filter-menu li.card:after {
   clear: both;
 }
-section.center ul#yachts-list-grid a.card:last-child,
-section.center-parallax ul#yachts-list-grid a.card:last-child,
-section.center ul#filter-menu a.card:last-child,
-section.center-parallax ul#filter-menu a.card:last-child {
+section.center ul#yachts-list-grid li.card:last-child,
+section.center-parallax ul#yachts-list-grid li.card:last-child,
+section.center ul#filter-menu li.card:last-child,
+section.center-parallax ul#filter-menu li.card:last-child {
   margin-right: 0%;
 }
 section.center ul#yachts-list-grid div.container-yachtcard-img,
@@ -2088,46 +2310,28 @@ section.center-parallax ul#filter-menu h3.yacht-name {
   margin: 5px 0 15px 0;
   padding-left: 20px;
   padding-right: -20px;
+  min-height: 60px;
 }
 section.center ul#yachts-list-grid li,
 section.center-parallax ul#yachts-list-grid li,
 section.center ul#filter-menu li,
 section.center-parallax ul#filter-menu li {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 100%;
-  margin-left: 0%;
-  margin-right: 3%;
   text-align: left !important;
   margin-bottom: 40px;
   background-color: #183d79;
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-section.center ul#yachts-list-grid li:before,
-section.center-parallax ul#yachts-list-grid li:before,
-section.center ul#filter-menu li:before,
-section.center-parallax ul#filter-menu li:before,
-section.center ul#yachts-list-grid li:after,
-section.center-parallax ul#yachts-list-grid li:after,
-section.center ul#filter-menu li:after,
-section.center-parallax ul#filter-menu li:after {
-  content: '';
-  display: table;
-}
-section.center ul#yachts-list-grid li:after,
-section.center-parallax ul#yachts-list-grid li:after,
-section.center ul#filter-menu li:after,
-section.center-parallax ul#filter-menu li:after {
-  clear: both;
-}
-section.center ul#yachts-list-grid li:last-child,
-section.center-parallax ul#yachts-list-grid li:last-child,
-section.center ul#filter-menu li:last-child,
-section.center-parallax ul#filter-menu li:last-child {
-  margin-right: 0%;
+section.center ul#yachts-list-grid li a,
+section.center-parallax ul#yachts-list-grid li a,
+section.center ul#filter-menu li a,
+section.center-parallax ul#filter-menu li a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 section.center ul#yachts-list-grid li ul.yacht-specs,
 section.center-parallax ul#yachts-list-grid li ul.yacht-specs,
@@ -2136,6 +2340,7 @@ section.center-parallax ul#filter-menu li ul.yacht-specs {
   position: relative;
   padding-left: 20px;
   padding-right: -20px;
+  min-height: 115px;
 }
 section.center ul#yachts-list-grid li ul.yacht-specs li,
 section.center-parallax ul#yachts-list-grid li ul.yacht-specs li,
@@ -2260,6 +2465,10 @@ section.center-parallax a.button {
   padding: 15px 50px;
   border: 2px solid #f4bb3b;
 }
+section.center a.button.active,
+section.center-parallax a.button.active {
+  background-color: #f4bb3b;
+}
 section.center a.button:hover,
 section.center-parallax a.button:hover {
   background-color: #f4bb3b;
@@ -2361,6 +2570,7 @@ section.center-parallax div#container-other-specs:last-child {
 }
 section.center div#container-other-specs div#other-specs,
 section.center-parallax div#container-other-specs div#other-specs {
+  margin-top: 60px;
   *zoom: 1;
   float: left;
   clear: none;
@@ -2386,6 +2596,7 @@ section.center-parallax div#container-other-specs div#other-specs:last-child {
 }
 section.center div#container-other-specs div#other-description,
 section.center-parallax div#container-other-specs div#other-description {
+  margin-top: 60px;
   *zoom: 1;
   float: left;
   clear: none;
@@ -2441,6 +2652,10 @@ section.center div#other-description div.description-info,
 section.center-parallax div#other-description div.description-info {
   margin-bottom: 80px;
 }
+section.center div#other-description div.description-info.indent p,
+section.center-parallax div#other-description div.description-info.indent p {
+  text-indent: 25px;
+}
 section.center div#other-description div.description-info p,
 section.center-parallax div#other-description div.description-info p {
   font-size: 20px;
@@ -2450,7 +2665,6 @@ section.center-parallax div#other-description div.description-info p {
   font-weight: 300 !important;
   margin: 0;
   margin-bottom: 25px;
-  text-indent: 25px;
 }
 section.center div#other-description div.description-info h2,
 section.center-parallax div#other-description div.description-info h2 {
@@ -2581,7 +2795,7 @@ section.center-parallax div.filter-opened-section {
   margin-left: 0%;
   margin-right: 3%;
   background-color: #183d79;
-  height: 400px;
+  height: 250px;
   border-top: 1px solid #103158;
 }
 section.center div.filter-opened-section:before,
@@ -2642,7 +2856,7 @@ section.center-parallax div.filter-opened-section:last-child {
   }
   section.center div.logo,
   section.center-parallax div.logo {
-    margin-top: 100px;
+    margin-top: 30%;
   }
 }
 @media only screen and (min-width: 600px) {
@@ -2675,7 +2889,7 @@ section.center-parallax div.filter-opened-section:last-child {
   }
   section.center div.logo,
   section.center-parallax div.logo {
-    margin-top: 120px;
+    margin-top: 30%;
     *zoom: 1;
     float: left;
     clear: none;
@@ -2787,10 +3001,10 @@ section.center-parallax div.filter-opened-section:last-child {
   section.center-parallax ul#filter-menu:last-child {
     margin-right: 0%;
   }
-  section.center ul#yachts-list-grid a.card,
-  section.center-parallax ul#yachts-list-grid a.card,
-  section.center ul#filter-menu a.card,
-  section.center-parallax ul#filter-menu a.card {
+  section.center ul#yachts-list-grid li.card,
+  section.center-parallax ul#yachts-list-grid li.card,
+  section.center ul#filter-menu li.card,
+  section.center-parallax ul#filter-menu li.card {
     *zoom: 1;
     float: left;
     clear: none;
@@ -2799,40 +3013,40 @@ section.center-parallax div.filter-opened-section:last-child {
     margin-left: 0%;
     margin-right: 3%;
   }
-  section.center ul#yachts-list-grid a.card:before,
-  section.center-parallax ul#yachts-list-grid a.card:before,
-  section.center ul#filter-menu a.card:before,
-  section.center-parallax ul#filter-menu a.card:before,
-  section.center ul#yachts-list-grid a.card:after,
-  section.center-parallax ul#yachts-list-grid a.card:after,
-  section.center ul#filter-menu a.card:after,
-  section.center-parallax ul#filter-menu a.card:after {
+  section.center ul#yachts-list-grid li.card:before,
+  section.center-parallax ul#yachts-list-grid li.card:before,
+  section.center ul#filter-menu li.card:before,
+  section.center-parallax ul#filter-menu li.card:before,
+  section.center ul#yachts-list-grid li.card:after,
+  section.center-parallax ul#yachts-list-grid li.card:after,
+  section.center ul#filter-menu li.card:after,
+  section.center-parallax ul#filter-menu li.card:after {
     content: '';
     display: table;
   }
-  section.center ul#yachts-list-grid a.card:after,
-  section.center-parallax ul#yachts-list-grid a.card:after,
-  section.center ul#filter-menu a.card:after,
-  section.center-parallax ul#filter-menu a.card:after {
+  section.center ul#yachts-list-grid li.card:after,
+  section.center-parallax ul#yachts-list-grid li.card:after,
+  section.center ul#filter-menu li.card:after,
+  section.center-parallax ul#filter-menu li.card:after {
     clear: both;
   }
-  section.center ul#yachts-list-grid a.card:nth-child(2n),
-  section.center-parallax ul#yachts-list-grid a.card:nth-child(2n),
-  section.center ul#filter-menu a.card:nth-child(2n),
-  section.center-parallax ul#filter-menu a.card:nth-child(2n) {
+  section.center ul#yachts-list-grid li.card:nth-child(2n),
+  section.center-parallax ul#yachts-list-grid li.card:nth-child(2n),
+  section.center ul#filter-menu li.card:nth-child(2n),
+  section.center-parallax ul#filter-menu li.card:nth-child(2n) {
     margin-right: 0%;
     float: right;
   }
-  section.center ul#yachts-list-grid a.card:nth-child(2n+1),
-  section.center-parallax ul#yachts-list-grid a.card:nth-child(2n+1),
-  section.center ul#filter-menu a.card:nth-child(2n+1),
-  section.center-parallax ul#filter-menu a.card:nth-child(2n+1) {
+  section.center ul#yachts-list-grid li.card:nth-child(2n+1),
+  section.center-parallax ul#yachts-list-grid li.card:nth-child(2n+1),
+  section.center ul#filter-menu li.card:nth-child(2n+1),
+  section.center-parallax ul#filter-menu li.card:nth-child(2n+1) {
     clear: both;
   }
-  section.center ul#yachts-list-grid li,
-  section.center-parallax ul#yachts-list-grid li,
-  section.center ul#filter-menu li,
-  section.center-parallax ul#filter-menu li {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs,
+  section.center ul#filter-menu li.card ul.yacht-specs,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs {
     *zoom: 1;
     float: left;
     clear: none;
@@ -2841,33 +3055,33 @@ section.center-parallax div.filter-opened-section:last-child {
     margin-left: 0%;
     margin-right: 3%;
   }
-  section.center ul#yachts-list-grid li:before,
-  section.center-parallax ul#yachts-list-grid li:before,
-  section.center ul#filter-menu li:before,
-  section.center-parallax ul#filter-menu li:before,
-  section.center ul#yachts-list-grid li:after,
-  section.center-parallax ul#yachts-list-grid li:after,
-  section.center ul#filter-menu li:after,
-  section.center-parallax ul#filter-menu li:after {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs:before,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs:before,
+  section.center ul#filter-menu li.card ul.yacht-specs:before,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs:before,
+  section.center ul#yachts-list-grid li.card ul.yacht-specs:after,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs:after,
+  section.center ul#filter-menu li.card ul.yacht-specs:after,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs:after {
     content: '';
     display: table;
   }
-  section.center ul#yachts-list-grid li:after,
-  section.center-parallax ul#yachts-list-grid li:after,
-  section.center ul#filter-menu li:after,
-  section.center-parallax ul#filter-menu li:after {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs:after,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs:after,
+  section.center ul#filter-menu li.card ul.yacht-specs:after,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs:after {
     clear: both;
   }
-  section.center ul#yachts-list-grid li:last-child,
-  section.center-parallax ul#yachts-list-grid li:last-child,
-  section.center ul#filter-menu li:last-child,
-  section.center-parallax ul#filter-menu li:last-child {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs:last-child,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs:last-child,
+  section.center ul#filter-menu li.card ul.yacht-specs:last-child,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs:last-child {
     margin-right: 0%;
   }
-  section.center ul#yachts-list-grid li ul.yacht-specs,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs,
-  section.center ul#filter-menu li ul.yacht-specs,
-  section.center-parallax ul#filter-menu li ul.yacht-specs {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li,
+  section.center ul#filter-menu li.card ul.yacht-specs li,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li {
     *zoom: 1;
     float: left;
     clear: none;
@@ -2876,62 +3090,27 @@ section.center-parallax div.filter-opened-section:last-child {
     margin-left: 0%;
     margin-right: 3%;
   }
-  section.center ul#yachts-list-grid li ul.yacht-specs:before,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs:before,
-  section.center ul#filter-menu li ul.yacht-specs:before,
-  section.center-parallax ul#filter-menu li ul.yacht-specs:before,
-  section.center ul#yachts-list-grid li ul.yacht-specs:after,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs:after,
-  section.center ul#filter-menu li ul.yacht-specs:after,
-  section.center-parallax ul#filter-menu li ul.yacht-specs:after {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li:before,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li:before,
+  section.center ul#filter-menu li.card ul.yacht-specs li:before,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li:before,
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li:after,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li:after,
+  section.center ul#filter-menu li.card ul.yacht-specs li:after,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li:after {
     content: '';
     display: table;
   }
-  section.center ul#yachts-list-grid li ul.yacht-specs:after,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs:after,
-  section.center ul#filter-menu li ul.yacht-specs:after,
-  section.center-parallax ul#filter-menu li ul.yacht-specs:after {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li:after,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li:after,
+  section.center ul#filter-menu li.card ul.yacht-specs li:after,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li:after {
     clear: both;
   }
-  section.center ul#yachts-list-grid li ul.yacht-specs:last-child,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs:last-child,
-  section.center ul#filter-menu li ul.yacht-specs:last-child,
-  section.center-parallax ul#filter-menu li ul.yacht-specs:last-child {
-    margin-right: 0%;
-  }
-  section.center ul#yachts-list-grid li ul.yacht-specs li,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li,
-  section.center ul#filter-menu li ul.yacht-specs li,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li {
-    *zoom: 1;
-    float: left;
-    clear: none;
-    text-align: inherit;
-    width: 100%;
-    margin-left: 0%;
-    margin-right: 3%;
-  }
-  section.center ul#yachts-list-grid li ul.yacht-specs li:before,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li:before,
-  section.center ul#filter-menu li ul.yacht-specs li:before,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li:before,
-  section.center ul#yachts-list-grid li ul.yacht-specs li:after,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li:after,
-  section.center ul#filter-menu li ul.yacht-specs li:after,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li:after {
-    content: '';
-    display: table;
-  }
-  section.center ul#yachts-list-grid li ul.yacht-specs li:after,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li:after,
-  section.center ul#filter-menu li ul.yacht-specs li:after,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li:after {
-    clear: both;
-  }
-  section.center ul#yachts-list-grid li ul.yacht-specs li:last-child,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li:last-child,
-  section.center ul#filter-menu li ul.yacht-specs li:last-child,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li:last-child {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li:last-child,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li:last-child,
+  section.center ul#filter-menu li.card ul.yacht-specs li:last-child,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li:last-child {
     margin-right: 0%;
   }
 }
@@ -2985,6 +3164,7 @@ section.center-parallax div.filter-opened-section:last-child {
     margin-right: 3%;
     position: relative;
     left: 34.3333333333333%;
+    margin-top: 20%;
   }
   section.center div.logo:before,
   section.center-parallax div.logo:before,
@@ -3233,11 +3413,6 @@ section.center-parallax div.filter-opened-section:last-child {
   section.center div.main-text.left:last-child,
   section.center-parallax div.main-text.left:last-child {
     margin-right: 0%;
-  }
-  section.center a.button,
-  section.center-parallax a.button {
-    position: relative;
-    left: 17.1666666666667%;
   }
   section.center p.call-to-action,
   section.center-parallax p.call-to-action {
@@ -3784,10 +3959,10 @@ section.center-parallax div.filter-opened-section:last-child {
   section.center-parallax ul#filter-menu:last-child {
     margin-right: 0%;
   }
-  section.center ul#yachts-list-grid a.card,
-  section.center-parallax ul#yachts-list-grid a.card,
-  section.center ul#filter-menu a.card,
-  section.center-parallax ul#filter-menu a.card {
+  section.center ul#yachts-list-grid li.card,
+  section.center-parallax ul#yachts-list-grid li.card,
+  section.center ul#filter-menu li.card,
+  section.center-parallax ul#filter-menu li.card {
     *zoom: 1;
     float: left;
     clear: none;
@@ -3797,40 +3972,40 @@ section.center-parallax div.filter-opened-section:last-child {
     margin-right: 3%;
     float: left !important;
   }
-  section.center ul#yachts-list-grid a.card:before,
-  section.center-parallax ul#yachts-list-grid a.card:before,
-  section.center ul#filter-menu a.card:before,
-  section.center-parallax ul#filter-menu a.card:before,
-  section.center ul#yachts-list-grid a.card:after,
-  section.center-parallax ul#yachts-list-grid a.card:after,
-  section.center ul#filter-menu a.card:after,
-  section.center-parallax ul#filter-menu a.card:after {
+  section.center ul#yachts-list-grid li.card:before,
+  section.center-parallax ul#yachts-list-grid li.card:before,
+  section.center ul#filter-menu li.card:before,
+  section.center-parallax ul#filter-menu li.card:before,
+  section.center ul#yachts-list-grid li.card:after,
+  section.center-parallax ul#yachts-list-grid li.card:after,
+  section.center ul#filter-menu li.card:after,
+  section.center-parallax ul#filter-menu li.card:after {
     content: '';
     display: table;
   }
-  section.center ul#yachts-list-grid a.card:after,
-  section.center-parallax ul#yachts-list-grid a.card:after,
-  section.center ul#filter-menu a.card:after,
-  section.center-parallax ul#filter-menu a.card:after {
+  section.center ul#yachts-list-grid li.card:after,
+  section.center-parallax ul#yachts-list-grid li.card:after,
+  section.center ul#filter-menu li.card:after,
+  section.center-parallax ul#filter-menu li.card:after {
     clear: both;
   }
-  section.center ul#yachts-list-grid a.card:nth-child(2n),
-  section.center-parallax ul#yachts-list-grid a.card:nth-child(2n),
-  section.center ul#filter-menu a.card:nth-child(2n),
-  section.center-parallax ul#filter-menu a.card:nth-child(2n) {
+  section.center ul#yachts-list-grid li.card:nth-child(2n),
+  section.center-parallax ul#yachts-list-grid li.card:nth-child(2n),
+  section.center ul#filter-menu li.card:nth-child(2n),
+  section.center-parallax ul#filter-menu li.card:nth-child(2n) {
     margin-right: 0%;
     float: right;
   }
-  section.center ul#yachts-list-grid a.card:nth-child(2n+1),
-  section.center-parallax ul#yachts-list-grid a.card:nth-child(2n+1),
-  section.center ul#filter-menu a.card:nth-child(2n+1),
-  section.center-parallax ul#filter-menu a.card:nth-child(2n+1) {
+  section.center ul#yachts-list-grid li.card:nth-child(2n+1),
+  section.center-parallax ul#yachts-list-grid li.card:nth-child(2n+1),
+  section.center ul#filter-menu li.card:nth-child(2n+1),
+  section.center-parallax ul#filter-menu li.card:nth-child(2n+1) {
     clear: both;
   }
-  section.center ul#yachts-list-grid li,
-  section.center-parallax ul#yachts-list-grid li,
-  section.center ul#filter-menu li,
-  section.center-parallax ul#filter-menu li {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs,
+  section.center ul#filter-menu li.card ul.yacht-specs,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs {
     *zoom: 1;
     float: left;
     clear: none;
@@ -3839,33 +4014,33 @@ section.center-parallax div.filter-opened-section:last-child {
     margin-left: 0%;
     margin-right: 3%;
   }
-  section.center ul#yachts-list-grid li:before,
-  section.center-parallax ul#yachts-list-grid li:before,
-  section.center ul#filter-menu li:before,
-  section.center-parallax ul#filter-menu li:before,
-  section.center ul#yachts-list-grid li:after,
-  section.center-parallax ul#yachts-list-grid li:after,
-  section.center ul#filter-menu li:after,
-  section.center-parallax ul#filter-menu li:after {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs:before,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs:before,
+  section.center ul#filter-menu li.card ul.yacht-specs:before,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs:before,
+  section.center ul#yachts-list-grid li.card ul.yacht-specs:after,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs:after,
+  section.center ul#filter-menu li.card ul.yacht-specs:after,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs:after {
     content: '';
     display: table;
   }
-  section.center ul#yachts-list-grid li:after,
-  section.center-parallax ul#yachts-list-grid li:after,
-  section.center ul#filter-menu li:after,
-  section.center-parallax ul#filter-menu li:after {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs:after,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs:after,
+  section.center ul#filter-menu li.card ul.yacht-specs:after,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs:after {
     clear: both;
   }
-  section.center ul#yachts-list-grid li:last-child,
-  section.center-parallax ul#yachts-list-grid li:last-child,
-  section.center ul#filter-menu li:last-child,
-  section.center-parallax ul#filter-menu li:last-child {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs:last-child,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs:last-child,
+  section.center ul#filter-menu li.card ul.yacht-specs:last-child,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs:last-child {
     margin-right: 0%;
   }
-  section.center ul#yachts-list-grid li ul.yacht-specs,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs,
-  section.center ul#filter-menu li ul.yacht-specs,
-  section.center-parallax ul#filter-menu li ul.yacht-specs {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li,
+  section.center ul#filter-menu li.card ul.yacht-specs li,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li {
     *zoom: 1;
     float: left;
     clear: none;
@@ -3874,62 +4049,27 @@ section.center-parallax div.filter-opened-section:last-child {
     margin-left: 0%;
     margin-right: 3%;
   }
-  section.center ul#yachts-list-grid li ul.yacht-specs:before,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs:before,
-  section.center ul#filter-menu li ul.yacht-specs:before,
-  section.center-parallax ul#filter-menu li ul.yacht-specs:before,
-  section.center ul#yachts-list-grid li ul.yacht-specs:after,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs:after,
-  section.center ul#filter-menu li ul.yacht-specs:after,
-  section.center-parallax ul#filter-menu li ul.yacht-specs:after {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li:before,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li:before,
+  section.center ul#filter-menu li.card ul.yacht-specs li:before,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li:before,
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li:after,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li:after,
+  section.center ul#filter-menu li.card ul.yacht-specs li:after,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li:after {
     content: '';
     display: table;
   }
-  section.center ul#yachts-list-grid li ul.yacht-specs:after,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs:after,
-  section.center ul#filter-menu li ul.yacht-specs:after,
-  section.center-parallax ul#filter-menu li ul.yacht-specs:after {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li:after,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li:after,
+  section.center ul#filter-menu li.card ul.yacht-specs li:after,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li:after {
     clear: both;
   }
-  section.center ul#yachts-list-grid li ul.yacht-specs:last-child,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs:last-child,
-  section.center ul#filter-menu li ul.yacht-specs:last-child,
-  section.center-parallax ul#filter-menu li ul.yacht-specs:last-child {
-    margin-right: 0%;
-  }
-  section.center ul#yachts-list-grid li ul.yacht-specs li,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li,
-  section.center ul#filter-menu li ul.yacht-specs li,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li {
-    *zoom: 1;
-    float: left;
-    clear: none;
-    text-align: inherit;
-    width: 100%;
-    margin-left: 0%;
-    margin-right: 3%;
-  }
-  section.center ul#yachts-list-grid li ul.yacht-specs li:before,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li:before,
-  section.center ul#filter-menu li ul.yacht-specs li:before,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li:before,
-  section.center ul#yachts-list-grid li ul.yacht-specs li:after,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li:after,
-  section.center ul#filter-menu li ul.yacht-specs li:after,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li:after {
-    content: '';
-    display: table;
-  }
-  section.center ul#yachts-list-grid li ul.yacht-specs li:after,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li:after,
-  section.center ul#filter-menu li ul.yacht-specs li:after,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li:after {
-    clear: both;
-  }
-  section.center ul#yachts-list-grid li ul.yacht-specs li:last-child,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li:last-child,
-  section.center ul#filter-menu li ul.yacht-specs li:last-child,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li:last-child {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li:last-child,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li:last-child,
+  section.center ul#filter-menu li.card ul.yacht-specs li:last-child,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li:last-child {
     margin-right: 0%;
   }
   section.center ul#yacht-size.full-team,
@@ -4240,10 +4380,10 @@ section.center-parallax div.filter-opened-section:last-child {
   section.center-parallax ul#filter-menu:last-child {
     margin-right: 0%;
   }
-  section.center ul#yachts-list-grid a.card,
-  section.center-parallax ul#yachts-list-grid a.card,
-  section.center ul#filter-menu a.card,
-  section.center-parallax ul#filter-menu a.card {
+  section.center ul#yachts-list-grid li.card,
+  section.center-parallax ul#yachts-list-grid li.card,
+  section.center ul#filter-menu li.card,
+  section.center-parallax ul#filter-menu li.card {
     *zoom: 1;
     float: left;
     clear: none;
@@ -4252,53 +4392,53 @@ section.center-parallax div.filter-opened-section:last-child {
     margin-left: 0%;
     margin-right: 3%;
   }
-  section.center ul#yachts-list-grid a.card:before,
-  section.center-parallax ul#yachts-list-grid a.card:before,
-  section.center ul#filter-menu a.card:before,
-  section.center-parallax ul#filter-menu a.card:before,
-  section.center ul#yachts-list-grid a.card:after,
-  section.center-parallax ul#yachts-list-grid a.card:after,
-  section.center ul#filter-menu a.card:after,
-  section.center-parallax ul#filter-menu a.card:after {
+  section.center ul#yachts-list-grid li.card:before,
+  section.center-parallax ul#yachts-list-grid li.card:before,
+  section.center ul#filter-menu li.card:before,
+  section.center-parallax ul#filter-menu li.card:before,
+  section.center ul#yachts-list-grid li.card:after,
+  section.center-parallax ul#yachts-list-grid li.card:after,
+  section.center ul#filter-menu li.card:after,
+  section.center-parallax ul#filter-menu li.card:after {
     content: '';
     display: table;
   }
-  section.center ul#yachts-list-grid a.card:after,
-  section.center-parallax ul#yachts-list-grid a.card:after,
-  section.center ul#filter-menu a.card:after,
-  section.center-parallax ul#filter-menu a.card:after {
+  section.center ul#yachts-list-grid li.card:after,
+  section.center-parallax ul#yachts-list-grid li.card:after,
+  section.center ul#filter-menu li.card:after,
+  section.center-parallax ul#filter-menu li.card:after {
     clear: both;
   }
-  section.center ul#yachts-list-grid a.card:nth-child(2n),
-  section.center-parallax ul#yachts-list-grid a.card:nth-child(2n),
-  section.center ul#filter-menu a.card:nth-child(2n),
-  section.center-parallax ul#filter-menu a.card:nth-child(2n) {
+  section.center ul#yachts-list-grid li.card:nth-child(2n),
+  section.center-parallax ul#yachts-list-grid li.card:nth-child(2n),
+  section.center ul#filter-menu li.card:nth-child(2n),
+  section.center-parallax ul#filter-menu li.card:nth-child(2n) {
     margin-right: 3%;
     float: left;
   }
-  section.center ul#yachts-list-grid a.card:nth-child(2n+1),
-  section.center-parallax ul#yachts-list-grid a.card:nth-child(2n+1),
-  section.center ul#filter-menu a.card:nth-child(2n+1),
-  section.center-parallax ul#filter-menu a.card:nth-child(2n+1) {
+  section.center ul#yachts-list-grid li.card:nth-child(2n+1),
+  section.center-parallax ul#yachts-list-grid li.card:nth-child(2n+1),
+  section.center ul#filter-menu li.card:nth-child(2n+1),
+  section.center-parallax ul#filter-menu li.card:nth-child(2n+1) {
     clear: none;
   }
-  section.center ul#yachts-list-grid a.card:nth-child(3n),
-  section.center-parallax ul#yachts-list-grid a.card:nth-child(3n),
-  section.center ul#filter-menu a.card:nth-child(3n),
-  section.center-parallax ul#filter-menu a.card:nth-child(3n) {
+  section.center ul#yachts-list-grid li.card:nth-child(3n),
+  section.center-parallax ul#yachts-list-grid li.card:nth-child(3n),
+  section.center ul#filter-menu li.card:nth-child(3n),
+  section.center-parallax ul#filter-menu li.card:nth-child(3n) {
     margin-right: 0%;
     float: right;
   }
-  section.center ul#yachts-list-grid a.card:nth-child(3n+1),
-  section.center-parallax ul#yachts-list-grid a.card:nth-child(3n+1),
-  section.center ul#filter-menu a.card:nth-child(3n+1),
-  section.center-parallax ul#filter-menu a.card:nth-child(3n+1) {
+  section.center ul#yachts-list-grid li.card:nth-child(3n+1),
+  section.center-parallax ul#yachts-list-grid li.card:nth-child(3n+1),
+  section.center ul#filter-menu li.card:nth-child(3n+1),
+  section.center-parallax ul#filter-menu li.card:nth-child(3n+1) {
     clear: both;
   }
-  section.center ul#yachts-list-grid li,
-  section.center-parallax ul#yachts-list-grid li,
-  section.center ul#filter-menu li,
-  section.center-parallax ul#filter-menu li {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs,
+  section.center ul#filter-menu li.card ul.yacht-specs,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs {
     *zoom: 1;
     float: left;
     clear: none;
@@ -4307,33 +4447,33 @@ section.center-parallax div.filter-opened-section:last-child {
     margin-left: 0%;
     margin-right: 3%;
   }
-  section.center ul#yachts-list-grid li:before,
-  section.center-parallax ul#yachts-list-grid li:before,
-  section.center ul#filter-menu li:before,
-  section.center-parallax ul#filter-menu li:before,
-  section.center ul#yachts-list-grid li:after,
-  section.center-parallax ul#yachts-list-grid li:after,
-  section.center ul#filter-menu li:after,
-  section.center-parallax ul#filter-menu li:after {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs:before,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs:before,
+  section.center ul#filter-menu li.card ul.yacht-specs:before,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs:before,
+  section.center ul#yachts-list-grid li.card ul.yacht-specs:after,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs:after,
+  section.center ul#filter-menu li.card ul.yacht-specs:after,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs:after {
     content: '';
     display: table;
   }
-  section.center ul#yachts-list-grid li:after,
-  section.center-parallax ul#yachts-list-grid li:after,
-  section.center ul#filter-menu li:after,
-  section.center-parallax ul#filter-menu li:after {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs:after,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs:after,
+  section.center ul#filter-menu li.card ul.yacht-specs:after,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs:after {
     clear: both;
   }
-  section.center ul#yachts-list-grid li:last-child,
-  section.center-parallax ul#yachts-list-grid li:last-child,
-  section.center ul#filter-menu li:last-child,
-  section.center-parallax ul#filter-menu li:last-child {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs:last-child,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs:last-child,
+  section.center ul#filter-menu li.card ul.yacht-specs:last-child,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs:last-child {
     margin-right: 0%;
   }
-  section.center ul#yachts-list-grid li ul.yacht-specs,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs,
-  section.center ul#filter-menu li ul.yacht-specs,
-  section.center-parallax ul#filter-menu li ul.yacht-specs {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li,
+  section.center ul#filter-menu li.card ul.yacht-specs li,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li {
     *zoom: 1;
     float: left;
     clear: none;
@@ -4342,62 +4482,27 @@ section.center-parallax div.filter-opened-section:last-child {
     margin-left: 0%;
     margin-right: 3%;
   }
-  section.center ul#yachts-list-grid li ul.yacht-specs:before,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs:before,
-  section.center ul#filter-menu li ul.yacht-specs:before,
-  section.center-parallax ul#filter-menu li ul.yacht-specs:before,
-  section.center ul#yachts-list-grid li ul.yacht-specs:after,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs:after,
-  section.center ul#filter-menu li ul.yacht-specs:after,
-  section.center-parallax ul#filter-menu li ul.yacht-specs:after {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li:before,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li:before,
+  section.center ul#filter-menu li.card ul.yacht-specs li:before,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li:before,
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li:after,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li:after,
+  section.center ul#filter-menu li.card ul.yacht-specs li:after,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li:after {
     content: '';
     display: table;
   }
-  section.center ul#yachts-list-grid li ul.yacht-specs:after,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs:after,
-  section.center ul#filter-menu li ul.yacht-specs:after,
-  section.center-parallax ul#filter-menu li ul.yacht-specs:after {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li:after,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li:after,
+  section.center ul#filter-menu li.card ul.yacht-specs li:after,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li:after {
     clear: both;
   }
-  section.center ul#yachts-list-grid li ul.yacht-specs:last-child,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs:last-child,
-  section.center ul#filter-menu li ul.yacht-specs:last-child,
-  section.center-parallax ul#filter-menu li ul.yacht-specs:last-child {
-    margin-right: 0%;
-  }
-  section.center ul#yachts-list-grid li ul.yacht-specs li,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li,
-  section.center ul#filter-menu li ul.yacht-specs li,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li {
-    *zoom: 1;
-    float: left;
-    clear: none;
-    text-align: inherit;
-    width: 100%;
-    margin-left: 0%;
-    margin-right: 3%;
-  }
-  section.center ul#yachts-list-grid li ul.yacht-specs li:before,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li:before,
-  section.center ul#filter-menu li ul.yacht-specs li:before,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li:before,
-  section.center ul#yachts-list-grid li ul.yacht-specs li:after,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li:after,
-  section.center ul#filter-menu li ul.yacht-specs li:after,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li:after {
-    content: '';
-    display: table;
-  }
-  section.center ul#yachts-list-grid li ul.yacht-specs li:after,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li:after,
-  section.center ul#filter-menu li ul.yacht-specs li:after,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li:after {
-    clear: both;
-  }
-  section.center ul#yachts-list-grid li ul.yacht-specs li:last-child,
-  section.center-parallax ul#yachts-list-grid li ul.yacht-specs li:last-child,
-  section.center ul#filter-menu li ul.yacht-specs li:last-child,
-  section.center-parallax ul#filter-menu li ul.yacht-specs li:last-child {
+  section.center ul#yachts-list-grid li.card ul.yacht-specs li:last-child,
+  section.center-parallax ul#yachts-list-grid li.card ul.yacht-specs li:last-child,
+  section.center ul#filter-menu li.card ul.yacht-specs li:last-child,
+  section.center-parallax ul#filter-menu li.card ul.yacht-specs li:last-child {
     margin-right: 0%;
   }
   section.center ul#filter-menu,
@@ -4407,7 +4512,7 @@ section.center-parallax div.filter-opened-section:last-child {
   }
   section.center ul#filter-menu li,
   section.center-parallax ul#filter-menu li {
-    width: 16.66% !important;
+    width: 20% !important;
     height: 100%;
     border-right: 1px solid #103158;
     text-align: center !important;

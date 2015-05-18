@@ -1,16 +1,35 @@
 extends ../layouts/_yacht_card.jade
 
 block img-yacht-card
-  img(src='/images/yachts/dionestar.jpg', alt='Dione Star Super Yacht')
+    if yacht.thumbnail.filename
+        img(src="/uploads/images/yachts/thumbnails/"+yacht.thumbnail.filename, alt=yacht.thumbnail.filename)
+    else 
+        img(src="/images/sprite/placeholder.png" alt="placeholder")
 block single-yacht-name
-  | Maltese Falcon
+    if yacht.name
+        = yacht.name 
+    else
+        = "missing"
 block single-yacht-charter
-  | € 470,00
+    if yacht["price per week from"]
+        = yacht["price per week from"]+yacht.currency
+    else
+        = "upon-request"
 block single-yacht-sale
-  | € 32.670,00
+    if yacht.price
+        = yacht.price+yacht.currency
+    else
+        = "upon-request"
 block single-yacht-length
-  | 42.00 m
-block single-yacht-built
-  | 2008
+    if yacht.lenght
+        = yacht.lenght
+    else
+        = "missing"
+
+
+    
 block single-yacht-guests
-  | 10
+    if yacht.guests
+        = yacht.guests
+    else
+        = "missing"

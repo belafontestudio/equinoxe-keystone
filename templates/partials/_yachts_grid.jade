@@ -2,23 +2,27 @@ block section
   section.center
     .main-text
       h1 
-        block title
-          | Yachts
+        if data.yachts.availability == "Sale"
+          | Yachts sale
+        else if data.yachts.availability == "Charter"
+          | Yachts charter  
       p
         block description
     block explain-call
     include _filter.jade
+
     .clear
-    ul#yachts-list-grid
-      include _card_yacht.jade
-      include _card_yacht.jade
-      include _card_yacht.jade
-      include _card_yacht.jade
-      include _card_yacht.jade
-      include _card_yacht.jade
-      include _card_yacht.jade
-      include _card_yacht.jade
-      include _card_yacht.jade
-      include _card_yacht.jade
-      include _card_yacht.jade
-      include _card_yacht.jade
+    if data.yachts.results.length
+      if data.yachts.totalPages > 1
+        //- h4.text-weight-normal Showing 
+        //-   strong #{data.yachts.first}
+        //-   |  to 
+        //-   strong #{data.yachts.last}
+        //-   |  of 
+        //-   strong #{data.yachts.total}
+        //-   |  yachts.
+      else
+        //- h4.text-weight-normal Showing #{utils.plural(data.yachts.results.length, '* yacht')}.
+      ul#yachts-list-grid
+        each yacht in data.yachts.results
+          include _card_yacht.jade

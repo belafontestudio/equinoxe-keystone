@@ -34,7 +34,8 @@ keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes('./views')
+	views: importRoutes('./views'),
+	api: importRoutes('./api')
 };
 
 // Setup Route Bindings
@@ -42,13 +43,16 @@ exports = module.exports = function(app) {
 
 	// Views
 	app.get('/', routes.views.index);
-	app.get('/yachts/:category?', routes.views.yachts);
-	app.get('/yachts/:yacht', routes.views.yacht);
+	app.get('/yachts/:availability', routes.views.yachts);
 	app.get('/yacht/:yacht', routes.views.yacht);
 	app.use('/app-storage',serveIndex(process.env.CLOUD_DIR, {'icons': true}));
+
 	app.get('/app-storage', middleware.requireUser);
+	app.use('/temp',serveIndex(process.env.TEMP_DIR, {'icons': true}));
+	app.get('/temp', middleware.requireUser);
 	//app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
 	app.get('/media/list', middleware.requireUser, routes.views.medialist);
+	app.get('/media/backup', middleware.requireUser, routes.views.mediadownload);
 
 
 	app.get('/yacht_brokerage', routes.views.yachtBrokerage);
@@ -57,10 +61,10 @@ exports = module.exports = function(app) {
 	app.get('/bareboat', routes.views.bareboat);
 	app.get('/services', routes.views.services);
 	app.get('/heritage', routes.views.heritage);
-	app.get('/yachts_list', routes.views.yachtList);
-
 	
-	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
-	// app.get('/protected', middleware.requireUser, routes.views.protected);
+
+	//API
+	app.get('/api/yachts/filter', keystone.initAPI, routes.api.yachts.filter);
+
 	
 };

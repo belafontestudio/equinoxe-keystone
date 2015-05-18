@@ -1,15 +1,15 @@
 extends ../layouts/_single_yacht_page.jade
 
 block title 
-  | Maltese Falcon
+  = data.yacht.name
 block single-yacht-price
-  | from € 470,00
+  = data.yacht["price per week from"]+data.yacht.currency 
 block single-yacht-length
-  | 41.00 m
+  = data.yacht.lenght+"m"
 block single-yacht-build
-  | 2009
+  = data.yacht.build+" / "+data.yacht.refit 
 block single-yacht-guests
-  | 12
+  = data.yacht.guests
 block explain-call
 block call-to-action
   a.button(href="#contact-us-modal", rel="modal:open") Enquire

@@ -1,86 +1,78 @@
-var keystone = require('keystone'),
-	async = require('async');
+var keystone = require('keystone');
 
 exports = module.exports = function(req, res) {
 	
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
-	// Init locals
 	locals.section = 'yachts';
+
 	locals.filters = {
-		category: req.params.category
+		availability: req.params.availability,
+		minguests: req.query.ming,
+		maxguests: req.query.maxg,
+		minprice: req.query.minp,
+		maxprice: req.query.maxp,
+		minlenght: req.query.minl,
+		maxlenght: req.query.maxl,
+		type: req.query.t,
 	};
 	locals.data = {
-		yachts: [],
-		categories: []
+		yachts: []
 	};
-	
-	// // Load all categories
-	// view.on('init', function(next) {
-		
-	// 	keystone.list('PostCategory').model.find().sort('name').exec(function(err, results) {
-			
-	// 		if (err || !results.length) {
-	// 			return next(err);
-	// 		}
-			
-	// 		locals.data.categories = results;
-			
-	// 		// Load the counts for each category
-	// 		async.each(locals.data.categories, function(category, next) {
-				
-	// 			keystone.list('Yacht').model.count().where('category').in([category.id]).exec(function(err, count) {
-	// 				category.postCount = count;
-	// 				next(err);
-	// 			});
-				
-	// 		}, function(err) {
-	// 			next(err);
-	// 		});
-			
-	// 	});
-		
-	// });
-	
-	// // Load the current category filter
-	// view.on('init', function(next) {
-		
-	// 	if (req.params.category) {
-	// 		keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function(err, result) {
-	// 			locals.data.category = result;
-	// 			next(err);
-	// 		});
-	// 	} else {
-	// 		next();
-	// 	}
-		
-	// });
 	
 	// Load the posts
 	view.on('init', function(next) {
 		
 		var q = keystone.list('Yacht').paginate({
 				page: req.query.page || 1,
-				perPage: 10,
+				perPage: 500,
 				maxPages: 10
 			})
 			.where('state', 'published')
 			.sort('-publishedDate')
 			.populate('author');
 		
-		if (locals.data.category) {
-			q.where('categories').in([locals.data.category]);
+		if (locals.filters.availability) {
+			q.where('availability').equals(locals.filters.availability);
 		}
+		if (locals.filters.minguests) {
+			q.where('guests').gt(locals.filters.minguests)
+		}
+		if (locals.filters.maxguests) {
+			q.where('guests').lt(locals.filters.maxguests)
+		}
+		if (locals.filters.minprice) {
+			q.where('price').gt(locals.filters.minprice)
+		}
+		if (locals.filters.maxprice) {
+			q.where('price').lt(locals.filters.maxprice)
+		}
+		if (locals.filters.minlenght) {
+			q.where('lenght').gt(locals.filters.minlenght)
+		}
+		if (locals.filters.maxlenght) {
+			q.where('lenght').lt(locals.filters.maxlenght)
+		}
+		if (locals.filters.type) {
+			q.where('type').equals(locals.filters.type)
+		}
+
+		
 		
 		q.exec(function(err, results) {
+			if (locals.filters.availability) {
+				results.availability = locals.filters.availability;
+			}
+
 			locals.data.yachts = results;
+			
 			next(err);
 		});
 		
 	});
 	
+	
 	// Render the view
-	view.render('yachts');
+	view.render('yachts_list');
 	
 };
