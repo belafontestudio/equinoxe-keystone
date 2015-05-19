@@ -10,6 +10,12 @@
 @import '_filters'
 
 
+body
+  overflow scroll !important
+
+.banner--clone
+  display none !important
+
 #hide
   display none
 
@@ -61,10 +67,20 @@ footer
     font-size 14px
     line-height 15px
     letter-spacing 1px
+    .logo-ftr
+      column(12/12)
+      text-align center
+      padding-bottom 40px
+      img
+        margin 0 auto
+        width 100%
+        max-width 350px
     .container
         column(12/12)
     .left
-        column(3/12, offset: 2/12)
+        column(10/12)
+        shift(1/12)
+        text-align center
         img
             width 100%
         ul
@@ -74,7 +90,8 @@ footer
                 &.bold
                     font-weight 700
     .right
-        column(5/12, offset: 1/12)
+        column(10/12, offset: 1/12)
+        padding-bottom 30px
         img
             width 100%
             opacity: 0.9
@@ -262,7 +279,7 @@ img.info
   position: absolute !important;
 }
 #simple-menu
-    z-index 9999
+    z-index 4
     position relative
 #enquire-modal, #contact-us-modal
     z-index 4 !important
@@ -1001,6 +1018,51 @@ section.center, section.center-parallax
 
 
 
+    footer
+        position relative
+        z-index 2
+        border-top 1px solid yellow
+        padding-top 80px
+        center(100%, 0)
+        font-family "Alegreya Sans", "Helvetica Neue", sans-serif
+        font-weight 300
+        text-rendering optimizeLegibility
+        color white
+        font-size 14px
+        line-height 15px
+        letter-spacing 1px
+        .logo-ftr
+          column(12/12)
+          text-align center
+          padding-bottom 85px
+          img
+            margin 0 auto
+            width 100%
+            max-width 350px
+        .container
+            column(12/12)
+        .left
+            column(5/12, offset: 1/12)
+            unshift()
+            text-align left
+
+            ul
+                margin-top 50px
+                li
+                    padding 10px 0
+                    &.bold
+                        font-weight 700
+        .right
+            column(4/12, offset: 1/12)
+            margin-top 50px
+            img
+                //align(vertical)
+                width 100%
+                position relative
+                //top 150px
+                opacity: 0.9
+
+
 
 ///////////////////////////////////////////////////////////////////
 +below(768px)
@@ -1320,6 +1382,53 @@ section.center, section.center-parallax
         div#container-other-specs
             .main-text
                 margin-top -218px
+
+
+
+
+    footer
+        position relative
+        z-index 2
+        border-top 1px solid yellow
+        padding-top 80px
+        center(100%, 0)
+        font-family "Alegreya Sans", "Helvetica Neue", sans-serif
+        font-weight 300
+        text-rendering optimizeLegibility
+        color white
+        font-size 14px
+        line-height 15px
+        letter-spacing 1px
+        .logo-ftr
+          column(12/12)
+          text-align center
+          padding-bottom 85px
+          img
+            margin 0 auto
+            width 100%
+            max-width 350px
+        .container
+            column(12/12)
+        .left
+            column(5/12, offset: 2/12)
+            unshift()
+            text-align left
+
+            ul
+                margin-top 50px
+                li
+                    padding 10px 0
+                    &.bold
+                        font-weight 700
+        .right
+            column(4/12) //, offset: 1/12)
+            margin-top 0
+            img
+                //align(vertical)
+                width 100%
+                position relative
+                //top 150px
+                opacity: 0.9
 
 +above(1300px)
 
