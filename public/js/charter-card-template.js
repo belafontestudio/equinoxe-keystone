@@ -21,7 +21,7 @@
           </li>
           <li><span>length:</span>
             {{#if lenght}}
-              {{lenght}} ft
+              {{lenght}} m
             {{else}}
               = "-"
             {{/if}}

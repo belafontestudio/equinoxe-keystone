@@ -9,161 +9,241 @@ block section
     section.center
       div#plain-color-background
         div#container-other-specs
-          .main-text
+          .main-text  
             h1 
               block title
-                | The title
+                = data.yacht.name
           .clear
           ul#single-yacht-specs
-            li
-              span
-                | charter:
-              block single-yacht-price
-                | price
-            li
-              span
-                | length:
-              block single-yacht-length
-                | number
-            li
-              span
-                | year of build:
-              block single-yacht-build
-                | year
-            li
-              span
-                | guests:
-              block single-yacht-guests
-                | number
+            if data.yacht["price per week from"] || data.yacht.price
+              li
+                if data.yacht.availability == "Charter"
+                  span
+                    | Charter price from:
+                  = data.yacht["price per week from"]+data.yacht.currency 
+                if data.yacht.availability == "Sale"
+                  if data.yacht.price
+                    span
+                      | Sale price:
+                    = data.yacht.price+data.yacht.currency
+            if data.yacht.lenght
+              li
+                span
+                  | length:
+                block single-yacht-length
+                  = data.yacht.lenght+"m"
+            if data.yacht.build || data.yacht.refit 
+              li
+                if data.yacht.refit && data.yacht.build
+                  span
+                    | built:
+                  = data.yacht.build+" / refit "+data.yacht.refit
+                else
+                    if data.yacht.refit
+                      span
+                        | refit:
+                      = data.yacht.refit
+                    else if data.yacht.build
+                      span
+                        | built:
+                      = data.yacht.build 
+            if data.yacht.guests
+              li
+                span
+                  | guests:
+                block single-yacht-guests
+                  = data.yacht.guests
 
           block explain-call
             p.call-to-action
-              block explain-call-text
-                | Call to action text
+
           .clear
           block call-to-action
-            | bottone CTA
+            a.button(href="#contact-us-modal", rel="modal:open") Enquire
           .clear
 
+          if data.yacht.gallery1.img1.filename || data.yacht.gallery1.img2.filename || data.yacht.gallery1.img3.filename || data.yacht.gallery1.img4.filename || data.yacht.gallery1.img5.filename || data.yacht.gallery1.img6.filename || data.yacht.gallery1.img7.filename || data.yacht.gallery1.img8.filename || data.yacht.gallery1.img9.filename || data.yacht.gallery1.img10.filename
+            #gallery1
+              #slides1
+                if data.yacht.gallery1.img1.filename
+                  - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
+                if data.yacht.gallery1.img2.filename
+                  - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
+                if data.yacht.gallery1.img3.filename
+                  - var src3 = encodeURIComponent(data.yacht.gallery1.img3.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src3+')')
+                if data.yacht.gallery1.img4.filename
+                  - var src4 = encodeURIComponent(data.yacht.gallery1.img4.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src4+')')
+                if data.yacht.gallery1.img5.filename
+                  - var src5 = encodeURIComponent(data.yacht.gallery1.img5.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src5+')')
+                if data.yacht.gallery1.img6.filename
+                  - var src6 = encodeURIComponent(data.yacht.gallery1.img6.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src6+')')
+                if data.yacht.gallery1.img7.filename
+                  - var src7 = encodeURIComponent(data.yacht.gallery1.img7.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src7+')')
+                if data.yacht.gallery1.img8.filename
+                  - var src8 = encodeURIComponent(data.yacht.gallery1.img8.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src8+')')
+                if data.yacht.gallery1.img9.filename
+                  - var src9 = encodeURIComponent(data.yacht.gallery1.img9.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src9+')')
+                if data.yacht.gallery1.img10.filename
+                  - var src10 = encodeURIComponent(data.yacht.gallery1.img10.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src10+')')
+          
 
-          #gallery1
-            #slides1
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery1.img1.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery1.img2.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery1.img3.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery1.img4.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery1.img5.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery1.img6.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery1.img7.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery1.img8.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery1.img9.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery1.img10.filename+')')
-          #gallery2
-            #slides2
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery2.img1.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery2.img2.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery2.img3.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery2.img4.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery2.img5.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery2.img6.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery2.img7.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery2.img8.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery2.img9.filename+')')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+data.yacht.gallery2.img10.filename+')')
+          if data.yacht.gallery2.img1.filename || data.yacht.gallery2.img2.filename || data.yacht.gallery2.img3.filename || data.yacht.gallery2.img4.filename || data.yacht.gallery2.img5.filename || data.yacht.gallery2.img6.filename || data.yacht.gallery2.img7.filename || data.yacht.gallery2.img8.filename || data.yacht.gallery2.img9.filename || data.yacht.gallery2.img10.filename
+            #gallery2
+              #slides2
+                if data.yacht.gallery2.img1.filename
+                  - var src1 = encodeURIComponent(data.yacht.gallery2.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
+                if data.yacht.gallery2.img2.filename
+                  - var src2 = encodeURIComponent(data.yacht.gallery2.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
+                if data.yacht.gallery2.img3.filename
+                  - var src3 = encodeURIComponent(data.yacht.gallery2.img3.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src3+')')
+                if data.yacht.gallery2.img4.filename
+                  - var src4 = encodeURIComponent(data.yacht.gallery2.img4.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src4+')')
+                if data.yacht.gallery2.img5.filename
+                  - var src5 = encodeURIComponent(data.yacht.gallery2.img5.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src5+')')
+                if data.yacht.gallery2.img6.filename
+                  - var src6 = encodeURIComponent(data.yacht.gallery2.img6.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src6+')')
+                if data.yacht.gallery2.img7.filename
+                  - var src7 = encodeURIComponent(data.yacht.gallery2.img7.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src7+')')
+                if data.yacht.gallery2.img8.filename
+                  - var src8 = encodeURIComponent(data.yacht.gallery2.img8.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src8+')')
+                if data.yacht.gallery2.img9.filename
+                  - var src9 = encodeURIComponent(data.yacht.gallery2.img9.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src9+')')
+                if data.yacht.gallery2.img10.filename
+                  - var src10 = encodeURIComponent(data.yacht.gallery2.img10.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src10+')')
           div#other-specs
             ul.other-specs-list
               h3
                 | Specifications</br>—
-              li
-                span
-                  | beam:
-                =data.yacht.beam
-              li
-                span
-                  | number of crew:
-                =data.yacht.crew
-              li
-                span
-                  | builder:
-                =data.yacht.builder
-              li
-                span
-                  | designer:
-                =data.yacht.designer
-              li
-                span
-                  | flag:
-                =data.yacht.flag
-              li
-                span
-                  | model:
-                =data.yacht.model
-              li
-                span
-                  | draft:
-                =data.yacht.draft
-              li
-                span
-                  | displacement:
-                =data.yacht.displacement
-              li
-                span
-                  | Cruising speed:
-                =data.yacht["crusing speed"]
-              li
-                span
-                  | Fuel consumption:
-                =data.yacht.consumption
-              li
-                span
-                  | VAT:
-                =data.yacht.vat
-              li
-                span
-                  | Location:
-                =data.yacht.location
-              li
-                span
-                  | Price Per Week Low Season:
-                =data.yacht["price per week low season"]+data.yacht.currency
-              li
-                span
-                  | Price Per Week High Season:
-                =data.yacht["price per week high season"]+data.yacht.currency
+              if data.yacht.beam
+                li
+                  span
+                    | beam:
+                  =data.yacht.bea
+              if data.yacht.crew
+                li
+                  span
+                    | number of crew:
+                  =data.yacht.crew
+              if data.yacht.builder
+                li
+                  span
+                    | builder:
+                  =data.yacht.builder
+              if data.yacht.designer
+                li
+                  span
+                    | designer:
+                  =data.yacht.designer
+              if data.yacht.flag
+                li
+                  span
+                    | flag:
+                  =data.yacht.flag
+              if data.yacht.model
+                li
+                  span
+                    | model:
+                  =data.yacht.model
+              if data.yacht.draft
+                li
+                  span
+                    | draft:
+                  =data.yacht.draft
+              if data.yacht.displacement
+                li
+                  span
+                    | displacement:
+                  =data.yacht.displacement
+              if data.yacht["crusing speed"]
+                li
+                  span
+                    | Cruising speed:
+                  =data.yacht["crusing speed"]
+              if data.yacht.consumption
+                li
+                  span
+                    | Fuel consumption:
+                  =data.yacht.consumption
+              if data.yacht.vat
+                li
+                  span
+                    | VAT:
+                  =data.yacht.vat
+              if data.yacht.location    
+                li
+                  span
+                    | Location:
+                  =data.yacht.location
+              if data.yacht["price per week low season"]
+                li
+                  span
+                    | Price Per Week Low Season:
+                  =data.yacht["price per week low season"]+data.yacht.currency
+              if data.yacht["price per week high season"]
+                li
+                  span
+                    | Price Per Week High Season:
+                  =data.yacht["price per week high season"]+data.yacht.currency
             ul.other-specs-list
               h3
                 | Accomodation</br>—
-              li
-                span
-                  | number of guests:
-                 =data.yacht.guests
-              li
-                span
-                  | number of crew:
-                 =data.yacht.crew
-              li
-                span
-                  | number of cabins:
-                 =data.yacht.cabins
-              li
-                span
-                  | guests cabins:
-                 =data.yacht["guests cabins"]
-              li
-                span
-                  | crew cabins:
-                 =data.yacht["crew cabins"]
+              if data.yacht.guests
+                li
+                  span
+                    | number of guests:
+                   =data.yacht.guests
+              if data.yacht.crew
+                li
+                  span
+                    | number of crew:
+                   =data.yacht.crew
+              if data.yacht.cabins
+                li
+                  span
+                    | number of cabins:
+                   =data.yacht.cabins
+              if data.yacht["guests cabins"]
+                li
+                  span
+                    | guests cabins:
+                   =data.yacht["guests cabins"]
+              if data.yacht["crew cabins"]
+                li
+                  span
+                    | crew cabins:
+                   =data.yacht["crew cabins"]
 
 
 
             ul.other-specs-list
               h3
                 | Equipment</br>—
-              li
-                span
-                  | Engines:
-                p 
-                  =data.yacht.engine
+              if data.yacht.engine
+                li
+                  span
+                    | Engines:
+                  p 
+                    =data.yacht.engine
               
           div#other-description
             div.description-info.indent

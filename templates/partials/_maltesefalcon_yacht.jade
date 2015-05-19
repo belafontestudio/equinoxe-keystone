@@ -1,15 +1,1 @@
 extends ../layouts/_single_yacht_page.jade
-
-block title 
-  = data.yacht.name
-block single-yacht-price
-  = data.yacht["price per week from"]+data.yacht.currency 
-block single-yacht-length
-  = data.yacht.lenght+"m"
-block single-yacht-build
-  = data.yacht.build+" / "+data.yacht.refit 
-block single-yacht-guests
-  = data.yacht.guests
-block explain-call
-block call-to-action
-  a.button(href="#contact-us-modal", rel="modal:open") Enquire

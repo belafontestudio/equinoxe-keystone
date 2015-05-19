@@ -7,7 +7,7 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 	
 	// Set locals
-	locals.section = 'yachts';
+	locals.section = 'yacht';
 	locals.filters = {
 		yacht: req.params.yacht
 	};
