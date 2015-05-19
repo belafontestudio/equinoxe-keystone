@@ -57,7 +57,7 @@ var imgLoad = imagesLoaded( 'body' );
 
 function resizeMap(){
     var windowHeight = $(window).height();
-   
+
     $(".section.inner-map").height(windowHeight-40);
 }
 
@@ -75,14 +75,14 @@ enquire.register("screen and (max-width:480px)", {
           $.fn.fullpage.destroy('all');
         }
     }
-      
+
 });
 enquire.register("screen and (min-width: 480px)", {
     match : function() {
         console.log("match web");
 
-        checkPage("web"); 
-    },  
+        checkPage("web");
+    },
     unmatch : function() {
         console.log("unmatch web");
         if($(".fullpage-wrapper")[0]){
@@ -93,7 +93,7 @@ enquire.register("screen and (min-width: 480px)", {
 
 function filterMenu(){
     updateFilterMenu();
-    
+
     $("a.filter").each(function(){
         $(this).click(function(e){
             e.stopPropagation();
@@ -113,7 +113,7 @@ function filterMenu(){
         closeFS();
         e.preventDefault();
     });
-    
+
 }
 
 function closeFS(){
@@ -128,12 +128,12 @@ function activeFS(target){
         $('section.filter-hide').each(function(){
             if (counter != target){
                 $(this).fadeOut(0);
-                 
+
             }else{
                 $(this).delay(500).fadeIn(1000);
-                
+
             }
-            
+
             counter++;
         });
 }
@@ -144,12 +144,12 @@ function activeLI(target){
         $('a.filter').each(function(){
             if (counter != target){
                 $(this).parent().removeClass("active");
-                 
+
             }else{
                 $(this).parent().addClass("active");
-                
+
             }
-            
+
             counter++;
         });
 };
@@ -199,7 +199,7 @@ function rangeSlider(){
 
 // function availabilityFilter(){
 //   $(document).on('click', 'a#sale', function(e) {
-//             e.preventDefault(); 
+//             e.preventDefault();
 //             $("a#sale").addClass("active");
 //             $("a#charter").removeClass("active");
 //             filters.a = "Sale";
@@ -207,7 +207,7 @@ function rangeSlider(){
 //             $("a#f6 span").text(filters.a);
 //         });
 //   $(document).on('click', 'a#charter', function(e) {
-//             e.preventDefault(); 
+//             e.preventDefault();
 //             $("a#charter").addClass("active");
 //             $("a#sale").removeClass("active");
 //             filters.a = "Charter";
@@ -218,7 +218,7 @@ function rangeSlider(){
 
 function lenghtFilter(){
   $(document).on('click', 'a#small', function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
             $(this).addClass("active");
             $("a#super").removeClass("active");
             $("a#mega").removeClass("active");
@@ -228,7 +228,7 @@ function lenghtFilter(){
             $("a#f4 span").text("0-24m");
         });
   $(document).on('click', 'a#super', function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
             $("a#small").removeClass("active");
             $(this).addClass("active");
             $("a#mega").removeClass("active");
@@ -238,7 +238,7 @@ function lenghtFilter(){
             $("a#f4 span").text("24-40m");
         });
   $(document).on('click', 'a#mega', function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
             $("a#small").removeClass("active");
             $("a#super").removeClass("active");
             $(this).addClass("active");
@@ -251,7 +251,7 @@ function lenghtFilter(){
 
 function typeFilter(){
   $(document).on('click', 'a#motor', function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
             $(this).addClass("active");
             $("a#sail").removeClass("active");
             $("a#gulet").removeClass("active");
@@ -260,7 +260,7 @@ function typeFilter(){
             $("a#f5 span").text(filters.t);
         });
   $(document).on('click', 'a#sail', function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
             $("a#motor").removeClass("active");
             $(this).addClass("active");
             $("a#gulet").removeClass("active");
@@ -269,7 +269,7 @@ function typeFilter(){
             $("a#f5 span").text(filters.t);
         });
   $(document).on('click', 'a#gulet', function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
             $("a#motor").removeClass("active");
             $("a#sail").removeClass("active");
             $(this).addClass("active");
@@ -281,10 +281,10 @@ function typeFilter(){
 
 function updateFilterMenu(){
   if(!$.isEmptyObject(urlParams) ){
-    
+
     if(urlParams.minp){
       values.minp = urlParams.minp/1000;
-      
+
     }
     if(urlParams.maxp){
       values.maxp = urlParams.maxp/1000;
@@ -295,8 +295,8 @@ function updateFilterMenu(){
     if(urlParams.maxg){
       values.maxg = urlParams.maxg;
     }
-    
-   
+
+
     // if(urlParams.a){
     //   values.a = urlParams.a;
     // }
@@ -310,7 +310,7 @@ function updateFilterMenu(){
       values.minl = urlParams.minl;
     }
 
-    
+
   }
    if(pathname == "/yachts/Charter"){
 
@@ -321,13 +321,13 @@ function updateFilterMenu(){
       values.a = "Sale";
       filters.a = "Sale";
     }
-  
+
   $("a#f3 span").text(values.ming+"-"+values.maxg);
   $("a#f6 span").text(values.a);
   $("a#f4 span").text(values.minl);
   $("a#f5 span").text(values.t);
   $("a#f2 span").text(values.minp+"-"+values.maxp);
-  
+
 }
 function collectYachtFilter(){
     timer = setTimeout(function () {
@@ -350,7 +350,7 @@ function collectYachtFilter(){
 
 
          if(pathname == "/yachts/Charter"){
-          
+
           filters.a = "Charter";
           q += "&a="+filters.a;
         }
@@ -372,17 +372,17 @@ function collectYachtFilter(){
         if(q != ""){
           console.log("query filled: " + q);
           $.get( "/api/yachts/filter?" + q, function( yachts ) {
-            
+
             populateYachts(yachts);
           });
         }else{
           $.get( "/api/yachts/filter", function( yachts ) {
-            
+
             populateYachts(yachts);
           });
         }
-        
-        
+
+
     },2000);
 }
 
@@ -390,7 +390,7 @@ $(document).ready(function() {
 
       var top_ofset = $('header').height() - 1;
         $(document).on('click', 'a.down', function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
             $('html, body').animate({
             scrollTop: $( $(this).attr('href') ).offset().top - top_ofset
           }, 1000);
@@ -400,7 +400,7 @@ $(document).ready(function() {
         $("#gallery2 #slides2").skippr();
 
         $(document).on('click', '.reset-button a', function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
             values.minp = 0;
             values.maxp = 500;
             values.ming = 1;
@@ -424,16 +424,16 @@ $(document).ready(function() {
             $( "#slider-range" ).slider({values: [ 0, 500]});
             collectYachtFilter();
         });
-   
+
 
     imgLoad.on( 'done', function( instance ) {
-  
+
       centerImagesInGrid();
       var pathArray = window.location.pathname.split( '/' );
       if (pathArray[2] == "single_yacht.html"){
-        $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0});  
+        $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0});
         }else if (pathArray[2] == "single_expedition.html"){
-          $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0});  
+          $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0});
         }else{
             console.log("imgscroll")
           $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0});
@@ -470,14 +470,14 @@ $(document).ready(function() {
               $("#filter-mega-yacht").fadeIn(1000);
             break;
           }
-          
-          
+
+
 
         }
        });
 
     $('#enquire-modal').on($.modal.OPEN, function(event, modal) {
-        
+
         if($(".fullpage-wrapper")[0]){
             $.fn.fullpage.setAllowScrolling(false);
             $.fn.fullpage.setKeyboardScrolling(false);
@@ -491,39 +491,41 @@ $(document).ready(function() {
         }
     });
 
-    
+
     $('#simple-menu').sidr({
         displace: true,
-        onOpen : menuOpen,
-        onClose : menuClose
+        onOpen : menuOpen(),
+        onClose : menuClose()
     });
 
 
     function menuOpen() {
+
         var menu = $('a#simple-menu');
         menu.addClass('hide');
         if (menu.hasClass('show')){
             menu.removeClass('show');
         }
         var hmenu = $('div#landing-menu div.center');
-            
+
         if (!hmenu.hasClass('hide')){
             hmenu.addClass('hide');
         }
         if (hmenu.hasClass('show')){
             hmenu.removeClass('show');
         }
-          
-        
+
+
     };
     function menuClose() {
+      console.log('funzia');
         var menu = $('a#simple-menu');
         menu.addClass('show');
         if (menu.hasClass('hide')){
             menu.removeClass('hide');
         }
         var hmenu = $('div#landing-menu div.center');
-            
+
         if (!hmenu.hasClass('show')){
             hmenu.addClass('show');
         }
@@ -553,27 +555,27 @@ function createLanding(){
         afterLoad: function(anchorLink, index){
             var hmenu = $('div#landing-menu div.center')
             //using anchorLink
-            
-            
+
+
                 if (!hmenu.hasClass('show')){
                     hmenu.addClass('show');
                 }
                 if (hmenu.hasClass('fast-hide')){
                     hmenu.removeClass('fast-hide');
                 }
-                
-            
+
+
         },
         onLeave: function(index, nextIndex, direction){
             var hmenu = $('div#landing-menu div.center')
-       
+
                 hmenu.addClass('fast-hide');
                 if (hmenu.hasClass('show')){
                     hmenu.removeClass('show');
                 }
-                
-             
-            
+
+
+
         }
 
     });
@@ -584,35 +586,35 @@ function hasFullPage(page){
     });
 }
 function webSlide(){
-    $("#onepage").load("slides/yacht_size_web.html",function(data){ 
+    $("#onepage").load("slides/yacht_size_web.html",function(data){
       homeSlides();
       //createLanding();
     });
 }
 function mobileSlide(){
-    $("#onepage").load("slides/yacht_size_mobile.html",function(data){ 
+    $("#onepage").load("slides/yacht_size_mobile.html",function(data){
         homeSlides();
         //createLanding();
     });
 }
 
-      
+
 function checkPage(size){
     var pathArray = window.location.pathname.split( '/' );
     //console.log(pathArray)
     if (pathArray[1] === ""){
-        
+
         if (size == "web"){
             webSlide();
         }else if (size == "mobile"){
-           mobileSlide(); 
+           mobileSlide();
         }
-        
-        
+
+
 
     }else if(pathArray[2] == "single_yacht.html"){
         $('#onepage').fullpage({
-        
+
             resize: false,
             autoScrolling: false,
             scrollOverflow: true,
@@ -622,12 +624,12 @@ function checkPage(size){
             loopHorizontal: false,
             slidesNavigation: true,
             slidesNavPosition: 'bottom'
-        
+
 
         });
     }else if(pathArray[2] == "single_expedition.html"){
         $('#onepage').fullpage({
-        
+
             resize: false,
             autoScrolling: false,
             scrollOverflow: true,
@@ -637,13 +639,13 @@ function checkPage(size){
             loopHorizontal: false,
             slidesNavigation: true,
             slidesNavPosition: 'bottom'
-        
+
 
         });
     }else{
         $("html").css("overflow","visible");
         $("body").css("overflow","visible");
-        
+
     }
 
 }
@@ -656,23 +658,23 @@ function hideCTA(target){
                         $(this).fadeIn(1000);
                     }
                 });
-            
+
             counter++;
-        }); 
+        });
 }
 
 function hideStatements(target){
     var counter = 1;
 
         $('p.statement').each(function(){
-           
+
                 $(this).fadeOut(0, function(){
                      if (counter == target){
                         $(this).fadeIn(1000);
                     }
                 });
-                 
-            
+
+
             counter++;
         });
 };
@@ -697,10 +699,10 @@ function homeSlides(){
     var charter = $('a#m1').parent()
     charter.addClass("current");
 
-    
+
     timerSlidesHome();
     menuSlidesHome()
-    
+
 }
 
 
@@ -712,19 +714,19 @@ function menuSlidesHome(){
                     timer = setTimeout(function () {
                         clearTimeout(timer);
                         clearInterval(slidesInterval);
-                    
+
                         var id = e.target.id;
 
                         var target = id.slice(-1);
                         if (!$(this).parent().hasClass("current")){
                             if (target > 3){
-                                target--; 
-                                
+                                target--;
+
                                 hideSlides(target+1);
                                 hideStatements(target);
                                 hideCTA(target);
                                 activeItem(target);
-                               
+
                             }
                             else
                             {
@@ -734,17 +736,17 @@ function menuSlidesHome(){
                                 activeItem(target);
 
                             }
-                        
+
                         }
                     },300);
-                
+
             });
             $(this).mouseleave(function(e){
                 clearTimeout(timer);
                 var id = e.target.id;
                 if(id != "m0"){
                     var target = parseInt(id.slice(-1));
-                    
+
 
                     timerSlidesHome(target);
                 }
@@ -756,19 +758,19 @@ function timerSlidesHome(counter){
     counter = (typeof counter !== 'undefined' )? counter : 2;
     var menu = $('.subMenu:eq(1)');
     slidesInterval = setInterval(function() {
-        
+
         if( counter >= $(menu).find('li.item').length+1){
             counter = 1;
         }
          if(counter == 3){
           hideSlides(counter);
         }else if (counter > 3){
-                     
+
                     hideSlides(counter);
                     hideStatements(counter-1);
                     hideCTA(counter-1);
                     activeItem(counter-1);
-                   
+
                 }
 
         else
@@ -779,9 +781,9 @@ function timerSlidesHome(counter){
             activeItem(counter);
 
         }
-        
 
-        counter++   
+
+        counter++
       }, 5000);
 }
 function activeItem(target){
@@ -802,19 +804,19 @@ function hideSlides(target){
         $('div.hslide').each(function(){
             if (counter != target){
                 $(this).fadeOut(1000);
-                 
+
             }else{
                 $(this).fadeIn(1000);
-                
+
             }
-            
+
             counter++;
         });
     }
 
 
 Handlebars.registerHelper('ifCond', function(v1, v2, options) {
-  
+
   if(v1 && v2) {
     return options.fn(this);
   }
@@ -834,7 +836,7 @@ function populateYachts(yachts){
     var list = yachts.list;
 
 
-    
+
     if(pathname == "/yachts/Charter"){
       var source   = $("#charter-card-template").html();
     }
@@ -842,8 +844,8 @@ function populateYachts(yachts){
       var source   = $("#sale-card-template").html();
     }
     var template = Handlebars.compile(source);
-      
+
     console.log(list)
     yachts_grid.html(template(list));
-            
+
 }

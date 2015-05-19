@@ -10,6 +10,10 @@
 @import '_filters'
 
 
+#hide
+  display none
+
+
 #gallery1, #gallery2
     width: 100%;
     height: 500px;
@@ -23,7 +27,7 @@
     background-color yellow
 
 div.background
-    
+
     position fixed
     top 0
     left 0
@@ -34,15 +38,16 @@ div.background
         background-size cover
         width 100%
         height 100%
-    
 
-.latest-space-yachts
-    
-    li
-        column(4/12)
-        img
-            width 100%
-            height auto
+section.center
+  .latest-space-yachts
+
+      li
+          column(12/12)
+          img
+              width 100%
+              height auto
+
 footer
     position relative
     z-index 2
@@ -69,11 +74,11 @@ footer
                 &.bold
                     font-weight 700
     .right
-        column(5/12, offset: 1/12) 
+        column(5/12, offset: 1/12)
         img
             width 100%
             opacity: 0.9
-            
+
     p.secondmenu
         column(12/12)
         a
@@ -90,7 +95,7 @@ footer
     bottom: 20px
     left: 50%
     margin-left: -30px
-    background url("/images/sprite/go_down.png") no-repeat 0 0 
+    background url("/images/sprite/go_down.png") no-repeat 0 0
     z-index: 2
     &:hover
         background-position: 0 -60px
@@ -101,19 +106,19 @@ footer
     shift(2/12)
     p
         font-size 44px
-            
+
 .buttons
     column(12/12)
     text-align center
     margin 30px 0  80px 0
-    a.enquire-button 
+    a.enquire-button
         text-decoration none
         border: 2px solid yellow;
         padding: 15px 30px;
         color: white
-            
-        
-    a.enquire-button:hover 
+
+
+    a.enquire-button:hover
         background-color: yellow;
         color: white
 
@@ -121,7 +126,7 @@ footer
     //position absolute !important
 
 //loader
-.loader 
+.loader
   position: fixed
   left: 0px
   top: 0px
@@ -207,28 +212,26 @@ footer
     padding-bottom: 100px
 
 //temporary
-#simple-menu
-    display: block
-.subMenu
-    display: none
+
+
 section.center-parallax
     margin-top: 200px
     z-index 900
     a.button
         shift(2/12)
-    
+
 div.filtro
     background-color: black
     position absolute
     top 0
-    left 0 
-    right 0 
+    left 0
+    right 0
     bottom 0
     z-index 1
     opacity 0.4
 a
    outline 0 !important
-   
+
 section.center.filter-hide
     display none
 div.filter-opened-section
@@ -248,10 +251,10 @@ div.filter-opened-section
         background navy-blue
         overflow hidden
         scrolling no
-        
+
         &:focus
             outline none
-            
+
 img.info
     width: 100%
 
@@ -263,11 +266,11 @@ img.info
     position relative
 #enquire-modal, #contact-us-modal
     z-index 4 !important
-    
+
 .cta
     text-align: center
     a.button.home
-        left: auto
+
         margin: 5px
 .hslide, .statement, .cta
     display none
@@ -283,16 +286,16 @@ img.info
     background-position center center
 .imageHolder
     img
-        bottom 0 
-    
-        
+        bottom 0
+
+
     a
         transform(translateZ(1px))
 .section.inner-last-yacht
     width 100%
     height 400px
-    overflow hidden     
-    position relative 
+    overflow hidden
+    position relative
 .section.inner-map
     width 100%
     height 600px
@@ -317,7 +320,7 @@ p.more-info
     font-size rem(40px) !important
     line-height rem(40px) !important
     font-weight bold
-        
+
 div#container-other-specs
     a.button
         left 0
@@ -325,7 +328,7 @@ div#container-other-specs
     ul#single-yacht-specs
         li
             color yellow
-            
+
 div.bottom-spacer
     position relative
     display inline-block
@@ -335,10 +338,11 @@ div.bottom-spacer
 .subMenu
      height 60px
      z-index 3
-     
+
      div.center
          top 20px
     ul#anchor-menu
+        display none
         margin-left 80px !important
         li
             padding: 0 20px
@@ -347,9 +351,9 @@ div.bottom-spacer
                     border-bottom 1px solid yellow
             &.active
                 a
-                    color yellow 
-                    
-        
+                    color yellow
+
+
         a
             outline 0
             font-family "Alegreya Sans", "Helvetica Neue", sans-serif
@@ -362,19 +366,19 @@ div.bottom-spacer
             text-transform uppercase
             text-decoration none
 
-                
-       
-        li a.enquire-button 
+
+
+        li a.enquire-button
             border: 2px solid yellow;
             padding: 15px 30px;
             color: white
-            
-        
-        li a.enquire-button:hover 
+
+
+        li a.enquire-button:hover
             background-color: yellow;
             color: white
-    
-.banner--clone 
+
+.banner--clone
     position: fixed;
     top: 0;
     left: 0;
@@ -392,29 +396,29 @@ div.bottom-spacer
             &:hover, &current
                 a
                     border-bottom 1px solid yellow
-                    
+
             &.active
                 a
                     color yellow
-            
+
             a
                 color white
 
                 &:hover
-                     
+
                     border-bottom 1px solid yellow
                 &.active
                     color yellow
-           
-        li 
-            a.enquire-button 
+
+        li
+            a.enquire-button
                 border: 2px solid yellow ;
                 padding: 15px 30px;
                 color: yellow
-            
-        
-        li 
-            a.enquire-button:hover 
+
+
+        li
+            a.enquire-button:hover
                 background-color: yellow;
                 color: white
 
@@ -426,7 +430,7 @@ div.bottom-spacer
 
 div#sidr
     z-index 4
-                
+
 div.imgbackground
     position absolute
     width 100%
@@ -441,7 +445,7 @@ div.imgbackground
         width auto
         top 0
         opacity 0.6
-  
+
 div.bg-img-slide
 
     z-index: 0;
@@ -463,6 +467,7 @@ div#container-other-specs
 
 
 a#simple-menu
+
     font-family "Alegreya Sans", "Helvetica Neue", sans-serif
     font-weight 300
     text-rendering optimizeLegibility
@@ -479,26 +484,35 @@ a#simple-menu
     // z-index 999
     top 0
     left 0
-    padding 22px
+    padding 14px
     background-color yellow
-    
- .fast-hide  
+
+    //Hamburger
+    span
+      display none
+
+    #hide
+      display block
+
+ .fast-hide
     opacity 0
-    transition(opacity, 0)  
-.hide  
+    transition(opacity, 0)
+.hide
     opacity 0
     transition(opacity, 1s)
 
-.show 
+.show
     opacity 1
     transition(opacity, 1s)
 
 
-    
 
-    
-    
+
+
+
 section.center, section.center-parallax
+
+    center(480px)
     z-index 2
     padding 0 20px
     div.logo
@@ -530,7 +544,7 @@ section.center, section.center-parallax
         line-height rem(31px) !important
         margin-bottom 20px !important
     p
-        
+
         font-size rem(16px)
         line-height rem(23px)
         margin 0
@@ -557,7 +571,7 @@ section.center, section.center-parallax
         list-style-type none
         padding 0
         -webkit-transform: translateZ(1px)
-        li 
+        li
             column(12/12)
             text-align center !important
             margin-bottom 12px
@@ -691,11 +705,11 @@ section.center, section.center-parallax
             a
                 position absolute
                 top 0
-                left 0 
-                right 0 
-                bottom 0 
+                left 0
+                right 0
+                bottom 0
                 z-index 1
-                
+
             ul.yacht-specs
                 position relative
                 padding-left 20px
@@ -716,7 +730,7 @@ section.center, section.center-parallax
             div.container-yachtcard-img
                 img
                     opacity 0.7
-                    
+
     ul#yacht-size.full-team
         margin-top 0 !important
         li
@@ -733,15 +747,15 @@ section.center, section.center-parallax
                     position relative
                     margin-bottom 5px
     ul#latest-yachts-imgbackground
-        display none                 
- 
-    
-        
+        display none
+
+
+
     div.main-text
         column(12/12)
         margin-top 50px
         margin-bottom 30px
-        
+
     div.main-text.home
         margin-top 40px
         position relative
@@ -751,8 +765,8 @@ section.center, section.center-parallax
             line-height rem(26px)
             position absolute
             top 0
-            
-            
+
+
     a.button
         position relative
         clear both
@@ -767,8 +781,8 @@ section.center, section.center-parallax
     a.button.home
         position relative
         top 120px
-        
-        
+
+
     div.quote
         column(12/12)
         margin-top 100px
@@ -795,7 +809,7 @@ section.center, section.center-parallax
         height auto
         padding 0
         margin 0
-        
+
     div#container-other-specs
         column(12/12)
         padding-top 40px
@@ -833,7 +847,7 @@ section.center, section.center-parallax
                 font-weight 300 !important
                 margin 0
                 margin-bottom 25px
-                
+
             h2
                 font-size rem(34px)
                 line-height rem(36px)
@@ -904,34 +918,61 @@ section.center, section.center-parallax
         background-color #183d79
         height 250px
         border-top 1px solid navy-blue
-                
 
-                
-            
-+below(480px)       
+
+
+///////////////////////////////////////////////////////////////////
++below(480px)
     .fp-controlArrow
         display none !important
     .slide.mobile-slide
         display inline-block
     .scroll
         display none
-+below(768px)       
-    ul#yacht-size
-        //margin-bottom 80px !important
+
+
+
+///////////////////////////////////////////////////////////////////
 +above(480px)
+
+
+    a#simple-menu
+      padding 20px
+      span
+        display block
+      #hide
+        display none
+
     .slide.mobile-slide
         display none
     ul#anchor-menu
         margin-left 0 !important
 
     section.center, section.center-parallax
-        center(100%, 80px) 
+        center(100%, 80px)
         div.logo
             margin-top 30%
+
+
+
+
+///////////////////////////////////////////////////////////////////
++below(600px)
+  section.center, section.center-parallax
+      center(600px, 80px)
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////
 +above(600px)
-    
+
+
+
     section.center, section.center-parallax
-        center(700px, 80px)
+        center(700px, 20px)
         div.main-text.home
             margin-top 50px
         div.logo
@@ -940,10 +981,14 @@ section.center, section.center-parallax
             shift(3/12)
         ul#call-to-action-menu-button
             column(12/12)
-            li 
+            li
                 column(6/12)
                 margin-bottom 0
-                
+
+        .latest-space-yachts
+          li
+            column(4/12)
+
         ul#yachts-list-grid, ul#filter-menu
             column(12/12)
             li.card
@@ -952,20 +997,36 @@ section.center, section.center-parallax
                     column(6/6)
                     li
                         column(6/6)
-        
-        
-        
 
+
+
+
+///////////////////////////////////////////////////////////////////
++below(768px)
+    h1.smaller
+      text-align center
+    .cta
+      a.button.home
+          column(8/12)
+          shift(2/12)
+
+    ul#yacht-size
+      li:last-child
+        margin-top 50px
+
+
+
+///////////////////////////////////////////////////////////////////
 +above(768px)
     .scroll
         display block
     p.more-info
         font-size rem(65px) !important
         line-height rem(65px) !important
-    
+
 
     section.center, section.center-parallax
-        center(1400px, 0px)
+        center(800px, 0px)
         div.main-text.home
             margin-top 50px
             shift(3/12)
@@ -988,7 +1049,7 @@ section.center, section.center-parallax
         ul#call-to-action-menu-button
             column(6/12)
             shift (2/12)
-            li 
+            li
                 column(3/6)
                 margin-bottom 0
         ul#call-to-action-menu
@@ -1008,7 +1069,7 @@ section.center, section.center-parallax
             column(4/12)
             shift(0/12)
             margin-left 40px
-        
+
         p.call-to-action
             column(6/12)
             shift(2/12)
@@ -1031,9 +1092,9 @@ section.center, section.center-parallax
             li.team.second-column
                 shift(1/9)
             li.bulletlist
-                column(3/9,cycle:3)  
+                column(3/9,cycle:3)
             li.bulletlist2
-                column(4/9,cycle:2)  
+                column(4/9,cycle:2)
             li
                 column(3/9)
                 text-align left !important
@@ -1092,8 +1153,8 @@ section.center, section.center-parallax
             left 17.1666666666667%
             position relative
 
-            
-  
+
+
         div#container-other-specs
             column(9/12)
             shift(2/12)
@@ -1119,10 +1180,10 @@ section.center, section.center-parallax
         div#container-other-specs
             .main-text
                 margin-top -175px
-            
-                
-                    
-                    
+
+
+
+
 
         ul#latest-yachts
             column(12/12)
@@ -1140,33 +1201,35 @@ section.center, section.center-parallax
         li
             position relative
             height 100%
-            top 0 
+            top 0
             float left
             overflow: hidden
             width 33.3%
             img
                 position absolute
                 width auto
-                
-                
-    
-                        
+
+
+
+///////////////////////////////////////////////////////////////////
 +above(900px)
     #simple-menu
         display: none
     .subMenu
         display: block
+        #anchor-menu
+          display block !important
     section.center, section.center-parallax
         ul#yachts-list-grid, ul#filter-menu
             margin-top 60px
             column(9/12)
             shift(2/12)
             li.card
-                column(3/9,uncycle:2,cycle:3) 
+                column(3/9,uncycle:2,cycle:3)
                 ul.yacht-specs
                     column(3/3)
                     li
-                        column(3/3)  
+                        column(3/3)
         ul#filter-menu
             height 130px
             margin-top 0
@@ -1185,10 +1248,14 @@ section.center, section.center-parallax
             column(9/12)
             shift(2/12)
 
-        
+
+
+///////////////////////////////////////////////////////////////////
 +above(1080px)
 
     section.center, section.center-parallax
+        center(1400px, 80px)
+
         h1
             font-size rem(85px)
             line-height rem(85px)
@@ -1227,7 +1294,7 @@ section.center, section.center-parallax
             li
                 column(4/12)
 
-          
+
         div#container-other-specs
             column(8/12)
             shift(2/12)
