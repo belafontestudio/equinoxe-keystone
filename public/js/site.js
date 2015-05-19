@@ -492,7 +492,8 @@ $(document).ready(function() {
     });
 
 
-    $('#simple-menu').sidr({
+    $('#simple-menu').sidr(
+      {
         displace: true,
         onOpen : menuOpen(),
         onClose : menuClose()

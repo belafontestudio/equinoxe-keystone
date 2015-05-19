@@ -29,7 +29,7 @@ exports = module.exports = function(req, res) {
 				maxPages: 10
 			})
 			.where('state', 'published')
-			.sort('-publishedDate')
+			.sort('-lenght')
 			.populate('author');
 		
 		if (locals.filters.availability) {
@@ -54,7 +54,11 @@ exports = module.exports = function(req, res) {
 			q.where('lenght').lt(locals.filters.maxlenght)
 		}
 		if (locals.filters.type) {
-			q.where('type').equals(locals.filters.type)
+			if(locals.filters.type == "Sails"){
+				q.where('type').in([locals.filters.type,"Catamaran"])
+			}else{
+				q.where('type').equals(locals.filters.type)
+			}
 		}
 
 		

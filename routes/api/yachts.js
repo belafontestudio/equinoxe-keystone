@@ -11,7 +11,7 @@ exports.filter = function(req, res) {
 				maxPages: 10
 			})
 			.where('state', 'published')
-			.sort('-publishedDate')
+			.sort('-lenght')
 			.populate('author');
 		
 		if (req.query.a) {
@@ -36,7 +36,12 @@ exports.filter = function(req, res) {
 			q.where('lenght').lt(req.query.maxl)
 		}
 		if (req.query.t) {
-			q.where('type').equals(req.query.t)
+			if(req.query.t == "Sails"){
+				q.where('type').in([req.query.t,"Catamaran"])
+			}else{
+				q.where('type').equals(req.query.t)
+			}
+
 		}
 
 
