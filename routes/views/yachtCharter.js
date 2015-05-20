@@ -9,7 +9,9 @@ exports = module.exports = function(req, res) {
 	// item in the header navigation.
 	locals.section = 'yacht_charter';
 	locals.data = {
-		featured: []
+		powers: [],
+		sails: [],
+		gulets: []
 	};
 	
 	// Load the posts
@@ -23,19 +25,54 @@ exports = module.exports = function(req, res) {
 			.where('state', 'published')
 			.sort('-publishedDate')
 			.where('availability').equals("Charter")
+			.where('type').equals("Power")
+			.where('featured',true);
+
+		var r = keystone.list('Yacht').paginate({
+				page: 1,
+				perPage: 3,
+				maxPages: 1
+			})
+			.where('state', 'published')
+			.sort('-publishedDate')
+			.where('availability').equals("Charter")
+			.where('type').equals("Sails")
+			.where('featured',true);
+
+		var s = keystone.list('Yacht').paginate({
+				page: 1,
+				perPage: 3,
+				maxPages: 1
+			})
+			.where('state', 'published')
+			.sort('-publishedDate')
+			.where('availability').equals("Charter")
+			.where('type').equals("Gulet")
 			.where('featured',true);
 
 
 		
 		
 		q.exec(function(err, results) {
-			locals.data.featured = results;
-			console.log(locals.data.featured.results);
-			next(err);
+			locals.data.powers = results;
+			r.exec(function(err, results) {
+				locals.data.sails = results;
+				s.exec(function(err, results) {
+					locals.data.gulets = results;
+					
+					next(err);
+				});
+			
+			});
+			
 		});
+		
+		
+		
 		
 	});
 	// Render the view
+	
 	view.render('yacht_charter');
 	
 };

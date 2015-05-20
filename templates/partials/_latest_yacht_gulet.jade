@@ -1,1 +1,39 @@
-extends ../layouts/_latest_space_grid.jade
+block section
+  section.center.latest-grid.spacer
+    .main-text.left
+      h1.smaller2
+        block title-smaller2
+          | Featured gulets for charter:
+    .clear
+    ul.latest-space-yachts
+      each gulet in data.gulets.results
+        li
+          block photo1
+            if gulet.thumbnail.filename
+                img(src="/uploads/images/yachts/thumbnails/"+encodeURIComponent(gulet.thumbnail.filename).replace(/\(/g, '%28').replace(/\)/g, '%29'), alt=gulet.thumbnail.filename)
+            else 
+                img(src="/images/sprite/placeholder.png" alt="placeholder")
+          h2.main-title
+            block yacht-name1
+              = gulet.name
+          ul.vertical-list
+            li
+              | <span class="uppercase">Price:</span> 
+              block price1
+                = gulet.price+gulet.currency
+            li
+              | <span class="uppercase">Length:</span> 
+              block length1
+                = gulet.lenght
+            li
+              | <span class="uppercase">Built:</span> 
+              block built1
+                = gulet.build
+            li
+              | <span class="uppercase">Guests:</span> 
+              block guests1
+                = gulet.guests
+            .clear
+          .buttons
+            a.button(href= "/yacht/"+gulet.slug) Discover
+      
