@@ -2,7 +2,7 @@ extends ../layouts/_yacht_card.jade
 
 block img-yacht-card
     if yacht.thumbnail.filename
-        img(src="/uploads/images/yachts/thumbnails/"+yacht.thumbnail.filename, alt=yacht.thumbnail.filename)
+        img(src="/uploads/images/yachts/thumbnails/"+encodeURIComponent(yacht.thumbnail.filename).replace(/\(/g, '%28').replace(/\)/g, '%29'), alt=yacht.thumbnail.filename)
     else 
         img(src="/images/sprite/placeholder.png" alt="placeholder")
 block single-yacht-name
