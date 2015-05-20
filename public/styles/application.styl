@@ -75,7 +75,7 @@ footer
       img
         margin 0 auto
         width 100%
-        max-width 350px
+        max-width 240px
     .container
         column(12/12)
     .left
@@ -1876,7 +1876,7 @@ section.center-parallax
           img
             margin 0 auto
             width 100%
-            max-width 350px
+            max-width 240px
         .container
             column(12/12)
         .left
@@ -2116,12 +2116,7 @@ section.center-parallax
 
 ///////////////////////////////////////////////////////////////////
 +above(900px)
-    #simple-menu
-        display: none
-    .subMenu
-        display: block
-        #anchor-menu
-          display block !important
+
     section.center, section.center-parallax
 
         margin-top: 150px
@@ -2249,7 +2244,7 @@ section.center-parallax
           img
             margin 0 auto
             width 100%
-            max-width 350px
+            max-width 240px
         .container
             column(12/12)
         .left
@@ -2273,6 +2268,18 @@ section.center-parallax
                 //top 150px
                 opacity: 0.9
 
+
+
+
++above(1200px)
+  #simple-menu
+      display: none
+  .subMenu
+      display: block
+      #anchor-menu
+        display block !important
+
+        
 +above(1300px)
 
     section.center, section.center-parallax
