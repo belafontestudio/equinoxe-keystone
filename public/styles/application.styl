@@ -69,8 +69,9 @@ footer
     letter-spacing 1px
     .logo-ftr
       column(12/12)
+
       text-align center
-      padding-bottom 40px
+      padding 40px 15px 0 15px
       img
         margin 0 auto
         width 100%
@@ -106,13 +107,14 @@ footer
     column(12/12)
 .down
     display: block
-    width: 60px
-    height: 60px
+    width: 30px
+    height: 30px
     position: absolute
-    bottom: 20px
+    bottom: 10px
     left: 50%
-    margin-left: -30px
+    margin-left: -15px
     background url("/images/sprite/go_down.png") no-repeat 0 0
+    background-size 100% 200%
     z-index: 2
     &:hover
         background-position: 0 -60px
@@ -120,9 +122,12 @@ footer
 .main-text.info
     text-align center
     column(8/12)
-    shift(2/12)
+    //shift(1/12)
+    h1
+      text-align center
     p
         font-size 44px
+        line-height 3rem
 
 .buttons
     column(12/12)
@@ -232,7 +237,8 @@ footer
 
 
 section.center-parallax
-    margin-top: 200px
+    center(450px, 30px)
+    margin-top: 20px
     z-index 900
     a.button
         shift(2/12)
@@ -339,7 +345,7 @@ p.more-info
     font-weight bold
 
 div#container-other-specs
-    
+
     a.button
         left 0
         margin 30px 0 60px 0
@@ -528,9 +534,9 @@ a#simple-menu
 
 
 
-section.center, section.center-parallax
+section.center
+    center(480px, 20px)
 
-    center(480px)
     z-index 2
     padding 0 20px
     div.logo
@@ -938,9 +944,417 @@ section.center, section.center-parallax
         border-top 1px solid navy-blue
 
 
+section.center-parallax
+  center(350px, 30px)
 
+  z-index 2
+  padding 0 20px
+  div.logo
+          margin-top 100px
+          column(8/12)
+          shift(2/12)
+          img
+              width 100%
+  h1, h2, h3, h4, p, a, ul, li
+      color white
+      letter-spacing 0.8px
+  h1
+      font-weight bold
+      font-size rem(40px)
+      line-height rem(40px)
+      margin 0 0 23px 0
+  h1.smaller
+      font-size rem(25px)
+      line-height rem(25px)
+  h1.smaller2
+      font-size rem(18px)
+      line-height rem(18px)
+      text-transform uppercase
+      margin-bottom 50px
+      text-align center
+  h2.main-title
+      text-transform none !important
+      font-size rem(30px) !important
+      line-height rem(31px) !important
+      margin-bottom 20px !important
+  p
+
+      font-size rem(16px)
+      line-height rem(23px)
+      margin 0
+      margin-bottom 10px
+  a
+      text-decoration none
+      font-size rem(16px)
+      line-height rem(20px)
+  ul.vertical-list
+      width 100% !important
+      margin-bottom 20px !important
+      li
+          width 100% !important
+          font-size rem(16px)
+          line-height rem(20px)
+  p.call-to-action
+      column(12/12)
+      text-transform uppercase
+      font-style italic
+      margin-bottom 30px
+
+  ul#call-to-action-menu-button
+      column(12/12)
+      list-style-type none
+      padding 0
+      -webkit-transform: translateZ(1px)
+      li
+          column(12/12)
+          text-align center !important
+          margin-bottom 12px
+          -webkit-transform: translateZ(1px)
+          a
+              width 100%
+              left 0
+              -webkit-transform: translateZ(1px)
+              &.active
+                  color yellow
+  ul#call-to-action-menu
+      column(12/12)
+      list-style-type none
+      padding 0
+      li
+          column(4/12)
+          text-align center !important
+          img
+              margin-bottom 15px
+          img.motor
+              width 50%
+          img.sail
+              width 32%
+          img.gulet
+              width 39%
+              position relative
+              left 5%
+      a.link
+          text-transform uppercase
+          text-decoration underline
+          font-size rem(16px)
+          line-height rem(23px)
+          display block
+          &.link:hover, &:active
+              color yellow
+          &:visited
+              opacity 0.5
+  ul#yacht-size, ul#latest-yachts, ul#yachts-list-grid, ul#filter-menu, ul#yacht-size-mobile
+      column(12/12)
+      list-style-type none
+      padding 0
+      margin 0
+      margin-top -50px
+      text-align center !important
+      li
+          position relative
+          text-align center !important
+          div.container-img
+              width 100%
+              height auto
+              position relative
+              img.yacht
+                  width 50%
+                  position absolute
+                  bottom 0
+                  left 22%
+              img.super-yacht
+                  width 70%
+                  position absolute
+                  bottom 0
+                  left 12%
+              img.mega-yacht
+                  width 90%
+                  position relative
+                  left -2%
+                  bottom -6px
+              img.mega-yacht.img-spacer
+                  opacity 0
+                  left 0
+          h2
+              span.number-list
+                  display block
+                  color yellow
+                  font-size rem(95px)
+                  line-height rem(95px)
+          div.container-img.team-members
+              img
+                  max-width 50%
+                  margin-top 30px
+          h2
+              margin 25px 0 5px 0
+              font-size rem(25px)
+              line-height rem(25px)
+              text-transform uppercase
+          p
+              margin 0 0 20px 0
+              font-size rem(16px)
+              line-height rem(20px)
+          p.description-text
+              font-weight lighter
+              margin-top 30px
+              a
+                  font-weight bold
+                  color yellow
+                  &:hover
+                      text-decoration underline
+          a.button
+                  width 70%
+                  margin 0
+                  padding-left 0
+                  padding-right 0
+                  text-align center
+                  text-transform uppercase
+                  left 0
+  ul#yachts-list-grid, ul#filter-menu
+      margin-top 60px
+      li.card
+          column(12/12)
+          background-color navy-blue
+      div.container-yachtcard-img
+          position relative
+          width 100%
+          height auto
+          overflow hidden
+          img
+              position relative
+              width 100%
+              height auto
+      h3.yacht-name
+          font-size rem(30px)
+          line-height rem(30px)
+          margin 5px 0 15px 0
+          padding-left 20px
+          padding-right -20px
+          min-height 60px
+      li
+          text-align left !important
+          margin-bottom 40px
+          background-color #183d79
+          border-radius 2px
+          a
+              position absolute
+              top 0
+              left 0
+              right 0
+              bottom 0
+              z-index 1
+
+          ul.yacht-specs
+              position relative
+              padding-left 20px
+              padding-right -20px
+              min-height 115px
+              li
+                  padding-left 100px
+                  margin-bottom 0
+                  background-color transparent
+                  span
+                      text-transform uppercase
+                      position absolute
+                      left 0
+              li:last-child
+                  padding-bottom 15px !important
+      li:hover, li.active
+          background-color yellow
+          div.container-yachtcard-img
+              img
+                  opacity 0.7
+
+  ul#yacht-size.full-team
+      margin-top 0 !important
+      li
+          margin-bottom 10px
+          h2
+              margin-top 0
+              font-size 20px
+              line-height 20px
+          p
+              margin-top 5px
+          div.container-img
+              img
+                  max-width 60px
+                  position relative
+                  margin-bottom 5px
+  ul#latest-yachts-imgbackground
+      display none
+
+
+
+  div.main-text
+      column(12/12)
+      margin-top 50px
+      margin-bottom 30px
+
+  div.main-text.home
+      margin-top 40px
+      position relative
+      text-align center
+      p
+          font-size rem(19px)
+          line-height rem(26px)
+          position absolute
+          top 0
+
+
+  a.button
+      position relative
+      clear both
+      display inline-block
+      margin 0
+      padding 15px 50px
+      border 2px solid yellow
+  a.button.active
+      background-color yellow
+  a.button:hover
+      background-color yellow
+  a.button.home
+      position relative
+      top 120px
+
+
+  div.quote
+      column(12/12)
+      margin-top 100px
+      p
+          font-size rem(26px)
+          line-height rem(36px)
+      p.author
+          font-size rem(18px)
+          line-height rem(21px)
+          margin-top 25px
+  ul#single-yacht-specs
+      li
+          font-size rem(16px)
+          line-height rem(16px)
+          margin-bottom 3px
+          span
+              font-weight bold
+              text-transform uppercase
+              padding-right 10px
+  div#plain-color-background
+      background-color navy-blue
+      position relative
+      display inline-block
+      height auto
+      padding 0
+      margin 0
+
+  div#container-other-specs
+      column(12/12)
+      padding-top 40px
+      div#other-specs
+          margin-top 60px
+          column(12/12)
+      div#other-description
+          margin-top 60px
+          column(12/12)
+  div#other-specs
+      margin-bottom 50px
+      ul.other-specs-list
+          font-size rem(16px)
+          line-height rem(21px)
+          font-weight 300 !important
+          margin-bottom 40px
+          padding-top 5px
+          h3
+              font-size rem(28px)
+              line-height rem(29px)
+              margin 0
+              margin-bottom 18px
+          li span
+              text-transform uppercase
+              padding-right 7px
+  div#other-description
+      div.description-info
+          margin-bottom 80px
+          &.indent
+              p
+                  text-indent 25px
+          p
+              font-size rem(20px)
+              line-height rem(26px)
+              font-weight 300 !important
+              margin 0
+              margin-bottom 25px
+
+          h2
+              font-size rem(34px)
+              line-height rem(36px)
+              margin 0
+              margin-bottom 40px
+  ul#filter-menu
+      padding 0
+      margin 0
+      height auto
+      background-color #183d79
+      position relative
+      border-radius 2px
+      li
+          width 50% !important
+          height 130px
+          margin 0 !important
+          padding 0
+          border-right 1px solid navy-blue
+          text-align center !important
+          background-color transparent
+          position relative
+          float left
+          border-top 1px solid navy-blue
+          a.filter
+              width 100%
+              height 100%
+              position relative
+              display inline-block
+              padding-top 19px
+          div.icon-filter
+              width 110px
+              height 30px
+              margin 0 auto 15px auto
+              img
+                  max-height 100%
+          h3, span
+              position relative
+              margin 0
+              padding 0
+              font-weight 300
+          h3
+              font-size rem(12px)
+              line-height rem(12px)
+              text-transform uppercase
+              margin-bottom 5px
+              letter-spacing 1.5px
+          span
+              font-size rem(25px)
+              line-height rem(25px)
+              text-transform uppercase
+      li:nth-child(even)
+          border-right none
+  div.reset-button
+      column(12/12)
+      background-color #183d79
+      margin-bottom 0
+      height auto
+      display inline-block
+      border-top 1px solid navy-blue
+      a.button
+          text-align center
+          width 144px
+          margin-left -72px
+          left 50%
+          border none
+  div.filter-opened-section
+      column(12/12)
+      background-color #183d79
+      height 250px
+      border-top 1px solid navy-blue
 ///////////////////////////////////////////////////////////////////
 +below(480px)
+
     .fp-controlArrow
         display none !important
     .slide.mobile-slide
@@ -954,30 +1368,437 @@ section.center, section.center-parallax
 +above(480px)
 
 
-    a#simple-menu
+  a#simple-menu
       padding 20px
       span
         display block
       #hide
         display none
 
-    .slide.mobile-slide
+  .slide.mobile-slide
         display none
     ul#anchor-menu
         margin-left 0 !important
 
-    section.center, section.center-parallax
+    section.center
         center(100%, 80px)
         div.logo
             margin-top 30%
 
+  section.center-parallax
+      center(600px, 25px)
+      margin-top 40px
+      z-index 2
+      padding 0 20px
+      div.logo
+              margin-top 100px
+              column(8/12)
+              shift(2/12)
+              img
+                  width 100%
+      h1, h2, h3, h4, p, a, ul, li
+          color white
+          letter-spacing 0.8px
+      h1
+          font-weight bold
+          font-size rem(40px)
+          line-height rem(40px)
+          margin 0 0 23px 0
+      h1.smaller
+          font-size rem(25px)
+          line-height rem(25px)
+      h1.smaller2
+          font-size rem(18px)
+          line-height rem(18px)
+          text-transform uppercase
+          margin-bottom 50px
+          text-align center
+      h2.main-title
+          text-transform none !important
+          font-size rem(30px) !important
+          line-height rem(31px) !important
+          margin-bottom 20px !important
+      p
 
+          font-size rem(16px)
+          line-height rem(23px)
+          margin 0
+          margin-bottom 10px
+      a
+          text-decoration none
+          font-size rem(16px)
+          line-height rem(20px)
+      ul.vertical-list
+          width 100% !important
+          margin-bottom 20px !important
+          li
+              width 100% !important
+              font-size rem(16px)
+              line-height rem(20px)
+      p.call-to-action
+          column(12/12)
+          text-transform uppercase
+          font-style italic
+          margin-bottom 30px
+
+      ul#call-to-action-menu-button
+          column(12/12)
+          list-style-type none
+          padding 0
+          -webkit-transform: translateZ(1px)
+          li
+              column(12/12)
+              text-align center !important
+              margin-bottom 12px
+              -webkit-transform: translateZ(1px)
+              a
+                  width 100%
+                  left 0
+                  -webkit-transform: translateZ(1px)
+                  &.active
+                      color yellow
+      ul#call-to-action-menu
+          column(12/12)
+          list-style-type none
+          padding 0
+          li
+              column(4/12)
+              text-align center !important
+              img
+                  margin-bottom 15px
+              img.motor
+                  width 50%
+              img.sail
+                  width 32%
+              img.gulet
+                  width 39%
+                  position relative
+                  left 5%
+          a.link
+              text-transform uppercase
+              text-decoration underline
+              font-size rem(16px)
+              line-height rem(23px)
+              display block
+              &.link:hover, &:active
+                  color yellow
+              &:visited
+                  opacity 0.5
+      ul#yacht-size, ul#latest-yachts, ul#yachts-list-grid, ul#filter-menu, ul#yacht-size-mobile
+          column(12/12)
+          list-style-type none
+          padding 0
+          margin 0
+          margin-top -50px
+          text-align center !important
+          li
+              position relative
+              text-align center !important
+              div.container-img
+                  width 100%
+                  height auto
+                  position relative
+                  img.yacht
+                      width 50%
+                      position absolute
+                      bottom 0
+                      left 22%
+                  img.super-yacht
+                      width 70%
+                      position absolute
+                      bottom 0
+                      left 12%
+                  img.mega-yacht
+                      width 90%
+                      position relative
+                      left -2%
+                      bottom -6px
+                  img.mega-yacht.img-spacer
+                      opacity 0
+                      left 0
+              h2
+                  span.number-list
+                      display block
+                      color yellow
+                      font-size rem(95px)
+                      line-height rem(95px)
+              div.container-img.team-members
+                  img
+                      max-width 50%
+                      margin-top 30px
+              h2
+                  margin 25px 0 5px 0
+                  font-size rem(25px)
+                  line-height rem(25px)
+                  text-transform uppercase
+              p
+                  margin 0 0 20px 0
+                  font-size rem(16px)
+                  line-height rem(20px)
+              p.description-text
+                  font-weight lighter
+                  margin-top 30px
+                  a
+                      font-weight bold
+                      color yellow
+                      &:hover
+                          text-decoration underline
+              a.button
+                      width 70%
+                      margin 0
+                      padding-left 0
+                      padding-right 0
+                      text-align center
+                      text-transform uppercase
+                      left 0
+      ul#yachts-list-grid, ul#filter-menu
+          margin-top 60px
+          li.card
+              column(12/12)
+              background-color navy-blue
+          div.container-yachtcard-img
+              position relative
+              width 100%
+              height auto
+              overflow hidden
+              img
+                  position relative
+                  width 100%
+                  height auto
+          h3.yacht-name
+              font-size rem(30px)
+              line-height rem(30px)
+              margin 5px 0 15px 0
+              padding-left 20px
+              padding-right -20px
+              min-height 60px
+          li
+              text-align left !important
+              margin-bottom 40px
+              background-color #183d79
+              border-radius 2px
+              a
+                  position absolute
+                  top 0
+                  left 0
+                  right 0
+                  bottom 0
+                  z-index 1
+
+              ul.yacht-specs
+                  position relative
+                  padding-left 20px
+                  padding-right -20px
+                  min-height 115px
+                  li
+                      padding-left 100px
+                      margin-bottom 0
+                      background-color transparent
+                      span
+                          text-transform uppercase
+                          position absolute
+                          left 0
+                  li:last-child
+                      padding-bottom 15px !important
+          li:hover, li.active
+              background-color yellow
+              div.container-yachtcard-img
+                  img
+                      opacity 0.7
+
+      ul#yacht-size.full-team
+          margin-top 0 !important
+          li
+              margin-bottom 10px
+              h2
+                  margin-top 0
+                  font-size 20px
+                  line-height 20px
+              p
+                  margin-top 5px
+              div.container-img
+                  img
+                      max-width 60px
+                      position relative
+                      margin-bottom 5px
+      ul#latest-yachts-imgbackground
+          display none
+
+
+
+      div.main-text
+          column(12/12)
+          margin-top 50px
+          margin-bottom 30px
+
+      div.main-text.home
+          margin-top 40px
+          position relative
+          text-align center
+          p
+              font-size rem(19px)
+              line-height rem(26px)
+              position absolute
+              top 0
+
+
+      a.button
+          position relative
+          clear both
+          display inline-block
+          margin 0
+          padding 15px 50px
+          border 2px solid yellow
+      a.button.active
+          background-color yellow
+      a.button:hover
+          background-color yellow
+      a.button.home
+          position relative
+          top 120px
+
+
+      div.quote
+          column(12/12)
+          margin-top 100px
+          p
+              font-size rem(26px)
+              line-height rem(36px)
+          p.author
+              font-size rem(18px)
+              line-height rem(21px)
+              margin-top 25px
+      ul#single-yacht-specs
+          li
+              font-size rem(16px)
+              line-height rem(16px)
+              margin-bottom 3px
+              span
+                  font-weight bold
+                  text-transform uppercase
+                  padding-right 10px
+      div#plain-color-background
+          background-color navy-blue
+          position relative
+          display inline-block
+          height auto
+          padding 0
+          margin 0
+
+      div#container-other-specs
+          column(12/12)
+          padding-top 40px
+          div#other-specs
+              margin-top 60px
+              column(12/12)
+          div#other-description
+              margin-top 60px
+              column(12/12)
+      div#other-specs
+          margin-bottom 50px
+          ul.other-specs-list
+              font-size rem(16px)
+              line-height rem(21px)
+              font-weight 300 !important
+              margin-bottom 40px
+              padding-top 5px
+              h3
+                  font-size rem(28px)
+                  line-height rem(29px)
+                  margin 0
+                  margin-bottom 18px
+              li span
+                  text-transform uppercase
+                  padding-right 7px
+      div#other-description
+          div.description-info
+              margin-bottom 80px
+              &.indent
+                  p
+                      text-indent 25px
+              p
+                  font-size rem(20px)
+                  line-height rem(26px)
+                  font-weight 300 !important
+                  margin 0
+                  margin-bottom 25px
+
+              h2
+                  font-size rem(34px)
+                  line-height rem(36px)
+                  margin 0
+                  margin-bottom 40px
+      ul#filter-menu
+          padding 0
+          margin 0
+          height auto
+          background-color #183d79
+          position relative
+          border-radius 2px
+          li
+              width 50% !important
+              height 130px
+              margin 0 !important
+              padding 0
+              border-right 1px solid navy-blue
+              text-align center !important
+              background-color transparent
+              position relative
+              float left
+              border-top 1px solid navy-blue
+              a.filter
+                  width 100%
+                  height 100%
+                  position relative
+                  display inline-block
+                  padding-top 19px
+              div.icon-filter
+                  width 110px
+                  height 30px
+                  margin 0 auto 15px auto
+                  img
+                      max-height 100%
+              h3, span
+                  position relative
+                  margin 0
+                  padding 0
+                  font-weight 300
+              h3
+                  font-size rem(12px)
+                  line-height rem(12px)
+                  text-transform uppercase
+                  margin-bottom 5px
+                  letter-spacing 1.5px
+              span
+                  font-size rem(25px)
+                  line-height rem(25px)
+                  text-transform uppercase
+          li:nth-child(even)
+              border-right none
+      div.reset-button
+          column(12/12)
+          background-color #183d79
+          margin-bottom 0
+          height auto
+          display inline-block
+          border-top 1px solid navy-blue
+          a.button
+              text-align center
+              width 144px
+              margin-left -72px
+              left 50%
+              border none
+      div.filter-opened-section
+          column(12/12)
+          background-color #183d79
+          height 250px
+          border-top 1px solid navy-blue
 
 
 ///////////////////////////////////////////////////////////////////
 +below(600px)
-  section.center, section.center-parallax
-      center(600px, 80px)
+  // section.center, section.center-parallax
+  //     center(600px, 80px)
 
 
 
@@ -987,6 +1808,18 @@ section.center, section.center-parallax
 ///////////////////////////////////////////////////////////////////
 +above(600px)
 
+    .down
+        display: block
+        width: 60px
+        height: 60px
+        position: absolute
+        bottom: 20px
+        left: 50%
+        margin-left: -30px
+        background url("/images/sprite/go_down.png") no-repeat 0 0
+        z-index: 2
+        &:hover
+            background-position: 0 -60px
 
 
     section.center, section.center-parallax
@@ -1127,6 +1960,8 @@ section.center, section.center-parallax
             text-align center
             column(10/12)
             shift(2/12)
+            h1
+              text-align left
 
         div.main-text.left
             column(4/12)
@@ -1283,6 +2118,9 @@ section.center, section.center-parallax
         #anchor-menu
           display block !important
     section.center, section.center-parallax
+
+        margin-top: 150px
+
         ul#yachts-list-grid, ul#filter-menu
             margin-top 60px
             column(9/12)
