@@ -3,87 +3,37 @@ block section
     .main-text.left
       h1.smaller2
         block title-smaller2
-          | Title:
+          | Featured yachts for sale:
     .clear
     ul.latest-space-yachts
-      li
-        block photo1
-          | first image
-        h2.main-title
-          block yacht-name1
-            | Name
-        ul.vertical-list
-          li
-            | <span class="uppercase">Charter:</span> 
-            block price1
-              | Price
-          li
-            | <span class="uppercase">Length:</span> 
-            block length1
-              | Length
-          li
-            | <span class="uppercase">Built:</span> 
-            block built1
-              | Year
-          li
-            | <span class="uppercase">Guests:</span> 
-            block guests1
-              | Number
-          .clear
-        .buttons
-          a.button(href="../pages/single_yacht.html") Discover
-      li
-        
-        block photo2
-          | second image
-        h2.main-title
-          block yacht-name2
-            | Name
-        ul.vertical-list
-          li
-            | <span class="uppercase">Charter:</span> 
-            block price2
-              | Price
-          li
-            | <span class="uppercase">Length:</span> 
-            block length2
-              | Length
-          li
-            | <span class="uppercase">Built:</span> 
-            block built2
-              | Year
-          li
-            | <span class="uppercase">Guests:</span> 
-            block guests2
-              | Number
-          .clear
-        .buttons
-          a.button(href="../pages/single_yacht.html") Discover
-      li
-        
-        block photo3
-          | third image
-        h2.main-title
-          block yacht-name3
-            | Name
-        ul.vertical-list
-          li
-            | <span class="uppercase">Charter:</span> 
-            block price3
-              | Price
-          li
-            | <span class="uppercase">Length:</span> 
-            block length3
-              | Length
-          li
-            | <span class="uppercase">Built:</span> 
-            block built3
-              | Year
-          li
-            | <span class="uppercase">Guests:</span> 
-            block guests3
-              | Number
-          .clear
-        .buttons
-          a.button(href="../pages/single_yacht.html") Discover
-
+      each featured in data.featured.results
+        li
+          block photo1
+            if featured.thumbnail.filename
+                img(src="/uploads/images/yachts/thumbnails/"+encodeURIComponent(featured.thumbnail.filename).replace(/\(/g, '%28').replace(/\)/g, '%29'), alt=featured.thumbnail.filename)
+            else 
+                img(src="/images/sprite/placeholder.png" alt="placeholder")
+          h2.main-title
+            block yacht-name1
+              = featured.name
+          ul.vertical-list
+            li
+              | <span class="uppercase">Price:</span> 
+              block price1
+                = featured.price+featured.currency
+            li
+              | <span class="uppercase">Length:</span> 
+              block length1
+                = featured.lenght
+            li
+              | <span class="uppercase">Built:</span> 
+              block built1
+                = featured.build
+            li
+              | <span class="uppercase">Guests:</span> 
+              block guests1
+                = featured.guests
+            .clear
+          .buttons
+            a.button(href="../pages/single_yacht.html") Discover
+      
