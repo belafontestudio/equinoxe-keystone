@@ -388,6 +388,8 @@ function collectYachtFilter(){
 
 $(document).ready(function() {
 
+    //  $(".owl-carousel-single").owlCarousel();
+
       var top_ofset = $('header').height() - 1;
         $(document).on('click', 'a.down', function(e) {
             e.preventDefault();

@@ -62,74 +62,77 @@ block section
             a.button(href="#contact-us-modal", rel="modal:open") Enquire
           .clear
 
-          if data.yacht.gallery1.img1.filename || data.yacht.gallery1.img2.filename || data.yacht.gallery1.img3.filename || data.yacht.gallery1.img4.filename || data.yacht.gallery1.img5.filename || data.yacht.gallery1.img6.filename || data.yacht.gallery1.img7.filename || data.yacht.gallery1.img8.filename || data.yacht.gallery1.img9.filename || data.yacht.gallery1.img10.filename
-            #gallery1
-              #slides1
-                if data.yacht.gallery1.img1.filename
-                  - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
-                if data.yacht.gallery1.img2.filename
-                  - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
-                if data.yacht.gallery1.img3.filename
-                  - var src3 = encodeURIComponent(data.yacht.gallery1.img3.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src3+')')
-                if data.yacht.gallery1.img4.filename
-                  - var src4 = encodeURIComponent(data.yacht.gallery1.img4.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src4+')')
-                if data.yacht.gallery1.img5.filename
-                  - var src5 = encodeURIComponent(data.yacht.gallery1.img5.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src5+')')
-                if data.yacht.gallery1.img6.filename
-                  - var src6 = encodeURIComponent(data.yacht.gallery1.img6.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src6+')')
-                if data.yacht.gallery1.img7.filename
-                  - var src7 = encodeURIComponent(data.yacht.gallery1.img7.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src7+')')
-                if data.yacht.gallery1.img8.filename
-                  - var src8 = encodeURIComponent(data.yacht.gallery1.img8.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src8+')')
-                if data.yacht.gallery1.img9.filename
-                  - var src9 = encodeURIComponent(data.yacht.gallery1.img9.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src9+')')
-                if data.yacht.gallery1.img10.filename
-                  - var src10 = encodeURIComponent(data.yacht.gallery1.img10.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src10+')')
-          
+    if data.yacht.gallery1.img1.filename || data.yacht.gallery1.img2.filename || data.yacht.gallery1.img3.filename || data.yacht.gallery1.img4.filename || data.yacht.gallery1.img5.filename || data.yacht.gallery1.img6.filename || data.yacht.gallery1.img7.filename || data.yacht.gallery1.img8.filename || data.yacht.gallery1.img9.filename || data.yacht.gallery1.img10.filename
+      #gallery1
+        #slides1.owl-carousel.owl-carousel-single
+          if data.yacht.gallery1.img1.filename
+            - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
+          if data.yacht.gallery1.img2.filename
+            - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
+          if data.yacht.gallery1.img3.filename
+            - var src3 = encodeURIComponent(data.yacht.gallery1.img3.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src3+')')
+          if data.yacht.gallery1.img4.filename
+            - var src4 = encodeURIComponent(data.yacht.gallery1.img4.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src4+')')
+          if data.yacht.gallery1.img5.filename
+            - var src5 = encodeURIComponent(data.yacht.gallery1.img5.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src5+')')
+          if data.yacht.gallery1.img6.filename
+            - var src6 = encodeURIComponent(data.yacht.gallery1.img6.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src6+')')
+          if data.yacht.gallery1.img7.filename
+            - var src7 = encodeURIComponent(data.yacht.gallery1.img7.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src7+')')
+          if data.yacht.gallery1.img8.filename
+            - var src8 = encodeURIComponent(data.yacht.gallery1.img8.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src8+')')
+          if data.yacht.gallery1.img9.filename
+            - var src9 = encodeURIComponent(data.yacht.gallery1.img9.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src9+')')
+          if data.yacht.gallery1.img10.filename
+            - var src10 = encodeURIComponent(data.yacht.gallery1.img10.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src10+')')
 
-          if data.yacht.gallery2.img1.filename || data.yacht.gallery2.img2.filename || data.yacht.gallery2.img3.filename || data.yacht.gallery2.img4.filename || data.yacht.gallery2.img5.filename || data.yacht.gallery2.img6.filename || data.yacht.gallery2.img7.filename || data.yacht.gallery2.img8.filename || data.yacht.gallery2.img9.filename || data.yacht.gallery2.img10.filename
-            #gallery2
-              #slides2
-                if data.yacht.gallery2.img1.filename
-                  - var src1 = encodeURIComponent(data.yacht.gallery2.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
-                if data.yacht.gallery2.img2.filename
-                  - var src2 = encodeURIComponent(data.yacht.gallery2.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
-                if data.yacht.gallery2.img3.filename
-                  - var src3 = encodeURIComponent(data.yacht.gallery2.img3.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src3+')')
-                if data.yacht.gallery2.img4.filename
-                  - var src4 = encodeURIComponent(data.yacht.gallery2.img4.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src4+')')
-                if data.yacht.gallery2.img5.filename
-                  - var src5 = encodeURIComponent(data.yacht.gallery2.img5.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src5+')')
-                if data.yacht.gallery2.img6.filename
-                  - var src6 = encodeURIComponent(data.yacht.gallery2.img6.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src6+')')
-                if data.yacht.gallery2.img7.filename
-                  - var src7 = encodeURIComponent(data.yacht.gallery2.img7.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src7+')')
-                if data.yacht.gallery2.img8.filename
-                  - var src8 = encodeURIComponent(data.yacht.gallery2.img8.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src8+')')
-                if data.yacht.gallery2.img9.filename
-                  - var src9 = encodeURIComponent(data.yacht.gallery2.img9.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src9+')')
-                if data.yacht.gallery2.img10.filename
-                  - var src10 = encodeURIComponent(data.yacht.gallery2.img10.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                  .img(style='background-image: url(/uploads/images/yachts/galleries/'+src10+')')
+
+    if data.yacht.gallery2.img1.filename || data.yacht.gallery2.img2.filename || data.yacht.gallery2.img3.filename || data.yacht.gallery2.img4.filename || data.yacht.gallery2.img5.filename || data.yacht.gallery2.img6.filename || data.yacht.gallery2.img7.filename || data.yacht.gallery2.img8.filename || data.yacht.gallery2.img9.filename || data.yacht.gallery2.img10.filename
+      #gallery2
+        #slides2
+          if data.yacht.gallery2.img1.filename
+            - var src1 = encodeURIComponent(data.yacht.gallery2.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
+          if data.yacht.gallery2.img2.filename
+            - var src2 = encodeURIComponent(data.yacht.gallery2.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
+          if data.yacht.gallery2.img3.filename
+            - var src3 = encodeURIComponent(data.yacht.gallery2.img3.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src3+')')
+          if data.yacht.gallery2.img4.filename
+            - var src4 = encodeURIComponent(data.yacht.gallery2.img4.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src4+')')
+          if data.yacht.gallery2.img5.filename
+            - var src5 = encodeURIComponent(data.yacht.gallery2.img5.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src5+')')
+          if data.yacht.gallery2.img6.filename
+            - var src6 = encodeURIComponent(data.yacht.gallery2.img6.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src6+')')
+          if data.yacht.gallery2.img7.filename
+            - var src7 = encodeURIComponent(data.yacht.gallery2.img7.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src7+')')
+          if data.yacht.gallery2.img8.filename
+            - var src8 = encodeURIComponent(data.yacht.gallery2.img8.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src8+')')
+          if data.yacht.gallery2.img9.filename
+            - var src9 = encodeURIComponent(data.yacht.gallery2.img9.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src9+')')
+          if data.yacht.gallery2.img10.filename
+            - var src10 = encodeURIComponent(data.yacht.gallery2.img10.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src10+')')
+            
+    section.center
+      div#container-other-specs
           div#other-specs
             ul.other-specs-list
               h3
