@@ -19,11 +19,11 @@
  */
 
 var _ = require('underscore'),
-	keystone = require('keystone'),
-	i18n = require("i18n"),
-	middleware = require('./middleware'),
-	importRoutes = keystone.importer(__dirname),
-	serveIndex = require('serve-index')
+    keystone = require('keystone'),
+    i18n = require("i18n"),
+    middleware = require('./middleware'),
+    importRoutes = keystone.importer(__dirname),
+    serveIndex = require('serve-index')
 
 // Add-in i18n support
 keystone.pre('routes', i18n.init);
@@ -34,37 +34,48 @@ keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes('./views'),
-	api: importRoutes('./api')
+    views: importRoutes('./views'),
+    api: importRoutes('./api')
 };
+
+keystone.set('404', function(req, res, next) {
+    res.status(404).render('errors/404');
+});
+keystone.set('500', function(req, res, next) {
+    res.status(500).render('errors/500');
+});
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
 
-	// Views
-	app.get('/', routes.views.index);
-	app.get('/yachts/:availability', routes.views.yachts);
-	app.get('/yacht/:yacht', routes.views.yacht);
-	app.use('/app-storage',serveIndex(process.env.CLOUD_DIR, {'icons': true}));
+    // Views
+    app.get('/', routes.views.index);
 
-	app.get('/app-storage', middleware.requireUser);
-	app.use('/temp',serveIndex(process.env.TEMP_DIR, {'icons': true}));
-	app.get('/temp', middleware.requireUser);
-	//app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
-	app.get('/media/list', middleware.requireUser, routes.views.medialist);
-	app.get('/media/backup', middleware.requireUser, routes.views.mediadownload);
+    app.get('/yachts/:availability', routes.views.yachts);
+    app.get('/yacht/:yacht', routes.views.yacht);
+    app.use('/app-storage',serveIndex(process.env.CLOUD_DIR, {'icons': true}));
+
+    app.get('/app-storage', middleware.requireUser);
+    app.use('/temp',serveIndex(process.env.TEMP_DIR, {'icons': true}));
+    app.get('/temp', middleware.requireUser);
+    //app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
+    app.get('/media/list', middleware.requireUser, routes.views.medialist);
+    app.get('/media/backup', middleware.requireUser, routes.views.mediadownload);
 
 
-	app.get('/yacht_brokerage', routes.views.yachtBrokerage);
-	app.get('/yacht_charter', routes.views.yachtCharter);
-	app.get('/expeditions_planning', routes.views.expeditionsPlanning);
-	app.get('/bareboat', routes.views.bareboat);
-	app.get('/services', routes.views.services);
-	app.get('/heritage', routes.views.heritage);
-	
+    app.get('/yacht_brokerage', routes.views.yachtBrokerage);
+    app.get('/yacht_charter', routes.views.yachtCharter);
+    app.get('/expeditions_planning', routes.views.expeditionsPlanning);
+    app.get('/bareboat', routes.views.bareboat);
+    app.get('/services', routes.views.services);
+    app.get('/heritage', routes.views.heritage);
+    
 
-	//API
-	app.get('/api/yachts/filter', keystone.initAPI, routes.api.yachts.filter);
+    //API
+    app.get('/api/yachts/filter', keystone.initAPI, routes.api.yachts.filter);
 
-	
+
+
+
+    
 };

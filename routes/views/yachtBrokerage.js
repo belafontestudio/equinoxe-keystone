@@ -31,7 +31,7 @@ exports = module.exports = function(req, res) {
 		
 		q.exec(function(err, results) {
 			locals.data.featured = results;
-			console.log(locals.data.featured.results);
+			
 			next(err);
 		});
 		
