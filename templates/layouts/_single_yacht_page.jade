@@ -132,130 +132,131 @@ block section
             .img(style='background-image: url(/uploads/images/yachts/galleries/'+src10+')')
             
     section.center
-      div#container-other-specs
-          div#other-specs
-            ul.other-specs-list
-              h3
-                | Specifications</br>—
-              if data.yacht.beam
-                li
-                  span
-                    | beam:
-                  =data.yacht.bea
-              if data.yacht.crew
-                li
-                  span
-                    | number of crew:
-                  =data.yacht.crew
-              if data.yacht.builder
-                li
-                  span
-                    | builder:
-                  =data.yacht.builder
-              if data.yacht.designer
-                li
-                  span
-                    | designer:
-                  =data.yacht.designer
-              if data.yacht.flag
-                li
-                  span
-                    | flag:
-                  =data.yacht.flag
-              if data.yacht.model
-                li
-                  span
-                    | model:
-                  =data.yacht.model
-              if data.yacht.draft
-                li
-                  span
-                    | draft:
-                  =data.yacht.draft
-              if data.yacht.displacement
-                li
-                  span
-                    | displacement:
-                  =data.yacht.displacement
-              if data.yacht["crusing speed"]
-                li
-                  span
-                    | Cruising speed:
-                  =data.yacht["crusing speed"]
-              if data.yacht.consumption
-                li
-                  span
-                    | Fuel consumption:
-                  =data.yacht.consumption
-              if data.yacht.vat
-                li
-                  span
-                    | VAT:
-                  =data.yacht.vat
-              if data.yacht.location    
-                li
-                  span
-                    | Location:
-                  =data.yacht.location
-              if data.yacht["price per week low season"]
-                li
-                  span
-                    | Price Per Week Low Season:
-                  =data.yacht["price per week low season"]+data.yacht.currency
-              if data.yacht["price per week high season"]
-                li
-                  span
-                    | Price Per Week High Season:
-                  =data.yacht["price per week high season"]+data.yacht.currency
-            ul.other-specs-list
-              h3
-                | Accomodation</br>—
-              if data.yacht.guests
-                li
-                  span
-                    | number of guests:
-                   =data.yacht.guests
-              if data.yacht.crew
-                li
-                  span
-                    | number of crew:
-                   =data.yacht.crew
-              if data.yacht.cabins
-                li
-                  span
-                    | number of cabins:
-                   =data.yacht.cabins
-              if data.yacht["guests cabins"]
-                li
-                  span
-                    | guests cabins:
-                   =data.yacht["guests cabins"]
-              if data.yacht["crew cabins"]
-                li
-                  span
-                    | crew cabins:
-                   =data.yacht["crew cabins"]
+      div#plain-color-background
+        div#container-other-specs
+            div#other-specs
+              ul.other-specs-list
+                h3
+                  | Specifications</br>—
+                if data.yacht.beam
+                  li
+                    span
+                      | beam:
+                    =data.yacht.bea
+                if data.yacht.crew
+                  li
+                    span
+                      | number of crew:
+                    =data.yacht.crew
+                if data.yacht.builder
+                  li
+                    span
+                      | builder:
+                    =data.yacht.builder
+                if data.yacht.designer
+                  li
+                    span
+                      | designer:
+                    =data.yacht.designer
+                if data.yacht.flag
+                  li
+                    span
+                      | flag:
+                    =data.yacht.flag
+                if data.yacht.model
+                  li
+                    span
+                      | model:
+                    =data.yacht.model
+                if data.yacht.draft
+                  li
+                    span
+                      | draft:
+                    =data.yacht.draft
+                if data.yacht.displacement
+                  li
+                    span
+                      | displacement:
+                    =data.yacht.displacement
+                if data.yacht["crusing speed"]
+                  li
+                    span
+                      | Cruising speed:
+                    =data.yacht["crusing speed"]
+                if data.yacht.consumption
+                  li
+                    span
+                      | Fuel consumption:
+                    =data.yacht.consumption
+                if data.yacht.vat
+                  li
+                    span
+                      | VAT:
+                    =data.yacht.vat
+                if data.yacht.location    
+                  li
+                    span
+                      | Location:
+                    =data.yacht.location
+                if data.yacht["price per week low season"]
+                  li
+                    span
+                      | Price Per Week Low Season:
+                    =data.yacht["price per week low season"]+data.yacht.currency
+                if data.yacht["price per week high season"]
+                  li
+                    span
+                      | Price Per Week High Season:
+                    =data.yacht["price per week high season"]+data.yacht.currency
+              ul.other-specs-list
+                h3
+                  | Accomodation</br>—
+                if data.yacht.guests
+                  li
+                    span
+                      | number of guests:
+                     =data.yacht.guests
+                if data.yacht.crew
+                  li
+                    span
+                      | number of crew:
+                     =data.yacht.crew
+                if data.yacht.cabins
+                  li
+                    span
+                      | number of cabins:
+                     =data.yacht.cabins
+                if data.yacht["guests cabins"]
+                  li
+                    span
+                      | guests cabins:
+                     =data.yacht["guests cabins"]
+                if data.yacht["crew cabins"]
+                  li
+                    span
+                      | crew cabins:
+                     =data.yacht["crew cabins"]
 
 
 
-            ul.other-specs-list
-              h3
-                | Equipment</br>—
-              if data.yacht.engine
-                li
-                  span
-                    | Engines:
-                  p 
-                    =data.yacht.engine
-              
-          div#other-description
-            div.description-info.indent
-              h2
-                | Description
-              !=data.yacht.content.description
-            div.description-info
-              h2
-                | Water Sports
-              !=data.yacht.content["water sports"]
-              a.button(href="#contact-us-modal", rel="modal:open") Enquire
-  
+              ul.other-specs-list
+                h3
+                  | Equipment</br>—
+                if data.yacht.engine
+                  li
+                    span
+                      | Engines:
+                    p 
+                      =data.yacht.engine
+                
+            div#other-description
+              div.description-info.indent
+                h2
+                  | Description
+                !=data.yacht.content.description
+              div.description-info
+                h2
+                  | Water Sports
+                !=data.yacht.content["water sports"]
+                a.button(href="#contact-us-modal", rel="modal:open") Enquire
+    
