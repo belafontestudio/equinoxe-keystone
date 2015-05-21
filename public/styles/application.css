@@ -1930,9 +1930,6 @@ section.center ul#call-to-action-menu:last-child {
   margin-right: 0%;
 }
 section.center ul#call-to-action-menu li {
-  padding: 10px 0;
-  border: 1px solid #f4bb3b;
-  background: rgba(0,0,0,0.4);
   *zoom: 1;
   float: left;
   clear: none;
@@ -1952,12 +1949,6 @@ section.center ul#call-to-action-menu li:after {
 }
 section.center ul#call-to-action-menu li:last-child {
   margin-right: 0%;
-}
-section.center ul#call-to-action-menu li:hover {
-  opacity: 0.7;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-  filter: alpha(opacity=70);
-  cursor: pointer;
 }
 section.center ul#call-to-action-menu li img {
   margin-bottom: 15px;
@@ -3572,6 +3563,33 @@ section.center-parallax div.filter-opened-section:last-child {
   .scroll {
     display: none;
   }
+  #yatch-charter-intro ul#call-to-action-menu li {
+    border: 1px solid #f4bb3b;
+    padding: 8px 14px;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+  }
+  #yatch-charter-intro ul#call-to-action-menu li:hover {
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+  }
+  #yatch-charter-intro ul#call-to-action-menu li img {
+    height: 35px;
+    float: clear;
+    margin-bottom: 10px;
+  }
+  #yatch-charter-intro ul#call-to-action-menu li a {
+    color: #f4bb3b;
+    text-decoration: none;
+  }
 }
 @media only screen and (min-width: 480px) {
   a#simple-menu {
@@ -3827,8 +3845,6 @@ section.center-parallax div.filter-opened-section:last-child {
     margin-right: 0%;
   }
   section.center-parallax ul#call-to-action-menu li {
-    border: 1px solid #f4bb3b;
-    background: rgba(0,0,0,0.4);
     *zoom: 1;
     float: left;
     clear: none;
@@ -3848,12 +3864,6 @@ section.center-parallax div.filter-opened-section:last-child {
   }
   section.center-parallax ul#call-to-action-menu li:last-child {
     margin-right: 0%;
-  }
-  section.center-parallax ul#call-to-action-menu li:hover {
-    opacity: 0.7;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-    filter: alpha(opacity=70);
-    cursor: pointer;
   }
   section.center-parallax ul#call-to-action-menu li img {
     margin: 15px 0;
@@ -4530,6 +4540,62 @@ section.center-parallax div.filter-opened-section:last-child {
   }
   section.center-parallax div.filter-opened-section:last-child {
     margin-right: 0%;
+  }
+  #yatch-charter-intro ul#call-to-action-menu li {
+    border: 1px solid #f4bb3b;
+    padding: 8px 14px;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+  }
+  #yatch-charter-intro ul#call-to-action-menu li:hover {
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+  }
+  #yatch-charter-intro ul#call-to-action-menu li img {
+    height: 35px;
+    float: clear;
+    margin-bottom: 10px;
+  }
+  #yatch-charter-intro ul#call-to-action-menu li a {
+    color: #f4bb3b;
+    text-decoration: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #yatch-charter-intro ul#call-to-action-menu li {
+    border: 1px solid #f4bb3b;
+    padding: 8px 14px;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+  }
+  #yatch-charter-intro ul#call-to-action-menu li:hover {
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+  }
+  #yatch-charter-intro ul#call-to-action-menu li img {
+    height: 35px;
+    float: clear;
+    margin-bottom: 10px;
+  }
+  #yatch-charter-intro ul#call-to-action-menu li a {
+    color: #f4bb3b;
+    text-decoration: none;
   }
 }
 @media only screen and (min-width: 600px) {
@@ -6450,6 +6516,9 @@ section.center-parallax div.filter-opened-section:last-child {
   section.center-parallax div.filter-opened-section:last-child {
     margin-right: 0%;
   }
+  #yatch-grid-container {
+    padding-left: 0 !important;
+  }
 }
 @media only screen and (min-width: 1080px) {
   section.center,
@@ -6700,6 +6769,9 @@ section.center-parallax div.filter-opened-section:last-child {
   section.center div#container-other-specs .main-text,
   section.center-parallax div#container-other-specs .main-text {
     margin-top: -218px;
+  }
+  #yatch-grid-container {
+    padding-left: 0 !important;
   }
   footer {
     position: relative;

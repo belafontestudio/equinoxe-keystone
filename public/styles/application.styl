@@ -54,6 +54,9 @@ section.center
               width 100%
               height auto
 
+
+
+
 footer
     position relative
     z-index 2
@@ -612,14 +615,9 @@ section.center
         list-style-type none
         padding 0
         li
-            padding 10px 0
-            border 1px solid yellow
-            background rgba(0,0,0, .4)
             column(4/12)
             text-align center !important
-            &:hover
-              opacity .7
-              cursor pointer
+
 
             img
                 margin-bottom 15px
@@ -1365,6 +1363,7 @@ section.center-parallax
 
 
 
+
 /////////////////////////////////////////////////////////////////////// 404
 
 .container-404
@@ -1389,6 +1388,32 @@ section.center-parallax
         display inline-block
     .scroll
         display none
+
+    #yatch-charter-intro
+      ul#call-to-action-menu
+        li
+          border 1px solid yellow
+          padding 8px 14px
+          text-align center
+
+          -webkit-transition: all .3s ease-in;
+          -moz-transition: all .3s ease-in;
+          -ms-transition: all .3s ease-in;
+          -o-transition: all .3s ease-in;
+          transition: all .3s ease-in;
+
+          &:hover
+            background rgba(0,0,0,.5)
+            cursor pointer
+          img
+            height 35px
+            float clear
+            margin-bottom 10px
+          a
+            color yellow
+            text-decoration none
+            // position relative
+            // top 20px
 
 
 
@@ -1491,13 +1516,10 @@ section.center-parallax
           padding 0
 
           li
-              border 1px solid yellow
-              background rgba(0,0,0, .4)
+
               column(4/12)
               text-align center !important
-              &:hover
-                opacity .7
-                cursor pointer
+
               img
                   margin 15px 0
               img.motor
@@ -1829,12 +1851,66 @@ section.center-parallax
           border-top 1px solid navy-blue
 
 
+
+
+  #yatch-charter-intro
+    ul#call-to-action-menu
+      li
+        border 1px solid yellow
+        padding 8px 14px
+        text-align center
+
+        -webkit-transition: all .3s ease-in;
+        -moz-transition: all .3s ease-in;
+        -ms-transition: all .3s ease-in;
+        -o-transition: all .3s ease-in;
+        transition: all .3s ease-in;
+
+        &:hover
+          background rgba(0,0,0,.5)
+          cursor pointer
+        img
+          height 35px
+          float clear
+          margin-bottom 10px
+        a
+          color yellow
+          text-decoration none
+          // position relative
+          // top 20px
+
+
+
 ///////////////////////////////////////////////////////////////////
 +below(600px)
   // section.center, section.center-parallax
   //     center(600px, 80px)
 
+  #yatch-charter-intro
+    ul#call-to-action-menu
+      li
+        border 1px solid yellow
+        padding 8px 14px
+        text-align center
 
+        -webkit-transition: all .3s ease-in;
+        -moz-transition: all .3s ease-in;
+        -ms-transition: all .3s ease-in;
+        -o-transition: all .3s ease-in;
+        transition: all .3s ease-in;
+
+        &:hover
+          background rgba(0,0,0,.5)
+          cursor pointer
+        img
+          height 35px
+          float clear
+          margin-bottom 10px
+        a
+          color yellow
+          text-decoration none
+          // position relative
+          // top 20px
 
 
 
@@ -1931,6 +2007,9 @@ section.center-parallax
                 position relative
                 //top 150px
                 opacity: 0.9
+
+
+
 
 
 
@@ -2146,6 +2225,7 @@ section.center-parallax
 
 
 
+
 ///////////////////////////////////////////////////////////////////
 +above(900px)
 
@@ -2182,7 +2262,8 @@ section.center-parallax
             shift(2/12)
 
 
-
+      #yatch-grid-container
+        padding-left 0 !important
 ///////////////////////////////////////////////////////////////////
 +above(1080px)
 
@@ -2253,7 +2334,8 @@ section.center-parallax
             .main-text
                 margin-top -218px
 
-
+    #yatch-grid-container
+      padding-left 0 !important
 
 
     footer
@@ -2343,3 +2425,60 @@ section.center-parallax
         li
             display inline-block
             margin-right 27px
+
+
+
+
+
+
+
+////////////////////////////////////////// OVERWRITE
+
+// #yatch-charter-intro
+//   ul#call-to-action-menu
+//     li
+//       border 1px solid yellow
+//       padding 8px 14px
+//       text-align center
+//
+//       -webkit-transition: all .3s ease-in;
+//       -moz-transition: all .3s ease-in;
+//       -ms-transition: all .3s ease-in;
+//       -o-transition: all .3s ease-in;
+//       transition: all .3s ease-in;
+//
+//       &:hover
+//         background rgba(0,0,0,.5)
+//         cursor pointer
+//       img
+//         height 35px
+//         float clear
+//         margin-bottom 10px
+//       a
+//         color yellow
+//         text-decoration none
+//         // position relative
+//         // top 20px
+// #yatch-charter-intro
+//   ul#call-to-action-menu
+//     li
+//       border 1px solid yellow
+//       padding 8px 14px
+//
+//       -webkit-transition: all .3s ease-in;
+//       -moz-transition: all .3s ease-in;
+//       -ms-transition: all .3s ease-in;
+//       -o-transition: all .3s ease-in;
+//       transition: all .3s ease-in;
+//
+//       &:hover
+//         background rgba(0,0,0,.5)
+//         cursor pointer
+//       img
+//         height 35px
+//         float left
+//       a
+//         color yellow
+//         text-decoration none
+//         position relative
+//         top 20px
