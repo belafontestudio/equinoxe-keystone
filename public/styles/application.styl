@@ -14,7 +14,7 @@ body
   overflow scroll !important
 
 .banner--clone
-  display none !important
+  //display none !important
 
 #hide
   display none
@@ -506,7 +506,7 @@ a#simple-menu
     padding 0
     margin 0
     position fixed
-    // z-index 999
+    z-index 999
     top 0
     left 0
     padding 14px
@@ -612,8 +612,15 @@ section.center
         list-style-type none
         padding 0
         li
+            padding 10px 0
+            border 1px solid yellow
+            background rgba(0,0,0, .4)
             column(4/12)
             text-align center !important
+            &:hover
+              opacity .7
+              cursor pointer
+
             img
                 margin-bottom 15px
             img.motor
@@ -1354,6 +1361,25 @@ section.center-parallax
       background-color #183d79
       height 250px
       border-top 1px solid navy-blue
+
+
+
+
+/////////////////////////////////////////////////////////////////////// 404
+
+.container-404
+  width 100%
+  text-align center
+  background navy-blue
+  color yellow
+  img
+    width 300px
+  h1
+    font-size 2.4em
+  p
+    font-size 1.1em
+
+
 ///////////////////////////////////////////////////////////////////
 +below(480px)
 
@@ -1463,11 +1489,17 @@ section.center-parallax
           column(12/12)
           list-style-type none
           padding 0
+
           li
+              border 1px solid yellow
+              background rgba(0,0,0, .4)
               column(4/12)
               text-align center !important
+              &:hover
+                opacity .7
+                cursor pointer
               img
-                  margin-bottom 15px
+                  margin 15px 0
               img.motor
                   width 50%
               img.sail
@@ -2270,6 +2302,11 @@ section.center-parallax
 
 
 
++below(1200px)
+
+  .banner--clone
+    display none
+
 
 +above(1200px)
   #simple-menu
@@ -2279,7 +2316,7 @@ section.center-parallax
       #anchor-menu
         display block !important
 
-        
+
 +above(1300px)
 
     section.center, section.center-parallax

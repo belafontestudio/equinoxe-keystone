@@ -872,9 +872,6 @@ section.center div.slider-bar .ui-widget-header {
 body {
   overflow: scroll !important;
 }
-.banner--clone {
-  display: none !important;
-}
 #hide {
   display: none;
 }
@@ -1676,6 +1673,7 @@ a#simple-menu {
   padding: 0;
   margin: 0;
   position: fixed;
+  z-index: 999;
   top: 0;
   left: 0;
   padding: 14px;
@@ -1932,6 +1930,9 @@ section.center ul#call-to-action-menu:last-child {
   margin-right: 0%;
 }
 section.center ul#call-to-action-menu li {
+  padding: 10px 0;
+  border: 1px solid #f4bb3b;
+  background: rgba(0,0,0,0.4);
   *zoom: 1;
   float: left;
   clear: none;
@@ -1951,6 +1952,12 @@ section.center ul#call-to-action-menu li:after {
 }
 section.center ul#call-to-action-menu li:last-child {
   margin-right: 0%;
+}
+section.center ul#call-to-action-menu li:hover {
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+  cursor: pointer;
 }
 section.center ul#call-to-action-menu li img {
   margin-bottom: 15px;
@@ -3540,6 +3547,21 @@ section.center-parallax div.filter-opened-section:after {
 section.center-parallax div.filter-opened-section:last-child {
   margin-right: 0%;
 }
+.container-404 {
+  width: 100%;
+  text-align: center;
+  background: #103158;
+  color: #f4bb3b;
+}
+.container-404 img {
+  width: 300px;
+}
+.container-404 h1 {
+  font-size: 2.4em;
+}
+.container-404 p {
+  font-size: 1.1em;
+}
 @media only screen and (max-width: 480px) {
   .fp-controlArrow {
     display: none !important;
@@ -3805,6 +3827,8 @@ section.center-parallax div.filter-opened-section:last-child {
     margin-right: 0%;
   }
   section.center-parallax ul#call-to-action-menu li {
+    border: 1px solid #f4bb3b;
+    background: rgba(0,0,0,0.4);
     *zoom: 1;
     float: left;
     clear: none;
@@ -3825,8 +3849,14 @@ section.center-parallax div.filter-opened-section:last-child {
   section.center-parallax ul#call-to-action-menu li:last-child {
     margin-right: 0%;
   }
+  section.center-parallax ul#call-to-action-menu li:hover {
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    cursor: pointer;
+  }
   section.center-parallax ul#call-to-action-menu li img {
-    margin-bottom: 15px;
+    margin: 15px 0;
   }
   section.center-parallax ul#call-to-action-menu li img.motor {
     width: 50%;
@@ -6807,6 +6837,11 @@ section.center-parallax div.filter-opened-section:last-child {
     opacity: 0.9;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
     filter: alpha(opacity=90);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .banner--clone {
+    display: none;
   }
 }
 @media only screen and (min-width: 1200px) {
