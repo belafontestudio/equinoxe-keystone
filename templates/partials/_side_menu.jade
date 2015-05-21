@@ -5,19 +5,7 @@
     div#side-menu-logo
       img(src='../images/sprite/logo.svg', alt='Equinoxe-Logo')
     ul
-      li
-        a(href='/pages/landing.html') Home
-      li
-        a(href='/pages/yacht_charter.html') Yatch brokerage
-      li.active
-        a(href='/pages/yacht_brokerage.html') Yatch charter
-      li
-        a(href='/pages/yacht_purchase.html') Bareboat
-      li
-        a(href='/pages/bareboat.html') Expeditions
-      li
-        a(href='/pages/expeditions_planning.html') Land & Services
-      li
-        a(href='/pages/heritage.html') Heritage
-      li
-        a.enquire-button(href="#enquire-modal", rel="modal:open") Enquire
+      each link in navLinks
+            li.item(class=(section == link.key ? 'active' : null)): a(href=link.href id=link.id)= link.label
+          li
+            a.enquire-button(href="#enquire-modal", rel="modal:open") Enquire
