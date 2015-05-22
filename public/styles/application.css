@@ -1174,6 +1174,12 @@ div.filtro {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
   filter: alpha(opacity=40);
 }
+div.filtro-map {
+  background: #000;
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+}
 a {
   outline: 0 !important;
 }
@@ -1326,11 +1332,13 @@ p.more-info {
   line-height: 2.5rem !important;
   font-weight: bold;
 }
-div#container-other-specs a.button {
+div#container-other-specs a.button,
+div#container-other-specs-2 a.button {
   left: 0;
   margin: 30px 0 60px 0;
 }
-div#container-other-specs ul#single-yacht-specs li {
+div#container-other-specs ul#single-yacht-specs li,
+div#container-other-specs-2 ul#single-yacht-specs li {
   color: #f4bb3b;
 }
 div.bottom-spacer {
@@ -1490,7 +1498,8 @@ div.bg-img-slide {
   -moz-background-size: cover;
   background-size: cover;
 }
-div#container-other-specs .main-text {
+div#container-other-specs .main-text,
+div#container-other-specs-2 .main-text {
   position: absolute;
   width: 100%;
   left: 0;
@@ -2255,14 +2264,16 @@ section.center ul#single-yacht-specs li span {
   text-transform: uppercase;
   padding-right: 10px;
 }
-section.center div#plain-color-background {
+section.center div#plain-color-background,
+section.center div#plain-color-background-2 {
   background-color: #103158;
   position: relative;
   height: auto;
   padding: 0;
   margin: 0;
 }
-section.center div#container-other-specs {
+section.center div#container-other-specs,
+section.center div#container-other-specs-2 {
   *zoom: 1;
   float: left;
   clear: none;
@@ -2273,17 +2284,22 @@ section.center div#container-other-specs {
   padding-top: 40px;
 }
 section.center div#container-other-specs:before,
-section.center div#container-other-specs:after {
+section.center div#container-other-specs-2:before,
+section.center div#container-other-specs:after,
+section.center div#container-other-specs-2:after {
   content: '';
   display: table;
 }
-section.center div#container-other-specs:after {
+section.center div#container-other-specs:after,
+section.center div#container-other-specs-2:after {
   clear: both;
 }
-section.center div#container-other-specs:last-child {
+section.center div#container-other-specs:last-child,
+section.center div#container-other-specs-2:last-child {
   margin-right: 0%;
 }
-section.center div#container-other-specs div#other-specs {
+section.center div#container-other-specs div#other-specs,
+section.center div#container-other-specs-2 div#other-specs {
   margin-top: 60px;
   *zoom: 1;
   float: left;
@@ -2294,17 +2310,22 @@ section.center div#container-other-specs div#other-specs {
   margin-right: 3%;
 }
 section.center div#container-other-specs div#other-specs:before,
-section.center div#container-other-specs div#other-specs:after {
+section.center div#container-other-specs-2 div#other-specs:before,
+section.center div#container-other-specs div#other-specs:after,
+section.center div#container-other-specs-2 div#other-specs:after {
   content: '';
   display: table;
 }
-section.center div#container-other-specs div#other-specs:after {
+section.center div#container-other-specs div#other-specs:after,
+section.center div#container-other-specs-2 div#other-specs:after {
   clear: both;
 }
-section.center div#container-other-specs div#other-specs:last-child {
+section.center div#container-other-specs div#other-specs:last-child,
+section.center div#container-other-specs-2 div#other-specs:last-child {
   margin-right: 0%;
 }
-section.center div#container-other-specs div#other-description {
+section.center div#container-other-specs div#other-description,
+section.center div#container-other-specs-2 div#other-description {
   margin-top: 60px;
   *zoom: 1;
   float: left;
@@ -2315,14 +2336,18 @@ section.center div#container-other-specs div#other-description {
   margin-right: 3%;
 }
 section.center div#container-other-specs div#other-description:before,
-section.center div#container-other-specs div#other-description:after {
+section.center div#container-other-specs-2 div#other-description:before,
+section.center div#container-other-specs div#other-description:after,
+section.center div#container-other-specs-2 div#other-description:after {
   content: '';
   display: table;
 }
-section.center div#container-other-specs div#other-description:after {
+section.center div#container-other-specs div#other-description:after,
+section.center div#container-other-specs-2 div#other-description:after {
   clear: both;
 }
-section.center div#container-other-specs div#other-description:last-child {
+section.center div#container-other-specs div#other-description:last-child,
+section.center div#container-other-specs-2 div#other-description:last-child {
   margin-right: 0%;
 }
 section.center div#other-specs {
@@ -3166,122 +3191,13 @@ section.center-parallax ul#single-yacht-specs li span {
   text-transform: uppercase;
   padding-right: 10px;
 }
-section.center-parallax div#plain-color-background {
+section.center-parallax div#plain-color-background,
+section.center-parallax #plain-color-background-2 {
   background-color: #103158;
   position: relative;
   height: auto;
   padding: 0;
   margin: 0;
-}
-section.center-parallax div#container-other-specs {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 100%;
-  margin-left: 0%;
-  margin-right: 3%;
-  padding-top: 40px;
-}
-section.center-parallax div#container-other-specs:before,
-section.center-parallax div#container-other-specs:after {
-  content: '';
-  display: table;
-}
-section.center-parallax div#container-other-specs:after {
-  clear: both;
-}
-section.center-parallax div#container-other-specs:last-child {
-  margin-right: 0%;
-}
-section.center-parallax div#container-other-specs div#other-specs {
-  margin-top: 60px;
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 100%;
-  margin-left: 0%;
-  margin-right: 3%;
-}
-section.center-parallax div#container-other-specs div#other-specs:before,
-section.center-parallax div#container-other-specs div#other-specs:after {
-  content: '';
-  display: table;
-}
-section.center-parallax div#container-other-specs div#other-specs:after {
-  clear: both;
-}
-section.center-parallax div#container-other-specs div#other-specs:last-child {
-  margin-right: 0%;
-}
-section.center-parallax div#container-other-specs div#other-description {
-  margin-top: 60px;
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 100%;
-  margin-left: 0%;
-  margin-right: 3%;
-}
-section.center-parallax div#container-other-specs div#other-description:before,
-section.center-parallax div#container-other-specs div#other-description:after {
-  content: '';
-  display: table;
-}
-section.center-parallax div#container-other-specs div#other-description:after {
-  clear: both;
-}
-section.center-parallax div#container-other-specs div#other-description:last-child {
-  margin-right: 0%;
-}
-section.center-parallax div#other-specs {
-  margin-bottom: 50px;
-}
-section.center-parallax div#other-specs ul.other-specs-list {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 21px;
-  line-height: 1.3125rem;
-  font-weight: 300 !important;
-  margin-bottom: 40px;
-  padding-top: 5px;
-}
-section.center-parallax div#other-specs ul.other-specs-list h3 {
-  font-size: 28px;
-  font-size: 1.75rem;
-  line-height: 29px;
-  line-height: 1.8125rem;
-  margin: 0;
-  margin-bottom: 18px;
-}
-section.center-parallax div#other-specs ul.other-specs-list li span {
-  text-transform: uppercase;
-  padding-right: 7px;
-}
-section.center-parallax div#other-description div.description-info {
-  margin-bottom: 80px;
-}
-section.center-parallax div#other-description div.description-info.indent p {
-  text-indent: 25px;
-}
-section.center-parallax div#other-description div.description-info p {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 26px;
-  line-height: 1.625rem;
-  font-weight: 300 !important;
-  margin: 0;
-  margin-bottom: 25px;
-}
-section.center-parallax div#other-description div.description-info h2 {
-  font-size: 34px;
-  font-size: 2.125rem;
-  line-height: 36px;
-  line-height: 2.25rem;
-  margin: 0;
-  margin-bottom: 40px;
 }
 section.center-parallax ul#filter-menu {
   padding: 0;
@@ -4319,14 +4235,16 @@ footer p.secondmenu a:hover {
     text-transform: uppercase;
     padding-right: 10px;
   }
-  section.center-parallax div#plain-color-background {
+  section.center-parallax div#plain-color-background,
+  section.center-parallax div#plain-color-background-2 {
     background-color: #103158;
     position: relative;
     height: auto;
     padding: 0;
     margin: 0;
   }
-  section.center-parallax div#container-other-specs {
+  section.center-parallax div#container-other-specs,
+  section.center-parallax div#container-other-specs-2 {
     *zoom: 1;
     float: left;
     clear: none;
@@ -4337,17 +4255,22 @@ footer p.secondmenu a:hover {
     padding-top: 40px;
   }
   section.center-parallax div#container-other-specs:before,
-  section.center-parallax div#container-other-specs:after {
+  section.center-parallax div#container-other-specs-2:before,
+  section.center-parallax div#container-other-specs:after,
+  section.center-parallax div#container-other-specs-2:after {
     content: '';
     display: table;
   }
-  section.center-parallax div#container-other-specs:after {
+  section.center-parallax div#container-other-specs:after,
+  section.center-parallax div#container-other-specs-2:after {
     clear: both;
   }
-  section.center-parallax div#container-other-specs:last-child {
+  section.center-parallax div#container-other-specs:last-child,
+  section.center-parallax div#container-other-specs-2:last-child {
     margin-right: 0%;
   }
-  section.center-parallax div#container-other-specs div#other-specs {
+  section.center-parallax div#container-other-specs div#other-specs,
+  section.center-parallax div#container-other-specs-2 div#other-specs {
     margin-top: 60px;
     *zoom: 1;
     float: left;
@@ -4358,17 +4281,22 @@ footer p.secondmenu a:hover {
     margin-right: 3%;
   }
   section.center-parallax div#container-other-specs div#other-specs:before,
-  section.center-parallax div#container-other-specs div#other-specs:after {
+  section.center-parallax div#container-other-specs-2 div#other-specs:before,
+  section.center-parallax div#container-other-specs div#other-specs:after,
+  section.center-parallax div#container-other-specs-2 div#other-specs:after {
     content: '';
     display: table;
   }
-  section.center-parallax div#container-other-specs div#other-specs:after {
+  section.center-parallax div#container-other-specs div#other-specs:after,
+  section.center-parallax div#container-other-specs-2 div#other-specs:after {
     clear: both;
   }
-  section.center-parallax div#container-other-specs div#other-specs:last-child {
+  section.center-parallax div#container-other-specs div#other-specs:last-child,
+  section.center-parallax div#container-other-specs-2 div#other-specs:last-child {
     margin-right: 0%;
   }
-  section.center-parallax div#container-other-specs div#other-description {
+  section.center-parallax div#container-other-specs div#other-description,
+  section.center-parallax div#container-other-specs-2 div#other-description {
     margin-top: 60px;
     *zoom: 1;
     float: left;
@@ -4379,14 +4307,18 @@ footer p.secondmenu a:hover {
     margin-right: 3%;
   }
   section.center-parallax div#container-other-specs div#other-description:before,
-  section.center-parallax div#container-other-specs div#other-description:after {
+  section.center-parallax div#container-other-specs-2 div#other-description:before,
+  section.center-parallax div#container-other-specs div#other-description:after,
+  section.center-parallax div#container-other-specs-2 div#other-description:after {
     content: '';
     display: table;
   }
-  section.center-parallax div#container-other-specs div#other-description:after {
+  section.center-parallax div#container-other-specs div#other-description:after,
+  section.center-parallax div#container-other-specs-2 div#other-description:after {
     clear: both;
   }
-  section.center-parallax div#container-other-specs div#other-description:last-child {
+  section.center-parallax div#container-other-specs div#other-description:last-child,
+  section.center-parallax div#container-other-specs-2 div#other-description:last-child {
     margin-right: 0%;
   }
   section.center-parallax div#other-specs {
@@ -4907,6 +4839,33 @@ footer p.secondmenu a:hover {
   section.center-parallax ul#single-yacht-specs li {
     display: inline-block;
     margin-right: 15px;
+  }
+  ul.other-specs-list {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 39.9166666666667%;
+    margin-left: 0%;
+    margin-right: 3%;
+    position: relative;
+    left: 8.5833333333333%;
+  }
+  ul.other-specs-list:before,
+  ul.other-specs-list:after {
+    content: '';
+    display: table;
+  }
+  ul.other-specs-list:after {
+    clear: both;
+  }
+  ul.other-specs-list:last-child {
+    margin-right: 0%;
+  }
+  #other-description {
+    width: 82.8333333333333% !important;
+    position: relative;
+    left: 8.5833333333333%;
   }
   footer {
     position: relative;
@@ -6531,6 +6490,40 @@ footer p.secondmenu a:hover {
   #yatch-grid-container {
     padding-left: 0 !important;
   }
+  div#other-specs {
+    width: 39.9166666666667% !important;
+    border-right: 1px solid #fff;
+  }
+  div#other-specs .other-specs-list {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    position: relative;
+    left: 8.5833333333333%;
+  }
+  div#other-specs .other-specs-list:before,
+  div#other-specs .other-specs-list:after {
+    content: '';
+    display: table;
+  }
+  div#other-specs .other-specs-list:after {
+    clear: both;
+  }
+  div#other-specs .other-specs-list:last-child {
+    margin-right: 0%;
+  }
+  div#other-specs .other-specs-list:nth-child(3) {
+    margin-bottom: 0 !important;
+  }
+  #other-description {
+    width: 57.0833333333333% !important;
+    position: relative;
+    left: 5.15%;
+  }
 }
 @media only screen and (min-width: 1080px) {
   section.center,
@@ -6677,7 +6670,9 @@ footer p.secondmenu a:hover {
     margin-right: 0%;
   }
   section.center div#container-other-specs,
-  section.center-parallax div#container-other-specs {
+  section.center-parallax div#container-other-specs,
+  section.center div#container-other-specs-2,
+  section.center-parallax div#container-other-specs-2 {
     *zoom: 1;
     float: left;
     clear: none;
@@ -6690,21 +6685,31 @@ footer p.secondmenu a:hover {
   }
   section.center div#container-other-specs:before,
   section.center-parallax div#container-other-specs:before,
+  section.center div#container-other-specs-2:before,
+  section.center-parallax div#container-other-specs-2:before,
   section.center div#container-other-specs:after,
-  section.center-parallax div#container-other-specs:after {
+  section.center-parallax div#container-other-specs:after,
+  section.center div#container-other-specs-2:after,
+  section.center-parallax div#container-other-specs-2:after {
     content: '';
     display: table;
   }
   section.center div#container-other-specs:after,
-  section.center-parallax div#container-other-specs:after {
+  section.center-parallax div#container-other-specs:after,
+  section.center div#container-other-specs-2:after,
+  section.center-parallax div#container-other-specs-2:after {
     clear: both;
   }
   section.center div#container-other-specs:last-child,
-  section.center-parallax div#container-other-specs:last-child {
+  section.center-parallax div#container-other-specs:last-child,
+  section.center div#container-other-specs-2:last-child,
+  section.center-parallax div#container-other-specs-2:last-child {
     margin-right: 0%;
   }
   section.center div#container-other-specs div#other-specs,
-  section.center-parallax div#container-other-specs div#other-specs {
+  section.center-parallax div#container-other-specs div#other-specs,
+  section.center div#container-other-specs-2 div#other-specs,
+  section.center-parallax div#container-other-specs-2 div#other-specs {
     *zoom: 1;
     float: left;
     clear: none;
@@ -6715,21 +6720,31 @@ footer p.secondmenu a:hover {
   }
   section.center div#container-other-specs div#other-specs:before,
   section.center-parallax div#container-other-specs div#other-specs:before,
+  section.center div#container-other-specs-2 div#other-specs:before,
+  section.center-parallax div#container-other-specs-2 div#other-specs:before,
   section.center div#container-other-specs div#other-specs:after,
-  section.center-parallax div#container-other-specs div#other-specs:after {
+  section.center-parallax div#container-other-specs div#other-specs:after,
+  section.center div#container-other-specs-2 div#other-specs:after,
+  section.center-parallax div#container-other-specs-2 div#other-specs:after {
     content: '';
     display: table;
   }
   section.center div#container-other-specs div#other-specs:after,
-  section.center-parallax div#container-other-specs div#other-specs:after {
+  section.center-parallax div#container-other-specs div#other-specs:after,
+  section.center div#container-other-specs-2 div#other-specs:after,
+  section.center-parallax div#container-other-specs-2 div#other-specs:after {
     clear: both;
   }
   section.center div#container-other-specs div#other-specs:last-child,
-  section.center-parallax div#container-other-specs div#other-specs:last-child {
+  section.center-parallax div#container-other-specs div#other-specs:last-child,
+  section.center div#container-other-specs-2 div#other-specs:last-child,
+  section.center-parallax div#container-other-specs-2 div#other-specs:last-child {
     margin-right: 0%;
   }
   section.center div#container-other-specs div#other-description,
-  section.center-parallax div#container-other-specs div#other-description {
+  section.center-parallax div#container-other-specs div#other-description,
+  section.center div#container-other-specs-2 div#other-description,
+  section.center-parallax div#container-other-specs-2 div#other-description {
     *zoom: 1;
     float: left;
     clear: none;
@@ -6740,17 +6755,25 @@ footer p.secondmenu a:hover {
   }
   section.center div#container-other-specs div#other-description:before,
   section.center-parallax div#container-other-specs div#other-description:before,
+  section.center div#container-other-specs-2 div#other-description:before,
+  section.center-parallax div#container-other-specs-2 div#other-description:before,
   section.center div#container-other-specs div#other-description:after,
-  section.center-parallax div#container-other-specs div#other-description:after {
+  section.center-parallax div#container-other-specs div#other-description:after,
+  section.center div#container-other-specs-2 div#other-description:after,
+  section.center-parallax div#container-other-specs-2 div#other-description:after {
     content: '';
     display: table;
   }
   section.center div#container-other-specs div#other-description:after,
-  section.center-parallax div#container-other-specs div#other-description:after {
+  section.center-parallax div#container-other-specs div#other-description:after,
+  section.center div#container-other-specs-2 div#other-description:after,
+  section.center-parallax div#container-other-specs-2 div#other-description:after {
     clear: both;
   }
   section.center div#container-other-specs div#other-description:last-child,
-  section.center-parallax div#container-other-specs div#other-description:last-child {
+  section.center-parallax div#container-other-specs div#other-description:last-child,
+  section.center div#container-other-specs-2 div#other-description:last-child,
+  section.center-parallax div#container-other-specs-2 div#other-description:last-child {
     margin-right: 0%;
   }
   section.center div#other-specs,
@@ -6779,7 +6802,9 @@ footer p.secondmenu a:hover {
     margin-bottom: 40px;
   }
   section.center div#container-other-specs .main-text,
-  section.center-parallax div#container-other-specs .main-text {
+  section.center-parallax div#container-other-specs .main-text,
+  section.center div#container-other-specs-2 .main-text,
+  section.center-parallax div#container-other-specs-2 .main-text {
     margin-top: -218px;
   }
   #yatch-grid-container {
