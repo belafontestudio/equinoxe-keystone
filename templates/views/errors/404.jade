@@ -1,7 +1,15 @@
 extends ../../layouts/default
+block modals
+	include ../../partials/_enquire_modal.jade
+	include ../../partials/_contact_us_modal.jade
+block menu 
+	include ../../partials/_menu.jade
 
 block content
 	.container-404
 		img(src="/images/404.png")
 		h1 404
 		p.lead Sorry, the page you requested can't be found.
+
+	.section.darker
+			include ../../partials/_footer.jade 
