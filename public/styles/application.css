@@ -1056,23 +1056,6 @@ div.background .mare {
 .section:last-child {
   margin-right: 0%;
 }
-.down {
-  display: block;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  margin-left: -15px;
-  background: url("/images/sprite/go_down.png") no-repeat 0 0;
-  -webkit-background-size: 100% 200%;
-  -moz-background-size: 100% 200%;
-  background-size: 100% 200%;
-  z-index: 2;
-}
-.down:hover {
-  background-position: 0 -30px;
-}
 .main-text.info {
   text-align: center;
   *zoom: 1;
@@ -1561,6 +1544,9 @@ a#simple-menu #hide {
   -o-transition: opacity 1s;
   -ms-transition: opacity 1s;
   transition: opacity 1s;
+}
+#founders {
+  padding-bottom: 0;
 }
 section.center {
   *zoom: 1;
@@ -2172,7 +2158,7 @@ section.center div.main-text {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
-  margin-top: 50px;
+  margin-top: 12px;
   margin-bottom: 30px;
 }
 section.center div.main-text:before,
@@ -3100,7 +3086,7 @@ section.center-parallax div.main-text {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
-  margin-top: 50px;
+  margin-top: 12px;
   margin-bottom: 30px;
 }
 section.center-parallax div.main-text:before,
@@ -3424,6 +3410,9 @@ footer .left ul {
 }
 footer .left ul li {
   padding: 10px 0;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
 }
 footer .left ul li.bold {
   font-weight: 700;
@@ -4144,7 +4133,7 @@ footer p.secondmenu a:hover {
     width: 100%;
     margin-left: 0%;
     margin-right: 3%;
-    margin-top: 50px;
+    margin-top: 12px;
     margin-bottom: 30px;
   }
   section.center-parallax div.main-text:before,
@@ -4541,6 +4530,12 @@ footer p.secondmenu a:hover {
     color: #f4bb3b;
     text-decoration: none;
   }
+  #yatch-grid-container {
+    top: -40px;
+  }
+  .down {
+    display: none;
+  }
 }
 @media only screen and (min-width: 600px) {
   .down {
@@ -4579,6 +4574,10 @@ footer p.secondmenu a:hover {
   section.center:after,
   section.center-parallax:after {
     clear: both;
+  }
+  section.center div.main-text,
+  section.center-parallax div.main-text {
+    margin-top: 40px !important;
   }
   section.center div.main-text.home,
   section.center-parallax div.main-text.home {
@@ -7045,4 +7044,11 @@ footer p.secondmenu a:hover {
 }
 .container-404 p {
   font-size: 2em;
+}
+.gradient-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
 }

@@ -408,7 +408,7 @@ $(document).ready(function() {
     //availabilityFilter();
     lenghtFilter();
     typeFilter();
-    
+
 
 
 
@@ -709,3 +709,6 @@ function populateYachts(yachts){
     yachts_grid.html(template(list));
 
 }
+
+
+/////////////////////////
