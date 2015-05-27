@@ -42,6 +42,14 @@
         "./jquery-ui.js"
       ]
     },
+    "owlcarousel": {
+      "main": [
+        "./owlcarousel/owl.carousel.css",
+        "./owlcarousel/owl.theme.css",
+        "./owlcarousel/owl.transitions.css",
+        "./owlcarousel/owl.carousel.min.js"
+      ]
+    },
     "jquery-modal": {
       "main": [
         "./jquery.modal.js",

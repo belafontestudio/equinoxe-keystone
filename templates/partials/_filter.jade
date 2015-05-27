@@ -1,5 +1,7 @@
-
-ul#filter-menu
+div#toggle-btn
+  i.fa.fa-plus-circle
+    |   Filters
+ul#filter-menu.filter-toggle
   //- li
   //-   a.filter#f1(href="#")
   //-     div.icon-filter
@@ -59,7 +61,7 @@ div.filter-opened-section
   include _filter_salecharter.jade
   
   
-div.reset-button
+div.reset-button.filter-toggle
   a.button(href="#") Reset
 
     

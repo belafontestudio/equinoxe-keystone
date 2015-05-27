@@ -345,6 +345,7 @@ div#side-menu-logo img {
 }
 @media only screen and (max-width: 480px) {
   .sidr {
+    width: 100%;
     width: 100vw;
   }
 }
@@ -1086,7 +1087,7 @@ div.background .mare {
   text-align: center;
 }
 .main-text.info p {
-  font-size: 44px;
+  font-size: 30px;
   line-height: 3rem;
 }
 .buttons {
@@ -1177,6 +1178,7 @@ section.center.filter-hide {
 div.filter-opened-section {
   height: 0;
   display: none;
+  position: relative;
 }
 *:focus {
   outline: none;
@@ -2469,7 +2471,6 @@ section.center div.reset-button {
   background-color: #183d79;
   margin-bottom: 0;
   height: auto;
-  display: inline-block;
   border-top: 1px solid #103158;
 }
 section.center div.reset-button:before,
@@ -2498,6 +2499,7 @@ section.center div.filter-opened-section {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
+  position: relative;
   background-color: #183d79;
   height: 250px;
   border-top: 1px solid #103158;
@@ -3271,7 +3273,6 @@ section.center-parallax div.reset-button {
   background-color: #183d79;
   margin-bottom: 0;
   height: auto;
-  display: inline-block;
   border-top: 1px solid #103158;
 }
 section.center-parallax div.reset-button:before,
@@ -4561,14 +4562,35 @@ footer p.secondmenu a:hover {
     color: #f4bb3b;
     text-decoration: none;
   }
+  .main-text.info p {
+    font-size: 30px;
+    text-align: center;
+  }
   #yatch-grid-container {
     top: -40px;
   }
   .down {
     display: none;
   }
+  #toggle-btn {
+    color: #fff;
+    cursor: pointer;
+    padding-bottom: 30px;
+  }
+  .filter-toggle {
+    display: none;
+  }
+  .reset-button {
+    display: none;
+  }
 }
 @media only screen and (min-width: 600px) {
+  #toggle-btn {
+    display: none;
+  }
+  .filter-toggle {
+    display: block;
+  }
   .down {
     display: block;
     width: 60px;
@@ -4605,6 +4627,10 @@ footer p.secondmenu a:hover {
   section.center:after,
   section.center-parallax:after {
     clear: both;
+  }
+  section.center div#container-other-specs .main-text,
+  section.center-parallax div#container-other-specs .main-text {
+    margin-top: -120px !important;
   }
   section.center div.main-text,
   section.center-parallax div.main-text {
@@ -6219,7 +6245,7 @@ footer p.secondmenu a:hover {
   }
   section.center div#container-other-specs .main-text,
   section.center-parallax div#container-other-specs .main-text {
-    margin-top: -175px;
+    margin-top: -175px !important;
   }
   section.center ul#latest-yachts,
   section.center-parallax ul#latest-yachts {
@@ -7083,9 +7109,18 @@ footer p.secondmenu a:hover {
   font-size: 2em;
 }
 .gradient-top {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100px;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  background: -webkit-linear-gradient(top, #000 0%, rgba(123,181,227,0) 98%, rgba(125,185,232,0) 100%);
+  background: -moz-linear-gradient(top, #000 0%, rgba(123,181,227,0) 98%, rgba(125,185,232,0) 100%);
+  background: -o-linear-gradient(top, #000 0%, rgba(123,181,227,0) 98%, rgba(125,185,232,0) 100%);
+  background: -ms-linear-gradient(top, #000 0%, rgba(123,181,227,0) 98%, rgba(125,185,232,0) 100%);
+  background: linear-gradient(to bottom, #000 0%, rgba(123,181,227,0) 98%, rgba(125,185,232,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=;
 }

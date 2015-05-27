@@ -355,7 +355,9 @@ function collectYachtFilter(){
 
 $(document).ready(function() {
       var headhesive = new Headhesive('.subMenu', options);
-    //  $(".owl-carousel-single").owlCarousel();
+
+
+
       checkPage()
       var top_ofset = $('header').height() - 1;
         $(document).on('click', 'a.down', function(e) {
@@ -365,8 +367,8 @@ $(document).ready(function() {
           }, 1000);
         });
 
-        $("#gallery1 #slides1").skippr();
-        $("#gallery2 #slides2").skippr();
+        // $("#gallery1 #slides1").skippr();
+        // $("#gallery2 #slides2").skippr();
 
         $(document).on('click', '.reset-button a', function(e) {
             e.preventDefault();
@@ -409,6 +411,8 @@ $(document).ready(function() {
     lenghtFilter();
     typeFilter();
 
+    toggleFilters();
+    mediaqueriesjs();
 
 
 
@@ -458,6 +462,10 @@ $(document).ready(function() {
     $('a#closeMenu').click(function(){
         $.sidr("close");
     });
+
+
+
+    $(".owl-carousel-single").owlCarousel();
 
 });
 function createLanding(){
@@ -712,3 +720,25 @@ function populateYachts(yachts){
 
 
 /////////////////////////
+
+function toggleFilters(){
+
+  $('#toggle-btn').click(function() {
+    $('.filter-toggle').slideToggle("fast", function() {
+    // Animation complete.
+    });
+  });
+
+}
+
+function mediaqueriesjs(){
+
+  enquire.register("screen and (max-width:600px)", {
+    match : function() {
+      $('#heritage-img').attr('src', '/images/equinoxe_infografica-mobile.png');
+    },
+    unmatch : function() {
+      $('#heritage-img').attr('src', '/images/equinoxe_infografica.png');
+    }
+});
+}
