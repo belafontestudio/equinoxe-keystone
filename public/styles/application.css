@@ -811,6 +811,7 @@ div.filter-opened-section a.close-filter:hover {
 .filter-mobile ul#yacht-size-mobile li#filter-super-yacht,
 .filter-mobile ul#yacht-size-mobile li#filter-mega-yacht {
   padding: 0;
+  top: -25px;
 }
 .filter-mobile ul#yacht-size-mobile li#filter-yacht h2,
 .filter-mobile ul#yacht-size-mobile li#filter-super-yacht h2,
@@ -978,6 +979,84 @@ section.center div#slider-numbers p.max-guest {
 section.center div#slider .ui-widget-header,
 section.center div.slider-bar .ui-widget-header {
   background: #f4bb3b;
+}
+@media only screen and (max-width: 600px) {
+  .filter-mobile ul#yacht-size-mobile .button {
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .filter-mobile {
+    position: relative;
+    width: 100%;
+  }
+  .filter-mobile div#slider-single,
+  .filter-mobile div.slider-bar {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .filter-mobile ul#yacht-size-mobile {
+    left: 0 !important;
+    width: 100% !important;
+    height: 290px;
+    margin: 28px auto !important;
+    position: relative !important;
+  }
+  .filter-mobile ul#yacht-size-mobile li#filter-yacht,
+  .filter-mobile ul#yacht-size-mobile li#filter-super-yacht,
+  .filter-mobile ul#yacht-size-mobile li#filter-mega-yacht {
+    padding-top: 60px;
+    top: -25px;
+  }
+  .filter-mobile ul#yacht-size-mobile li#filter-yacht h2,
+  .filter-mobile ul#yacht-size-mobile li#filter-super-yacht h2,
+  .filter-mobile ul#yacht-size-mobile li#filter-mega-yacht h2 {
+    font-size: 1rem;
+  }
+  .filter-mobile ul#yacht-size-mobile li#filter-yacht p,
+  .filter-mobile ul#yacht-size-mobile li#filter-super-yacht p,
+  .filter-mobile ul#yacht-size-mobile li#filter-mega-yacht p {
+    font-size: 0.9em;
+  }
+  .filter-mobile ul#yacht-size-mobile li {
+    width: 30% !important;
+    display: inline-block;
+    margin: 0;
+  }
+  .filter-mobile ul#yacht-size-mobile li h2,
+  .filter-mobile ul#yacht-size-mobile li p {
+    text-align: center;
+  }
+  .filter-mobile ul#yacht-size-mobile li div.container-img {
+    height: 214px !important;
+    position: relative;
+    width: 100%;
+  }
+  .filter-mobile ul#yacht-size-mobile li div.container-img img.yacht,
+  .filter-mobile ul#yacht-size-mobile li div.container-img img.super-yacht,
+  .filter-mobile ul#yacht-size-mobile li div.container-img img.mega-yacht {
+    left: 50% !important;
+    width: auto !important;
+    position: absolute !important;
+    bottom: 0 !important;
+  }
+  .filter-mobile ul#yacht-size-mobile li div.container-img img.yacht {
+    margin-left: -52px !important;
+    height: 55%;
+  }
+  .filter-mobile ul#yacht-size-mobile li div.container-img img.super-yacht {
+    margin-left: -81px !important;
+    height: 80%;
+  }
+  .filter-mobile ul#yacht-size-mobile li div.container-img img.mega-yacht {
+    margin-left: -103px !important;
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .filter-mobile ul#yacht-size-mobile .button {
+    left: 17% !important;
+  }
 }
 @media only screen and (max-width: 900px) {
   li#last-filter {
@@ -4591,6 +4670,12 @@ footer p.secondmenu a:hover {
   }
 }
 @media only screen and (min-width: 600px) {
+  #toggle-btn {
+    display: none;
+  }
+  .filter-toggle {
+    display: block;
+  }
   .down {
     display: block;
     width: 60px;

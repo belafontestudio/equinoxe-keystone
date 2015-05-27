@@ -38,6 +38,7 @@ div.filter-opened-section
     li#filter-yacht, li#filter-super-yacht, li#filter-mega-yacht
       //position absolute
       padding 0
+      top -25px
       h2
         font-size 1rem
       p
@@ -164,6 +165,71 @@ section.center
   div#slider, div.slider-bar
     .ui-widget-header
       background yellow
+
+
+
++below(600px)
+  .filter-mobile
+    ul#yacht-size-mobile
+      .button
+        display none
+
++above(600px)
+
+  .filter-mobile
+    position relative
+    width 100%
+    div#slider-single, div.slider-bar
+      max-width 80%
+      margin 0 auto
+    ul#yacht-size-mobile
+      left 0 !important
+      width 100% !important
+      height 290px
+      margin 28px auto !important
+      position relative !important
+      li#filter-yacht, li#filter-super-yacht, li#filter-mega-yacht
+        //position absolute
+        padding-top 60px
+        top -25px
+        h2
+          font-size 1rem
+        p
+          font-size .9em
+
+      li
+        width 30% !important
+        display inline-block
+        margin 0
+        h2, p
+          text-align center
+        div.container-img
+          height 214px !important
+          position relative
+          width 100%
+          img.yacht, img.super-yacht, img.mega-yacht
+            left 50% !important
+            width auto !important
+            position absolute !important
+            bottom 0 !important
+          img.yacht
+            margin-left -52px !important
+            height 55%
+          img.super-yacht
+            margin-left -81px !important
+            height 80%
+          img.mega-yacht
+            margin-left -103px !important
+            height 100%
+
+
+
+
++above(768px)
+  .filter-mobile
+    ul#yacht-size-mobile
+      .button
+        left 17% !important
 
 
 +below(900px)

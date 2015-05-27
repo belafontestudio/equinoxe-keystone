@@ -413,6 +413,7 @@ $(document).ready(function() {
 
     toggleFilters();
     mediaqueriesjs();
+    clickFilters()
 
 
 
@@ -745,4 +746,37 @@ function mediaqueriesjs(){
       $('#heritage-img').attr('src', '/images/equinoxe_infografica.png');
     }
 });
+}
+
+
+function clickFilters(){
+  $('#filter-yacht').click(function() {
+    $('#filter-yacht>h2').css('color','#F4BB3B');
+    $('#filter-super-yacht>h2').css('color','white');
+    $('#filter-mega-yacht>h2').css('color','white');
+    filters.minl = "0";
+    filters.maxl = "24";
+    collectYachtFilter();
+    $("a#f4 span").text("0-24m");
+  });
+
+  $('#filter-super-yacht').click(function() {
+    $('#filter-super-yacht>h2').css('color','#F4BB3B');
+    $('#filter-yacht>h2').css('color','white');
+    $('#filter-mega-yacht>h2').css('color','white');
+    filters.minl = "24";
+    filters.maxl = "40";
+    collectYachtFilter();
+    $("a#f4 span").text("24-40m");
+  });
+
+  $('#filter-mega-yacht').click(function() {
+    $('#filter-mega-yacht>h2').css('color','#F4BB3B');
+    $('#filter-yacht>h2').css('color','white');
+    $('#filter-super-yacht>h2').css('color','white');
+    filters.minl = "40";
+    filters.maxl = "150";
+    collectYachtFilter();
+    $("a#f4 span").text("40m+");
+  });
 }
