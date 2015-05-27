@@ -33,8 +33,8 @@
     "jqueryui": "~1.11.2",
     "handlebars": "~3.0.3",
     "skippr": "~1.1.0",
-    "owlcarousel": "~1.3.2",
-    "numeral": "~1.5.3"
+    "numeral": "~1.5.3",
+    "owlcarousel": "~1.3.2"
   },
   "overrides": {
     "jqueryui": {
@@ -45,10 +45,10 @@
     },
     "owlcarousel": {
       "main": [
-        "./owlcarousel/owl.carousel.css",
-        "./owlcarousel/owl.theme.css",
-        "./owlcarousel/owl.transitions.css",
-        "./owlcarousel/owl.carousel.min.js"
+        "./owl-carousel/owl.carousel.css",
+        "./owl-carousel/owl.theme.css",
+        "./owl-carousel/owl.transitions.css",
+        "./owl-carousel/owl.carousel.js"
       ]
     },
     "jquery-modal": {
