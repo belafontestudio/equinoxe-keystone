@@ -972,6 +972,11 @@ section.center div#slider .ui-widget-header,
 section.center div.slider-bar .ui-widget-header {
   background: #f4bb3b;
 }
+@media only screen and (max-width: 900px) {
+  li#last-filter {
+    width: 100% !important;
+  }
+}
 @media only screen and (min-width: 900px) {
   section.center.sale-charter {
     width: 80%;
@@ -1773,7 +1778,7 @@ section.center ul#call-to-action-menu {
   margin-left: 0%;
   margin-right: 3%;
   list-style-type: none;
-  padding: 0;
+  padding: 0 20px;
 }
 section.center ul#call-to-action-menu:before,
 section.center ul#call-to-action-menu:after {
@@ -1794,6 +1799,7 @@ section.center ul#call-to-action-menu li {
   width: 31.3333333333333%;
   margin-left: 0%;
   margin-right: 3%;
+  padding: 20px 10px;
   text-align: center !important;
 }
 section.center ul#call-to-action-menu li:before,
@@ -1806,6 +1812,10 @@ section.center ul#call-to-action-menu li:after {
 }
 section.center ul#call-to-action-menu li:last-child {
   margin-right: 0%;
+}
+section.center ul#call-to-action-menu li:hover {
+  background: rgba(255,255,255,0.3);
+  color: #f4bb3b;
 }
 section.center ul#call-to-action-menu li img {
   margin-bottom: 15px;
@@ -1823,7 +1833,7 @@ section.center ul#call-to-action-menu li img.gulet {
 }
 section.center ul#call-to-action-menu a.link {
   text-transform: uppercase;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 16px;
   font-size: 1rem;
   line-height: 23px;
@@ -2403,6 +2413,9 @@ section.center ul#filter-menu li {
   position: relative;
   float: left;
   border-top: 1px solid #103158;
+}
+section.center ul#filter-menu li:last-child {
+  width: 100% !important;
 }
 section.center ul#filter-menu li a.filter {
   width: 100%;
@@ -3417,6 +3430,10 @@ footer .left ul li {
 footer .left ul li.bold {
   font-weight: 700;
 }
+footer .left ul li a {
+  text-decoration: none;
+  color: #fff;
+}
 footer .right {
   *zoom: 1;
   float: left;
@@ -3506,6 +3523,20 @@ footer p.secondmenu a:hover {
   #yatch-charter-intro ul#call-to-action-menu li a {
     color: #f4bb3b;
     text-decoration: none;
+  }
+  div.icon-filter {
+    width: 110px;
+    height: 20px !important;
+    margin: 0 auto 15px auto !important;
+  }
+  ul#filter-menu li {
+    height: 110px !important;
+  }
+  .filter h3 {
+    font-size: 0.75rem;
+  }
+  .filter span {
+    font-size: 1rem !important;
   }
 }
 @media only screen and (min-width: 480px) {
@@ -3798,7 +3829,7 @@ footer p.secondmenu a:hover {
   }
   section.center-parallax ul#call-to-action-menu a.link {
     text-transform: uppercase;
-    text-decoration: underline;
+    text-decoration: none;
     font-size: 16px;
     font-size: 1rem;
     line-height: 23px;
@@ -4838,6 +4869,11 @@ footer p.secondmenu a:hover {
   section.center-parallax ul#single-yacht-specs li {
     display: inline-block;
     margin-right: 15px;
+  }
+  div.icon-filter {
+    width: 110px;
+    height: 30px;
+    margin: 0 auto 15px auto;
   }
   ul.other-specs-list {
     *zoom: 1;
@@ -6447,6 +6483,7 @@ footer p.secondmenu a:hover {
   }
   section.center ul#filter-menu li:last-child,
   section.center-parallax ul#filter-menu li:last-child {
+    width: 20% !important;
     border-right: none;
   }
   section.center div.reset-button,
