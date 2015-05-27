@@ -20,12 +20,14 @@ block section
                 if data.yacht.availability == "Charter"
                   span
                     | Charter price from:
-                  = data.yacht["price per week from"]+data.yacht.currency 
+                  = numeralFunction(data.yacht["price per week from"]).format('0,0[.]00' )+data.yacht.currency
+                  
                 if data.yacht.availability == "Sale"
                   if data.yacht.price
                     span
                       | Sale price:
-                    = data.yacht.price+data.yacht.currency
+                    = numeralFunction(data.yacht.price).format('0,0[.]00' )+data.yacht.currency
+                    
             if data.yacht.lenght
               li
                 span
@@ -202,12 +204,13 @@ block section
                   li
                     span
                       | Price Per Week Low Season:
-                    =data.yacht["price per week low season"]+data.yacht.currency
+                    = numeralFunction(data.yacht["price per week low season"]).format('0,0[.]00' )+data.yacht.currency
+
                 if data.yacht["price per week high season"]
                   li
                     span
                       | Price Per Week High Season:
-                    =data.yacht["price per week high season"]+data.yacht.currency
+                    = numeralFunction(data.yacht["price per week high season"]).format('0,0[.]00' )+data.yacht.currency
               ul.other-specs-list
                 h3
                   | Accomodation</br>—

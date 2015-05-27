@@ -13,12 +13,12 @@ block single-yacht
               if yacht.availability == "Charter"
                 span
                   | Price from:
-                = yacht["price per week from"]+yacht.currency 
+                = numeralFunction(yacht["price per week from"]).format('0,0[.]00' )+yacht.currency
               if yacht.availability == "Sale"
                 if yacht.price
                   span
                     | Price:
-                  = yacht.price+yacht.currency
+                  = numeralFunction(yacht.price).format('0,0[.]00' )+yacht.currency
           if yacht.lenght
             li
               span

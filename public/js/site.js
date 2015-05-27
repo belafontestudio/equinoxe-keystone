@@ -691,7 +691,11 @@ Handlebars.registerHelper('ifCond', function(v1, v2, options) {
   }
   return options.inverse(this);
 });
-
+Handlebars.registerHelper('numeral', function(price,currency,options) {
+    
+  var num = numeral(price).format('0,0[.]00' )+currency;
+  return num;
+});
 Handlebars.registerHelper('ifOr', function(v1, v2, options) {
   if(v1 || v2) {
     return options.fn(this);

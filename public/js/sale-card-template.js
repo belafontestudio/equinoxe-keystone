@@ -15,7 +15,7 @@
             {{/if}} 
         </h3>
         <ul class="yacht-specs">
-          <li><span>Price:</span>{{price}}{{currency}}
+          <li><span>Price:</span>{{{numeral price currency}}}
           </li>
           <li><span>length:</span>
             {{#if lenght}}

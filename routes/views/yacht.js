@@ -1,5 +1,6 @@
 var keystone = require('keystone'),
 	async = require('async');
+	numeral = require('numeral');
 
 exports = module.exports = function(req, res) {
 	
@@ -43,6 +44,6 @@ exports = module.exports = function(req, res) {
 	});
 	
 	// Render the view
-	view.render('yacht');
+	view.render('yacht',{numeralFunction : numeral});
 	
 };

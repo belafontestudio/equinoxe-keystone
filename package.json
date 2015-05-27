@@ -13,6 +13,7 @@
     "keystone": "git+https://github.com/Belafonte-boat/keystone-localimages.git",
     "node-sass": "~1.0.1",
     "node-sass-middleware": "^0.4.0",
+    "numeral": "^1.5.3",
     "serve-index": "^1.6.3",
     "stylus": "^0.50.0",
     "stylus-type-utils": "0.0.3",

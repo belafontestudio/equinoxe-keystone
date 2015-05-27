@@ -12,7 +12,7 @@ block single-yacht-name
         = "missing"
 block single-yacht-charter
     if yacht["price per week from"]
-        = yacht["price per week from"]+yacht.currency
+        = numeralFunction(yacht["price per week from"]).format('0,0[.]00' )+yacht.currency
     else
         = "upon-request"
 block single-yacht-sale
