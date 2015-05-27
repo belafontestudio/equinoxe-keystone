@@ -810,11 +810,17 @@ div.filter-opened-section a.close-filter:hover {
 .filter-mobile ul#yacht-size-mobile li#filter-yacht,
 .filter-mobile ul#yacht-size-mobile li#filter-super-yacht,
 .filter-mobile ul#yacht-size-mobile li#filter-mega-yacht {
-  position: absolute;
+  padding: 0;
 }
-.filter-mobile ul#yacht-size-mobile li#filter-mega-yacht,
-.filter-mobile ul#yacht-size-mobile li#filter-super-yacht {
-  display: none;
+.filter-mobile ul#yacht-size-mobile li#filter-yacht h2,
+.filter-mobile ul#yacht-size-mobile li#filter-super-yacht h2,
+.filter-mobile ul#yacht-size-mobile li#filter-mega-yacht h2 {
+  font-size: 1rem;
+}
+.filter-mobile ul#yacht-size-mobile li#filter-yacht p,
+.filter-mobile ul#yacht-size-mobile li#filter-super-yacht p,
+.filter-mobile ul#yacht-size-mobile li#filter-mega-yacht p {
+  font-size: 0.9em;
 }
 .filter-mobile ul#yacht-size-mobile li {
   width: 100% !important;
@@ -4585,12 +4591,6 @@ footer p.secondmenu a:hover {
   }
 }
 @media only screen and (min-width: 600px) {
-  #toggle-btn {
-    display: none;
-  }
-  .filter-toggle {
-    display: block;
-  }
   .down {
     display: block;
     width: 60px;
