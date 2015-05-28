@@ -6,6 +6,7 @@ block section
         div(class="img-holder-scroll", data-image="/uploads/images/yachts/covers/"+data.yacht.cover.filename, alt=data.yacht.cover.filename)
       else 
         div(class="img-holder-scroll", data-image="/images/sprite/placeholder_cover.png", alt="placeholder")
+    
     section.center
       div#plain-color-background
         div#container-other-specs
@@ -66,7 +67,7 @@ block section
 
     if data.yacht.gallery1.img1.filename || data.yacht.gallery1.img2.filename || data.yacht.gallery1.img3.filename || data.yacht.gallery1.img4.filename || data.yacht.gallery1.img5.filename || data.yacht.gallery1.img6.filename || data.yacht.gallery1.img7.filename || data.yacht.gallery1.img8.filename || data.yacht.gallery1.img9.filename || data.yacht.gallery1.img10.filename
       #gallery1
-        #slides1.owl-carousel.owl-carousel-single
+        #slides1
           if data.yacht.gallery1.img1.filename
             - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
             .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
@@ -97,11 +98,6 @@ block section
           if data.yacht.gallery1.img10.filename
             - var src10 = encodeURIComponent(data.yacht.gallery1.img10.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
             .img(style='background-image: url(/uploads/images/yachts/galleries/'+src10+')')
-
-
-    if data.yacht.gallery2.img1.filename || data.yacht.gallery2.img2.filename || data.yacht.gallery2.img3.filename || data.yacht.gallery2.img4.filename || data.yacht.gallery2.img5.filename || data.yacht.gallery2.img6.filename || data.yacht.gallery2.img7.filename || data.yacht.gallery2.img8.filename || data.yacht.gallery2.img9.filename || data.yacht.gallery2.img10.filename
-      #gallery2
-        #slides2
           if data.yacht.gallery2.img1.filename
             - var src1 = encodeURIComponent(data.yacht.gallery2.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
             .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')

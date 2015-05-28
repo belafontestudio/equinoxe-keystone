@@ -12,10 +12,11 @@ block body
     div.main-photo
       block main-photo
         div(class="img-holder", data-image="/images/landing/bareboat.jpg")
-          section.center-parallax
-            .section
-              .filtro
-              include ../partials/_bareboat_intro.jade
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_bareboat_intro.jade
           a#btn.down(href="#bareboat_section")
     .section.spacer#bareboat_section
       include ../partials/_bareboat_bulletlist.jade

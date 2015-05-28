@@ -10,10 +10,11 @@ block body
     div.main-photo
       block main-photo
         div(class="img-holder", data-image="/images/landing/oriz_brokerage.jpg")
-          section.center-parallax
-            .section
-              .filtro
-              include ../partials/_yacht_brokerage_intro.jade
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_yacht_brokerage_intro.jade
           a.down(href="#brokerage_bulletlist")
     .section.spacer#brokerage_bulletlist
       include ../partials/_brokerage_bulletlist.jade

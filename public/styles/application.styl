@@ -20,7 +20,7 @@
 
 #gallery1, #gallery2
     width: 100%;
-    height: 600px;
+    height: 750px;
     position: relative;
     min-height: 500px;
 
@@ -42,8 +42,6 @@ div.background
         background-size cover
         width 100%
         height 100%
-
-
 
 
 
@@ -2240,6 +2238,7 @@ footer
       shift(1/20)
 
 
+  
 ///////////////////////////////////////////////////////////////////
 +above(1080px)
 
@@ -2374,7 +2373,18 @@ footer
       #anchor-menu
         display block !important
 
-
++below(1280px)
+  .reposition
+    top 0
+    left 0
+    bottom 0 
+    right 0
+    position absolute
+  section.center-parallax
+    margin-top 90px
+    
+  .img-holder
+    position relative
 +above(1300px)
 
     section.center, section.center-parallax

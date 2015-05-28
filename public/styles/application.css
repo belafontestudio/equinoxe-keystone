@@ -1102,7 +1102,7 @@ section.center div.slider-bar .ui-widget-header {
 #gallery1,
 #gallery2 {
   width: 100%;
-  height: 600px;
+  height: 750px;
   position: relative;
   min-height: 500px;
 }
@@ -7109,6 +7109,21 @@ footer p.secondmenu a:hover {
   }
   .subMenu #anchor-menu {
     display: block !important;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .reposition {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+  }
+  section.center-parallax {
+    margin-top: 90px;
+  }
+  .img-holder {
+    position: relative;
   }
 }
 @media only screen and (min-width: 1300px) {

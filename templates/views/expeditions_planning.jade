@@ -12,10 +12,11 @@ block body
     div.main-photo
       block main-photo
         div(class="img-holder", data-image="/images/landing/oriz_expedition.jpg")
-          section.center-parallax
-            .section
-              .filtro
-              include ../partials/_expeditions_intro.jade
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_expeditions_intro.jade
           a.down(href="#expeditions_section")
     .section.spacer#expeditions_section
       include ../partials/_quote_expeditions.jade

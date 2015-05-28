@@ -367,8 +367,8 @@ $(document).ready(function() {
           }, 1000);
         });
 
-        // $("#gallery1 #slides1").skippr();
-        // $("#gallery2 #slides2").skippr();
+        $("#gallery1 #slides1").skippr();
+        $("#gallery2 #slides2").skippr();
 
         $(document).on('click', '.reset-button a', function(e) {
             e.preventDefault();
@@ -396,10 +396,11 @@ $(document).ready(function() {
             collectYachtFilter();
         });
 
-
+    var touch = Modernizr.touch;
+    console.log(touch);
     imgLoad.on( 'done', function( instance ) {
-        $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0});
-        $('.img-holder-scroll').imageScroll({coverRatio: 0.7,extraHeight: 0});
+        $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0, touch: touch});
+        $('.img-holder-scroll').imageScroll({coverRatio: 0.7,extraHeight: 0, touch: touch});
 
     });
 
@@ -466,7 +467,7 @@ $(document).ready(function() {
 
 
 
-    $(".owl-carousel-single").owlCarousel();
+    //$(".owl-carousel-single").owlCarousel();
 
 });
 function createLanding(){

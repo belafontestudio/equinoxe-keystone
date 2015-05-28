@@ -9,10 +9,11 @@ block body
     div.main-photo
       block main-photo
         div(class="img-holder", data-image="/images/landing/beb30.jpg")
-          section.center-parallax
-            .section
-              .filtro
-              include ../partials/_services_intro.jade
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_services_intro.jade
           a.down(href="#services_section")
     .section.spacer#services_section
       include ../partials/_land_bulletlist.jade
