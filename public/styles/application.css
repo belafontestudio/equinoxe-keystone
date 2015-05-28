@@ -345,8 +345,7 @@ div#side-menu-logo img {
 }
 @media only screen and (max-width: 480px) {
   .sidr {
-    width: 100%;
-    width: 100vw;
+    width: 100% !important;
   }
 }
 .fp-controlArrow {
@@ -1127,6 +1126,9 @@ div.background .mare {
   width: 100%;
   height: 100%;
 }
+ul.yachts-list-grid {
+  min-height: 500px;
+}
 .section {
   *zoom: 1;
   float: left;
@@ -1686,7 +1688,7 @@ section.center:after {
   clear: both;
 }
 section.center div.logo {
-  margin-top: 100px;
+  margin-top: 45px;
   *zoom: 1;
   float: left;
   clear: none;
