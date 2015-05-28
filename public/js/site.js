@@ -10,7 +10,7 @@ values.minl = "";
 values.maxl = "";
 
 var pathname = location.pathname;
-
+var touch = Modernizr.touch;
  // Set options
 var options = {
     offset: 700,
@@ -356,6 +356,9 @@ function collectYachtFilter(){
 $(document).ready(function() {
       var headhesive = new Headhesive('.subMenu', options);
 
+      if(touch){
+        $(".down").hide();
+      }
 
 
       checkPage()
@@ -396,8 +399,9 @@ $(document).ready(function() {
             collectYachtFilter();
         });
 
-    var touch = Modernizr.touch;
-    console.log(touch);
+    
+
+    
     imgLoad.on( 'done', function( instance ) {
         $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0, touch: touch});
         $('.img-holder-scroll').imageScroll({coverRatio: 0.7,extraHeight: 0, touch: touch});
