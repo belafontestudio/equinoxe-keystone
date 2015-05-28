@@ -20,9 +20,9 @@
 
 #gallery1, #gallery2
     width: 100%;
-    height: 750px;
+    //height: 750px;
     position: relative;
-    min-height: 500px;
+    //min-height: 500px;
 
 
 .skippr-nav-element-block
@@ -117,7 +117,9 @@ div.filtro
     bottom 0
     z-index 1
     opacity 0.4
+    min-height 600px
 
+    
 div.filtro-map
   background black
   opacity .7
@@ -343,7 +345,7 @@ div.imgbackground
         opacity 0.6
 
 div.bg-img-slide
-
+    min-height 600px
     z-index: 0;
     position: absolute;
     width: 100%;
@@ -1263,7 +1265,10 @@ footer
               color: white
 
 
-
+.owl-item
+  .img
+    background-position: center center;
+    background-size cover
 
 
 ///////////////////////////////////////////////////////////////////
@@ -1836,11 +1841,15 @@ footer
   .reset-button
     display none
 
+
+  .owl-item
+    .img
+      height 270px
 ///////////////////////////////////////////////////////////////////
 +above(600px)
 
-    #toggle-btn
-      display none
+    // #toggle-btn
+    //   display none
 
     .filter-toggle
       display block
@@ -1962,7 +1971,9 @@ footer
 
 
 
-
+    .owl-item
+      .img
+        height 480px
 
 ///////////////////////////////////////////////////////////////////
 +below(768px)
@@ -2239,7 +2250,11 @@ footer
       shift(1/20)
 
 
-  
+
+    .owl-item
+      .img
+        height 600px
+
 ///////////////////////////////////////////////////////////////////
 +above(1080px)
 
@@ -2378,12 +2393,12 @@ footer
   .reposition
     top 0
     left 0
-    bottom 0 
+    bottom 0
     right 0
     position absolute
   section.center-parallax
     margin-top 90px
-    
+
   .img-holder
     position relative
 +above(1300px)

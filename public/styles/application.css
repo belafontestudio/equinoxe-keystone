@@ -1101,9 +1101,7 @@ section.center div.slider-bar .ui-widget-header {
 #gallery1,
 #gallery2 {
   width: 100%;
-  height: 750px;
   position: relative;
-  min-height: 500px;
 }
 .skippr-nav-element-block {
   width: 30px;
@@ -1249,6 +1247,7 @@ div.filtro {
   opacity: 0.4;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
   filter: alpha(opacity=40);
+  min-height: 600px;
 }
 div.filtro-map {
   background: #000;
@@ -1564,6 +1563,7 @@ div.imgbackground img.full-picture {
   filter: alpha(opacity=60);
 }
 div.bg-img-slide {
+  min-height: 600px;
   z-index: 0;
   position: absolute;
   width: 100%;
@@ -3575,6 +3575,12 @@ footer p.secondmenu a {
 footer p.secondmenu a:hover {
   color: #fff;
 }
+.owl-item .img {
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
 @media only screen and (max-width: 480px) {
   .fp-controlArrow {
     display: none !important;
@@ -4670,11 +4676,11 @@ footer p.secondmenu a:hover {
   .reset-button {
     display: none;
   }
+  .owl-item .img {
+    height: 270px;
+  }
 }
 @media only screen and (min-width: 600px) {
-  #toggle-btn {
-    display: none;
-  }
   .filter-toggle {
     display: block;
   }
@@ -5151,6 +5157,9 @@ footer p.secondmenu a:hover {
     opacity: 0.9;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
     filter: alpha(opacity=90);
+  }
+  .owl-item .img {
+    height: 480px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -6672,6 +6681,9 @@ footer p.secondmenu a:hover {
     width: 57.0833333333333% !important;
     position: relative;
     left: 5.15%;
+  }
+  .owl-item .img {
+    height: 600px;
   }
 }
 @media only screen and (min-width: 1080px) {

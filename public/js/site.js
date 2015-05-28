@@ -371,8 +371,8 @@ $(document).ready(function() {
           }, 1000);
         });
 
-        $("#gallery1 #slides1").skippr();
-        $("#gallery2 #slides2").skippr();
+        // $("#gallery1 #slides1").skippr();
+        // $("#gallery2 #slides2").skippr();
 
         $(document).on('click', '.reset-button a', function(e) {
             e.preventDefault();
@@ -400,9 +400,9 @@ $(document).ready(function() {
             collectYachtFilter();
         });
 
-    
 
-    
+
+
     imgLoad.on( 'done', function( instance ) {
         $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0, touch: touch});
         $('.img-holder-scroll').imageScroll({coverRatio: 0.7,extraHeight: 0, touch: touch});
@@ -421,7 +421,15 @@ $(document).ready(function() {
     mediaqueriesjs();
     clickFilters()
 
+    sliderKey();
 
+    $("#slides1").owlCarousel({
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+      lazyLoad : true,
+      rewindNav : true
+    });
 
 
     $('#simple-menu').sidr(
@@ -472,7 +480,7 @@ $(document).ready(function() {
 
 
 
-    //$(".owl-carousel-single").owlCarousel();
+
 
 });
 function createLanding(){
@@ -699,7 +707,7 @@ Handlebars.registerHelper('ifCond', function(v1, v2, options) {
   return options.inverse(this);
 });
 Handlebars.registerHelper('numeral', function(price,currency,options) {
-    
+
   var num = numeral(price).format('0,0[.]00' )+currency;
   return num;
 });
@@ -788,5 +796,25 @@ function clickFilters(){
     filters.maxl = "150";
     collectYachtFilter();
     $("a#f4 span").text("40m+");
+  });
+}
+
+
+
+
+function sliderKey(){
+  jQuery(document.documentElement).keyup(function (event) {
+
+    var owl = jQuery(".owl-carousel");
+
+    // handle cursor keys
+    if (event.keyCode == 37) {
+       // go left
+       owl.trigger('owl.prev');
+    } else if (event.keyCode == 39) {
+       // go right
+       owl.trigger('owl.next');
+    }
+
   });
 }
