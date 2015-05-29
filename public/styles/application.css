@@ -343,11 +343,6 @@ div#side-menu-logo img {
 .sidr ul li:last-child:hover {
   background-color: #f4bb3b;
 }
-@media only screen and (max-width: 480px) {
-  .sidr {
-    width: 100% !important;
-  }
-}
 .fp-controlArrow {
   border-style: none;
   bottom: 15px;
@@ -3581,6 +3576,17 @@ footer p.secondmenu a:hover {
   -moz-background-size: cover;
   background-size: cover;
 }
+#toggle-btn {
+  color: #fff;
+  cursor: pointer;
+  padding-bottom: 30px;
+}
+.filter-toggle {
+  display: none;
+}
+.reset-button {
+  display: none;
+}
 @media only screen and (max-width: 480px) {
   .fp-controlArrow {
     display: none !important;
@@ -4670,20 +4676,11 @@ footer p.secondmenu a:hover {
     cursor: pointer;
     padding-bottom: 30px;
   }
-  .filter-toggle {
-    display: none;
-  }
-  .reset-button {
-    display: none;
-  }
   .owl-item .img {
     height: 270px;
   }
 }
 @media only screen and (min-width: 600px) {
-  .filter-toggle {
-    display: block;
-  }
   .down {
     display: block;
     width: 60px;
@@ -5190,6 +5187,11 @@ footer p.secondmenu a:hover {
   }
   ul#yacht-size li:last-child {
     margin-top: 50px;
+  }
+  #toggle-btn {
+    position: relative;
+    left: 0;
+    margin-top: 0;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -6416,6 +6418,11 @@ footer p.secondmenu a:hover {
     position: absolute;
     width: auto;
   }
+  #toggle-btn {
+    position: relative;
+    left: 17%;
+    margin-top: 159px;
+  }
 }
 @media only screen and (min-width: 900px) {
   section.center,
@@ -7107,6 +7114,11 @@ footer p.secondmenu a:hover {
     opacity: 0.9;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
     filter: alpha(opacity=90);
+  }
+  #toggle-btn {
+    position: relative;
+    left: -34%;
+    margin-top: 159px;
   }
 }
 @media only screen and (max-width: 1200px) {

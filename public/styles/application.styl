@@ -119,7 +119,7 @@ div.filtro
     opacity 0.4
     min-height 600px
 
-    
+
 div.filtro-map
   background black
   opacity .7
@@ -1271,6 +1271,20 @@ footer
     background-size cover
 
 
+
+#toggle-btn
+  color white
+  cursor pointer
+  padding-bottom 30px
+
+
+.filter-toggle
+  display none
+
+.reset-button
+  display none
+
+
 ///////////////////////////////////////////////////////////////////
 +below(480px)
 
@@ -1835,11 +1849,7 @@ footer
     cursor pointer
     padding-bottom 30px
 
-  .filter-toggle
-    display none
 
-  .reset-button
-    display none
 
 
   .owl-item
@@ -1851,8 +1861,8 @@ footer
     // #toggle-btn
     //   display none
 
-    .filter-toggle
-      display block
+    // .filter-toggle
+    //   display block
 
     .down
         display: block
@@ -1988,7 +1998,10 @@ footer
       li:last-child
         margin-top 50px
 
-
+    #toggle-btn
+      position relative
+      left 0
+      margin-top 0
 
 ///////////////////////////////////////////////////////////////////
 +above(768px)
@@ -2190,7 +2203,10 @@ footer
 
 
 
-
+    #toggle-btn
+      position relative
+      left 17%
+      margin-top 159px
 
 
 ///////////////////////////////////////////////////////////////////
@@ -2373,6 +2389,11 @@ footer
                 //top 150px
                 opacity: 0.9
 
+
+    #toggle-btn
+      position relative
+      left -34%
+      margin-top 159px
 
 
 +below(1200px)
