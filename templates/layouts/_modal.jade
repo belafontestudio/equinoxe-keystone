@@ -2,19 +2,19 @@ div(id="enquire-modal", style="display:none;")
     .logo
       img(src='../images/sprite/logo.svg', alt='Equinoxe-Logo')
     .clear
-    form.form-horizontal
+    form.form-horizontal#enquire_form
       fieldset
         // Text input
         .control-group.name
           label.control-label(for='textinput') Name
           .controls
-            input#textinput.input-xlarge(name='textinput', type='text', placeholder='Marc', required='')
+            input#textinput.enquire_name.input-xlarge(name='textinput', type='text', placeholder='Marc', required='')
             
         // Text input
         .control-group.surname
           label.control-label(for='textinput') Surname
           .controls
-            input#textinput.input-xlarge(name='textinput', type='text', placeholder='Rosenberg', required='')
+            input#textinput.enquire_surname.input-xlarge(name='textinput', type='text', placeholder='Rosenberg', required='')
           
         // Multiple Checkboxes
         .control-group.checkboxes
@@ -37,7 +37,7 @@ div(id="enquire-modal", style="display:none;")
               | Bareboat
         // Text input
         .control-group.phonenum
-          label.control-label(for='textinput') Phone Number
+          label.enquire_phone.control-label(for='textinput') Phone Number
           .controls
             input#textinput.input-xlarge(name='textinput', type='text', placeholder='placeholder', required='')
             
@@ -45,13 +45,13 @@ div(id="enquire-modal", style="display:none;")
         .control-group.mail
           label.control-label(for='textinput') Email
           .controls
-            input#textinput.input-xlarge(name='textinput', type='text', placeholder='johnappleseed@yahoo.it', required='')
+            input#textinput.enquire_email.input-xlarge(name='textinput', type='text', placeholder='johnappleseed@yahoo.it', required='')
            
         // Textarea
         .control-group.text-area
           label.control-label(for='textarea') Message
           .controls
-            textarea#textarea(placeholder='Your message',name='textarea').
+            textarea#textarea.enquire_msg(placeholder='Your message',name='textarea').
         <!-- Button -->
         .control-group.submit
           .controls

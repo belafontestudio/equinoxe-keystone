@@ -56,7 +56,23 @@ function resizeMap(){
     $(".section.inner-map").height(windowHeight-40);
 }
 
+function backToList(){
+    params = window.location.search.substring(1);
+    if(!$.isEmptyObject(urlParams) ){
+        if(urlParams.a == "Charter"){
+            $(".back-to-yachts").attr("href","/yachts/Charter?"+params)
+        }
+        if(urlParams.a == "Sale"){
+            $(".back-to-yachts").attr("href","/yachts/Sale?"+params)
+        }
 
+    }else{
+        var referrer =  document.referrer;
+        if(referrer ){
+        $(".back-to-yachts").attr("href",referrer)
+        }
+    }
+}
 
 function filterMenu(){
     updateFilterMenu();
@@ -361,7 +377,7 @@ $(document).ready(function() {
         $(".down").hide();
       }
 
-
+      backToList()
       checkPage()
       var top_ofset = $('header').height() - 1;
         $(document).on('click', 'a.down', function(e) {
@@ -733,8 +749,15 @@ function emptyGrid(){
 }
 function fillGrid(yachts,template,q){
     var list = yachts.list;
+    list.q= q;
     var yachts_grid = $("ul#yachts-list-grid");
-    yachts_grid.html(template(list,q)).fadeIn(500);
+    if(list.total > 0){
+      yachts_grid.html(template(list)).fadeIn(500);  
+    }else{
+      yachts_grid.html('<p id="no-yacht-found">Too bad. No yachts meet your requirements.<br><br>Use reset button to start again</p>').fadeIn(500);  
+    }
+    
+   
 }
 function populateYachts(yachts,q){
     
@@ -830,3 +853,52 @@ function sliderKey(){
 
   });
 }
+
+$("#enquire_form").submit(function()
+    {
+        var email = $(".enquire_email").val(); // get email field value
+        var name = $(".enquire_name").val(); // get name field value
+        var surname = $(".enquire_surname").val(); // get name field value
+
+        var check0 = $("#checkboxes-0").val(); // get name field value
+        var check1 = $("#checkboxes-1").val(); // get name field value
+        var check2 = $("#checkboxes-2").val(); // get name field value
+        var check3 = $("#checkboxes-3").val(); // get name field value
+        var check4 = $("#checkboxes-4").val(); // get name field value
+
+        var msg = $(".enquire_msg").val(); // get message field value
+        $.ajax(
+        {
+            type: "POST",
+            url: "https://mandrillapp.com/api/1.0/messages/send.json",
+            data: {
+                'key': 'LSCHLKdc1EZKgi47pzZ7yg',
+                'message': {
+                    'from_email': email,
+                    'from_name': name+" "+surname,
+                    'headers': {
+                        'Reply-To': email
+                    },
+                    'subject': name +" "+ surname +'Website Contact Form',
+                    'text': check0 +" "+ check1 + " "+ check2 +" "+ check3 + " " + check4 +"   "+msg,
+                    'to': [
+                    {
+                        'email': 'piermaria@belafonte.co',
+                        'name': 'Piermaria Cosina',
+                        'type': 'to'
+                    }]
+                }
+            }
+        })
+        .done(function(response) {
+            alert('Your message has been sent. Thank you!'); // show success message
+            $("#name").val(''); // reset field after successful submission
+            $("#email").val(''); // reset field after successful submission
+            $("#msg").val(''); // reset field after successful submission
+        })
+        .fail(function(response) {
+            alert('Error sending message.');
+        });
+        return false; // prevent page refresh
+    });
+
