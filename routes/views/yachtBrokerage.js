@@ -37,6 +37,6 @@ exports = module.exports = function(req, res) {
 		
 	});
 	// Render the view
-	view.render('yacht_brokerage');
+	view.render('yacht_brokerage', {numeralFunction : numeral});
 	
 };

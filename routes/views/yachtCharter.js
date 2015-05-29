@@ -73,6 +73,6 @@ exports = module.exports = function(req, res) {
 	});
 	// Render the view
 	
-	view.render('yacht_charter');
+	view.render('yacht_charter', {numeralFunction : numeral});
 	
 };

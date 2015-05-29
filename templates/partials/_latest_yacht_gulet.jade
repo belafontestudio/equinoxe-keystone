@@ -18,13 +18,22 @@ block section
               = gulet.name
           ul.vertical-list
             li
-              | <span class="uppercase">Price:</span> 
-              block price1
-                = gulet.price+gulet.currency
+              if gulet["price per week from"] || gulet.price
+              li
+                if gulet.availability == "Charter"
+                  span
+                    | CHARTER PRICE FROM: 
+                  = numeralFunction(gulet["price per week from"]).format('0,0[.]00' )+gulet.currency
+                  
+                if gulet.availability == "Sale"
+                  if gulet.price
+                    span
+                      | SALE PRICE: 
+                    = numeralFunction(gulet.price).format('0,0[.]00' )+gulet.currency
             li
               | <span class="uppercase">Length:</span> 
               block length1
-                = gulet.lenght
+                = gulet.lenght+"m"
             li
               | <span class="uppercase">Built:</span> 
               block built1

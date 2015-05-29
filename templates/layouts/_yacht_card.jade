@@ -1,6 +1,7 @@
 block single-yacht
     li.card
-        a(href= "/yacht/"+yacht.slug)
+
+        a.slug(href= "/yacht/"+yacht.slug+"?a"+yacht.availability)
         div.container-yachtcard-img
           block img-yacht-card
             | img

@@ -3587,32 +3587,7 @@ footer p.secondmenu a:hover {
 .reset-button {
   display: none;
 }
-.back-to-yachts {
-  position: relative;
-  bottom: 25px;
-}
-.back-to-yachts:hover {
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
-}
-.btn-min-w {
-  padding: 15px 0px !important;
-}
-#no-yacht-found {
-  position: relative;
-  z-index: 100;
-  text-align: center;
-  color: #fff;
-  font-weight: bold;
-  font-size: 30px;
-  font-size: 1.875rem;
-  padding: 40px 10px;
-}
 @media only screen and (max-width: 480px) {
-  #her-btn {
-    left: 8%;
-  }
   .fp-controlArrow {
     display: none !important;
   }
@@ -4704,11 +4679,6 @@ footer p.secondmenu a:hover {
   .owl-item .img {
     height: 270px;
   }
-  #no-yacht-found {
-    font-size: 17px;
-    font-size: 1.0625rem;
-    padding: 20px 20px;
-  }
 }
 @media only screen and (min-width: 600px) {
   .down {
@@ -5215,6 +5185,9 @@ footer p.secondmenu a:hover {
   .cta a.button.home:last-child {
     margin-right: 0%;
   }
+  ul#yacht-size li:last-child {
+    margin-top: 50px;
+  }
   #toggle-btn {
     position: relative;
     left: 0;
@@ -5290,10 +5263,10 @@ footer p.secondmenu a:hover {
   }
   section.center h1,
   section.center-parallax h1 {
-    font-size: 40px;
-    font-size: 2.5rem;
-    line-height: 70px;
-    line-height: 4.375rem;
+    font-size: 65px;
+    font-size: 4.0625rem;
+    line-height: 65px;
+    line-height: 4.0625rem;
   }
   section.center h1.smaller,
   section.center-parallax h1.smaller {
@@ -6746,8 +6719,8 @@ footer p.secondmenu a:hover {
   }
   section.center h1,
   section.center-parallax h1 {
-    font-size: 60px;
-    font-size: 3.75rem;
+    font-size: 85px;
+    font-size: 5.3125rem;
     line-height: 85px;
     line-height: 5.3125rem;
   }

@@ -36,14 +36,14 @@ block map
                     backgroundColor: "#103158",
                     center: new google.maps.LatLng(0, 0),
                     zoom: 2,
-                    zoomControl: false,
+                    zoomControl: true,
                     disableDoubleClickZoom: true,
                     mapTypeControl: false,
                     scaleControl: false,
                     scrollwheel: false,
                     panControl: false,
                     streetViewControl: false,
-                    draggable : false,
+                    draggable : true,
                     overviewMapControl: false,
                     overviewMapControlOptions: {
                     opened: false,
@@ -59,10 +59,10 @@ block map
               
               var populationOptions = {
                     strokeColor: '#F4BB3B',
-                    strokeOpacity: 1,
-                    strokeWeight: 5,
+                    strokeOpacity: 0,
+                    strokeWeight: 0,
                     fillColor: '#F4BB3B',
-                    fillOpacity: 0,
+                    fillOpacity: 0.5,
                     map: map,
                     center: citymap[city].center,
                     radius: citymap[city].population * 10000

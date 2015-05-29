@@ -18,13 +18,22 @@ block section
               = power.name
           ul.vertical-list
             li
-              | <span class="uppercase">Price:</span> 
-              block price1
-                = power.price+power.currency
+              if power["price per week from"] || power.price
+              li
+                if power.availability == "Charter"
+                  span
+                    | CHARTER PRICE FROM: 
+                  = numeralFunction(power["price per week from"]).format('0,0[.]00' )+power.currency
+                  
+                if power.availability == "Sale"
+                  if power.price
+                    span
+                      | SALE PRICE: 
+                    = numeralFunction(power.price).format('0,0[.]00' )+power.currency
             li
               | <span class="uppercase">Length:</span> 
               block length1
-                = power.lenght
+                = power.lenght+"m"
             li
               | <span class="uppercase">Built:</span> 
               block built1

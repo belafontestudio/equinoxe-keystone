@@ -5,6 +5,7 @@ block map
         // populations in North America.
 
         // First, create an object containing LatLng and population for each city.
+        var globalZIndex = 1;
         var citymap = {};
         citymap['vancouver'] = {
           center: new google.maps.LatLng(49.28, -123.12),
@@ -51,14 +52,14 @@ block map
               var mapOptions = {
                     center: new google.maps.LatLng(40.714352, -74.005973),
                     zoom: 2,
-                    zoomControl: false,
+                    zoomControl: true,
                     disableDoubleClickZoom: true,
                     mapTypeControl: false,
                     scaleControl: false,
                     scrollwheel: false,
                     panControl: false,
                     streetViewControl: false,
-                    draggable : false,
+                    draggable : true,
                     overviewMapControl: false,
                     overviewMapControlOptions: {
                     opened: false,
@@ -66,34 +67,37 @@ block map
               mapTypeId: google.maps.MapTypeId.SATELLITE,
         }
         var mapElement = document.getElementById('charter-map');
-        console.log(mapElement)
         var map = new google.maps.Map(mapElement, mapOptions);
         var locations = [];
         // Construct the circle for each value in citymap.
         // Note: We scale the area of the circle based on the population.
         for (var city in citymap) {
+              
+              var populationOptions = {
+                    strokeColor: '#F4BB3B',
+                    strokeOpacity: 0,
+                    strokeWeight: 0,
+                    fillColor: '#F4BB3B',
+                    fillOpacity: 0.35,
+                    map: map,
+                    center: citymap[city].center,
+                    radius: Math.sqrt(citymap[city].population) * 500,
+                    zIndex: globalZIndex++
+              };
               var mapLabel = new MapLabel({
                    text: citymap[city].name,
                    position: citymap[city].text,
                    map: map,
                    fontSize:24,
-                   fontColor: "#F4BB3B",
+                   fontColor: "#FFFFFF",
                    strokeWeight: 0,
                    fontFamily: "sans-serif",
-                   align: 'center'
+                   align: 'center',
+                   zIndex: globalZIndex++
                  });
-              var populationOptions = {
-                    strokeColor: '#F4BB3B',
-                    strokeOpacity: 1,
-                    strokeWeight: 5,
-                    fillColor: '#F4BB3B',
-                    fillOpacity: 0,
-                    map: map,
-                    center: citymap[city].center,
-                    radius: Math.sqrt(citymap[city].population) * 500
-              };
               // Add the circle for this city to the map.
               cityCircle = new google.maps.Circle(populationOptions);
+
         }
 
         for (i = 0; i < locations.length; i++) {
@@ -105,12 +109,8 @@ block map
               marker = new google.maps.Marker({
                     icon: markericon,
                     position: new google.maps.LatLng(locations[i][5], locations[i][6]),
-                    map: map,
-                    title: locations[i][0],
-                    desc: description,
-                    tel: telephone,
-                    email: email,
-                    web: web
+                    zIndex: globalZIndex++
+                    
               });
               link = '';     
               }

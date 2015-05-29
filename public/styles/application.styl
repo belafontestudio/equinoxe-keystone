@@ -523,6 +523,7 @@ section.center
                 color yellow
             &:visited
                 opacity 0.5
+            img 
     ul#yacht-size, ul#latest-yachts, ul#yachts-list-grid, ul#filter-menu, ul#yacht-size-mobile
         column(12/12)
         list-style-type none
@@ -1830,7 +1831,8 @@ footer
 +below(600px)
   // section.center, section.center-parallax
   //     center(600px, 80px)
-
+  section.center-parallax
+    margin-top 50px
   #yatch-charter-intro
     ul#call-to-action-menu
       li
@@ -2450,14 +2452,19 @@ footer
     right 0
     position absolute
   section.center-parallax
-    margin-top 90px
+    margin-top 50px
 
   .img-holder
     position relative
     height 600px
     overflow hidden
+<<<<<<< Updated upstream
 
     img
+=======
+    
+    &>img
+>>>>>>> Stashed changes
       position: absolute;
       top: -9999px;
       bottom: -9999px;

@@ -1,6 +1,6 @@
  {{#each results}}
 
-       <li class="card"><a href="/yacht/{{slug}}"></a>
+       <li class="card"><a href="/yacht/{{slug}}{{q}}"></a>
 
         <div class="container-yachtcard-img">
             {{#if thumbnail.filename}}

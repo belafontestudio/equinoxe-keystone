@@ -736,8 +736,13 @@ function fillGrid(yachts,template,q){
     var yachts_grid = $("ul#yachts-list-grid");
     yachts_grid.html(template(list,q)).fadeIn(500);
 }
+<<<<<<< Updated upstream
+function populateYachts(yachts){
+
+=======
 function populateYachts(yachts,q){
     
+>>>>>>> Stashed changes
     if(pathname == "/yachts/Charter"){
       var source   = $("#charter-card-template").html();
     }
