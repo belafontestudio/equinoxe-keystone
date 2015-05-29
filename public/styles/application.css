@@ -343,11 +343,6 @@ div#side-menu-logo img {
 .sidr ul li:last-child:hover {
   background-color: #f4bb3b;
 }
-@media only screen and (max-width: 480px) {
-  .sidr {
-    width: 100% !important;
-  }
-}
 .fp-controlArrow {
   border-style: none;
   bottom: 15px;
@@ -7138,6 +7133,18 @@ footer p.secondmenu a:hover {
   }
   .img-holder {
     position: relative;
+    height: 600px;
+    overflow: hidden;
+  }
+  .img-holder img {
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    min-height: 100%;
+    max-width: none !important;
   }
 }
 @media only screen and (min-width: 1300px) {

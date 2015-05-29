@@ -404,8 +404,8 @@ $(document).ready(function() {
 
 
     imgLoad.on( 'done', function( instance ) {
-        $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0, touch: touch});
-        $('.img-holder-scroll').imageScroll({coverRatio: 0.7,extraHeight: 0, touch: touch});
+        $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0, touch: touch,holderMinHeight: 600});
+        $('.img-holder-scroll').imageScroll({coverRatio: 0.7,extraHeight: 0, touch: touch, holderMinHeight: 600});
 
     });
 
@@ -668,7 +668,7 @@ function timerSlidesHome(counter){
 
 
         counter++
-      }, 5000);
+      }, 8000);
 }
 function activeItem(target){
     var counter = 0;
