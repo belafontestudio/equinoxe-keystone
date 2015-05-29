@@ -722,7 +722,7 @@ function emptyGrid(){
     var yachts_grid = $("ul#yachts-list-grid");
     yachts_grid.children().fadeOut(500, function() {
         yachts_grid.empty();
-    });   
+    });
 }
 function fillGrid(yachts,template){
     var list = yachts.list;
@@ -730,7 +730,7 @@ function fillGrid(yachts,template){
     yachts_grid.html(template(list)).fadeIn(500);
 }
 function populateYachts(yachts){
-    
+
     if(pathname == "/yachts/Charter"){
       var source   = $("#charter-card-template").html();
     }
@@ -750,7 +750,12 @@ function toggleFilters(){
     $('.filter-toggle').slideToggle("fast", function() {
     // Animation complete.
     });
+
+    $('.filter-opened-section').fadeOut();
+
   });
+
+
 
 }
 

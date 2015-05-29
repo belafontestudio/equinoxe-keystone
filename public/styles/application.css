@@ -3587,7 +3587,19 @@ footer p.secondmenu a:hover {
 .reset-button {
   display: none;
 }
+.back-to-yachts {
+  position: relative;
+  bottom: 25px;
+}
+.back-to-yachts:hover {
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
 @media only screen and (max-width: 480px) {
+  #her-btn {
+    left: 8%;
+  }
   .fp-controlArrow {
     display: none !important;
   }
