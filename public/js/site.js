@@ -376,7 +376,7 @@ $(document).ready(function() {
       if(touch){
         $(".down").hide();
       }
-
+      submitModals()
       backToList()
       checkPage()
       var top_ofset = $('header').height() - 1;
@@ -854,7 +854,8 @@ function sliderKey(){
   });
 }
 
-$("#enquire_form").submit(function()
+function submitModals(){
+    $("#enquire_form").submit(function()
     {
         var email = $(".enquire_email").val(); // get email field value
         var name = $(".enquire_name").val(); // get name field value
@@ -901,4 +902,50 @@ $("#enquire_form").submit(function()
         });
         return false; // prevent page refresh
     });
+
+$("#yacht_modal").submit(function()
+    {
+        var email = $(".modal_email").val(); // get email field value
+        var name = $(".modal_name").val(); // get name field value
+        var surname = $(".modal_surname").val(); // get name field value
+
+        var theyacht = $('h1').text(); // get name field value
+
+
+        var msg = $(".modal_msg").val(); // get message field value
+        $.ajax(
+        {
+            type: "POST",
+            url: "https://mandrillapp.com/api/1.0/messages/send.json",
+            data: {
+                'key': 'LSCHLKdc1EZKgi47pzZ7yg',
+                'message': {
+                    'from_email': email,
+                    'from_name': name+" "+surname,
+                    'headers': {
+                        'Reply-To': email
+                    },
+                    'subject': theyacht + " "+name +" "+ surname +'Website Contact Form',
+                    'text':  theyacht +"   "+msg,
+                    'to': [
+                    {
+                        'email': 'piermaria@belafonte.co',
+                        'name': 'Piermaria Cosina',
+                        'type': 'to'
+                    }]
+                }
+            }
+        })
+        .done(function(response) {
+            alert('Your message has been sent. Thank you!'); // show success message
+            $("#name").val(''); // reset field after successful submission
+            $("#email").val(''); // reset field after successful submission
+            $("#msg").val(''); // reset field after successful submission
+        })
+        .fail(function(response) {
+            alert('Error sending message.');
+        });
+        return false; // prevent page refresh
+    });
+}
 
