@@ -9,6 +9,12 @@ block body
   #onepage
     .section.spacer
       include ../partials/_yachts_grid.jade
+      p#no-yacht-found 
+        | Too bad. No yachts meet your requirements.
+        br
+        br
+        | Use reset button to start again
+      
     .section.darker
       include ../partials/_footer.jade
     script(id="charter-card-template", type="text/x-handlebars-template")
