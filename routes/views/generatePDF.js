@@ -4,13 +4,13 @@ request = require('request'),
 pdf = require('html-pdf'),
 _ = require('underscore');
 
-var keystone = require('keystone');
+
 
 exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res),
 		locals = res.locals;
 
-
+	var slugs = [];
 	locals.filters = {
 		availability: req.params.availability,
 		minguests: req.query.ming,
@@ -74,22 +74,33 @@ exports = module.exports = function(req, res) {
 			}
 
 			locals.data.yachts = results;
-			_.each(locals.data.yachts.results, generatePDF);
-			next(err);
+
+			_.each(locals.data.yachts.results, populateYachts);
+			generatePDF(slugs[0],next);
+			
 			
 		});
 		
 	});
-	
 
-	function generatePDF(yacht){
-		var options = { filename: process.env.CLOUD_DIR+"/generated/pdf/"+yacht.slug+".pdf", format: 'A4' };
+	function populateYachts(yacht){
+		slugs.push(yacht.slug)
+	}
+
+	function generatePDF(yacht,next){
+		var options = { filename: process.env.CLOUD_DIR+"/generated/pdf/"+yacht+".pdf", format: 'A4' };
 			
-        request("http://localhost:3000/api/print/"+yacht.slug, function (error, response, body) {
+        request("http://localhost:3000/api/print/"+yacht, function (error, response, body) {
 		    pdf.create(body, options).toFile(function(err, res) {
 			  if (err) return console.log(err);
-
+			  if (typeof slugs !== 'undefined' && slugs.length > 0) {
+				 slugs.shift();
+			  		generatePDF(slugs[0]);
+				}else{
+					next(err);
+				}
 			  
+		
 
 			});
 		});
