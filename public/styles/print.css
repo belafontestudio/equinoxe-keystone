@@ -16,16 +16,12 @@ ul {
   margin: 0;
   padding: 0;
 }
-@page {
-  margin: 0;
+@page  {
   width: A4;
   height: portrait;
-}
-@page :left {
-  margin-left: 0;
-}
-@page :right {
-  margin-left: 0;
+  @top-center {
+    content: 'Ciao';
+  }
 }
 #header {
   position: relative;

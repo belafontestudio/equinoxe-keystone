@@ -19,16 +19,13 @@ ul
   margin 0
   padding 0
 
-@page
-  margin 0
+@page {
+  //margin 0
   size: A4 portrait
-
-@page :left
-  margin-left: 0
-
-@page :right
-  margin-left: 0
-
+  @top-center {
+    content 'Ciao'
+  }
+}
 
 #header
   position relative
@@ -72,7 +69,10 @@ img#logo
     col(6/12)
 
 
+
+
 #footer-wrap
+//  position running(header)
   col(12/12)
   background navy-blue
   .footer
