@@ -1,6 +1,8 @@
 var keystone = require('keystone'),
-	async = require('async');
-	numeral = require('numeral');
+	async = require('async'),
+	numeral = require('numeral'),
+	pdf = require('html-pdf'),
+	request = require('request');
 
 exports = module.exports = function(req, res) {
 	
@@ -29,21 +31,12 @@ exports = module.exports = function(req, res) {
 			next(err);
 		});
 		
+		
 	});
 	
-	// // Load other posts
-	// view.on('init', function(next) {
-		
-	// 	var q = keystone.list('Yacht').model.find().sort('-publishedDate').populate('author').limit('4');
-		
-	// 	q.exec(function(err, results) {
-	// 		locals.data.yachts = results;
-	// 		next(err);
-	// 	});
-		
-	// });
+
 	
 	// Render the view
-	view.render('yacht',{numeralFunction : numeral});
+	view.render('yachtPrint',{numeralFunction : numeral});
 	
 };

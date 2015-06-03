@@ -1,4 +1,6 @@
 var keystone = require('keystone'),
+	pdf = require('html-pdf'),
+	request = require('request'),
 	Types = keystone.Field.Types;
 
 /**
@@ -26,7 +28,7 @@ Yacht.add({
 		return '<img src="'+file.href+'" style="max-width: 250px">'}},
 
 	featured: { type: Types.Boolean },
-
+	pdf: { type: Types.Boolean },
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	type: { type: Types.Select, options: 'Power, Sails, Gulet, Catamaran', default: 'Power', index: true },
 	availability: { type: Types.Select, options: 'Sale, Charter', default: 'Charter', index: true },
@@ -209,7 +211,24 @@ Yacht.add({
 	}
 });
 
+Yacht.schema.pre('save', function(next) {
+	
+	if ( this.pdf == true ) {
+        var options = { filename: process.env.CLOUD_DIR+"/generated/pdf/"+this.slug+".pdf", format: 'A4' };
+        request("http://localhost:3000/api/print/"+this.slug, function (error, response, body) {
+				    pdf.create(body, options).toFile(function(err, res) {
+					  if (err) return console.log(err);
+					  console.log(this)
+					  this.pdf = false;
+					  next();
 
+					});
+		});
+    }else{
+    	next();
+    }
+    
+});
 
 Yacht.schema.virtual('content.full').get(function() {
 	return this.content.extended || this.content.brief;

@@ -53,14 +53,15 @@ exports = module.exports = function(app) {
 
     app.get('/yachts/:availability', routes.views.yachts);
     app.get('/yacht/:yacht', routes.views.yacht);
+    
+
     app.use('/app-storage',serveIndex(process.env.CLOUD_DIR, {'icons': true}));
 
     app.get('/app-storage', middleware.requireUser);
     app.use('/temp',serveIndex(process.env.TEMP_DIR, {'icons': true}));
     app.get('/temp', middleware.requireUser);
-    //app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
-    app.get('/media/list', middleware.requireUser, routes.views.medialist);
-    app.get('/media/backup', middleware.requireUser, routes.views.mediadownload);
+
+    
 
 
     app.get('/yacht_brokerage', routes.views.yachtBrokerage);
@@ -72,6 +73,12 @@ exports = module.exports = function(app) {
     
 
     //API
+    //app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
+    app.get('/media/list', middleware.requireUser, routes.views.medialist);
+    app.get('/media/backup', middleware.requireUser, routes.views.mediadownload);
+    app.get('/media/generate/pdf', middleware.requireUser, routes.views.generatePDF);
+
+    app.get('/api/print/:yacht', keystone.initAPI, routes.api.yachtPrint);
     app.get('/api/yachts/filter', keystone.initAPI, routes.api.yachts.filter);
 
 
