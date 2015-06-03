@@ -12,14 +12,17 @@ block content
       img(src="http://localhost:3000/images/sprite/placeholder_cover.png", alt="placeholder")
   
   section.center
-    div#plain-color-background
-      div#container-other-specs
-        .main-text  
-          h1 
-            block title
-              = data.yacht.name
-        .clear
-        ul#single-yacht-specs
+    
+    div#container-other-specs
+      .main-text  
+        h1 
+          block title
+            = data.yacht.name
+      .clear
+      
+    .top-specs
+      .top-specs-little
+        ul#top-specs-left
           if data.yacht["price per week from"] || data.yacht.price
             li
               if data.yacht.availability == "Charter"
@@ -39,6 +42,7 @@ block content
                 | length:
               block single-yacht-length
                 = data.yacht.lenght+"m"
+                
           if data.yacht.build || data.yacht.refit 
             li
               if data.yacht.refit && data.yacht.build
@@ -61,90 +65,44 @@ block content
               block single-yacht-guests
                 = data.yacht.guests
 
-        block explain-call
-          p.call-to-action
+        ul#top-specs-right
+          h3
+            | Accomodation</br>—
+          if data.yacht.guests
+            li
+              span
+                | number of guests:
+               =data.yacht.guests
+          if data.yacht.crew
+            li
+              span
+                | number of crew:
+               =data.yacht.crew
+          if data.yacht.cabins
+            li
+              span
+                | number of cabins:
+               =data.yacht.cabins
+          if data.yacht["guests cabins"]
+            li
+              span
+                | guests cabins:
+               =data.yacht["guests cabins"]
+          if data.yacht["crew cabins"]
+            li
+              span
+                | crew cabins:
+               =data.yacht["crew cabins"]
+      
+      
 
-        .clear
-        block call-to-action
-          a.button(href="#contact-us-modal", rel="modal:open") Enquire
-        .clear
-        
-        a.back-to-yachts(href="yachts/")
-          i.fa.fa-chevron-left
-          |   Back to yachts
-        
+     
 
-  if data.yacht.gallery1.img1.filename || data.yacht.gallery1.img2.filename || data.yacht.gallery1.img3.filename || data.yacht.gallery1.img4.filename || data.yacht.gallery1.img5.filename || data.yacht.gallery1.img6.filename || data.yacht.gallery1.img7.filename || data.yacht.gallery1.img8.filename || data.yacht.gallery1.img9.filename || data.yacht.gallery1.img10.filename
-    #gallery1
-      #slides1.owl-carousel.owl-theme
-        if data.yacht.gallery1.img1.filename
-          - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
-        if data.yacht.gallery1.img2.filename
-          - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
-        if data.yacht.gallery1.img3.filename
-          - var src3 = encodeURIComponent(data.yacht.gallery1.img3.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src3+')')
-        if data.yacht.gallery1.img4.filename
-          - var src4 = encodeURIComponent(data.yacht.gallery1.img4.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src4+')')
-        if data.yacht.gallery1.img5.filename
-          - var src5 = encodeURIComponent(data.yacht.gallery1.img5.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src5+')')
-        if data.yacht.gallery1.img6.filename
-          - var src6 = encodeURIComponent(data.yacht.gallery1.img6.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src6+')')
-        if data.yacht.gallery1.img7.filename
-          - var src7 = encodeURIComponent(data.yacht.gallery1.img7.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src7+')')
-        if data.yacht.gallery1.img8.filename
-          - var src8 = encodeURIComponent(data.yacht.gallery1.img8.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src8+')')
-        if data.yacht.gallery1.img9.filename
-          - var src9 = encodeURIComponent(data.yacht.gallery1.img9.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src9+')')
-        if data.yacht.gallery1.img10.filename
-          - var src10 = encodeURIComponent(data.yacht.gallery1.img10.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src10+')')
-        if data.yacht.gallery2.img1.filename
-          - var src1 = encodeURIComponent(data.yacht.gallery2.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
-        if data.yacht.gallery2.img2.filename
-          - var src2 = encodeURIComponent(data.yacht.gallery2.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
-        if data.yacht.gallery2.img3.filename
-          - var src3 = encodeURIComponent(data.yacht.gallery2.img3.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src3+')')
-        if data.yacht.gallery2.img4.filename
-          - var src4 = encodeURIComponent(data.yacht.gallery2.img4.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src4+')')
-        if data.yacht.gallery2.img5.filename
-          - var src5 = encodeURIComponent(data.yacht.gallery2.img5.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src5+')')
-        if data.yacht.gallery2.img6.filename
-          - var src6 = encodeURIComponent(data.yacht.gallery2.img6.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src6+')')
-        if data.yacht.gallery2.img7.filename
-          - var src7 = encodeURIComponent(data.yacht.gallery2.img7.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src7+')')
-        if data.yacht.gallery2.img8.filename
-          - var src8 = encodeURIComponent(data.yacht.gallery2.img8.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src8+')')
-        if data.yacht.gallery2.img9.filename
-          - var src9 = encodeURIComponent(data.yacht.gallery2.img9.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src9+')')
-        if data.yacht.gallery2.img10.filename
-          - var src10 = encodeURIComponent(data.yacht.gallery2.img10.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src10+')')
-          
-  section.center
-    div#plain-color-background-2
-      div#container-other-specs-2
+    div.bottom-specs
           div#other-specs
+            h3
+              | Specifications</br>—
             ul.other-specs-list
-              h3
-                | Specifications</br>—
               if data.yacht.beam
                 li
                   span
@@ -180,6 +138,7 @@ block content
                   span
                     | draft:
                   =data.yacht.draft
+            ul.other-specs-list
               if data.yacht.displacement
                 li
                   span
@@ -216,53 +175,56 @@ block content
                   span
                     | Price Per Week High Season:
                   = numeralFunction(data.yacht["price per week high season"]).format('0,0[.]00' )+data.yacht.currency
-            ul.other-specs-list
-              h3
-                | Accomodation</br>—
-              if data.yacht.guests
-                li
-                  span
-                    | number of guests:
-                   =data.yacht.guests
-              if data.yacht.crew
-                li
-                  span
-                    | number of crew:
-                   =data.yacht.crew
-              if data.yacht.cabins
-                li
-                  span
-                    | number of cabins:
-                   =data.yacht.cabins
-              if data.yacht["guests cabins"]
-                li
-                  span
-                    | guests cabins:
-                   =data.yacht["guests cabins"]
-              if data.yacht["crew cabins"]
-                li
-                  span
-                    | crew cabins:
-                   =data.yacht["crew cabins"]
+            
+  #footer-wrap
+    .footer
+      ul
+        li
+          | www.equinoxeyachts.com |
+        li
+          | ey@equinoxeyacths.it | 
+        li
+          | Torino: +39 011 8185211 |
+        li
+          | Corrado Di Majo mobile +39 335 5967552
+      p
+        | All yachts offered are subject to still being available. Yacht particulars are believed to be correct but their contents are not guaranteed, neither may they be used for any contractual purposes. Specification provided for information only. Subject to prior sale, price change or withdrawal from market without notice.
 
 
 
-            ul.other-specs-list
-              h3
-                | Equipment</br>—
-              if data.yacht.engine
-                li
-                  span
-                    | Engines:
-                  p 
-                    =data.yacht.engine
-              
-          div#other-description
-            div.description-info.indent
-              h2 Description
-              
-              !=data.yacht.content.description
-            div.description-info
-              h2 Water Sports
-              !=data.yacht.content["water sports"]
-              a.button(href="#contact-us-modal", rel="modal:open") Enquire
+
+
+
+
+        //- if data.yacht.gallery1.img1.filename || data.yacht.gallery1.img2.filename || data.yacht.gallery1.img3.filename || data.yacht.gallery1.img4.filename || data.yacht.gallery1.img5.filename || data.yacht.gallery1.img6.filename || data.yacht.gallery1.img7.filename || data.yacht.gallery1.img8.filename || data.yacht.gallery1.img9.filename || data.yacht.gallery1.img10.filename
+          //-   #gallery1
+          //-     #slides1.owl-carousel.owl-theme
+          //-       if data.yacht.gallery1.img1.filename
+          //-         - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+          //-         .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
+          //-       if data.yacht.gallery1.img2.filename
+          //-         - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+          //-         .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
+          //-  
+  
+  
+  
+          //-   ul.other-specs-list
+          //-     h3
+          //-       | Equipment</br>—
+          //-     if data.yacht.engine
+          //-       li
+          //-         span
+          //-           | Engines:
+          //-         p 
+          //-           =data.yacht.engine
+          //-     
+          //- div#other-description
+          //-   div.description-info.indent
+          //-     h2 Description
+          //-     
+          //-     !=data.yacht.content.description
+          //-   div.description-info
+          //-     h2 Water Sports
+          //-     !=data.yacht.content["water sports"]
+          //-     a.button(href="#contact-us-modal", rel="modal:open") Enquire

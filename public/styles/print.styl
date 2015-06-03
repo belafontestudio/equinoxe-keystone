@@ -1,15 +1,42 @@
 @import 'nib'
+@import 'jeet'
 
 yellow = #F4BB3B
 midnight = #091D34
 navy-blue = #103158
 
 body, section.center
-
-  width: 100% 
+  -webkit-print-color-adjust exact
+  width: 100%
   margin: 0
   float: none
   padding 0
+  list-style none
+  edit()
+
+ul
+  list-style none
+  margin 0
+  padding 0
+
+@page
+  margin 0
+  size: A4 portrait
+
+@page :left
+  margin-left: 0
+
+@page :right
+  margin-left: 0
+
+
+#header
+  position relative
+  background: navy-blue
+  width 100%
+
+  &.big
+    height 100px
 
 img#logo
   margin  auto
@@ -19,21 +46,45 @@ img#logo
 #cover
   img
     width 100%
-@page 
-  size: A4 portrait
-  
-@page :left 
-  margin-left: 0
 
-@page :right
-  margin-left: 0
-  
 
-#header
-  position relative
-  background: navy-blue
+.main-text
+    width: 100%
+    text-align center
+    h1
+      font-size 30px
+      color midnight
+
+.top-specs
   width 100%
-  
-  &.big
-    height 100px
-  
+  .top-specs-little
+    col(10/12)
+    shift(1/12)
+    #top-specs-left
+      col(7/12)
+    #top-specs-right
+      col(4/12)
+
+.bottom-specs
+  col(10/12)
+  shift(1/12)
+  .other-specs-list
+    col(6/12)
+
+
+#footer-wrap
+  col(12/12)
+  background navy-blue
+  .footer
+    background navy-blue
+    col(10/12)
+    shift(1/12)
+    padding 30px 0
+    ul
+      text-align center
+      color yellow
+      li
+        display inline-block
+    p
+      color white
+      font-size 10px
