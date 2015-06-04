@@ -3,10 +3,8 @@ extends ../layouts/print
 
 block content
   #pageHeader(style="background:blue;")
-    #header.big(style="background:blue;")
       p
         | ciaocixiosoida
-      img#logo(src="http://localhost:3000/images/logo.svg")
   #pageContent
     #cover
       if data.yacht.cover.filename
@@ -232,7 +230,7 @@ block content
             div.description-info.indent
               h2 Description
               
-              !=data.yacht.content.description
+              !=data.yacht.content["Content Description Full Specs"]
             div.description-info
               h2 Water Sports
               !=data.yacht.content["water sports"]

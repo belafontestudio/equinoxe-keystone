@@ -30,9 +30,15 @@ keystone.init({
 	'wysiwyg override toolbar': true,
 	'wysiwyg menubar': false,
 	'wysiwyg skin': 'lightgray',
-	'wysiwyg additional buttons': 'pastetext,paste',
+	'wysiwyg additional buttons': 'styleselect,pastetext,paste',
 	'wysiwyg additional plugins': 'paste',
-	'wysiwyg additional options': {"paste_retain_style_properties": "color font-size"},
+	'wysiwyg additional options': {"paste_retain_style_properties": "color font-size",  style_formats: [
+
+            {title: 'h3', block: 'h3'},
+            {title: 'p', block: 'p'},
+            {title: 'b', block: 'b'},
+            {title: 'i', block: 'i'}
+   ]},
 	'wysiwyg cloudinary images': false,
 });
 
