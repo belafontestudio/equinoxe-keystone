@@ -13,6 +13,7 @@ ul {
   padding: 0;
 }
 @page  {
+  margin: 0;
   width: A4;
   height: portrait;
   @top-center {
@@ -41,7 +42,7 @@ img#logo {
   text-align: center;
 }
 .main-text h1 {
-  font-size: 55px;
+  font-size: 48px;
   color: #091d34;
   margin: 10px 0;
 }
@@ -58,7 +59,7 @@ img#logo {
   margin-right: 3%;
   position: relative;
   left: 8.5833333333333%;
-  height: 160px;
+  height: 145px;
   border-bottom: 1px solid #f4bb3b;
 }
 .top-specs .top-specs-little:before,
@@ -81,8 +82,9 @@ img#logo {
   margin-left: 0%;
   margin-right: 3%;
   margin-right: 2%;
-  font-size: 1.9em;
+  font-size: 24px;
   font-weight: bold;
+  height: 130px;
   border-right: 1px solid #f4bb3b;
 }
 .top-specs .top-specs-little #top-specs-left:before,
@@ -101,7 +103,7 @@ img#logo {
 }
 .top-specs .top-specs-little #top-specs-left li span {
   text-transform: uppercase;
-  font-size: 0.4em;
+  font-size: 12px;
   font-weight: normal;
   display: inline-block;
   width: 180px;
@@ -130,12 +132,13 @@ img#logo {
 }
 .top-specs .top-specs-little #top-specs-right h3 {
   font-color: #091d34;
+  font-size: 18px;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 15px;
 }
 .top-specs .top-specs-little #top-specs-right li {
-  font-size: 1.9em;
+  font-size: 24px;
   font-weight: bold;
   color: #091d34;
 }
@@ -144,7 +147,7 @@ img#logo {
   text-transform: uppercase;
   display: inline-block;
   width: 90px;
-  font-size: 0.5em;
+  font-size: 12px;
 }
 .bottom-specs {
   *zoom: 1;
@@ -171,6 +174,7 @@ img#logo {
   margin-right: 0%;
 }
 .bottom-specs #other-specs h3 {
+  font-size: 18px;
   font-weight: 400;
   margin: 15px 0;
 }
@@ -229,11 +233,11 @@ img#logo {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 82.8333333333333%;
+  width: 65.6666666666667%;
   margin-left: 0%;
   margin-right: 3%;
   position: relative;
-  left: 8.5833333333333%;
+  left: 17.1666666666667%;
 }
 .description #other-description:before,
 .description #other-description:after {
@@ -282,6 +286,7 @@ img#logo {
   position: relative;
   left: 8.5833333333333%;
   padding: 19px 0;
+  text-align: center;
 }
 #footer-wrap .footer:before,
 #footer-wrap .footer:after {
@@ -295,14 +300,13 @@ img#logo {
   margin-right: 0%;
 }
 #footer-wrap .footer ul {
-  text-align: center;
   color: #f4bb3b;
 }
 #footer-wrap .footer ul li {
   display: inline-block;
-  font-size: 12px;
+  font-size: 11px;
 }
 #footer-wrap .footer p {
   color: #fff;
-  font-size: 10px;
+  font-size: 9px;
 }

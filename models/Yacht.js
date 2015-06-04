@@ -212,14 +212,14 @@ Yacht.add({
 });
 
 Yacht.schema.pre('save', function(next) {
-	
-	if ( this.pdf == true ) {
-        var options = { filename: process.env.CLOUD_DIR+"/generated/pdf/"+this.slug+".pdf", format: 'A4' };
-        request("http://localhost:3000/api/print/"+this.slug, function (error, response, body) {
+	var yacht = this;
+	if ( yacht.pdf == true ) {
+        var options = { filename: process.env.CLOUD_DIR+"/generated/pdf/"+yacht.slug+".pdf", format: 'A4'};
+        request("http://localhost:3000/api/print/"+yacht.slug,function (error, response, body) {
 				    pdf.create(body, options).toFile(function(err, res) {
 					  if (err) return console.log(err);
-					  console.log(this)
-					  this.pdf = false;
+
+					  yacht.pdf = false;
 					  next();
 
 					});

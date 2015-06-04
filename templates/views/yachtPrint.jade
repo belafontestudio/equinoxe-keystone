@@ -183,23 +183,23 @@ block content
 
 
 
-
-  .foto-one
-    if data.yacht.gallery1.img1.filename || data.yacht.gallery1.img2.filename || data.yacht.gallery1.img3.filename || data.yacht.gallery1.img4.filename || data.yacht.gallery1.img5.filename || data.yacht.gallery1.img6.filename || data.yacht.gallery1.img7.filename || data.yacht.gallery1.img8.filename || data.yacht.gallery1.img9.filename || data.yacht.gallery1.img10.filename
+  #photo-container
+    .foto-one
+      if data.yacht.gallery1.img1.filename || data.yacht.gallery1.img2.filename || data.yacht.gallery1.img3.filename || data.yacht.gallery1.img4.filename || data.yacht.gallery1.img5.filename || data.yacht.gallery1.img6.filename || data.yacht.gallery1.img7.filename || data.yacht.gallery1.img8.filename || data.yacht.gallery1.img9.filename || data.yacht.gallery1.img10.filename
+        if data.yacht.gallery1.img1.filename
+          - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
+        if data.yacht.gallery1.img2.filename
+          - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
+    .foto-twos
       if data.yacht.gallery1.img1.filename
         - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
         .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
       if data.yacht.gallery1.img2.filename
         - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
         .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
-  .foto-twos
-    if data.yacht.gallery1.img1.filename
-      - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-      .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
-    if data.yacht.gallery1.img2.filename
-      - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-      .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
-  
+    
   
   
   
@@ -211,9 +211,11 @@ block content
             div.description-info
               h2 
                 = data.yacht.name
-                |  Description
+                |  Full Specifications
               
               !=data.yacht.content.description
+              
+              
             div.description-info
               h2 Water Sports
               !=data.yacht.content["water sports"]
