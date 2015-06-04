@@ -5,6 +5,14 @@
 *:focus {
   outline: none;
 }
+#scrollUp {
+  background-image: url("/images/top.png");
+  bottom: 20px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  content: '';
+}
 html,
 body {
   height: 100%;
@@ -7292,4 +7300,7 @@ footer p.secondmenu a:hover {
   background: -ms-linear-gradient(top, #000 0%, rgba(123,181,227,0) 98%, rgba(125,185,232,0) 100%);
   background: linear-gradient(to bottom, #000 0%, rgba(123,181,227,0) 98%, rgba(125,185,232,0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=;
+}
+#slides1 {
+  position: relative;
 }
