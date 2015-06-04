@@ -2,236 +2,232 @@ extends ../layouts/print
 
 
 block content
-  #pageHeader(style="background:blue;")
-      p
-        | ciaocixiosoida
-  #pageContent
-    #cover
-      if data.yacht.cover.filename
-        img(src="http://localhost:3000/uploads/images/yachts/covers/"+data.yacht.cover.filename, alt=data.yacht.cover.filename)
-      else 
-        img(src="http://localhost:3000/images/sprite/placeholder_cover.png", alt="placeholder")
+  #header.big
     
-    section.center
-      
-      div#container-other-specs
-        .main-text  
-          h1 
-            block title
-              = data.yacht.name
-        .clear
-        
-      .top-specs
-        .top-specs-little
-          ul#top-specs-left
-            if data.yacht["price per week from"] || data.yacht.price
-              li
-                if data.yacht.availability == "Charter"
-                  span
-                    | Charter price from:
-                  = numeralFunction(data.yacht["price per week from"]).format('0,0[.]00' )+data.yacht.currency
-                  
-                if data.yacht.availability == "Sale"
-                  if data.yacht.price
-                    span
-                      | Sale price:
-                    = numeralFunction(data.yacht.price).format('0,0[.]00' )+data.yacht.currency
-                    
-            if data.yacht.lenght
-              li
-                span
-                  | length:
-                block single-yacht-length
-                  = data.yacht.lenght+"m"
-                  
-            if data.yacht.build || data.yacht.refit 
-              li
-                if data.yacht.refit && data.yacht.build
-                  span
-                    | built:
-                  = data.yacht.build+" / refit "+data.yacht.refit
-                else
-                    if data.yacht.refit
-                      span
-                        | refit:
-                      = data.yacht.refit
-                    else if data.yacht.build
-                      span
-                        | built:
-                      = data.yacht.build 
-            if data.yacht.guests
-              li
-                span
-                  | guests:
-                block single-yacht-guests
-                  = data.yacht.guests
-
-          ul#top-specs-right
-            h3
-              | Accomodation</br>—
-            if data.yacht.guests
-              li
-                span
-                  | number of guests:
-                 =data.yacht.guests
-            if data.yacht.crew
-              li
-                span
-                  | number of crew:
-                 =data.yacht.crew
-            if data.yacht.cabins
-              li
-                span
-                  | number of cabins:
-                 =data.yacht.cabins
-            if data.yacht["guests cabins"]
-              li
-                span
-                  | guests cabins:
-                 =data.yacht["guests cabins"]
-            if data.yacht["crew cabins"]
-              li
-                span
-                  | crew cabins:
-                 =data.yacht["crew cabins"]
-        
-        
-
-       
-
-      div.bottom-specs
-            div#other-specs
-              h3
-                | Specifications</br>—
-              ul.other-specs-list
-                if data.yacht.beam
-                  li
-                    span
-                      | beam:
-                    =data.yacht.bea
-                if data.yacht.crew
-                  li
-                    span
-                      | number of crew:
-                    =data.yacht.crew
-                if data.yacht.builder
-                  li
-                    span
-                      | builder:
-                    =data.yacht.builder
-                if data.yacht.designer
-                  li
-                    span
-                      | designer:
-                    =data.yacht.designer
-                if data.yacht.flag
-                  li
-                    span
-                      | flag:
-                    =data.yacht.flag
-                if data.yacht.model
-                  li
-                    span
-                      | model:
-                    =data.yacht.model
-                if data.yacht.draft
-                  li
-                    span
-                      | draft:
-                    =data.yacht.draft
-              ul.other-specs-list
-                if data.yacht.displacement
-                  li
-                    span
-                      | displacement:
-                    =data.yacht.displacement
-                if data.yacht["crusing speed"]
-                  li
-                    span
-                      | Cruising speed:
-                    =data.yacht["crusing speed"]
-                if data.yacht.consumption
-                  li
-                    span
-                      | Fuel consumption:
-                    =data.yacht.consumption
-                if data.yacht.vat
-                  li
-                    span
-                      | VAT:
-                    =data.yacht.vat
-                if data.yacht.location    
-                  li
-                    span
-                      | Location:
-                    =data.yacht.location
-                if data.yacht["price per week low season"]
-                  li
-                    span
-                      | Price Per Week Low Season:
-                    = numeralFunction(data.yacht["price per week low season"]).format('0,0[.]00' )+data.yacht.currency
-
-                if data.yacht["price per week high season"]
-                  li
-                    span
-                      | Price Per Week High Season:
-                    = numeralFunction(data.yacht["price per week high season"]).format('0,0[.]00' )+data.yacht.currency
-  #pageFooter         
-    #footer-wrap
-      .footer
-        ul
-          li
-            | www.equinoxeyachts.com |
-          li
-            | ey@equinoxeyacths.it | 
-          li
-            | Torino: +39 011 8185211 |
-          li
-            | Corrado Di Majo mobile +39 335 5967552
-        p
-          | All yachts offered are subject to still being available. Yacht particulars are believed to be correct but their contents are not guaranteed, neither may they be used for any contractual purposes. Specification provided for information only. Subject to prior sale, price change or withdrawal from market without notice.
-
-
-
-
-
-  .foto-one
-    if data.yacht.gallery1.img1.filename || data.yacht.gallery1.img2.filename || data.yacht.gallery1.img3.filename || data.yacht.gallery1.img4.filename || data.yacht.gallery1.img5.filename || data.yacht.gallery1.img6.filename || data.yacht.gallery1.img7.filename || data.yacht.gallery1.img8.filename || data.yacht.gallery1.img9.filename || data.yacht.gallery1.img10.filename
-        #gallery1
-            if data.yacht.gallery1.img1.filename
-              - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
-            if data.yacht.gallery1.img2.filename
-              - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-              .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
-  .foto-two
-    if data.yacht.gallery1.img1.filename
-      - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-      .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
-    if data.yacht.gallery1.img2.filename
-      - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-      .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
+    img#logo(src="http://localhost:3000/images/sprite/logo.png")
+  #cover
+    if data.yacht.cover.filename
+      img(src="http://localhost:3000/uploads/images/yachts/covers/"+data.yacht.cover.filename, alt=data.yacht.cover.filename)
+    else 
+      img(src="http://localhost:3000/images/sprite/placeholder_cover.png", alt="placeholder")
   
+  section.center
+    
+    div#container-other-specs
+      .main-text  
+        h1 
+          block title
+            = data.yacht.name
+      .clear
+      
+    .top-specs
+      .top-specs-little
+        ul#top-specs-left
+          if data.yacht["price per week from"] || data.yacht.price
+            li
+              if data.yacht.availability == "Charter"
+                span
+                  | Charter price from:
+                = numeralFunction(data.yacht["price per week from"]).format('0,0[.]00' )+data.yacht.currency
+                
+              if data.yacht.availability == "Sale"
+                if data.yacht.price
+                  span
+                    | Sale price:
+                  = numeralFunction(data.yacht.price).format('0,0[.]00' )+data.yacht.currency
+                  
+          if data.yacht.lenght
+            li
+              span
+                | length:
+              block single-yacht-length
+                = data.yacht.lenght+"m"
+                
+          if data.yacht.build || data.yacht.refit 
+            li
+              if data.yacht.refit && data.yacht.build
+                span
+                  | built:
+                = data.yacht.build+" / refit "+data.yacht.refit
+              else
+                  if data.yacht.refit
+                    span
+                      | refit:
+                    = data.yacht.refit
+                  else if data.yacht.build
+                    span
+                      | built:
+                    = data.yacht.build 
+          if data.yacht.guests
+            li
+              span
+                | guests:
+              block single-yacht-guests
+                = data.yacht.guests
+
+        ul#top-specs-right
+          h3
+            | Accomodation
+          if data.yacht.guests
+            li
+              span
+                | guests:
+               =data.yacht.guests
+          if data.yacht.crew
+            li
+              span
+                | crew:
+               =data.yacht.crew
+          if data.yacht.cabins
+            li
+              span
+                | cabins:
+               =data.yacht.cabins
+      
+      
+
+     
+
+    div.bottom-specs
+          div#other-specs
+            h3
+              | Specifications
+            ul.other-specs-list
+              if data.yacht.beam
+                li
+                  span
+                    | beam:
+                  =data.yacht.bea
+              if data.yacht.crew
+                li
+                  span
+                    | number of crew:
+                  =data.yacht.crew
+              if data.yacht.builder
+                li
+                  span
+                    | builder:
+                  =data.yacht.builder
+              if data.yacht.designer
+                li
+                  span
+                    | designer:
+                  =data.yacht.designer
+              if data.yacht.flag
+                li
+                  span
+                    | flag:
+                  =data.yacht.flag
+              if data.yacht.model
+                li
+                  span
+                    | model:
+                  =data.yacht.model
+              if data.yacht.draft
+                li
+                  span
+                    | draft:
+                  =data.yacht.draft
+            ul.other-specs-list
+              if data.yacht.displacement
+                li
+                  span
+                    | displacement:
+                  =data.yacht.displacement
+              if data.yacht["crusing speed"]
+                li
+                  span
+                    | Cruising speed:
+                  =data.yacht["crusing speed"]
+              if data.yacht.consumption
+                li
+                  span
+                    | Fuel consumption:
+                  =data.yacht.consumption
+              if data.yacht.vat
+                li
+                  span
+                    | VAT:
+                  =data.yacht.vat
+              if data.yacht.location    
+                li
+                  span
+                    | Location:
+                  =data.yacht.location
+              if data.yacht["price per week low season"]
+                li
+                  span
+                    | Price Per Week Low Season:
+                  = numeralFunction(data.yacht["price per week low season"]).format('0,0[.]00' )+data.yacht.currency
+
+              if data.yacht["price per week high season"]
+                li
+                  span
+                    | Price Per Week High Season:
+                  = numeralFunction(data.yacht["price per week high season"]).format('0,0[.]00' )+data.yacht.currency
+            
+  #footer-wrap
+    .footer
+      ul
+        li
+          | www.equinoxeyachts.com |
+        li
+          | ey@equinoxeyacths.it | 
+        li
+          | Torino: +39 011 8185211 |
+        li
+          | Corrado Di Majo mobile +39 335 5967552
+      p
+        | All yachts offered are subject to still being available. Yacht particulars are believed to be correct but their contents are not guaranteed, neither may they be used for any contractual purposes. Specification provided for information only. Subject to prior sale, price change or withdrawal from market without notice.
+
+
+
+
+  #photo-container
+    .foto-one
+      if data.yacht.gallery1.img1.filename || data.yacht.gallery1.img2.filename || data.yacht.gallery1.img3.filename || data.yacht.gallery1.img4.filename || data.yacht.gallery1.img5.filename || data.yacht.gallery1.img6.filename || data.yacht.gallery1.img7.filename || data.yacht.gallery1.img8.filename || data.yacht.gallery1.img9.filename || data.yacht.gallery1.img10.filename
+        if data.yacht.gallery1.img1.filename
+          - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
+        if data.yacht.gallery1.img2.filename
+          - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+          .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
+    .foto-twos
+      if data.yacht.gallery1.img1.filename
+        - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+        .img(style='background-image: url(/uploads/images/yachts/galleries/'+src1+')')
+      if data.yacht.gallery1.img2.filename
+        - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+        .img(style='background-image: url(/uploads/images/yachts/galleries/'+src2+')')
+    
   
   
   
   .description
+  
+      
+            
+          div#other-description
+            div.description-info
+              h2 
+                = data.yacht.name
+                |  Full Specifications
+              
+              !=data.yacht.content.description
+              
+              
+            div.description-info
+              h2 Water Sports
+              !=data.yacht.content["water sports"]
+              
+              
             ul.other-specs-list
               h3
-                | Equipment</br>—
+                | Equipment
               if data.yacht.engine
                 li
                   span
                     | Engines:
                   p 
                     =data.yacht.engine
-              
-          div#other-description
-            div.description-info.indent
-              h2 Description
-              
-              !=data.yacht.content["Content Description Full Specs"]
-            div.description-info
-              h2 Water Sports
-              !=data.yacht.content["water sports"]
               
