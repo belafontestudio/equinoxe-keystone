@@ -17,6 +17,7 @@ ul {
   padding: 0;
 }
 @page  {
+  margin: 30pt;
   width: A4;
   height: portrait;
   @top-center {

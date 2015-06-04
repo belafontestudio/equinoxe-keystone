@@ -214,8 +214,8 @@ Yacht.add({
 Yacht.schema.pre('save', function(next) {
 	var yacht = this;
 	if ( yacht.pdf == true ) {
-        var options = { filename: process.env.CLOUD_DIR+"/generated/pdf/"+yacht.slug+".pdf", format: 'A4' };
-        request("http://localhost:3000/api/print/"+yacht.slug, function (error, response, body) {
+        var options = { filename: process.env.CLOUD_DIR+"/generated/pdf/"+yacht.slug+".pdf", format: 'A4'};
+        request("http://localhost:3000/api/print/"+yacht.slug,function (error, response, body) {
 				    pdf.create(body, options).toFile(function(err, res) {
 					  if (err) return console.log(err);
 
