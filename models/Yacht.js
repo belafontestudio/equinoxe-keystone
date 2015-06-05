@@ -26,7 +26,7 @@ Yacht.add({
 	pre: {width:480,height:270},format: function(item, file){
 
 		return '<img src="'+file.href+'" style="max-width: 250px">'}},
-
+	"pdf url": {type: Types.Text, required: false, readonly: true},
 	featured: { type: Types.Boolean },
 	pdf: { type: Types.Boolean },
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
@@ -220,6 +220,7 @@ Yacht.schema.pre('save', function(next) {
 					  if (err) return console.log(err);
 
 					  yacht.pdf = false;
+					  yacht["pdf url"] = "http://localhost:3000/generated/pdf/"+yacht.slug+".pdf";
 					  next();
 
 					});

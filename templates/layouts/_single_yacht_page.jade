@@ -57,6 +57,14 @@ block section
                 block single-yacht-guests
                   = data.yacht.guests
 
+            if data.yacht["pdf url"]
+              li
+                block single-yacht-pdf
+                  a(href=data.yacht["pdf url"], target="_blank")
+                    | Fullspec PDF
+
+
+
           block explain-call
             p.call-to-action
 
