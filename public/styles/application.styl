@@ -14,6 +14,25 @@
 //   overflow scroll !important
 
 
+#gallery1
+  position relative
+
+.arrow
+  width 19px
+  height 41px
+  background purple
+  position absolute
+  z-index 2000
+  top 45%
+  cursor pointer
+#next-arrow
+  background url('/images/next-arrow.png')
+  right 10px
+#back-arrow
+  background url('/images/back-arrow.png')
+  left 10px
+
+
 #hide
   display none
 
@@ -523,7 +542,7 @@ section.center
                 color yellow
             &:visited
                 opacity 0.5
-            img 
+            img
     ul#yacht-size, ul#latest-yachts, ul#yachts-list-grid, ul#filter-menu, ul#yacht-size-mobile
         column(12/12)
         list-style-type none
@@ -2503,7 +2522,7 @@ footer
 
 
 
-/////////////////////////////////////////////////////////////////////// 404
+
 
 .container-404
   margin 20% 0
@@ -2521,7 +2540,7 @@ footer
 
 
 
-/////////
+
 .gradient-top
   position absolute
   top 0
@@ -2531,6 +2550,11 @@ footer
   opacity .5
   background linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(123,181,227,0) 98%,rgba(125,185,232,0) 100%)
   filter unquote('progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#007db9e8', GradientType=0)')
+
+
+
+
+
 
 
 

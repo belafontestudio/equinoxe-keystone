@@ -425,6 +425,17 @@ $(document).ready(function() {
 
     });
 
+    $.scrollUp({
+      scrollName: 'scrollUp', // Element ID
+      topDistance: '400', // Distance from top before showing element (px)
+      topSpeed: 300, // Speed back to top (ms)
+      animation: 'fade', // Fade, slide, none
+      animationInSpeed: 200, // Animation in speed (ms)
+      animationOutSpeed: 200, // Animation out speed (ms)
+      scrollText: '', // Text for element
+      activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+    });
+
     resizeMap();
     filterMenu();
     rangeSlider();
@@ -439,7 +450,9 @@ $(document).ready(function() {
 
     sliderKey();
 
-    $("#slides1").owlCarousel({
+    owl = $("#slides1");
+
+    owl.owlCarousel({
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true,
@@ -447,6 +460,12 @@ $(document).ready(function() {
       rewindNav : true
     });
 
+    $("#next-arrow").click(function(){
+      owl.trigger('owl.next');
+    });
+    $("#back-arrow").click(function(){
+      owl.trigger('owl.prev');
+    });
 
     $('#simple-menu').sidr(
       {
@@ -610,14 +629,14 @@ function menuSlidesHome(){
   var menu = $('.subMenu:eq(1)');
     $(menu).find('li.item').each(function(){
         if($(this).attr("id") != "m0"){
-            
+
             $(this).find('a').mouseover(function(e){
                     clearTimeout(timer);
                     clearTimeout(timer2);
                     timer = setTimeout(function () {
-                        
+
                         clearInterval(slidesInterval);
-                        
+
                         var id = e.target.id;
 
                         var target = id.slice(-1);
@@ -752,15 +771,15 @@ function fillGrid(yachts,template,q){
     list.q= q;
     var yachts_grid = $("ul#yachts-list-grid");
     if(list.total > 0){
-      yachts_grid.html(template(list)).fadeIn(500);  
+      yachts_grid.html(template(list)).fadeIn(500);
     }else{
-      yachts_grid.html('<p id="no-yacht-found">Too bad. No yachts meet your requirements.<br><br>Use reset button to start again</p>').fadeIn(500);  
+      yachts_grid.html('<p id="no-yacht-found">Too bad. No yachts meet your requirements.<br><br>Use reset button to start again</p>').fadeIn(500);
     }
-    
-   
+
+
 }
 function populateYachts(yachts,q){
-    
+
     if(pathname == "/yachts/Charter"){
       var source   = $("#charter-card-template").html();
     }
@@ -841,6 +860,9 @@ function sliderKey(){
   jQuery(document.documentElement).keyup(function (event) {
 
     var owl = jQuery(".owl-carousel");
+
+
+
 
     // handle cursor keys
     if (event.keyCode == 37) {
@@ -948,4 +970,3 @@ $("#yacht_modal").submit(function()
         return false; // prevent page refresh
     });
 }
-
