@@ -1098,6 +1098,26 @@ section.center div.slider-bar .ui-widget-header {
     width: 100%;
   }
 }
+#gallery1 {
+  position: relative;
+}
+.arrow {
+  width: 19px;
+  height: 41px;
+  background: #800080;
+  position: absolute;
+  z-index: 2000;
+  top: 45%;
+  cursor: pointer;
+}
+#next-arrow {
+  background: url("/images/next-arrow.png");
+  right: 10px;
+}
+#back-arrow {
+  background: url("/images/back-arrow.png");
+  left: 10px;
+}
 #hide {
   display: none;
 }
@@ -7300,7 +7320,4 @@ footer p.secondmenu a:hover {
   background: -ms-linear-gradient(top, #000 0%, rgba(123,181,227,0) 98%, rgba(125,185,232,0) 100%);
   background: linear-gradient(to bottom, #000 0%, rgba(123,181,227,0) 98%, rgba(125,185,232,0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=;
-}
-#slides1 {
-  position: relative;
 }

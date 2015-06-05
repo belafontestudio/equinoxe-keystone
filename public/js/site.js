@@ -450,7 +450,9 @@ $(document).ready(function() {
 
     sliderKey();
 
-    $("#slides1").owlCarousel({
+    owl = $("#slides1");
+
+    owl.owlCarousel({
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true,
@@ -458,6 +460,12 @@ $(document).ready(function() {
       rewindNav : true
     });
 
+    $("#next-arrow").click(function(){
+      owl.trigger('owl.next');
+    });
+    $("#back-arrow").click(function(){
+      owl.trigger('owl.prev');
+    });
 
     $('#simple-menu').sidr(
       {
@@ -852,6 +860,9 @@ function sliderKey(){
   jQuery(document.documentElement).keyup(function (event) {
 
     var owl = jQuery(".owl-carousel");
+
+
+
 
     // handle cursor keys
     if (event.keyCode == 37) {
