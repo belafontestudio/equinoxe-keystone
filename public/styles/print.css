@@ -20,6 +20,10 @@ ul {
     content: 'Ciao';
   }
 }
+h2,
+h3 {
+  page-break-before: always;
+}
 #header {
   position: relative;
   background: #103158;
@@ -35,6 +39,9 @@ img#logo {
   display: block;
 }
 #cover img {
+  width: 100%;
+}
+#photo-container img {
   width: 100%;
 }
 .main-text {
@@ -261,6 +268,8 @@ img#logo {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
+  position: absolute;
+  bottom: 0;
   background: #103158;
 }
 #footer-wrap:before,
