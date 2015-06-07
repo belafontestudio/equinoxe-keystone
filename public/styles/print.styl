@@ -27,6 +27,12 @@ ul
   }
 }
 
+h2, h3 { 
+  page-break-before: always;
+  }
+
+
+
 #header
   position relative
   background: navy-blue
@@ -43,7 +49,9 @@ img#logo
 #cover
   img
     width 100%
-
+#photo-container
+  img
+    width 100%
 
 .main-text
     width: 100%
@@ -147,6 +155,8 @@ img#logo
 #footer-wrap
 //  position running(header)
   col(12/12)
+  position absolute
+  bottom 0
   background navy-blue
   .footer
     background navy-blue
