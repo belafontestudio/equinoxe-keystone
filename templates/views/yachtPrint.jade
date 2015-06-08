@@ -189,20 +189,24 @@ block content
         if data.yacht.gallery1.img1.filename
           - var src1 = encodeURIComponent(data.yacht.gallery1.img1.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
           img(src='http://localhost:3000/uploads/images/yachts/galleries/'+src1)
-          p(style="font-size:8px;")
-            | Pippo Inside
+          p.caption
+            | =data.tacht.gallery.img1.attr
         if data.yacht.gallery1.img2.filename
           - var src2 = encodeURIComponent(data.yacht.gallery1.img2.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
           img(src='http://localhost:3000/uploads/images/yachts/galleries/'+src2)
-          p(style="font-size:8px;")
-            | Pippo
+          p.caption
+            | =data.tacht.gallery.img2.attr
     .foto-twos
       if data.yacht.gallery1.img3.filename
         - var src3 = encodeURIComponent(data.yacht.gallery1.img3.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
         img(src='http://localhost:3000/uploads/images/yachts/galleries/'+src3)
+        p.caption
+          | =data.tacht.gallery.img4.attr
       if data.yacht.gallery1.img4.filename
         - var src4 = encodeURIComponent(data.yacht.gallery1.img4.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
         img(src='http://localhost:3000/uploads/images/yachts/galleries/'+src4)
+        p.caption
+          | Pippo Inside
     
   
   

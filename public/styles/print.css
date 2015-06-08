@@ -5,6 +5,12 @@ h4 {
 b {
   font-weight: bold;
 }
+#cover {
+  margin-top: -10mm;
+}
+#pageHeader {
+  background: #800080;
+}
 body,
 section.center {
   -webkit-print-color-adjust: exact;
@@ -269,6 +275,16 @@ img#logo {
 }
 .description #other-description .description-info h2 {
   text-align: center;
+}
+.caption {
+  padding: 0;
+  margin: 0;
+  font-size: 9px;
+  width: 100%;
+  text-align: center;
+}
+.caption:nth-child(even) {
+  padding-bottom: 2px;
 }
 #footer-wrap {
   *zoom: 1;

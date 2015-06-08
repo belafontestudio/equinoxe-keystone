@@ -18,6 +18,7 @@
     "request": "^2.57.0",
     "serve-index": "^1.6.3",
     "stylus": "^0.50.0",
+    "stylus-font-face": "^1.0.1",
     "stylus-type-utils": "0.0.3",
     "underscore": "~1.7.0"
   },

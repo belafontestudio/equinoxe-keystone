@@ -1967,7 +1967,7 @@ body .ui-tooltip {
 
 
 
-/*
+/* 
  * 	Core Owl Carousel CSS File
  *	v1.3.2
  */
@@ -2005,7 +2005,7 @@ body .ui-tooltip {
 	-o-transition: height 500ms ease-in-out;
 	transition: height 500ms ease-in-out;
 }
-
+	
 .owl-carousel .owl-item{
 	float: left;
 }
@@ -2023,8 +2023,8 @@ body .ui-tooltip {
 }
 
 /* mouse grab icon */
-.grabbing {
-    cursor:url(/images/grabbing.png) 8 8, move;
+.grabbing { 
+    cursor:url(grabbing.png) 8 8, move;
 }
 
 /* fix */
@@ -2040,7 +2040,7 @@ body .ui-tooltip {
 
 
 /*
-* 	Owl Carousel Owl Demo Theme
+* 	Owl Carousel Owl Demo Theme 
 *	v1.3.2
 */
 
@@ -2118,8 +2118,8 @@ body .ui-tooltip {
 	min-height: 150px;
 	background: url(AjaxLoader.gif) no-repeat center center
 }
-/*
- *  Owl Carousel CSS3 Transitions
+/* 
+ *  Owl Carousel CSS3 Transitions 
  *  v1.3.2
  */
 
