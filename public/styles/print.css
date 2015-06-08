@@ -1,3 +1,10 @@
+h3,
+h4 {
+  font-size: 1.3em;
+}
+b {
+  font-weight: bold;
+}
 body,
 section.center {
   -webkit-print-color-adjust: exact;
@@ -6,6 +13,9 @@ section.center {
   float: none;
   padding: 0;
   font-family: "Alegreya Sans", "Helvetica Neue", sans-serif;
+}
+section.center {
+  padding: 10px 0;
 }
 ul {
   list-style: none;
@@ -268,8 +278,6 @@ img#logo {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
-  position: absolute;
-  bottom: 0;
   background: #103158;
 }
 #footer-wrap:before,
