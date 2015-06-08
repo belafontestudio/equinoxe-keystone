@@ -5,12 +5,6 @@ h4 {
 b {
   font-weight: bold;
 }
-#cover {
-  margin-top: -10mm;
-}
-#pageHeader {
-  background: #800080;
-}
 body,
 section.center {
   -webkit-print-color-adjust: exact;
@@ -42,7 +36,6 @@ h3 {
 }
 #header {
   position: relative;
-  background: #103158;
   width: 100%;
 }
 #header.big {

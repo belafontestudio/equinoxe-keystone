@@ -42,7 +42,7 @@ html
 
 		//- Include template-specific stylesheets by extending the css block
 		block css
-			link(href="http://localhost:3000/styles/print.css", rel="stylesheet")
+			link(href= data.url+"/styles/print.css", rel="stylesheet")
 
 		//- Add any other template-specific HEAD tags by extending the head block
 		block head
@@ -64,15 +64,6 @@ html
 				h1 General Layout
 
 	//- jQuery 1.11.1 is included by default, and required by both Bootstrap
-		//- and the KeystoneJS Content Editor. If you are not targeting IE8,
-		//- you can upgrade to 2.1.1 (also bundled) for better performance.
-	script(src='http://localhost:3000//js/lib/jquery/jquery-2.1.1.min.js')
-		
-
-		//- Customise which Bootstrap javascript files are served by including
-		//- them specifically here, instead of bootstrap-3.2.0.min.js
-
-	script(src='http://localhost:3000//static/vendor.js')
-	script(src='http://localhost:3000/js/print.js')
-
-		
+	//-script(src='http://localhost:3000//js/lib/jquery/jquery-2.1.1.min.js')
+	//-script(src='http://localhost:3000//static/vendor.js')
+	//-script(src='http://localhost:3000/js/print.js')
