@@ -1296,6 +1296,9 @@ footer
   color white
   cursor pointer
   padding-bottom 30px
+  span
+    font-family "Alegreya Sans", "Helvetica Neue", sans-serif
+
 
 
 .filter-toggle
@@ -2258,12 +2261,20 @@ footer
 
     #toggle-btn
       position relative
-      left 17%
+      left -34%
       margin-top 159px
 
 
+
++below(900px)
+  .filter-toggle
+    display none
+
 ///////////////////////////////////////////////////////////////////
 +above(900px)
+
+    .filter-toggle
+      display block
 
     section.center, section.center-parallax
 

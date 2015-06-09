@@ -54,6 +54,12 @@ div(id="enquire-modal", style="display:none;")
             textarea#textarea.enquire_msg(placeholder='Your message',name='textarea').
         <!-- Button -->
         .control-group.submit
+          #mandrill-response
+            #response-true
+              p
+                | Your message has been sent. Thank you!
+            #response-false
+              p
+                | Error sending message.
           .controls
             input(type="submit" value="Submit")
-

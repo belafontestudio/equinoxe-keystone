@@ -710,7 +710,7 @@ function timerSlidesHome(counter){
 
 
         counter++
-      }, 3000);
+      }, 8000);
 }
 function activeItem(target){
     var counter = 0;
@@ -914,13 +914,13 @@ function submitModals(){
             }
         })
         .done(function(response) {
-            alert('Your message has been sent. Thank you!'); // show success message
+            $('#response-true').fadeIn(); // show success message
             $("#name").val(''); // reset field after successful submission
             $("#email").val(''); // reset field after successful submission
             $("#msg").val(''); // reset field after successful submission
         })
         .fail(function(response) {
-            alert('Error sending message.');
+          $('#response-false').fadeIn();
         });
         return false; // prevent page refresh
     });
@@ -959,13 +959,13 @@ $("#yacht_modal").submit(function()
             }
         })
         .done(function(response) {
-            alert('Your message has been sent. Thank you!'); // show success message
+            $('#response-true').fadeIn(); // show success message
             $("#name").val(''); // reset field after successful submission
             $("#email").val(''); // reset field after successful submission
             $("#msg").val(''); // reset field after successful submission
         })
         .fail(function(response) {
-            alert('Error sending message.');
+          $('#response-false').fadeIn();
         });
         return false; // prevent page refresh
     });

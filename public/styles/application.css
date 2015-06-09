@@ -502,8 +502,24 @@ textarea#textarea {
   resize: vertical !important;
   min-height: 200px;
 }
+#mandrill-response {
+  font-size: 1.2em;
+}
+#mandrill-response #response-true {
+  display: none;
+}
+#mandrill-response #response-true p {
+  color: #fff;
+}
+#mandrill-response #response-false {
+  display: none;
+}
+#mandrill-response #response-false p {
+  color: #c0392b;
+}
 div#enquire-modal,
 div#contact-us-modal {
+  color: #103158;
   width: 100%;
   margin: 0 auto;
   -webkit-box-shadow: none;
@@ -514,25 +530,25 @@ div#enquire-modal input::-webkit-input-placeholder,
 div#contact-us-modal input::-webkit-input-placeholder,
 div#enquire-modal textarea::-webkit-input-placeholder,
 div#contact-us-modal textarea::-webkit-input-placeholder {
-  color: rgba(255,255,255,0.4) !important;
+  color: #ecf0f1 !important;
 }
 div#enquire-modal input:-moz-placeholder,
 div#contact-us-modal input:-moz-placeholder,
 div#enquire-modal textarea:-moz-placeholder,
 div#contact-us-modal textarea:-moz-placeholder {
-  color: rgba(255,255,255,0.4) !important;
+  color: #ecf0f1 !important;
 }
 div#enquire-modal input::-moz-placeholder,
 div#contact-us-modal input::-moz-placeholder,
 div#enquire-modal textarea::-moz-placeholder,
 div#contact-us-modal textarea::-moz-placeholder {
-  color: rgba(255,255,255,0.4) !important;
+  color: #ecf0f1 !important;
 }
 div#enquire-modal input:-ms-input-placeholder,
 div#contact-us-modal input:-ms-input-placeholder,
 div#enquire-modal textarea:-ms-input-placeholder,
 div#contact-us-modal textarea:-ms-input-placeholder {
-  color: rgba(255,255,255,0.4) !important;
+  color: #ecf0f1 !important;
 }
 div#enquire-modal .logo,
 div#contact-us-modal .logo {
@@ -560,7 +576,7 @@ div#contact-us-modal fieldset {
 }
 div#enquire-modal fieldset label,
 div#contact-us-modal fieldset label {
-  color: #fff;
+  color: #103158;
   font-family: "Alegreya Sans", "Helvetica Neue", sans-serif;
   font-weight: 300;
   text-rendering: optimizeLegibility;
@@ -3610,6 +3626,9 @@ footer p.secondmenu a:hover {
   cursor: pointer;
   padding-bottom: 30px;
 }
+#toggle-btn span {
+  font-family: "Alegreya Sans", "Helvetica Neue", sans-serif;
+}
 .filter-toggle {
   display: none;
 }
@@ -6479,11 +6498,19 @@ footer p.secondmenu a:hover {
   }
   #toggle-btn {
     position: relative;
-    left: 17%;
+    left: -34%;
     margin-top: 159px;
   }
 }
+@media only screen and (max-width: 900px) {
+  .filter-toggle {
+    display: none;
+  }
+}
 @media only screen and (min-width: 900px) {
+  .filter-toggle {
+    display: block;
+  }
   section.center,
   section.center-parallax {
     margin-top: 150px;

@@ -34,12 +34,15 @@ h2,
 h3 {
   page-break-before: always;
 }
+p {
+  font-size: 14px;
+}
 #header {
   position: relative;
   width: 100%;
 }
 #header.big {
-  height: 100px;
+  width: 240px;
 }
 img#logo {
   margin: auto;

@@ -22,7 +22,7 @@
   background url("../images/sprite/hamburger_close.svg") no-repeat 0 0
 
 
-.modal-spinner 
+.modal-spinner
   display: none;
   width: 64px;
   height: 64px;
@@ -37,21 +37,34 @@
   -o-border-radius: 8px;
   -ms-border-radius: 8px;
   border-radius: 8px;
- 
+
 .jquery-modal.blocker
   background navy-blue !important
-  
+
 textarea#textarea
   resize vertical !important
   min-height 200px
 
+
+#mandrill-response
+  font-size 1.2em
+  #response-true
+    display none
+    p
+      color white
+  #response-false
+    display none
+    p
+      color #c0392b
+
 div#enquire-modal, div#contact-us-modal
+    color #103158
     width 100%
     margin 0 auto
     box-shadow none
     padding 30px
     input, textarea
-      placeholder-color(rgba(255, 255, 255, 0.4))
+      placeholder-color(rgb(236, 240, 241))
     .logo
         position relative
         margin 0
@@ -69,7 +82,7 @@ div#enquire-modal, div#contact-us-modal
           margin 0
           width 100%
           label
-              color white
+              color #103158
               font-family "Alegreya Sans", "Helvetica Neue", sans-serif
               font-weight 300
               text-rendering optimizeLegibility
@@ -134,14 +147,14 @@ div#enquire-modal, div#contact-us-modal
               letter-spacing 1px
             input:hover
               opacity 0.6
-              
+
 +below(450px)
    div#enquire-modal, div#contact-us-modal
      position relative !important
      margin 0 !important
      left 0 !important
      top 0 !important
-                
+
 +above(450px)
   div#enquire-modal, div#contact-us-modal
     width 80%
@@ -160,7 +173,7 @@ div#enquire-modal, div#contact-us-modal
             width 100%
             input
               width 30%
-               
+
 +above(768px)
   div#enquire-modal, div#contact-us-modal
     .form-horizontal
