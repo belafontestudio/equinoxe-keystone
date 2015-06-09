@@ -16,7 +16,8 @@ exports = module.exports = function(req, res) {
 	};
 	
 	locals.data = {
-		yachts: []
+		yachts: [],
+		url: process.env.WEB_URL
 	};
 	
 	// Load the current post
