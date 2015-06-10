@@ -2578,8 +2578,8 @@ section.center ul#filter-menu li h3 {
   letter-spacing: 1.5px;
 }
 section.center ul#filter-menu li span {
-  font-size: 25px;
-  font-size: 1.5625rem;
+  font-size: 16px;
+  font-size: 1rem;
   line-height: 25px;
   line-height: 1.5625rem;
   text-transform: uppercase;
@@ -3380,8 +3380,8 @@ section.center-parallax ul#filter-menu li h3 {
   letter-spacing: 1.5px;
 }
 section.center-parallax ul#filter-menu li span {
-  font-size: 25px;
-  font-size: 1.5625rem;
+  font-size: 16px;
+  font-size: 1rem;
   line-height: 25px;
   line-height: 1.5625rem;
   text-transform: uppercase;
