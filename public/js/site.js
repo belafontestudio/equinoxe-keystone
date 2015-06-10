@@ -140,7 +140,7 @@ function guestSlider(){
     $( "#slider-guest" ).slider({
       range: true,
       min: 1,
-      max: 15,
+      max: 34,
       step: 1,
       values: [ values.ming, values.maxg],
       slide: function( event, ui ) {
