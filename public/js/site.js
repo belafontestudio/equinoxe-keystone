@@ -166,9 +166,9 @@ function rangeSlider(){
       step: 1000,
       values: [ values.minp, values.maxp ],
       slide: function( event, ui ) {
-        $( "p.min-price" ).text( "€" + ui.values[ 0 ] );
-        $( "p.max-price" ).text( "€" + ui.values[ 1 ]);
-        $("a#f2 span").text(ui.values[ 0 ]+"-"+ui.values[ 1 ]);
+        $( "p.min-price" ).text( "€" + numeral(ui.values[ 0 ]).format('0,0[.]00' ) );
+        $( "p.max-price" ).text( "€" + numeral(ui.values[ 1 ]).format('0,0[.]00' ));
+        $("a#f2 span").text(numeral(ui.values[ 0 ]).format('0,0[.]00' )+"-"+ui.values[ 1 ]);
       },
       stop: function( event, ui ) {
         filters.minp = ui.values[ 0 ];
@@ -309,7 +309,7 @@ function updateFilterMenu(){
   $("a#f6 span").text(values.a);
   $("a#f4 span").text(values.minl);
   $("a#f5 span").text(values.t);
-  $("a#f2 span").text(values.minp+"-"+values.maxp);
+  $("a#f2 span").text(numeral(values.minp).format('0,0[.]00' )+"-"+numeral(values.maxp).format('0,0[.]00' ));
 
 }
 function collectYachtFilter(){
@@ -392,8 +392,8 @@ $(document).ready(function() {
 
         $(document).on('click', '.reset-button a', function(e) {
             e.preventDefault();
-            values.minp = 0;
-            values.maxp = 500;
+            values.minp = 500;
+            values.maxp = 500000;
             values.ming = 1;
             values.maxg = 15;
             values.a = "";
@@ -411,8 +411,8 @@ $(document).ready(function() {
             filters.maxl = "";
 
             updateFilterMenu();
-            $( "#slider-guest" ).slider({values: [ 1, 15]});
-            $( "#slider-range" ).slider({values: [ 0, 500]});
+            $( "#slider-guest" ).slider({values: [ 1, 34]});
+            $( "#slider-range" ).slider({values: [ 500, 500000]});
             collectYachtFilter();
         });
 

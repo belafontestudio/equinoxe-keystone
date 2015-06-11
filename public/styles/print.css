@@ -35,7 +35,7 @@ h3 {
   page-break-before: always;
 }
 p {
-  font-size: 14px;
+  font-size: 12px;
 }
 #header {
   position: relative;
@@ -278,6 +278,7 @@ p.caption {
   font-size: 9px;
   width: 100%;
   height: 15px;
+  font-size: 13px;
   text-align: center;
 }
 p.caption:nth-child(even) {
