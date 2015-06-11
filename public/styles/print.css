@@ -272,14 +272,15 @@ img#logo {
 .description #other-description .description-info h2 {
   text-align: center;
 }
-.caption {
+p.caption {
   padding: 0;
   margin: 0;
   font-size: 9px;
   width: 100%;
+  height: 15px;
   text-align: center;
 }
-.caption:nth-child(even) {
+p.caption:nth-child(even) {
   padding-bottom: 2px;
 }
 #footer-wrap {
