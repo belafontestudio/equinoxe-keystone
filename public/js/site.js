@@ -376,7 +376,7 @@ $(document).ready(function() {
       if(touch){
         $(".down").hide();
       }
-      submitModals()
+
       backToList()
       checkPage()
       var top_ofset = $('header').height() - 1;
@@ -435,6 +435,10 @@ $(document).ready(function() {
       scrollText: '', // Text for element
       activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
     });
+
+
+    //validate();
+    submitModals();
 
     resizeMap();
     filterMenu();
@@ -813,11 +817,16 @@ function mediaqueriesjs(){
   enquire.register("screen and (max-width:600px)", {
     match : function() {
       $('#heritage-img').attr('src', '/images/equinoxe_infografica-mobile.png');
+      $('.enquire-button').on('click', function(){
+        $.scrollUp();
+      })
     },
     unmatch : function() {
       $('#heritage-img').attr('src', '/images/equinoxe_infografica.png');
     }
-});
+  });
+
+
 }
 
 
@@ -970,3 +979,41 @@ $("#yacht_modal").submit(function()
         return false; // prevent page refresh
     });
 }
+
+
+
+///////////// Form validation
+
+
+// function validate()
+// {
+//
+//   $('#submit-form').on('click', function(e){
+//     e.preventDefault;
+//
+//     var inputnumber = $('.enquire-phone');
+//     var phonefilter = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+//
+//     var inputemail = $('.enquire_email');
+//     var emailfilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+//
+//
+//
+//
+//     if(!inputnumber.value.match(phonefilter))
+//       {
+//           alert("Not a valid phone number");
+//           return false;
+//       }
+//     else if (!emailfilter.test(inputemail.value))
+//       {
+//         alert('Not a valid mail');
+//         return false;
+//       }
+//     else
+//       {
+//         submitModals();
+//       }
+//
+//   });
+// }
