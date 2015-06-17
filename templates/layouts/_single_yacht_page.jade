@@ -145,8 +145,9 @@ block section
         div#container-other-specs-2
             div#other-specs
               ul.other-specs-list
-                h3
-                  | Specifications</br>—
+                if data.yacht.beam || data.yacht.crew || data.yacht.builder || data.yacht.designer ||  data.yacht.flag || data.yacht.model || data.yacht.draft || data.yacht.displacement || data.yacht["crusing speed"] || data.yacht.consumption || data.yacht["price per week low season"] || data.yacht.vat || data.yacht.location || data.yacht["price per week high season"]
+                  h3
+                    | Specifications</br>—
                 if data.yacht.beam
                   li
                     span
@@ -219,8 +220,9 @@ block section
                       | Price Per Week High Season:
                     = numeralFunction(data.yacht["price per week high season"]).format('0,0[.]00' )+data.yacht.currency
               ul.other-specs-list
-                h3
-                  | Accomodation</br>—
+                if data.yacht.guests || data.yacht.crew || data.yacht.cabins || data.yacht["guests cabins"] || data.yacht["crew cabins"]
+                  h3
+                    | Accomodation</br>—
                 if data.yacht.guests
                   li
                     span
@@ -250,8 +252,9 @@ block section
 
 
               ul.other-specs-list
-                h3
-                  | Equipment</br>—
+                if data.yacht.engine || data.yacht["pdf url"] 
+                  h3
+                    | Equipment</br>—
                 if data.yacht.engine
                   li
                     span
@@ -267,11 +270,13 @@ block section
                 
             div#other-description
               div.description-info.indent
-                h2 Description
-                
+                if data.yacht.content.description
+                  h2 Description
+                  
                 !=data.yacht.content.description
               div.description-info
-                h2 Water Sports
+                if data.yacht.content["water sports"]
+                  h2 Water Sports
                 !=data.yacht.content["water sports"]
                 a.button(href="#contact-us-modal", rel="modal:open") Enquire
     

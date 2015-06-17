@@ -22,6 +22,7 @@ Yacht.add({
 
 		return '<img src="'+file.href+'" style="max-width: 250px">'
 	}},
+
 	thumbnail: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/thumbnails', prefix: '/uploads/images/yachts/thumbnails/', allowedTypes: ['image/jpeg','image/gif','image/png'],
 	pre: {width:480,height:270},format: function(item, file){
 
@@ -64,7 +65,6 @@ Yacht.add({
 	currency: { type: Types.Select, options: '€,$', default: '€', index: true },
 
 	location: { type: Types.Text, index: true },
-
 
 
 	"message/offers": { type: Types.Text, index: true },

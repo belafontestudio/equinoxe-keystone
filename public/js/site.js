@@ -9,6 +9,8 @@ values.t = "";
 values.minl = "";
 values.maxl = "";
 
+var imgLoad = imagesLoaded( 'window' );
+
 var pathname = location.pathname;
 var touch = Modernizr.touch;
  // Set options
@@ -46,7 +48,7 @@ $( window ).resize(function() {
 });
 
 
-var imgLoad = imagesLoaded( 'body' );
+
 
 
 
