@@ -57,6 +57,10 @@ block section
                 block single-yacht-guests
                   = data.yacht.guests
 
+            if data.yacht["message/offers"]
+              li
+                = data.yacht["message/offers"]
+
             
 
 
@@ -69,7 +73,7 @@ block section
             a.button(href="#contact-us-modal", rel="modal:open") Enquire
           .clear
           
-          a.back-to-yachts(href="yachts/")
+          a.back-to-yachts(href="/yachts/#{data.yacht.availability}")
             i.fa.fa-chevron-left
             |   Back to yachts
           
@@ -267,6 +271,15 @@ block section
                       | Engines:
                     p 
                       =data.yacht.engine
+<<<<<<< Updated upstream
+=======
+                //- if data.yacht["pdf url"]
+                //-   li
+                //-     block single-yacht-pdf
+                //-       a.button(href=data.yacht["pdf url"], target="_blank")
+                //-         i.fa.fa-file-pdf-o
+                //-         |   Fullspec PDF
+>>>>>>> Stashed changes
               ul.other-specs-list
                 if data.yacht.guests || data.yacht.crew || data.yacht.cabins || data.yacht["guests cabins"] || data.yacht["crew cabins"]
                   h3
@@ -297,30 +310,15 @@ block section
                       | crew cabins:
                      =data.yacht["crew cabins"]
 
-
-
-              ul.other-specs-list
-                if data.yacht.engine || data.yacht["pdf url"] 
-                  h3
-                    | Equipment</br>—
-                if data.yacht.engine
-                  li
-                    span
-                      | Engines:
-                    p 
-                      =data.yacht.engine
-                //- if data.yacht["pdf url"]
-                //-   li
-                //-     block single-yacht-pdf
-                //-       a.button(href=data.yacht["pdf url"], target="_blank")
-                //-         i.fa.fa-file-pdf-o
-                //-         |   Fullspec PDF
-                
             div#other-description
-              div.description-info.indent
+              div.description-info
                 if data.yacht.content.description
+<<<<<<< Updated upstream
                   
                 !=data.yacht.content.description
+=======
+                  !=data.yacht.content.description
+>>>>>>> Stashed changes
               div.description-info
                 if data.yacht.content["water sports"]
                   h2 Water Sports

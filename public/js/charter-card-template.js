@@ -32,7 +32,7 @@
           <li>
             {{#ifCond build refit }}
                   <span>built:</span> 
-                  build" / refit "refit
+                  {{build}}" / refit "{{refit}}
             {{else}}
                   {{#if refit }}
                   <span>refit:</span> 
