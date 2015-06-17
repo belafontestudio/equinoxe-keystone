@@ -1,9 +1,11 @@
  {{#each results}}
        <li class="card"><a href="/yacht/{{slug}}?{{../q}}"></a>
         <div class="container-yachtcard-img">
-            {{#if "message/offers"}}
-              {{"message/offers"}}
-            {/if}}
+            {{#if [message/offers]}}
+              <span class="label">
+              {{[message/offers]}}
+              </span>
+            {{/if}}
 
             {{#if thumbnail.filename}}
               <img src="/uploads/images/yachts/thumbnails/{{thumbnail.filename}}" alt={{thumbnail.filename}}/>

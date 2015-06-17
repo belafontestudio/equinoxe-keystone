@@ -777,6 +777,7 @@ function fillGrid(yachts,template,q){
     list.q= q;
     var yachts_grid = $("ul#yachts-list-grid");
     if(list.total > 0){
+      
       yachts_grid.html(template(list)).fadeIn(500);
     }else{
       yachts_grid.html('<p id="no-yacht-found">Too bad. No yachts meet your requirements.<br><br>Use reset button to start again</p>').fadeIn(500);

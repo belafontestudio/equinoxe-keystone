@@ -166,6 +166,10 @@ block content
                     span
                       | Price Per Week High Season:
                     = numeralFunction(data.yacht["price per week high season"]).format('0,0[.]00' )+data.yacht.currency
+
+                if data.yacht["message/offers"]
+                  li
+                    = data.yacht["message/offers"]
               
     //- #footer-wrap
     //-   .footer
