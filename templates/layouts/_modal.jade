@@ -39,13 +39,13 @@ div(id="enquire-modal", style="display:none;")
         .control-group.phonenum
           label.enquire_phone.control-label(for='textinput') Phone Number
           .controls
-            input#textinput.input-xlarge(name='textinput', type='text', placeholder='placeholder', required='')
+            input#textinput.enquire-phone.input-xlarge(name='textinput', type='number', placeholder='placeholder', required='')
             
         // Text input
         .control-group.mail
           label.control-label(for='textinput') Email
           .controls
-            input#textinput.enquire_email.input-xlarge(name='textinput', type='text', placeholder='johnappleseed@yahoo.it', required='')
+            input#textinput.enquire_email.input-xlarge(name='textinput', type='email', placeholder='johnappleseed@yahoo.it', required='')
            
         // Textarea
         .control-group.text-area
@@ -62,4 +62,4 @@ div(id="enquire-modal", style="display:none;")
               p
                 | Error sending message.
           .controls
-            input(type="submit" value="Submit")
+            input#submit-form(type="submit" value="Submit")
