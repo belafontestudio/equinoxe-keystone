@@ -271,15 +271,12 @@ block section
                       | Engines:
                     p 
                       =data.yacht.engine
-<<<<<<< Updated upstream
-=======
                 //- if data.yacht["pdf url"]
                 //-   li
                 //-     block single-yacht-pdf
                 //-       a.button(href=data.yacht["pdf url"], target="_blank")
                 //-         i.fa.fa-file-pdf-o
                 //-         |   Fullspec PDF
->>>>>>> Stashed changes
               ul.other-specs-list
                 if data.yacht.guests || data.yacht.crew || data.yacht.cabins || data.yacht["guests cabins"] || data.yacht["crew cabins"]
                   h3
@@ -311,14 +308,9 @@ block section
                      =data.yacht["crew cabins"]
 
             div#other-description
-              div.description-info
-                if data.yacht.content.description
-<<<<<<< Updated upstream
-                  
-                !=data.yacht.content.description
-=======
+              if data.yacht.content.description
+                div.description-info
                   !=data.yacht.content.description
->>>>>>> Stashed changes
               div.description-info
                 if data.yacht.content["water sports"]
                   h2 Water Sports
