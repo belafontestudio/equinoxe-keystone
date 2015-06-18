@@ -219,12 +219,12 @@ Yacht.schema.pre('save', function(next) {
 			    "height": "20mm",
 			    "contents": '<div id="footer-wrap" style="height:18mm; border-top:1px solid #103158; float: left;clear: none;text-align: inherit;width: 810px;position: absolute;bottom: 0; left:-20px; padding-left:20px; background: white; color:#103158;"><div class="footer" style="width: 82.8333333333333%;margin-left: 0%;margin-right: 3%;position: relative;left: 8.5833333333333%;padding: 0;text-align: center; font-size: 9px"><ul style=" list-style: none; "><li style="display: inline-block;font-size: 11px;">www.equinoxeyachts.com | &nbsp;</li><li style="display: inline-block;font-size: 11px;">ey@equinoxeyacths.it | &nbsp;</li><li style="display: inline-block;font-size: 11px;">Torino: +39 011 8185211 | </li><li style="display: inline-block;font-size: 11px;">&nbsp;Corrado Di Majo mobile +39 335 5967552</li></ul><p font-size: 9px !important;">All yachts offered are subject to still being available. Yacht particulars are believed to be correct but their contents are not guaranteed, neither may they be used for any contractual purposes. Specification provided for information only. Subject to prior sale, price change or withdrawal from market without notice.</p></div></div>'
 			  }};
-        request("http://localhost:3000/api/print/"+yacht.slug,function (error, response, body) {
+        request(process.env.WEB_URL+"/api/print/"+yacht.slug,function (error, response, body) {
 				    pdf.create(body, options).toFile(function(err, res) {
 					  if (err) return console.log(err);
 
 					  yacht.pdf = false;
-					  yacht["pdf url"] = "http://localhost:3000/generated/pdf/"+yacht.slug+".pdf";
+					  yacht["pdf url"] = process.env.WEB_URL+"/generated/pdf/"+yacht.slug+".pdf";
 					  next();
 
 					});
