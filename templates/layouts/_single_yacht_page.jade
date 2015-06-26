@@ -11,7 +11,7 @@ block section
       div#plain-color-background
         div#container-other-specs
           .main-text  
-            h1 
+            h1#ombra 
               block title
                 = data.yacht.name
           .clear
@@ -58,7 +58,7 @@ block section
                   = data.yacht.guests
 
             if data.yacht["message/offers"]
-              li
+              li.offer-message
                 = data.yacht["message/offers"]
 
             

@@ -1113,6 +1113,16 @@ section.center div.slider-bar .ui-widget-header {
     width: 100%;
   }
 }
+#ombra {
+  text-shadow: 2px 2px 8px #103158;
+}
+.offer-message {
+  position: absolute;
+  z-index: 100;
+  padding: 8px;
+  background: #f4bb3b;
+  color: #091d34;
+}
 #gallery1 {
   position: relative;
 }
@@ -2496,10 +2506,10 @@ section.center div#other-specs ul.other-specs-list h3 {
 }
 section.center div#other-specs ul.other-specs-list li {
   font-size: 1.1em;
-  font-weight: bold;
+  font-weight: normal;
 }
 section.center div#other-specs ul.other-specs-list li span {
-  font-size: 0.7em;
+  font-size: 0.85em;
   font-weight: light;
   text-transform: lowercase;
   padding-right: 7px;
@@ -6781,7 +6791,7 @@ footer p.secondmenu a:hover {
     left: 5.15%;
   }
   .owl-item .img {
-    height: 660px;
+    height: 700px;
   }
 }
 @media only screen and (min-width: 1080px) {

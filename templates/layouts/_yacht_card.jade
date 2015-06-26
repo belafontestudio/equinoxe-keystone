@@ -4,7 +4,7 @@ block single-yacht
         a.slug(href= "/yacht/"+yacht.slug)
         div.container-yachtcard-img
           if yacht["message/offers"]
-            span
+            span.offer-message
               = yacht["message/offers"]
           block img-yacht-card
             | img
