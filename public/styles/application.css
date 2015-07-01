@@ -1121,7 +1121,7 @@ section.center div.slider-bar .ui-widget-header {
   z-index: 100;
   padding: 8px;
   background: #f4bb3b;
-  color: #091d34;
+  color: #091d34 !important;
 }
 #gallery1 {
   position: relative;
@@ -2505,14 +2505,18 @@ section.center div#other-specs ul.other-specs-list h3 {
   margin-bottom: 18px;
 }
 section.center div#other-specs ul.other-specs-list li {
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: normal;
 }
 section.center div#other-specs ul.other-specs-list li span {
-  font-size: 0.85em;
+  font-size: 0.88em;
+  color: #f4bb3b;
   font-weight: light;
   text-transform: lowercase;
   padding-right: 7px;
+}
+section.center div#other-specs ul.other-specs-list li span:before {
+  content: '';
 }
 section.center div#other-description div.description-info {
   margin-bottom: 80px;
@@ -6411,7 +6415,7 @@ footer p.secondmenu a:hover {
   }
   section.center div#other-specs,
   section.center-parallax div#other-specs {
-    padding-right: 20px;
+    padding-right: 26px;
   }
   section.center div#other-specs ul.other-specs-list,
   section.center-parallax div#other-specs ul.other-specs-list {
@@ -7044,10 +7048,6 @@ footer p.secondmenu a:hover {
   section.center div#container-other-specs-2 div#other-description:last-child,
   section.center-parallax div#container-other-specs-2 div#other-description:last-child {
     margin-right: 0%;
-  }
-  section.center div#other-specs,
-  section.center-parallax div#other-specs {
-    padding-right: 20px;
   }
   section.center div#other-specs ul.other-specs-list,
   section.center-parallax div#other-specs ul.other-specs-list {

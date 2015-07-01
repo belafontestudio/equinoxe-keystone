@@ -21,7 +21,7 @@
   z-index: 100;
   padding: 8px;
   background yellow
-  color midnight
+  color midnight !important
 
 #gallery1
   position relative
@@ -778,13 +778,17 @@ section.center
                 margin 0
                 margin-bottom 18px
             li
-              font-size 1.1em
+              font-size 1em
               font-weight normal
             li span
-                font-size .85em
+                font-size .88em
+                //text-decoration underline
+                color yellow
                 font-weight light
                 text-transform lowercase
                 padding-right 7px
+                &:before
+                  content ''
     div#other-description
         div.description-info
             margin-bottom 80px
@@ -2224,7 +2228,7 @@ footer
             div#other-description
                 column(5/9)
         div#other-specs
-            padding-right 20px
+            padding-right 26px
             ul.other-specs-list
                 margin-bottom 40px
                 padding-top 5px
@@ -2402,7 +2406,7 @@ footer
             div#other-description
                 column(5/8)
         div#other-specs
-            padding-right 20px
+
             ul.other-specs-list
                 margin-bottom 40px
                 padding-top 5px
