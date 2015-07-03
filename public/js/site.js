@@ -1,7 +1,9 @@
 var slidesInterval, filters = {}, values= {};
 var timer, timer2;
-values.minp = 5000;
-values.maxp = 500000;
+values.minp = 100000;
+values.maxp = 100000000;
+values.minpw = 5000;
+values.maxpw = 500000;
 values.ming = 1;
 values.maxg = 34;
 values.a = "";
@@ -119,8 +121,13 @@ function activeFS(target){
 
             }
 
+
             counter++;
         });
+        if($('section.filter-hide').length == 1){
+          $("section.zone").delay(500).fadeIn(1000);
+
+        }
 }
 function activeLI(target){
   target = (typeof target !== 'undefined' )? target : 0;
@@ -160,11 +167,32 @@ function guestSlider(){
     $( "p.min-guest" ).text( $( "#slider-guest" ).slider( "values", 0 )+ "guests");
     $( "p.max-guest" ).text( $( "#slider-guest" ).slider( "values", 1 )+ "guests");
 }
-function rangeSlider(){
-    $( "#slider-range" ).slider({
+function rangeSliderWeek(){
+  $( "#slider-rangeweek" ).slider({
       range: true,
       min: 5000,
       max: 500000,
+      step: 1000,
+      values: [ values.minpw, values.maxpw ],
+      slide: function( event, ui ) {
+        $( "p.min-priceweek" ).text( "€" + numeral(ui.values[ 0 ]).format('0,0[.]00' ) );
+        $( "p.max-priceweeek" ).text( "€" + numeral(ui.values[ 1 ]).format('0,0[.]00' ));
+        $("a#f2 span").text(numeral(ui.values[ 0 ]).format('0,0[.]00' )+"-"+ui.values[ 1 ]);
+      },
+      stop: function( event, ui ) {
+        filters.minpw = ui.values[ 0 ];
+        filters.maxpw = ui.values[ 1 ];
+        collectYachtFilter()
+      }
+    });
+    $( "p.min-priceweek" ).text( "€" + $( "#slider-rangeweek" ).slider( "values", 0 ));
+    $( "p.max-priceweek" ).text( "€" + $( "#slider-rangeweek" ).slider( "values", 1 ));
+}   
+function rangeSlider(){
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 100000,
+      max: 100000000,
       step: 1000,
       values: [ values.minp, values.maxp ],
       slide: function( event, ui ) {
@@ -180,6 +208,7 @@ function rangeSlider(){
     });
     $( "p.min-price" ).text( "€" + $( "#slider-range" ).slider( "values", 0 ));
     $( "p.max-price" ).text( "€" + $( "#slider-range" ).slider( "values", 1 ));
+
 }
 
 // function availabilityFilter(){
@@ -200,6 +229,55 @@ function rangeSlider(){
 //             $("a#f6 span").text(filters.a);
 //         });
 // }
+
+function resetFilters(){
+  $(document).on('click', '.reset-button a', function(e) {
+            e.preventDefault();
+            values.minp = 100000;
+            values.maxp = 100000000;
+            values.minpw = 500;
+            values.maxpw = 500000;
+            values.ming = 1;
+            values.maxg = 34;
+            values.a = "";
+            values.t = "";
+            values.minl = "";
+            values.maxl = "";
+
+            filters.minp = "";
+            filters.maxp = "";
+            filters.minpw = "";
+            filters.maxpw = "";
+            filters.ming = "";
+            filters.maxg = "";
+            filters.a = "";
+            filters.t = "";
+            filters.minl = "";
+            filters.maxl = "";
+            filters.z = "";
+
+            updateFilterMenu();
+            $( "#slider-guest" ).slider({values: [ 1, 34]});
+            $( "#slider-range" ).slider({values: [ 100000, 100000000]});
+            $( "#slider-rangeweek" ).slider({values: [ 500, 500000]});
+
+            $("a#small").removeClass("active");
+            $("a#super").removeClass("active");
+            $("a#mega").removeClass("active");
+
+            $("a#power").removeClass("active");
+            $("a#sail").removeClass("active");
+            $("a#gulet").removeClass("active");
+            
+            $( "p.min-price" ).text( "€" + $( "#slider-range" ).slider( "values", 0 ));
+            $( "p.max-price" ).text( "€" + $( "#slider-range" ).slider( "values", 1 ));
+            $( "p.min-priceweek" ).text( "€" + $( "#slider-rangeweek" ).slider( "values", 0 ));
+            $( "p.max-priceweek" ).text( "€" + $( "#slider-rangeweek" ).slider( "values", 1 ));
+            $( "p.min-guest" ).text( $( "#slider-guest" ).slider( "values", 0 )+ "guests");
+            $( "p.max-guest" ).text( $( "#slider-guest" ).slider( "values", 1 )+ "guests");
+            collectYachtFilter();
+        });
+}
 
 function lenghtFilter(){
   $(document).on('click', 'a#small', function(e) {
@@ -264,15 +342,52 @@ function typeFilter(){
         });
 }
 
+function zoneFilter(){
+  $(document).on('click', 'a#motor', function(e) {
+            e.preventDefault();
+            $(this).addClass("active");
+            $("a#sail").removeClass("active");
+            $("a#gulet").removeClass("active");
+            filters.z = "Artide";
+            collectYachtFilter();
+            $("a#f7 span").text(filters.z);
+        });
+  $(document).on('click', 'a#sail', function(e) {
+            e.preventDefault();
+            $("a#motor").removeClass("active");
+            $(this).addClass("active");
+            $("a#gulet").removeClass("active");
+            filters.z = "Antartic";
+            collectYachtFilter();
+            $("a#f7 span").text(filters.z);
+        });
+  $(document).on('click', 'a#gulet', function(e) {
+            e.preventDefault();
+            $("a#motor").removeClass("active");
+            $("a#sail").removeClass("active");
+            $(this).addClass("active");
+            filters.z = "Galapagos";
+            collectYachtFilter();
+            $("a#f7 span").text(filters.z);
+        });
+}
+
 function updateFilterMenu(){
   if(!$.isEmptyObject(urlParams) ){
 
     if(urlParams.minp){
-      values.minp = urlParams.minp/1000;
+      values.minp = urlParams.minp;
 
     }
     if(urlParams.maxp){
-      values.maxp = urlParams.maxp/1000;
+      values.maxp = urlParams.maxp;
+    }
+    if(urlParams.minpw){
+      values.minpw = urlParams.minpw;
+
+    }
+    if(urlParams.maxpw){
+      values.maxpw = urlParams.maxpw;
     }
     if(urlParams.ming){
       values.ming = urlParams.ming;
@@ -280,38 +395,79 @@ function updateFilterMenu(){
     if(urlParams.maxg){
       values.maxg = urlParams.maxg;
     }
-
+    if(urlParams.z){
+      values.z = urlParams.z;
+      filters.z = urlParams.z;
+    }
 
     // if(urlParams.a){
     //   values.a = urlParams.a;
     // }
     if(urlParams.t){
       values.t = urlParams.t;
+      filters.t = urlParams.t;
     }
     if(urlParams.minl){
       values.minl = urlParams.minl;
+      filters.minl = urlParams.minl;
     }
-    if(urlParams.minl){
-      values.minl = urlParams.minl;
+    if(urlParams.maxl){
+      values.maxl = urlParams.maxl;
+      filters.maxl = urlParams.maxl;
     }
 
 
   }
    if(pathname == "/yachts/Charter"){
-
+      $("a#f2 span").text(numeral(values.minpw).format('0,0[.]00' )+"-"+numeral(values.maxpw).format('0,0[.]00' ));
       values.a = "Charter";
       filters.a = "Charter";
     }
     if(pathname == "/yachts/Sale"){
+      $("a#f2 span").text(numeral(values.minp).format('0,0[.]00' )+"-"+numeral(values.maxp).format('0,0[.]00' ));
       values.a = "Sale";
       filters.a = "Sale";
     }
 
+  if(values.minl == "0" && values.maxl == "24"){
+    $("a#f4 span").text("0-24m");
+    $("a#small").addClass("active");
+    $("a#super").removeClass("active");
+    $("a#mega").removeClass("active");
+  }else if(values.minl == "24" && values.maxl == "40"){
+    $("a#f4 span").text("24-40m");
+    $("a#small").removeClass("active");
+    $("a#super").addClass("active");
+    $("a#mega").removeClass("active");
+  }else if(values.minl == "40" && values.maxl == "150"){
+    $("a#f4 span").text("40m+");
+    $("a#small").removeClass("active");
+    $("a#super").removeClass("active");
+    $("a#mega").addClass("active");
+  
+  }
+
+
+  if(values.t == "Power"){
+    $("a#power").addClass("active");
+    $("a#sail").removeClass("active");
+    $("a#gulet").removeClass("active");
+  }else if(values.t == "Sails"){
+    $("a#power").removeClass("active");
+    $("a#sail").addClass("active");
+    $("a#gulet").removeClass("active");
+  }else if(values.t == "Gulet"){
+    $("a#power").removeClass("active");
+    $("a#sail").removeClass("active");
+    $("a#gulet").addClass("active");
+  }
+            
+
   $("a#f3 span").text(values.ming+"-"+values.maxg);
   $("a#f6 span").text(values.a);
-  $("a#f4 span").text(values.minl);
+
   $("a#f5 span").text(values.t);
-  $("a#f2 span").text(numeral(values.minp).format('0,0[.]00' )+"-"+numeral(values.maxp).format('0,0[.]00' ));
+  
 
 }
 function collectYachtFilter(){
@@ -327,12 +483,22 @@ function collectYachtFilter(){
         if(filters.maxp){
           q += "&maxp="+filters.maxp;
         }
+        if(filters.minpw){
+          q += "&minpw="+filters.minpw;
+        }
+        if(filters.maxpw){
+          q += "&maxpw="+filters.maxpw;
+        }
         if(filters.ming){
           q += "&ming="+filters.ming;
         }
         if(filters.maxg){
           q += "&maxg="+filters.maxg;
         }
+        if(filters.z){
+          q += "&z="+filters.z;
+        }
+
 
 
          if(pathname == "/yachts/Charter"){
@@ -354,7 +520,7 @@ function collectYachtFilter(){
         if(filters.maxl){
           q += "&maxl="+filters.maxl;
         }
-        console.log(q)
+  
         if(q != ""){
           console.log("query filled: " + q);
           $.get( "/api/yachts/filter?" + q, function( yachts ) {
@@ -392,31 +558,7 @@ $(document).ready(function() {
         // $("#gallery1 #slides1").skippr();
         // $("#gallery2 #slides2").skippr();
 
-        $(document).on('click', '.reset-button a', function(e) {
-            e.preventDefault();
-            values.minp = 500;
-            values.maxp = 500000;
-            values.ming = 1;
-            values.maxg = 15;
-            values.a = "";
-            values.t = "";
-            values.minl = "";
-            values.maxl = "";
-
-            filters.minp = "";
-            filters.maxp = "";
-            filters.ming = "";
-            filters.maxg = "";
-            filters.a = "";
-            filters.t = "";
-            filters.minl = "";
-            filters.maxl = "";
-
-            updateFilterMenu();
-            $( "#slider-guest" ).slider({values: [ 1, 34]});
-            $( "#slider-range" ).slider({values: [ 500, 500000]});
-            collectYachtFilter();
-        });
+        resetFilters();
 
 
 
@@ -445,11 +587,12 @@ $(document).ready(function() {
     resizeMap();
     filterMenu();
     rangeSlider();
+    rangeSliderWeek();
     guestSlider();
     //availabilityFilter();
     lenghtFilter();
     typeFilter();
-
+    zoneFilter();
     toggleFilters();
     mediaqueriesjs();
     clickFilters()
@@ -780,7 +923,7 @@ function fillGrid(yachts,template,q){
       
       yachts_grid.html(template(list)).fadeIn(500);
     }else{
-      yachts_grid.html('<p id="no-yacht-found">Too bad. No yachts meet your requirements.<br><br>Use reset button to start again</p>').fadeIn(500);
+      yachts_grid.html('<p id="no-yacht-found">We’re sorry, but we couldn’t find a yacht meeting your requirements.<br><br>Change filters to try a new search.</p>').fadeIn(500);
     }
 
 
@@ -793,9 +936,14 @@ function populateYachts(yachts,q){
     if(pathname == "/yachts/Sale"){
       var source   = $("#sale-card-template").html();
     }
+    if(pathname == "/expeditions"){
+      var source   = $("#expedition-card-template").html();
+    }
     var template = Handlebars.compile(source);
     fillGrid(yachts,template,q)
 }
+
+
 
 
 /////////////////////////
@@ -887,20 +1035,29 @@ function sliderKey(){
 
   });
 }
-
+function checkedCheckbox(){
+  
+}
 function submitModals(){
     $("#enquire_form").submit(function()
     {
         var email = $(".enquire_email").val(); // get email field value
         var name = $(".enquire_name").val(); // get name field value
         var surname = $(".enquire_surname").val(); // get name field value
+        var tomail = ''
 
         var check0 = $("#checkboxes-0").val(); // get name field value
         var check1 = $("#checkboxes-1").val(); // get name field value
         var check2 = $("#checkboxes-2").val(); // get name field value
         var check3 = $("#checkboxes-3").val(); // get name field value
         var check4 = $("#checkboxes-4").val(); // get name field value
-
+        if ($("#checkboxes-0").is(":checked") || $("#checkboxes-3").is(":checked")|| $("#checkboxes-4").is(":checked")){
+          tomail = "barche@equinoxe.it";
+        }else if($("#checkboxes-1").is(":checked") || $("#checkboxes-2").is(":checked")){
+          tomail = "corrado@equinoxe.it";
+        }
+        console.log(tomail);
+         
         var msg = $(".enquire_msg").val(); // get message field value
         $.ajax(
         {
@@ -914,12 +1071,12 @@ function submitModals(){
                     'headers': {
                         'Reply-To': email
                     },
-                    'subject': name +" "+ surname +'Website Contact Form',
-                    'text': check0 +" "+ check1 + " "+ check2 +" "+ check3 + " " + check4 +"   "+msg,
+                    'subject': name +" "+ surname +' - website',
+                    'text': check0 +" - "+ check1 + " - "+ check2 +" - "+ check3 + " - " + check4 +" - "+msg,
                     'to': [
                     {
-                        'email': 'piermaria@belafonte.co',
-                        'name': 'Piermaria Cosina',
+                        'email': "piermaria@belafonte.co",
+                        'name': 'Equinoxe yacht',
                         'type': 'to'
                     }]
                 }
@@ -942,10 +1099,15 @@ $("#yacht_modal").submit(function()
         var email = $(".modal_email").val(); // get email field value
         var name = $(".modal_name").val(); // get name field value
         var surname = $(".modal_surname").val(); // get name field value
-
+        var tomail = "";
         var theyacht = $('h1').text(); // get name field value
-
-
+        var availability = $("li.availability");
+        if(availability == "Sale"){
+          tomail = "corrado@equinoxe.it";
+        }else{
+          tomail = "barche@equinoxe.it";
+        }
+        
         var msg = $(".modal_msg").val(); // get message field value
         $.ajax(
         {
@@ -959,12 +1121,12 @@ $("#yacht_modal").submit(function()
                     'headers': {
                         'Reply-To': email
                     },
-                    'subject': theyacht + " "+name +" "+ surname +'Website Contact Form',
-                    'text':  theyacht +"   "+msg,
+                    'subject': theyacht+ " - "+name +" "+ surname +' - website',
+                    'text':  theyacht +"<br/>   "+name+surname+msg,
                     'to': [
                     {
-                        'email': 'piermaria@belafonte.co',
-                        'name': 'Piermaria Cosina',
+                        'email': "piermaria@belafonte.co",
+                        'name': 'Equinoxe yachts',
                         'type': 'to'
                     }]
                 }

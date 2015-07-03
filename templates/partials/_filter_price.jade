@@ -1,9 +1,14 @@
 block section
   section.center.price-slider.filter-hide
+    if data.yachts.availability == "Sale"
       #slider-numbers
         p.min-price
-          
         p.max-price
-          
       .clear
       #slider-range.slider-bar
+    if data.yachts.availability == "Charter"
+      #slider-numbersweek
+        p.min-priceweek
+        p.max-priceweek
+      .clear
+      #slider-rangeweek.slider-bar

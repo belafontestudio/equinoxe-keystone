@@ -14,6 +14,8 @@ exports = module.exports = function(req, res) {
 		maxguests: req.query.maxg,
 		minprice: req.query.minp,
 		maxprice: req.query.maxp,
+		minpriceweek: req.query.minpw,
+		maxpriceweek: req.query.maxpw,
 		minlenght: req.query.minl,
 		maxlenght: req.query.maxl,
 		type: req.query.t,
@@ -31,29 +33,34 @@ exports = module.exports = function(req, res) {
 				maxPages: 10
 			})
 			.where('state', 'published')
-			.sort('-lenght')
-			.populate('author');
+			.sort('-lenght');
 		
 		if (locals.filters.availability) {
 			q.where('availability').equals(locals.filters.availability);
 		}
 		if (locals.filters.minguests) {
-			q.where('guests').gt(locals.filters.minguests)
+			q.where('guests').gte(locals.filters.minguests)
 		}
 		if (locals.filters.maxguests) {
-			q.where('guests').lt(locals.filters.maxguests)
+			q.where('guests').lte(locals.filters.maxguests)
+		}
+		if (locals.filters.minpriceweek) {
+			q.where('price per week from').gte(locals.filters.minpriceweek)
+		}
+		if (locals.filters.minpriceweek) {
+			q.where('price per week from').lte(locals.filters.maxpriceweek)
 		}
 		if (locals.filters.minprice) {
-			q.where('price').gt(locals.filters.minprice)
+			q.where('price').gte(locals.filters.minprice)
 		}
 		if (locals.filters.maxprice) {
-			q.where('price').lt(locals.filters.maxprice)
+			q.where('price').lte(locals.filters.maxprice)
 		}
 		if (locals.filters.minlenght) {
-			q.where('lenght').gt(locals.filters.minlenght)
+			q.where('lenght').gte(locals.filters.minlenght)
 		}
 		if (locals.filters.maxlenght) {
-			q.where('lenght').lt(locals.filters.maxlenght)
+			q.where('lenght').lte(locals.filters.maxlenght)
 		}
 		if (locals.filters.type) {
 			if(locals.filters.type == "Sails"){
@@ -69,6 +76,7 @@ exports = module.exports = function(req, res) {
 			if (locals.filters.availability) {
 				results.availability = locals.filters.availability;
 			}
+			
 
 			locals.data.yachts = results;
 			

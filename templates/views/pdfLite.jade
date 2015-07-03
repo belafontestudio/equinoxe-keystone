@@ -170,7 +170,8 @@ block content
                 if data.yacht["message/offers"]
                   li
                     = data.yacht["message/offers"]
-        
+              
+
 
   #photo-container
     .foto-one
@@ -178,7 +179,12 @@ block content
           if slide.img.filename
             - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
             img(src=data.url+'/uploads/images/yachts/galleries/'+src)
-      
+            p.caption
+              =slide.cap
+    
+    
+  
+  
   
   .description
 

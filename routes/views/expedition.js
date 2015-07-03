@@ -9,20 +9,20 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 	
 	// Set locals
-	locals.section = 'yacht';
+	locals.section = 'expedition';
 	locals.filters = {
-		yacht: req.params.yacht
+		expedition: req.params.expedition
 	};
 	
 	locals.data = {
-		yachts: []
+		expeditions: []
 	};
 	
 	// Load the current post
 	view.on('init', function(next) {
 		
-		var q = keystone.list('Yacht').model.findOne({
-			slug: locals.filters.yacht
+		var q = keystone.list('Expedition').model.findOne({
+			slug: locals.filters.expedition
 		});
 		
 		q.exec(function(err, result) {
@@ -69,25 +69,15 @@ exports = module.exports = function(req, res) {
 			var sortedGalleries = _.sortBy( galleries, "pos" );
 			result["sortedGalleries"] = sortedGalleries;
 		
-			locals.data.yacht = result;
+			locals.data.expedition = result;
 			next(err);
 		});
 		
 	});
 	
-	// // Load other posts
-	// view.on('init', function(next) {
-		
-	// 	var q = keystone.list('Yacht').model.find().sort('-publishedDate').populate('author').limit('4');
-		
-	// 	q.exec(function(err, results) {
-	// 		locals.data.yachts = results;
-	// 		next(err);
-	// 	});
-		
-	// });
+
 	
 	// Render the view
-	view.render('yacht',{numeralFunction : numeral});
+	view.render('expedition',{numeralFunction : numeral});
 	
 };

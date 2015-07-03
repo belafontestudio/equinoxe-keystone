@@ -1,23 +1,34 @@
 block section
-  section.center
+  section.center#yatch-grid-container
     .main-text
       h1 
-        block title
-          | Expeditions
+
+        | Expeditions
+
       p
         block description
-          | description paragraph
     block explain-call
-    ul#yachts-list-grid
-      include _card_expedition.jade
-      include _card_expedition.jade
-      include _card_expedition.jade
-      include _card_expedition.jade
-      include _card_expedition.jade
-      include _card_expedition.jade
-      include _card_expedition.jade
-      include _card_expedition.jade
-      include _card_expedition.jade
-      include _card_expedition.jade
-      include _card_expedition.jade
-      include _card_expedition.jade
+    include _filter_expeditions.jade
+
+    .clear
+    if data.expeditions.results.length
+      if data.expeditions.totalPages > 1
+        //- h4.text-weight-normal Showing 
+        //-   strong #{data.yachts.first}
+        //-   |  to 
+        //-   strong #{data.yachts.last}
+        //-   |  of 
+        //-   strong #{data.yachts.total}
+        //-   |  yachts.
+      else
+        //- h4.text-weight-normal Showing #{utils.plural(data.yachts.results.length, '* yacht')}.
+      ul#yachts-list-grid
+        each expedition in data.expeditions.results
+          include _card_expedition.jade
+    else
+      ul#yachts-list-grid
+        p#no-yacht-found 
+          | We’re sorry, but we couldn’t find an expedition meeting your requirements.
+          br
+          br
+          | Change filters to try a new search.

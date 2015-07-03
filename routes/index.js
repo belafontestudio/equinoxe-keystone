@@ -54,6 +54,8 @@ exports = module.exports = function(app) {
     app.get('/yachts/:availability', routes.views.yachts);
     app.get('/yacht/:yacht', routes.views.yacht);
     
+    app.get('/expeditions', routes.views.expeditions);
+    app.get('/expedition/:expedition', routes.views.expedition);
 
     app.use('/app-storage',serveIndex(process.env.CLOUD_DIR, {'icons': true}));
 
@@ -76,10 +78,13 @@ exports = module.exports = function(app) {
     //app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
     app.get('/media/list', middleware.requireUser, routes.views.medialist);
     app.get('/media/backup', middleware.requireUser, routes.views.mediadownload);
-    app.get('/media/generate/pdf', middleware.requireUser, routes.views.generatePDF);
+    app.get('/media/generate/pdfLite', middleware.requireUser, routes.views.generatePDF);
 
-    app.get('/api/print/:yacht', keystone.initAPI, routes.api.yachtPrint);
+
+    app.get('/api/pdf/full/:yacht', keystone.initAPI, routes.api.pdfFull);
+    app.get('/api/pdf/lite/:yacht', keystone.initAPI, routes.api.pdfLite);
     app.get('/api/yachts/filter', keystone.initAPI, routes.api.yachts.filter);
+    app.get('/api/expeditions/filter', keystone.initAPI, routes.api.expeditions.filter);
 
 
 
