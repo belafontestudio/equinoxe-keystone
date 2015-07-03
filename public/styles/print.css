@@ -247,9 +247,7 @@ img#logo {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
-  font-size: 1em;
-  font-weight: bold;
-  padding: 10px 20px;
+  margin-top: 10px;
   background-color: #f4bb3b;
 }
 .bottom-specs #message-p:before,
@@ -262,6 +260,11 @@ img#logo {
 }
 .bottom-specs #message-p:last-child {
   margin-right: 0%;
+}
+.bottom-specs #message-p p {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0 20px;
 }
 .description {
   *zoom: 1;
