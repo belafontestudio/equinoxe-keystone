@@ -70,6 +70,10 @@ exports = module.exports = function(req, res) {
 			}
 			var sortedGalleries = _.sortBy( galleries, "pos" );
 			result["sortedGalleries"] = sortedGalleries;
+
+
+			
+			
 			locals.data.yacht = result;
 			next(err);
 		});

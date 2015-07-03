@@ -54,6 +54,7 @@ exports = module.exports = function(app) {
     app.get('/yachts/:availability', routes.views.yachts);
     app.get('/yacht/:yacht', routes.views.yacht);
     
+    
     app.get('/expeditions', routes.views.expeditions);
     app.get('/expedition/:expedition', routes.views.expedition);
 
