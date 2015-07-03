@@ -5295,6 +5295,11 @@ footer p.secondmenu a:hover {
     margin-top: 0;
   }
 }
+@media (max-height: 700px), (max-width: 1000px) {
+  .down {
+    left: 200px;
+  }
+}
 @media only screen and (min-width: 768px) {
   .scroll {
     display: block;
