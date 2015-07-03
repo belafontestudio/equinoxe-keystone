@@ -53,8 +53,20 @@ img#logo {
 #cover img {
   width: 100%;
 }
+#photo-container {
+  color: #091d34;
+}
 #photo-container img {
   width: 100%;
+}
+.description-info {
+  color: #091d34;
+}
+.description-info p {
+  color: #091d34;
+}
+.other-specs-list {
+  color: #091d34;
 }
 .main-text {
   width: 100%;

@@ -2291,7 +2291,7 @@ section.center ul#yacht-size.full-team li p {
   margin-top: 5px;
 }
 section.center ul#yacht-size.full-team li div.container-img img {
-  max-width: 60px;
+  max-width: 100px;
   position: relative;
   margin-bottom: 5px;
 }
@@ -3232,7 +3232,7 @@ section.center-parallax ul#yacht-size.full-team li p {
   margin-top: 5px;
 }
 section.center-parallax ul#yacht-size.full-team li div.container-img img {
-  max-width: 60px;
+  max-width: 90px;
   position: relative;
   margin-bottom: 5px;
 }
@@ -4341,7 +4341,7 @@ footer p.secondmenu a:hover {
     margin-top: 5px;
   }
   section.center-parallax ul#yacht-size.full-team li div.container-img img {
-    max-width: 60px;
+    max-width: 90px;
     position: relative;
     margin-bottom: 5px;
   }
@@ -5289,6 +5289,11 @@ footer p.secondmenu a:hover {
     position: relative;
     left: 0;
     margin-top: 0;
+  }
+}
+@media (max-height: 700px), (max-width: 1000px) {
+  .down {
+    left: 200px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -6313,9 +6318,9 @@ footer p.secondmenu a:hover {
   }
   section.center ul#yacht-size.full-team li div.container-img img,
   section.center-parallax ul#yacht-size.full-team li div.container-img img {
-    max-width: 60px;
+    max-width: 85px;
     position: absolute;
-    left: -80px;
+    left: -92px;
     top: 0;
   }
   section.center ul#filter-menu,
