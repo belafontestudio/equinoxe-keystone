@@ -1,3 +1,4 @@
+/* @flow */
 var slidesInterval, filters = {}, values= {};
 var timer, timer2;
 values.minp = 100000;
@@ -161,7 +162,7 @@ function guestSlider(){
       stop: function( event, ui ) {
         filters.ming = ui.values[ 0 ];
         filters.maxg = ui.values[ 1 ];
-        collectYachtFilter()
+        collectFilter()
       }
     });
     $( "p.min-guest" ).text( $( "#slider-guest" ).slider( "values", 0 )+ "guests");
@@ -175,19 +176,19 @@ function rangeSliderWeek(){
       step: 1000,
       values: [ values.minpw, values.maxpw ],
       slide: function( event, ui ) {
-        $( "p.min-priceweek" ).text( "€" + numeral(ui.values[ 0 ]).format('0,0[.]00' ) );
-        $( "p.max-priceweeek" ).text( "€" + numeral(ui.values[ 1 ]).format('0,0[.]00' ));
+        $( "p.min-priceweek" ).text( "€" + numeral(ui.values[ 0 ]).format('0,0[.]00' ));
+        $( "p.max-priceweek" ).text( "€" + numeral(ui.values[ 1 ]).format('0,0[.]00' ));
         $("a#f2 span").text(numeral(ui.values[ 0 ]).format('0,0[.]00' )+"-"+ui.values[ 1 ]);
       },
       stop: function( event, ui ) {
         filters.minpw = ui.values[ 0 ];
         filters.maxpw = ui.values[ 1 ];
-        collectYachtFilter()
+        collectFilter()
       }
     });
-    $( "p.min-priceweek" ).text( "€" + $( "#slider-rangeweek" ).slider( "values", 0 ));
-    $( "p.max-priceweek" ).text( "€" + $( "#slider-rangeweek" ).slider( "values", 1 ));
-}   
+    $( "p.min-priceweek" ).text( "€" + numeral("5000").format('0,0[.]00' ));
+    $( "p.max-priceweek" ).text( "€" + numeral("500000").format('0,0[.]00' ));
+}
 function rangeSlider(){
     $( "#slider-range" ).slider({
       range: true,
@@ -196,18 +197,19 @@ function rangeSlider(){
       step: 1000,
       values: [ values.minp, values.maxp ],
       slide: function( event, ui ) {
-        $( "p.min-price" ).text( "€" + numeral(ui.values[ 0 ]).format('0,0[.]00' ) );
+        $( "p.min-price" ).text( "€" + numeral(ui.values[ 0 ]).format('0,0[.]00' ));
         $( "p.max-price" ).text( "€" + numeral(ui.values[ 1 ]).format('0,0[.]00' ));
         $("a#f2 span").text(numeral(ui.values[ 0 ]).format('0,0[.]00' )+"-"+ui.values[ 1 ]);
       },
       stop: function( event, ui ) {
         filters.minp = ui.values[ 0 ];
         filters.maxp = ui.values[ 1 ];
-        collectYachtFilter()
+        collectFilter()
       }
     });
-    $( "p.min-price" ).text( "€" + $( "#slider-range" ).slider( "values", 0 ));
-    $( "p.max-price" ).text( "€" + $( "#slider-range" ).slider( "values", 1 ));
+
+    $( "p.min-price" ).text( "€" + numeral("100000").format('0,0[.]00' ));
+    $( "p.max-price" ).text( "€" + numeral("100000000").format('0,0[.]00' ));
 
 }
 
@@ -217,7 +219,7 @@ function rangeSlider(){
 //             $("a#sale").addClass("active");
 //             $("a#charter").removeClass("active");
 //             filters.a = "Sale";
-//             collectYachtFilter();
+//             collectFilter();
 //             $("a#f6 span").text(filters.a);
 //         });
 //   $(document).on('click', 'a#charter', function(e) {
@@ -225,7 +227,7 @@ function rangeSlider(){
 //             $("a#charter").addClass("active");
 //             $("a#sale").removeClass("active");
 //             filters.a = "Charter";
-//             collectYachtFilter();
+//             collectFilter();
 //             $("a#f6 span").text(filters.a);
 //         });
 // }
@@ -268,14 +270,22 @@ function resetFilters(){
             $("a#power").removeClass("active");
             $("a#sail").removeClass("active");
             $("a#gulet").removeClass("active");
-            
+
+            $("a#arctic").removeClass("active");
+            $("a#antarctic").removeClass("active");
+            $("a#galapagos").removeClass("active");
+            $("a#patagonia").removeClass("active");
+            $("a#maldives").removeClass("active");
+            $("a#newzeland").removeClass("active");
+            $("a#australia").removeClass("active");
+
             $( "p.min-price" ).text( "€" + $( "#slider-range" ).slider( "values", 0 ));
             $( "p.max-price" ).text( "€" + $( "#slider-range" ).slider( "values", 1 ));
             $( "p.min-priceweek" ).text( "€" + $( "#slider-rangeweek" ).slider( "values", 0 ));
             $( "p.max-priceweek" ).text( "€" + $( "#slider-rangeweek" ).slider( "values", 1 ));
             $( "p.min-guest" ).text( $( "#slider-guest" ).slider( "values", 0 )+ "guests");
             $( "p.max-guest" ).text( $( "#slider-guest" ).slider( "values", 1 )+ "guests");
-            collectYachtFilter();
+            collectFilter();
         });
 }
 
@@ -287,7 +297,7 @@ function lenghtFilter(){
             $("a#mega").removeClass("active");
             filters.minl = "0";
             filters.maxl = "24";
-            collectYachtFilter();
+            collectFilter();
             $("a#f4 span").text("0-24m");
         });
   $(document).on('click', 'a#super', function(e) {
@@ -297,7 +307,7 @@ function lenghtFilter(){
             $("a#mega").removeClass("active");
             filters.minl = "24";
             filters.maxl = "40";
-            collectYachtFilter();
+            collectFilter();
             $("a#f4 span").text("24-40m");
         });
   $(document).on('click', 'a#mega', function(e) {
@@ -307,7 +317,7 @@ function lenghtFilter(){
             $(this).addClass("active");
             filters.minl = "40";
             filters.maxl = "150";
-            collectYachtFilter();
+            collectFilter();
             $("a#f4 span").text("40m+");
         });
 }
@@ -319,7 +329,7 @@ function typeFilter(){
             $("a#sail").removeClass("active");
             $("a#gulet").removeClass("active");
             filters.t = "Power";
-            collectYachtFilter();
+            collectFilter();
             $("a#f5 span").text(filters.t);
         });
   $(document).on('click', 'a#sail', function(e) {
@@ -328,7 +338,7 @@ function typeFilter(){
             $(this).addClass("active");
             $("a#gulet").removeClass("active");
             filters.t = "Sails";
-            collectYachtFilter();
+            collectFilter();
             $("a#f5 span").text(filters.t);
         });
   $(document).on('click', 'a#gulet', function(e) {
@@ -337,37 +347,108 @@ function typeFilter(){
             $("a#sail").removeClass("active");
             $(this).addClass("active");
             filters.t = "Gulet";
-            collectYachtFilter();
+            collectFilter();
             $("a#f5 span").text(filters.t);
         });
 }
 
 function zoneFilter(){
-  $(document).on('click', 'a#motor', function(e) {
+
+  $(document).on('click', 'a#arctic', function(e) {
             e.preventDefault();
             $(this).addClass("active");
-            $("a#sail").removeClass("active");
-            $("a#gulet").removeClass("active");
-            filters.z = "Artide";
-            collectYachtFilter();
+            $("a#antarctic").removeClass("active");
+            $("a#galapagos").removeClass("active");
+            $("a#patagonia").removeClass("active");
+            $("a#maldives").removeClass("active");
+            $("a#newzeland").removeClass("active");
+            $("a#australia").removeClass("active");
+            filters.z = "Arctic";
+            collectFilter();
             $("a#f7 span").text(filters.z);
         });
-  $(document).on('click', 'a#sail', function(e) {
+  $(document).on('click', 'a#antarctic', function(e) {
             e.preventDefault();
-            $("a#motor").removeClass("active");
             $(this).addClass("active");
-            $("a#gulet").removeClass("active");
-            filters.z = "Antartic";
-            collectYachtFilter();
+            $("a#arctic").removeClass("active");
+            $("a#galapagos").removeClass("active");
+            $("a#patagonia").removeClass("active");
+            $("a#maldives").removeClass("active");
+            $("a#newzeland").removeClass("active");
+            $("a#australia").removeClass("active");
+            filters.z = "Antarctic";
+            collectFilter();
             $("a#f7 span").text(filters.z);
         });
-  $(document).on('click', 'a#gulet', function(e) {
+  $(document).on('click', 'a#galapagos', function(e) {
             e.preventDefault();
-            $("a#motor").removeClass("active");
-            $("a#sail").removeClass("active");
+            $("a#arctic").removeClass("active");
+            $("a#antarctic").removeClass("active");
+            $("a#patagonia").removeClass("active");
+            $("a#maldives").removeClass("active");
+            $("a#newzeland").removeClass("active");
+            $("a#australia").removeClass("active");
             $(this).addClass("active");
             filters.z = "Galapagos";
-            collectYachtFilter();
+            collectFilter();
+            $("a#f7 span").text(filters.z);
+        });
+  $(document).on('click', 'a#patagonia', function(e) {
+            e.preventDefault();
+            $("a#arctic").removeClass("active");
+            $("a#antarctic").removeClass("active");
+            $("a#galapagos").removeClass("active");
+            $("a#maldives").removeClass("active");
+            $("a#newzeland").removeClass("active");
+            $("a#australia").removeClass("active");
+            $(this).addClass("active");
+            filters.z = "Patagonia";
+            collectFilter();
+            $("a#f7 span").text(filters.z);
+        });
+
+  $(document).on('click', 'a#maldives', function(e) {
+            e.preventDefault();
+            $("a#arctic").removeClass("active");
+            $("a#antarctic").removeClass("active");
+            $("a#galapagos").removeClass("active");
+            $("a#patagonia").removeClass("active");
+
+            $("a#newzeland").removeClass("active");
+            $("a#australia").removeClass("active");
+            $(this).addClass("active");
+            filters.z = "Maldives";
+            collectFilter();
+            $("a#f7 span").text(filters.z);
+        });
+
+  $(document).on('click', 'a#newzeland', function(e) {
+            e.preventDefault();
+            $("a#arctic").removeClass("active");
+            $("a#antarctic").removeClass("active");
+            $("a#galapagos").removeClass("active");
+            $("a#patagonia").removeClass("active");
+            $("a#maldives").removeClass("active");
+
+            $("a#australia").removeClass("active");
+            $(this).addClass("active");
+            filters.z = "New Zeland";
+            collectFilter();
+            $("a#f7 span").text(filters.z);
+        });
+
+  $(document).on('click', 'a#australia', function(e) {
+            e.preventDefault();
+            $("a#arctic").removeClass("active");
+            $("a#antarctic").removeClass("active");
+            $("a#galapagos").removeClass("active");
+            $("a#patagonia").removeClass("active");
+            $("a#maldives").removeClass("active");
+            $("a#newzeland").removeClass("active");
+
+            $(this).addClass("active");
+            filters.z = "Australia";
+            collectFilter();
             $("a#f7 span").text(filters.z);
         });
 }
@@ -428,6 +509,15 @@ function updateFilterMenu(){
       values.a = "Sale";
       filters.a = "Sale";
     }
+    if(pathname == "/expeditions"){
+      if(values.z != ""){
+        $("a#f7 span").text("");
+      }else{
+        $("a#f7 span").text(values.z);
+      }
+      
+      
+    }
 
   if(values.minl == "0" && values.maxl == "24"){
     $("a#f4 span").text("0-24m");
@@ -444,7 +534,7 @@ function updateFilterMenu(){
     $("a#small").removeClass("active");
     $("a#super").removeClass("active");
     $("a#mega").addClass("active");
-  
+
   }
 
 
@@ -461,16 +551,74 @@ function updateFilterMenu(){
     $("a#sail").removeClass("active");
     $("a#gulet").addClass("active");
   }
-            
+
+  if(values.z == "Arctic"){
+    $("a#arctic").addClass("active");
+    $("a#antarctic").removeClass("active");
+    $("a#galapagos").removeClass("active");
+    $("a#patagonia").removeClass("active");
+    $("a#maldives").removeClass("active");
+    $("a#newzeland").removeClass("active");
+    $("a#australia").removeClass("active");
+  }else if(values.z == "Antarctic"){
+    $("a#arctic").removeClass("active");
+    $("a#antarctic").addClass("active");
+    $("a#galapagos").removeClass("active");
+    $("a#patagonia").removeClass("active");
+    $("a#maldives").removeClass("active");
+    $("a#newzeland").removeClass("active");
+    $("a#australia").removeClass("active");
+  }else if(values.z == "Galapagos"){
+    $("a#arctic").removeClass("active");
+    $("a#antarctic").removeClass("active");
+    $("a#galapagos").addClass("active");
+    $("a#patagonia").removeClass("active");
+    $("a#maldives").removeClass("active");
+    $("a#newzeland").removeClass("active");
+    $("a#australia").removeClass("active");
+  }else if(values.z == "Patagonia"){
+    $("a#arctic").removeClass("active");
+    $("a#antarctic").removeClass("active");
+    $("a#galapagos").removeClass("active");
+    $("a#patagonia").addClass("active");
+    $("a#maldives").removeClass("active");
+    $("a#newzeland").removeClass("active");
+    $("a#australia").removeClass("active");
+  }else if(values.z == "Maldives"){
+    $("a#arctic").removeClass("active");
+    $("a#antarctic").removeClass("active");
+    $("a#galapagos").removeClass("active");
+    $("a#patagonia").removeClass("active");
+    $("a#maldives").addClass("active");
+    $("a#newzeland").removeClass("active");
+    $("a#australia").removeClass("active");
+  }else if(values.z == "New Zeland"){
+    $("a#arctic").removeClass("active");
+    $("a#antarctic").removeClass("active");
+    $("a#galapagos").removeClass("active");
+    $("a#patagonia").removeClass("active");
+    $("a#maldives").removeClass("active");
+    $("a#newzeland").addClass("active");
+    $("a#australia").removeClass("active");
+  }else if(values.z == "Australia"){
+    $("a#arctic").removeClass("active");
+    $("a#antarctic").removeClass("active");
+    $("a#galapagos").removeClass("active");
+    $("a#patagonia").removeClass("active");
+    $("a#maldives").removeClass("active");
+    $("a#newzeland").removeClass("active");
+    $("a#australia").addClass("active");
+  }
+
 
   $("a#f3 span").text(values.ming+"-"+values.maxg);
   $("a#f6 span").text(values.a);
 
   $("a#f5 span").text(values.t);
-  
+
 
 }
-function collectYachtFilter(){
+function collectFilter(){
     emptyGrid();
     timer = setTimeout(function () {
         clearTimeout(timer);
@@ -501,10 +649,17 @@ function collectYachtFilter(){
 
 
 
-         if(pathname == "/yachts/Charter"){
+        if(pathname == "/yachts/Charter"){
 
           filters.a = "Charter";
           q += "&a="+filters.a;
+        }
+        if(pathname == "/expeditions"){
+          if (filters.z == ""){
+            filters.z = "";
+            q += "&z="+filters.z;
+          }
+          
         }
         if(pathname == "/yachts/Sale"){
 
@@ -520,22 +675,35 @@ function collectYachtFilter(){
         if(filters.maxl){
           q += "&maxl="+filters.maxl;
         }
-  
+
         if(q != ""){
           console.log("query filled: " + q);
-          $.get( "/api/yachts/filter?" + q, function( yachts ) {
+          var apiQuery = rightQuery();
+          $.get( "/api/"+apiQuery+"/filter?" + q, function( data ) {
 
-            populateYachts(yachts,q);
+            populateData(data,q);
           });
         }else{
-          $.get( "/api/yachts/filter", function( yachts ) {
+          $.get( "/api/"+apiQuery+"/filter", function( data ) {
 
-            populateYachts(yachts,q);
+            populateData(data,q);
           });
         }
 
 
     },2000);
+}
+
+function rightQuery(){
+  if(pathname == "/yachts/Charter"){
+    return "yachts"
+  }
+  if(pathname == "/yachts/Sale"){
+    return "yachts"
+  }
+  if(pathname == "/expeditions"){
+    return "expeditions"
+  }
 }
 
 $(document).ready(function() {
@@ -915,20 +1083,29 @@ function emptyGrid(){
         yachts_grid.empty();
     });
 }
-function fillGrid(yachts,template,q){
-    var list = yachts.list;
+function fillGrid(data,template,q){
+    var list = data.list;
     list.q= q;
-    var yachts_grid = $("ul#yachts-list-grid");
+    var data_grid = $("ul#yachts-list-grid");
     if(list.total > 0){
-      
-      yachts_grid.html(template(list)).fadeIn(500);
+
+      data_grid.html(template(list)).fadeIn(500);
     }else{
-      yachts_grid.html('<p id="no-yacht-found">We’re sorry, but we couldn’t find a yacht meeting your requirements.<br><br>Change filters to try a new search.</p>').fadeIn(500);
+      if(pathname == "/yachts/Charter"){
+        data_grid.html('<p id="no-yacht-found">We’re sorry, but we couldn’t find a yacht meeting your requirements.<br><br>Change filters to try a new search.</p>').fadeIn(500);
+      }
+      if(pathname == "/yachts/Sale"){
+        data_grid.html('<p id="no-yacht-found">We’re sorry, but we couldn’t find a yacht meeting your requirements.<br><br>Change filters to try a new search.</p>').fadeIn(500);
+      }
+      if(pathname == "/expeditions"){
+        data_grid.html('<p id="no-yacht-found">We’re sorry, but we couldn’t find any expedition meeting your requirements.<br><br>Change filters to try a new search.</p>').fadeIn(500);
+      }
+
     }
 
 
 }
-function populateYachts(yachts,q){
+function populateData(data,q){
 
     if(pathname == "/yachts/Charter"){
       var source   = $("#charter-card-template").html();
@@ -940,7 +1117,7 @@ function populateYachts(yachts,q){
       var source   = $("#expedition-card-template").html();
     }
     var template = Handlebars.compile(source);
-    fillGrid(yachts,template,q)
+    fillGrid(data,template,q)
 }
 
 
@@ -988,7 +1165,7 @@ function clickFilters(){
     $('#filter-mega-yacht>h2').css('color','white');
     filters.minl = "0";
     filters.maxl = "24";
-    collectYachtFilter();
+    collectFilter();
     $("a#f4 span").text("0-24m");
   });
 
@@ -998,7 +1175,7 @@ function clickFilters(){
     $('#filter-mega-yacht>h2').css('color','white');
     filters.minl = "24";
     filters.maxl = "40";
-    collectYachtFilter();
+    collectFilter();
     $("a#f4 span").text("24-40m");
   });
 
@@ -1008,7 +1185,7 @@ function clickFilters(){
     $('#filter-super-yacht>h2').css('color','white');
     filters.minl = "40";
     filters.maxl = "150";
-    collectYachtFilter();
+    collectFilter();
     $("a#f4 span").text("40m+");
   });
 }
@@ -1036,7 +1213,7 @@ function sliderKey(){
   });
 }
 function checkedCheckbox(){
-  
+
 }
 function submitModals(){
     $("#enquire_form").submit(function()
@@ -1057,7 +1234,7 @@ function submitModals(){
           tomail = "corrado@equinoxe.it";
         }
         console.log(tomail);
-         
+
         var msg = $(".enquire_msg").val(); // get message field value
         $.ajax(
         {
@@ -1075,7 +1252,7 @@ function submitModals(){
                     'text': check0 +" - "+ check1 + " - "+ check2 +" - "+ check3 + " - " + check4 +" - "+msg,
                     'to': [
                     {
-                        'email': "piermaria@belafonte.co",
+                        'email': tomail,
                         'name': 'Equinoxe yacht',
                         'type': 'to'
                     }]
@@ -1107,7 +1284,7 @@ $("#yacht_modal").submit(function()
         }else{
           tomail = "barche@equinoxe.it";
         }
-        
+
         var msg = $(".modal_msg").val(); // get message field value
         $.ajax(
         {
@@ -1125,7 +1302,7 @@ $("#yacht_modal").submit(function()
                     'text':  theyacht +"<br/>   "+name+surname+msg,
                     'to': [
                     {
-                        'email': "piermaria@belafonte.co",
+                        'email': tomail,
                         'name': 'Equinoxe yachts',
                         'type': 'to'
                     }]

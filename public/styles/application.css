@@ -969,14 +969,17 @@ section.center ul#call-to-action-menu.filter li img.gulet {
 }
 section.center div#slider,
 section.center div#slider-numbers,
-section.center div.slider-bar {
+section.center div.slider-bar,
+section.center div#slider-numbersweek {
   max-width: 80%;
   margin: 0 auto;
 }
-section.center div#slider-numbers {
+section.center div#slider-numbers,
+section.center div#slider-numbersweek {
   margin-top: 100px;
 }
-section.center div#slider-numbers p {
+section.center div#slider-numbers p,
+section.center div#slider-numbersweek p {
   position: relative;
   margin: 0 0 10px 0;
   font-size: 25px;
@@ -986,11 +989,19 @@ section.center div#slider-numbers p {
   text-transform: uppercase;
 }
 section.center div#slider-numbers p.min-price,
-section.center div#slider-numbers p.min-guest {
+section.center div#slider-numbersweek p.min-price,
+section.center div#slider-numbers p.min-guest,
+section.center div#slider-numbersweek p.min-guest,
+section.center div#slider-numbers p.min-priceweek,
+section.center div#slider-numbersweek p.min-priceweek {
   float: left;
 }
 section.center div#slider-numbers p.max-price,
-section.center div#slider-numbers p.max-guest {
+section.center div#slider-numbersweek p.max-price,
+section.center div#slider-numbers p.max-guest,
+section.center div#slider-numbersweek p.max-guest,
+section.center div#slider-numbers p.max-priceweek,
+section.center div#slider-numbersweek p.max-priceweek {
   float: right;
   text-align: right;
 }

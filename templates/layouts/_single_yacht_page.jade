@@ -275,12 +275,12 @@ block section
                     span
                       | VAT:
                     =data.yacht.vat
-                if data.yacht["pdfLite url"]
-                  li
-                    block single-yacht-pdf
-                      a.button(href=data.yacht["pdfLite url"], target="_blank")
-                        i.fa.fa-file-pdf-o
-                        |  PDF
+                
+                li
+                  block single-yacht-pdf
+                    a.button(href="/generated/pdf/lite/"+data.yacht.slug+".pdf", target="_blank")
+                      i.fa.fa-file-pdf-o
+                      |  PDF
                 li.hidden.availability
                   =data.yacht.availability 
 

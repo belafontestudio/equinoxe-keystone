@@ -7,9 +7,8 @@ exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res),
 		locals = res.locals;
 	locals.section = 'expeditions';
-
 	locals.filters = {
-		zone: req.params.zone,
+		zone: req.query.z,
 
 	};
 	locals.data = {
@@ -27,13 +26,13 @@ exports = module.exports = function(req, res) {
 			.where('state', 'published')
 			.sort('name',1);
 		
-		if (locals.filters.availability) {
+		if (locals.filters.zone) {
 			q.where('zone').equals(locals.filters.zone);
 		}
 		
 		q.exec(function(err, results) {
 			locals.data.expeditions = results;
-			
+			console.log(locals.data.expeditions )
 			next(err);
 		});
 		

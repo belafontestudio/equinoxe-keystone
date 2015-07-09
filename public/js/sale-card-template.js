@@ -2,7 +2,7 @@
        <li class="card"><a href="/yacht/{{slug}}?{{../q}}"></a>
         <div class="container-yachtcard-img">
             {{#if [message/offers]}}
-              <span class="label">
+              <span class="offer-message">
               {{[message/offers]}}
               </span>
             {{/if}}

@@ -65,6 +65,39 @@ exports = module.exports = function(req, res) {
 			arrPos.push(result.gallery1.pos9);
 			arrPos.push(result.gallery1.pos10);
 
+			arrImg.push(result.gallery2.img1);
+			arrImg.push(result.gallery2.img2);
+			arrImg.push(result.gallery2.img3);
+			arrImg.push(result.gallery2.img4);
+			arrImg.push(result.gallery2.img5);
+			arrImg.push(result.gallery2.img6);
+			arrImg.push(result.gallery2.img7);
+			arrImg.push(result.gallery2.img8);
+			arrImg.push(result.gallery2.img9);
+			arrImg.push(result.gallery2.img10);
+
+			arrCap.push(result.gallery2.cap1);
+			arrCap.push(result.gallery2.cap2);
+			arrCap.push(result.gallery2.cap3);
+			arrCap.push(result.gallery2.cap4);
+			arrCap.push(result.gallery2.cap5);
+			arrCap.push(result.gallery2.cap6);
+			arrCap.push(result.gallery2.cap7);
+			arrCap.push(result.gallery2.cap8);
+			arrCap.push(result.gallery2.cap9);
+			arrCap.push(result.gallery2.cap10);
+
+			arrPos.push(result.gallery2.pos1);
+			arrPos.push(result.gallery2.pos2);
+			arrPos.push(result.gallery2.pos3);
+			arrPos.push(result.gallery2.pos4);
+			arrPos.push(result.gallery2.pos5);
+			arrPos.push(result.gallery2.pos6);
+			arrPos.push(result.gallery2.pos7);
+			arrPos.push(result.gallery2.pos8);
+			arrPos.push(result.gallery2.pos9);
+			arrPos.push(result.gallery2.pos10);
+
 			for (i = 0; i < 10; i++) { 
 				galleries.push({img:arrImg[i],cap:arrCap[i],pos:arrPos[i]})
 			}

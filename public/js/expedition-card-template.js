@@ -3,12 +3,12 @@
 
         <div class="container-yachtcard-img">
             {{#if [message/offers]}}
-              <span class="label">
+              <span class="offer-message">
               {{[message/offers]}}
               </span>
             {{/if}}
             {{#if thumbnail.filename}}
-              <img src="/uploads/images/expedition/thumbnails/{{thumbnail.filename}}" alt={{thumbnail.filename}}/>
+              <img src="/uploads/images/expeditions/thumbnails/{{thumbnail.filename}}" alt={{thumbnail.filename}}/>
             {{else}} 
               <img src="/images/sprite/placeholder.png" alt="placeholder"/>
             {{/if}}
