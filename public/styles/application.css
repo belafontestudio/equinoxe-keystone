@@ -7336,10 +7336,10 @@ footer p.secondmenu a:hover {
   }
   section.center div.main-text.home p,
   section.center-parallax div.main-text.home p {
-    font-size: 29px;
-    font-size: 1.8125rem;
-    line-height: 37px;
-    line-height: 2.3125rem;
+    font-size: 24px !important;
+    font-size: 1.5rem !important;
+    line-height: 34px !important;
+    line-height: 2.125rem !important;
   }
   section.center ul#call-to-action-menu a,
   section.center-parallax ul#call-to-action-menu a {
