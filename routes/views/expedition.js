@@ -96,7 +96,7 @@ exports = module.exports = function(req, res) {
 			arrPos.push(result.gallery2.pos9);
 			arrPos.push(result.gallery2.pos10);
 
-			for (i = 0; i < 10; i++) { 
+			for (i = 0; i < 20; i++) { 
 				galleries.push({img:arrImg[i],cap:arrCap[i],pos:arrPos[i]})
 			}
 			var sortedGalleries = _.sortBy( galleries, "pos" );

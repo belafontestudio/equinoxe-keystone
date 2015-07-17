@@ -36,7 +36,7 @@ exports = module.exports = function(req, res) {
 			.sort('-lenght');
 		
 		if (locals.filters.availability) {
-			q.where('availability').equals(locals.filters.a);
+			q.where('availability').equals(locals.filters.availability);
 		}
 		if (locals.filters.minguests) {
 			q.where('guests').gte(locals.filters.minguests)

@@ -185,14 +185,14 @@ block content
     
   
   
-  
-  .description
+  if data.yacht.content["description"]
+    .description
 
-    div#other-description
-      div.description-info
-        h2 
-          = data.yacht.name
-          |  Description
-        
-        !=data.yacht.content["description"]
-              
+      div#other-description
+        div.description-info
+          h2 
+            = data.yacht.name
+            |  Description
+          
+          !=data.yacht.content["description"]
+                

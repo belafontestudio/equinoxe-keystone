@@ -5316,6 +5316,7 @@ footer p.secondmenu a:hover {
 @media (max-height: 700px), (max-width: 1000px) {
   .down {
     left: 200px;
+    bottom: 150px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -7247,6 +7248,15 @@ footer p.secondmenu a:hover {
     position: relative;
     left: -34%;
     margin-top: 159px;
+  }
+}
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {
+  section.center-parallax {
+    margin-top: 80px !important;
+  }
+  main-text p {
+    font-size: 16px !important;
+    line-height: 1.4rem !important;
   }
 }
 @media only screen and (max-width: 1200px) {

@@ -183,14 +183,13 @@ block content
               =slide.cap
   
   
-  
-  .description
-
-          div#other-description
-            div.description-info
-              h2 
-                = data.yacht.name
-                |  Full Specifications
-              
-              !=data.yacht.content["description full specs"]
+  if data.yacht.content["description full specs"]
+    .description
+            div#other-description
+              div.description-info
+                h2 
+                  = data.yacht.name
+                  |  Full Specifications
+                
+                !=data.yacht.content["description full specs"]
               

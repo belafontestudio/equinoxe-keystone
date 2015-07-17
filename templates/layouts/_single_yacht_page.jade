@@ -101,7 +101,11 @@ block section
 
           .clear
           block call-to-action
-            a.button(href="#contact-us-modal", rel="modal:open") Enquire
+            if data.yacht.availability == "Charter"
+              a.button(href="#contact-us-modal", rel="modal:open") Enquire
+
+            if data.yacht.availability == "Sale"
+              a.button(href="#contact-us-modal", rel="modal:open") Request full specs
           .clear
           
           a.back-to-yachts(href="/yachts/#{data.yacht.availability}")
@@ -292,6 +296,10 @@ block section
                 if data.yacht.content["water sports"]
                   h2 Water Sports
                 !=data.yacht.content["water sports"]
-                a.button(href="#contact-us-modal", rel="modal:open") Enquire
+                if data.yacht.availability == "Charter"
+                  a.button(href="#contact-us-modal", rel="modal:open") Enquire
+
+                if data.yacht.availability == "Sale"
+                  a.button(href="#contact-us-modal", rel="modal:open") Request full specs
     
 div.gradient-top
