@@ -4,32 +4,33 @@ var keystone = require('keystone'),
 	_=require('underscore');
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
+
 	// Set locals
 	locals.section = 'yacht';
 	locals.filters = {
 		yacht: req.params.yacht
 	};
-	
+
 	locals.data = {
 		yachts: []
 	};
-	
+
 	// Load the current post
 	view.on('init', function(next) {
-		
+
 		var q = keystone.list('Yacht').model.findOne({
 			slug: locals.filters.yacht
 		});
-		
+
 		q.exec(function(err, result) {
 			var arrImg = [];
 			var arrCap = [];
 			var arrPos = [];
 			var galleries = [];
+			
 			arrImg.push(result.gallery1.img1);
 			arrImg.push(result.gallery1.img2);
 			arrImg.push(result.gallery1.img3);
@@ -96,31 +97,31 @@ exports = module.exports = function(req, res) {
 			arrPos.push(result.gallery2.pos9);
 			arrPos.push(result.gallery2.pos10);
 
-			for (i = 0; i < 20; i++) { 
+			for (i = 0; i < 20; i++) {
 				galleries.push({img:arrImg[i],cap:arrCap[i],pos:arrPos[i]})
 			}
 			var sortedGalleries = _.sortBy( galleries, "pos" );
 			result["sortedGalleries"] = sortedGalleries;
-		
+
 			locals.data.yacht = result;
 			next(err);
 		});
-		
+
 	});
-	
+
 	// // Load other posts
 	// view.on('init', function(next) {
-		
+
 	// 	var q = keystone.list('Yacht').model.find().sort('-publishedDate').populate('author').limit('4');
-		
+
 	// 	q.exec(function(err, results) {
 	// 		locals.data.yachts = results;
 	// 		next(err);
 	// 	});
-		
+
 	// });
-	
+
 	// Render the view
 	view.render('yacht',{numeralFunction : numeral});
-	
+
 };

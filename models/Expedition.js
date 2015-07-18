@@ -27,8 +27,8 @@ Expedition.add({
 	pre: {width:480,height:270},format: function(item, file){
 
 		return '<img src="'+file.href+'" style="max-width: 250px">'}},
-	
-	
+
+
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	zone: { type: Types.Select, options: 'Arctic, Antarctic, Galapagos, Patagonia, Maldives,New Zeland, Australia', default: 'Artic', index: true },
 	price: { type: Types.Number, index: true },
@@ -38,7 +38,7 @@ Expedition.add({
 	"message/offers": { type: Types.Text, index: true },
 	program: { type: Types.Html, wysiwyg: true, height: 400 },
 	description: { type: Types.Html, wysiwyg: true, height: 400 },
-	
+
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
 
 	gallery1: {
@@ -171,7 +171,7 @@ Expedition.add({
 
 
 	},
-	
+
 
 	})
 

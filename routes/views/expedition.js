@@ -4,32 +4,33 @@ var keystone = require('keystone'),
 	_=require('underscore');
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
+
 	// Set locals
 	locals.section = 'expedition';
 	locals.filters = {
 		expedition: req.params.expedition
 	};
-	
+
 	locals.data = {
 		expeditions: []
 	};
-	
+
 	// Load the current post
 	view.on('init', function(next) {
-		
+
 		var q = keystone.list('Expedition').model.findOne({
 			slug: locals.filters.expedition
 		});
-		
+
 		q.exec(function(err, result) {
 			var arrImg = [];
 			var arrCap = [];
 			var arrPos = [];
 			var galleries = [];
+
 			arrImg.push(result.gallery1.img1);
 			arrImg.push(result.gallery1.img2);
 			arrImg.push(result.gallery1.img3);
@@ -96,21 +97,21 @@ exports = module.exports = function(req, res) {
 			arrPos.push(result.gallery2.pos9);
 			arrPos.push(result.gallery2.pos10);
 
-			for (i = 0; i < 20; i++) { 
+			for (i = 0; i < 20; i++) {
 				galleries.push({img:arrImg[i],cap:arrCap[i],pos:arrPos[i]})
 			}
 			var sortedGalleries = _.sortBy( galleries, "pos" );
 			result["sortedGalleries"] = sortedGalleries;
-		
+
 			locals.data.expedition = result;
 			next(err);
 		});
-		
-	});
-	
 
-	
+	});
+
+
+
 	// Render the view
 	view.render('expedition',{numeralFunction : numeral});
-	
+
 };

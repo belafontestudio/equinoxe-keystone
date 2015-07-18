@@ -25,8 +25,8 @@ Yacht.add({
 
 	thumbnail: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/thumbnails', prefix: '/uploads/images/yachts/thumbnails/', allowedTypes: ['image/jpeg','image/gif','image/png'],
 	pre: {width:480,height:270},format: function(item, file){
-
-		return '<img src="'+file.href+'" style="max-width: 250px">'}},
+		return '<img src="'+file.href+'" style="max-width: 250px">'}
+	},
 	"pdfFull url": {type: Types.Text, required: false, readonly: true},
 	"pdfLite url": {type: Types.Text, required: false, readonly: true},
 	"pdfFull noLogo url": {type: Types.Text, required: false, readonly: true},
@@ -222,20 +222,27 @@ Yacht.schema.pre('save', function(next) {
 		"height": "20mm",
 		"contents": '<div id="footer-wrap" style="height:18mm; border-top:1px solid #103158; float: left;clear: none;text-align: inherit;width: 810px;position: absolute;bottom: 0; left:-20px; padding-left:20px; background: white; color:#103158;"><div class="footer" style="width: 82.8333333333333%;margin-left: 0%;margin-right: 3%;position: relative;left: 8.5833333333333%;padding: 0;text-align: center; font-size: 9px"><ul style=" list-style: none; "><li style="display: inline-block;font-size: 11px;">Equinoxe Yachts | &nbsp;</li><li style="display: inline-block;font-size: 11px;">Via dei Mille 18, Torino, Italy | &nbsp;</li><li style="display: inline-block;font-size: 11px;">+39 011 8185211 | </li><li style="display: inline-block;font-size: 11px;">&nbsp;barche@equinoxe.it</li></ul><p font-size: 9px !important;">All yachts offered are subject to still being available. Yacht particulars are believed to be correct but their contents are not guaranteed, neither may they be used for any contractual purposes. Specification provided for information only. Subject to prior sale, price change or withdrawal from market without notice.</p></div></div>'
 		}};
-	var pdfToGenerate = 1;
+	var pdfToGenerate = 0;
 	if(yacht.pdfNoLogo){
 		pdfToGenerate += 2;
 	}
 	if(yacht.pdf){
 		pdfToGenerate += 1;
 	}
+	if(yacht.state != "draft"){
+		pdfToGenerate = 1;
+	}
 	console.log("pdf 2 generate "+pdfToGenerate);
+	if (yacht.state != "draft"){
 	var finished = _.after(pdfToGenerate, next);
+	}else{
+		next();
+	}
 
 	if ( yacht.pdf == true ) {
 		pdfFull(finished,yacht);
 	}
-	if(yacht.state == "published"){
+	if(yacht.state != "draft"){
 		pdfLite(finished,yacht);
 	}
 	if ( yacht.pdfNoLogo  == true ) {

@@ -12,7 +12,7 @@ exports.filter = function(req, res) {
 			})
 			.where('state', 'published')
 			.sort('-lenght');
-		
+
 		if (req.query.a) {
 			q.where('availability').equals(req.query.a);
 		}

@@ -25,10 +25,10 @@ exports = module.exports = function(req, res) {
 	locals.data = {
 		yachts: []
 	};
-	
+
 	// Load the posts
 	view.on('init', function(next) {
-		
+
 			var q = keystone.list('Yacht').paginate({
 				page: req.query.page || 1,
 				perPage: 500,
@@ -36,7 +36,7 @@ exports = module.exports = function(req, res) {
 			})
 			.where('state', 'published')
 			.sort('-lenght');
-		
+
 		if (locals.filters.availability) {
 			q.where('availability').equals(locals.filters.availability);
 		}
@@ -72,8 +72,8 @@ exports = module.exports = function(req, res) {
 			}
 		}
 
-		
-		
+
+
 		q.exec(function(err, results) {
 			if (locals.filters.availability) {
 				results.availability = locals.filters.availability;
@@ -82,11 +82,12 @@ exports = module.exports = function(req, res) {
 			locals.data.yachts = results;
 
 			_.each(locals.data.yachts.results, populateYachts);
+			console.log(slugs);
 			generatePDF(slugs[0],next);
-			
-			
+
+
 		});
-		
+
 	});
 
 	function populateYachts(yacht){
@@ -99,11 +100,11 @@ exports = module.exports = function(req, res) {
 			    "height": "20mm",
 			    "contents": '<div id="footer-wrap" style="height:18mm; border-top:1px solid #103158; float: left;clear: none;text-align: inherit;width: 810px;position: absolute;bottom: 0; left:-20px; padding-left:20px; background: white; color:#103158;"><div class="footer" style="width: 82.8333333333333%;margin-left: 0%;margin-right: 3%;position: relative;left: 8.5833333333333%;padding: 0;text-align: center; font-size: 9px"><ul style=" list-style: none; "><li style="display: inline-block;font-size: 11px;">Equinoxe Yachts | &nbsp;</li><li style="display: inline-block;font-size: 11px;">Via dei Mille 18, Torino, Italy | &nbsp;</li><li style="display: inline-block;font-size: 11px;">+39 011 8185211 | </li><li style="display: inline-block;font-size: 11px;">&nbsp;barche@equinoxe.it</li></ul><p font-size: 9px !important;">All yachts offered are subject to still being available. Yacht particulars are believed to be correct but their contents are not guaranteed, neither may they be used for any contractual purposes. Specification provided for information only. Subject to prior sale, price change or withdrawal from market without notice.</p></div></div>'
 			  }};
-        
+
 		var url_string = process.env.WEB_URL+"/api/pdf/lite/"+yacht;
 
 
-			
+
         request(url_string, function (error, response, body) {
 		    pdf.create(body, options).toFile(function(err, res) {
 			  if (err) return console.log(err);
@@ -113,8 +114,8 @@ exports = module.exports = function(req, res) {
 				}else{
 					next(err);
 				}
-			  
-		
+
+
 
 			});
 		});
@@ -123,9 +124,9 @@ exports = module.exports = function(req, res) {
 
 
 
-		
-	
+
+
 	// Render the view
 	view.render('generatePDF');
-	
-};	
+
+};

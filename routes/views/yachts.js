@@ -1,9 +1,9 @@
 var keystone = require('keystone'),
 	numeral = require('numeral');
-	
+
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
 	locals.section = 'yachts';
@@ -23,10 +23,10 @@ exports = module.exports = function(req, res) {
 	locals.data = {
 		yachts: []
 	};
-	
+
 	// Load the posts
 	view.on('init', function(next) {
-		
+
 		var q = keystone.list('Yacht').paginate({
 				page: req.query.page || 1,
 				perPage: 500,
@@ -34,7 +34,7 @@ exports = module.exports = function(req, res) {
 			})
 			.where('state', 'published')
 			.sort('-lenght');
-		
+
 		if (locals.filters.availability) {
 			q.where('availability').equals(locals.filters.availability);
 		}
@@ -70,23 +70,23 @@ exports = module.exports = function(req, res) {
 			}
 		}
 
-		
-		
+
+
 		q.exec(function(err, results) {
 			if (locals.filters.availability) {
 				results.availability = locals.filters.availability;
 			}
-			
+
 
 			locals.data.yachts = results;
-			
+
 			next(err);
 		});
-		
+
 	});
-	
-	
+
+
 	// Render the view
 	view.render('yachts_list', {numeralFunction : numeral});
-	
+
 };
