@@ -39,34 +39,34 @@ exports = module.exports = function(req, res) {
 			q.where('availability').equals(locals.filters.availability);
 		}
 		if (locals.filters.minguests) {
-			q.where('guests').gte(locals.filters.minguests)
+			q.where('guests').gte(locals.filters.minguests);
 		}
 		if (locals.filters.maxguests) {
-			q.where('guests').lte(locals.filters.maxguests)
+			q.where('guests').lte(locals.filters.maxguests);
 		}
 		if (locals.filters.minpriceweek) {
-			q.where('price per week from').gte(locals.filters.minpriceweek)
+			q.where('price per week from').gte(locals.filters.minpriceweek);
 		}
 		if (locals.filters.minpriceweek) {
-			q.where('price per week from').lte(locals.filters.maxpriceweek)
+			q.where('price per week from').lte(locals.filters.maxpriceweek);
 		}
 		if (locals.filters.minprice) {
-			q.where('price').gte(locals.filters.minprice)
+			q.where('price').gte(locals.filters.minprice);
 		}
 		if (locals.filters.maxprice) {
-			q.where('price').lte(locals.filters.maxprice)
+			q.where('price').lte(locals.filters.maxprice);
 		}
 		if (locals.filters.minlenght) {
-			q.where('lenght').gte(locals.filters.minlenght)
+			q.where('lenght').gte(locals.filters.minlenght);
 		}
 		if (locals.filters.maxlenght) {
-			q.where('lenght').lte(locals.filters.maxlenght)
+			q.where('lenght').lte(locals.filters.maxlenght);
 		}
 		if (locals.filters.type) {
 			if(locals.filters.type == "Sails"){
-				q.where('type').in([locals.filters.type,"Catamaran"])
+				q.where('type').in([locals.filters.type,"Catamaran"]);
 			}else{
-				q.where('type').equals(locals.filters.type)
+				q.where('type').equals(locals.filters.type);
 			}
 		}
 
