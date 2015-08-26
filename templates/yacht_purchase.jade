@@ -1,0 +1,25 @@
+extends ./layouts/_general.jade
+block modals
+  include ./partials/_enquire_modal.jade
+  include ./partials/_contact_us_modal.jade
+block body
+  #onepage(data-anchor="sale-purchase")
+    block main-photo
+      div(class="img-holder", data-image="/images/landing/detailboat.jpg")
+        section.center-parallax
+    .section
+      include partials/_yacht_purchase_intro.jade
+    .section
+      include partials/_purchase_bulletlist.jade
+    div.bottom-spacer
+    .section
+      include partials/_quote_purchase.jade
+    div.bottom-spacer
+    section.center
+      .main-text
+        p.more-info
+          | Didn't find what you were looking for?
+      .clear
+      a.button(href="#contact-us-modal", rel="modal:open") Contact Us
+    div.bottom-spacer
+   

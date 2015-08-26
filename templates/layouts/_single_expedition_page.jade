@@ -1,0 +1,112 @@
+block section
+  div.main-photo
+    block main-photo
+      
+      if data.expedition.cover.filename
+        div(class="img-holder-scroll", data-image="/uploads/images/expeditions/covers/"+data.expedition.cover.filename, alt=data.expedition.cover.filename)
+      else 
+        div(class="img-holder-scroll", data-image="/images/sprite/placeholder_cover.png", alt="placeholder")
+    
+    section.center
+      div#plain-color-background
+        div#container-other-specs
+          .main-text  
+            h1#ombra 
+              block title
+                = data.expedition.name
+          .clear
+          ul#single-yacht-specs
+
+              if data.expedition.zone
+                li
+                  span
+                    | zone:
+                  block single-yacht-guests
+                    = data.expedition.zone
+
+
+          
+
+              if data.expedition.price
+                li
+                  if data.expedition.price
+                    span
+                      | Sale price:
+                    = numeralFunction(data.expedition.price).format('0,0[.]00' )+data.expedition.currency
+
+            if data.expedition["message/offers"]
+              li.offer-message
+                = data.expedition["message/offers"]
+
+            
+
+
+
+          block explain-call
+            p.call-to-action
+
+          .clear
+          block call-to-action
+            a.button(href="#contact-us-modal", rel="modal:open") Enquire
+          .clear
+          
+          a.back-to-yachts(href="/expeditions?z=#{data.expedition.zone}")
+            i.fa.fa-chevron-left
+            |   Back to expeditions
+
+
+    
+    #gallery1
+      #back-arrow.arrow
+      #next-arrow.arrow
+      #slides1.owl-carousel.owl-theme
+        each slide in data.expedition.sortedGalleries
+          if slide.img.filename
+            - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')')
+          
+            
+    section.center
+      div#plain-color-background-2
+        div#container-other-specs-2
+            div#other-specs
+              ul.other-specs-list
+                h3
+                  | Specifications</br>—
+                if data.expedition.zone
+                  li
+                    span
+                      | zone:
+                    =data.expedition.zone
+                if data.expedition.periods
+                  li
+                    span
+                      | zone:
+                    !=data.expedition.periods
+                if data.expedition.rates
+                  li
+                    span
+                      | rates:
+                    !=data.expedition.rates
+                if data.expedition.price
+                  li
+                    if data.expedition.price
+                      span
+                        | Price starting:
+                      = numeralFunction(data.expedition.price).format('0,0[.]00' )+data.expedition.currency
+
+                li.hidden.availability
+                  =data.expedition.zone 
+
+            div#other-description
+              if data.expedition.description
+                div.description-info
+                  !=data.expedition.description
+              if data.expedition.program
+                div.description-info
+                  !=data.expedition.program
+              
+
+                a.button(href="#contact-us-modal", rel="modal:open") Enquire
+    
+div.gradient-top

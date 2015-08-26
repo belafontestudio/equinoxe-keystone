@@ -1,0 +1,35 @@
+extends ../layouts/default
+block modals
+      include ../partials/_enquire_modal.jade
+      include ../partials/_contact_us_modal.jade
+block external-scripts
+  script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBl3hDHGkv8Ohrz_AY7vlWRNSB_W5Esa9M&sensor=false&extension=.js') 
+  script(src="/js/maplabel.js") 
+block menu 
+  include ../partials/_menu.jade
+block body
+  #onepage
+    div.main-photo
+      block main-photo
+        div(class="img-holder", data-image="/images/landing/bareboat.jpg")
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_bareboat_intro.jade
+          a#btn.down(href="#bareboat_section")
+    .section.spacer#bareboat_section
+      include ../partials/_bareboat_bulletlist.jade
+    .section.inner-map
+      include ../partials/_bareboat_map.jade
+    .section.darker
+      include ../partials/_footer.jade 
+  //-   .section
+  //-     include partials/_bareboat_bulletlist.jade
+  //-   div.bottom-spacer
+  //-   #sailogy_holder
+  //-   .section
+  //-     include partials/_quote_bareboat.jade
+  //-   div.bottom-spacer
+  //- script(src="https://www.sailogy.com/en/widget.js?partner=1&width=100%25&height=600px")
+  //- script create_sailogy_box('sailogy_holder');

@@ -2,6 +2,7 @@
 // customising the .env file in your project's root folder.
 require('dotenv').load();
 
+
 // Require keystone
 var keystone = require('keystone'),
 	i18n= require('i18n');
@@ -16,7 +17,7 @@ keystone.init({
 	'brand': 'Equinoxe',
 	
 	'sass': 'public',
-	'static': ['public','bower_components'],
+	'static': ['public','bower_components',process.env.CLOUD_DIR,process.env.TEMP_DIR],
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
@@ -29,10 +30,16 @@ keystone.init({
 	'wysiwyg override toolbar': true,
 	'wysiwyg menubar': false,
 	'wysiwyg skin': 'lightgray',
-	'wysiwyg additional buttons': 'pastetext,paste',
+	'wysiwyg additional buttons': 'styleselect,pastetext,paste',
 	'wysiwyg additional plugins': 'paste',
-	'wysiwyg additional options': {"paste_retain_style_properties": "color font-size"},
-	'wysiwyg cloudinary images': true,
+	'wysiwyg additional options': {"paste_retain_style_properties": "color font-size",  style_formats: [
+
+            {title: 'h3', block: 'h3'},
+            {title: 'p', block: 'p'},
+            {title: 'b', block: 'b'},
+            {title: 'i', block: 'i'}
+   ]},
+	'wysiwyg cloudinary images': false,
 });
 
 
@@ -56,7 +63,7 @@ keystone.set('locals', {
  
 i18n.configure({
 	locales:['en', 'it'],
-	defaultLocale: 'it',
+	defaultLocale: 'en',
 	directory: __dirname + '/locales'
 });
 

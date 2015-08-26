@@ -1,20 +1,13 @@
 extends ../layouts/default
+block modals
+  include ../partials/_enquire_modal.jade
+  include ../partials/_contact_us_modal.jade
+block menu 
+  include ../partials/_menu.jade
+block body
+  #onepage
+    include ../layouts/_single_yacht_page.jade
+  .section.darker
+    include ../partials/_footer.jade
 
-block content
-	.container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
-		article
-			p: a(href='/yachts') &larr; back to the yachts
-			hr
-			if !data.yacht
-				h2 Invalid Yacht.
-			else
-				header
-					h1= data.yacht.title
-					h5 Posted 
-						if data.yacht.publishedDate
-							| on #{data.yacht._.publishedDate.format('MMMM Do, YYYY')} 
-						
-						if data.yacht.author
-							| by #{data.yacht.author.name.first}
-				.post
-					!= data.yacht.content.full
+

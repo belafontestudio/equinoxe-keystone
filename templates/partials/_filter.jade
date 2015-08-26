@@ -1,0 +1,64 @@
+div#toggle-btn
+  i.fa.fa-plus-circle
+    span
+      |   Filters
+ul#filter-menu.filter-toggle
+  //- li
+  //-   a.filter#f1(href="#")
+  //-     div.icon-filter
+  //-       img(src='../images/sprite/filter_destination_icon.svg', alt='Destination')
+  //-     h3
+  //-       | Destination
+  //-     span
+  //-       | Maldive
+  li
+    a.filter#f2(href="#")
+      div.icon-filter
+        img(src='../images/sprite/filter_price_icon.svg', alt='Price')
+      h3
+        | Price Range
+      span
+  li
+    a.filter#f3(href="#")
+      div.icon-filter
+        img(src='../images/sprite/filter_guests_icon.svg', alt='Guests')
+      h3
+        | Guests
+      span
+  li
+    a.filter#f4(href="#")
+      div.icon-filter
+        img(src='../images/sprite/filter_size_icon.svg', alt='Length')
+      h3
+        | Length
+      span
+  li
+    a.filter#f5(href="#")
+      div.icon-filter
+        img(src='../images/sprite/filter_propulsion_icon.svg', alt='Propulsion')
+      h3
+        | Type
+      span
+  li#last-filter
+    a.filter#f6(href="#")
+      div.icon-filter
+        img(src='../images/sprite/filter_salecharter_icon.svg', alt='Propulsion')
+      h3
+        | Sale / Charter
+      span
+        | Charter
+div.filter-opened-section.filter-toggle-min
+  a.close-filter(href="#")
+    img(src='../images/sprite/hamburger_close.svg', alt='Close')
+  //- include _filter_map.jade
+  include _filter_price.jade
+  include _filter_guests.jade
+  include _filter_length.jade
+  include _filter_propulsion.jade
+  include _filter_salecharter.jade
+  
+  
+div.reset-button.filter-toggle
+  a.button(href="#") Reset
+
+    

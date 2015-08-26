@@ -1,0 +1,199 @@
+.modal
+  width: 800px
+  background: yellow
+  padding 30px 60px
+  border-radius 0
+  box-shadow 0
+  max-height 100%
+  overflow-y scroll
+  p
+    font-family "Alegreya Sans", "Helvetica Neue", sans-serif
+    font-size: 15px
+    color: navy-blue
+
+.modal a.close-modal
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-indent: -9999px;
+  background url("../images/sprite/hamburger_close.svg") no-repeat 0 0
+
+
+.modal-spinner
+  display: none;
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -32px;
+  margin-top: -32px;
+  background url("../images/modal/spinner.gif") #111 no-repeat center center
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+
+.jquery-modal.blocker
+  background navy-blue !important
+
+textarea#textarea
+  resize vertical !important
+  min-height 200px
+
+
+#mandrill-response
+  font-size 1.6em
+  #response-true
+    display none
+    p
+      color #103158
+  #response-false
+    display none
+    p
+      color #103158
+
+div#enquire-modal, div#contact-us-modal
+    color #103158
+    width 100%
+    margin 0 auto
+    box-shadow none
+    padding 30px
+    input, textarea
+      placeholder-color(rgb(236, 240, 241))
+    .logo
+        position relative
+        margin 0
+        margin-bottom 30px
+        text-align center
+        img
+            width 70%
+            max-width 230px
+    .form-horizontal
+        width auto
+        margin 0 auto
+      fieldset
+          border none
+          padding 0
+          margin 0
+          width 100%
+          label
+              color #103158
+              font-family "Alegreya Sans", "Helvetica Neue", sans-serif
+              font-weight 300
+              text-rendering optimizeLegibility
+              text-transform uppercase
+              font-size rem(15px)
+              line-height rem(15px)
+              letter-spacing 1px
+          input, textarea
+              border 1px solid white
+              background-color transparent
+              padding 8px
+              margin-bottom 15px
+              color navy-blue
+              box-shadow none !important
+              outline none !important
+              width 100%
+          input:focus, textarea:focus
+              background-color white
+              box-shadow none !important
+              outline none !important
+              color navy-blue
+          div.control-group
+              position relative
+              float left
+          .control-group
+              width 100%
+          .control-group.text-area
+              width 100%
+              max-width 100%
+          .control-group.checkboxes
+              width 100%
+              margin-bottom 15px
+              padding-left 20px
+              label.checkbox
+                position relative
+                float left
+                width 100%
+                font-size 12px
+                line-height 12px
+              input
+                position absolute
+                width auto
+                left -20px
+              label.control-label
+                margin-left -20px
+              .controls
+                margin-top 10px
+                label
+                  margin-bottom 8px
+          .control-group.submit
+            text-align center
+            width 100%
+            input
+              width 30%
+              background-color white
+              margin 20px 0 5px 0
+              color yellow
+              font-weight bold
+              text-transform uppercase
+              font-size rem(15px)
+              line-height rem(15px)
+              letter-spacing 1px
+            input:hover
+              opacity 0.6
+
++below(450px)
+   div#enquire-modal, div#contact-us-modal
+     //position relative !important
+     margin 0 !important
+     left 0 !important
+     top 0 !important
+
++above(450px)
+  div#enquire-modal, div#contact-us-modal
+    width 80%
+    .form-horizontal
+      fieldset
+          width 100%
+          input, textarea
+              width 100%
+          .control-group
+              width 100%
+          .control-group.text-area
+              width 100%
+          .control-group.checkboxes
+              width 100%
+          .control-group.submit
+            width 100%
+            input
+              width 30%
+
++above(768px)
+  div#enquire-modal, div#contact-us-modal
+    .form-horizontal
+        width 70%
+        margin 0 auto
+    fieldset
+        .control-group.name, .control-group.surname, .control-group.phonenum, .control-group.mail
+            width 48%
+            margin-right 2%
+        .control-group.text-area
+            width 98% !important
+        .control-group.checkboxes
+          label.checkbox
+            position relative
+            float left
+            width 50%
++above(940px)
+  div#enquire-modal, div#contact-us-modal
+    fieldset
+        .control-group.checkboxes
+            label.checkbox
+                width 33%
+                margin-right 0

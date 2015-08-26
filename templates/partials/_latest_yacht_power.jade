@@ -1,0 +1,48 @@
+block section
+  section.center.latest-grid.spacer
+    .main-text.left
+      h1.smaller2
+        block title-smaller2
+          | Featured power yachts for charter:
+    .clear
+    ul.latest-space-yachts
+      each power in data.powers.results
+        li
+          block photo1
+            if power.thumbnail.filename
+                img(src="/uploads/images/yachts/thumbnails/"+encodeURIComponent(power.thumbnail.filename).replace(/\(/g, '%28').replace(/\)/g, '%29'), alt=power.thumbnail.filename)
+            else 
+                img(src="/images/sprite/placeholder.png" alt="placeholder")
+          h2.main-title
+            block yacht-name1
+              = power.name
+          ul.vertical-list
+            li
+              if power["price per week from"] || power.price
+              li
+                if power.availability == "Charter"
+                  span
+                    | CHARTER PRICE FROM: 
+                  = numeralFunction(power["price per week from"]).format('0,0[.]00' )+power.currency
+                  
+                if power.availability == "Sale"
+                  if power.price
+                    span
+                      | SALE PRICE: 
+                    = numeralFunction(power.price).format('0,0[.]00' )+power.currency
+            li
+              | <span class="uppercase">Length:</span> 
+              block length1
+                = power.lenght+"m"
+            li
+              | <span class="uppercase">Built:</span> 
+              block built1
+                = power.build
+            li
+              | <span class="uppercase">Guests:</span> 
+              block guests1
+                = power.guests
+            .clear
+          .buttons
+            a.button(href= "/yacht/"+power.slug) Discover
+      

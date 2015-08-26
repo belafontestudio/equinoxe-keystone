@@ -1,0 +1,19 @@
+extends ../layouts/_section_intro.jade
+block title 
+  | Yacht brokerage
+block description
+  | We’ve been members of MYBA (Mediterranean Yacht Broker Association, the largest and most respected professional organization in the world) since its inception. We have strong connections with all major brokers worldwide.
+
+block explain-call
+block call-to-action
+  ul#call-to-action-menu-button
+    li
+      block first-call-to-action
+        a.button(href="../pages/yacht_brokerage.html")
+          block first-button
+            | Buy a yacht
+    li
+      block second-call-to-action
+        a.button(href="../pages/yacht_purchase.html")
+          block second-button
+            | Sell a yacht

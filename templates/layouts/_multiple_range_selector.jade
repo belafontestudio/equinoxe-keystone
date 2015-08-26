@@ -1,0 +1,36 @@
+block section
+  section.center
+    .main-text
+      h1.smaller 
+        block title-smaller
+          | The title
+    .clear
+    block yacht-size
+      ul#yacht-size
+        li
+          div.container-img
+            img.mega-yacht.img-spacer(src='../images/sprite/icon_select_yacht.svg', alt='Mega Yacht')
+            img.yacht(src='../images/sprite/icon_select_yacht.svg', alt='Yacht')
+          h2 YACHTS
+          p
+            | Up to 24.00 m
+          block button1
+            a.button(href="/yachts/Sale?minl=0&maxl=24") Go
+        li
+          div.container-img
+            img.mega-yacht.img-spacer(src='../images/sprite/icon_select_yacht.svg', alt='Mega Yacht')
+            img.super-yacht(src='../images/sprite/icon_select_yacht.svg', alt='Super Yacht')
+          h2 SUPER YACHTS
+          p
+            | 24.00 m to 40.00 m
+          block button2
+            a.button(href="/yachts/Sale?minl=24&maxl=40") Go
+        li
+          div.container-img
+            img.mega-yacht(src='../images/sprite/icon_select_yacht.svg', alt='Mega Yacht')
+          h2 MEGA YACHTS
+
+          p
+            | Over 40.00 m
+          block button3
+            a.button(href="/yachts/Sale?minl=40&maxl=200") Go

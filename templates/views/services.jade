@@ -1,0 +1,26 @@
+extends ../layouts/default
+block modals
+      include ../partials/_enquire_modal.jade
+      include ../partials/_contact_us_modal.jade
+block menu 
+  include ../partials/_menu.jade
+block body
+  #onepage
+    div.main-photo
+      block main-photo
+        div(class="img-holder", data-image="/images/landing/beb30.jpg")
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_services_intro.jade
+          a.down(href="#services_section")
+    .section.spacer#services_section
+      include ../partials/_land_bulletlist.jade
+    
+    .section.spacer.darker
+      include ../partials/_services_bulletlist.jade
+    .section.darker
+      include ../partials/_footer.jade 
+
+    

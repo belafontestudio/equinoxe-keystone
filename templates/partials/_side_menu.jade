@@ -1,0 +1,11 @@
+#sidr
+    // Your content
+    a#closeMenu(href='#')
+      img(src='../images/sprite/hamburger_close.svg', alt='close')
+    div#side-menu-logo
+      img(src='../images/sprite/logo.svg', alt='Equinoxe-Logo')
+    ul
+      each link in navLinks
+            li.item(class=(section == link.key ? 'active' : null)): a(href=link.href id=link.id)= link.label
+          li
+            a.enquire-button(href="#enquire-modal", rel="modal:open") Enquire

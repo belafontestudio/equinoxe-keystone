@@ -1,0 +1,8 @@
+block section
+  section.center.sale-charter.filter-hide
+    if data.yachts.availability == "Sale"
+        a#sale.active.button(href="/yachts/Sale") Sale
+        a#charter.button(href="/yachts/Charter") Charter
+    else if data.yachts.availability == "Charter"
+        a#sale.button(href="/yachts/Sale") Sale
+        a#charter.active.button(href="/yachts/Charter") Charter

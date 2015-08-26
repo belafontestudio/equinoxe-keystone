@@ -1,0 +1,36 @@
+extends ../layouts/default
+block modals
+      include ../partials/_enquire_modal.jade
+      include ../partials/_contact_us_modal.jade
+
+block menu 
+  include ../partials/_menu.jade
+block body
+  #onepage
+    
+    .terms-wrapper
+    
+      h1 Terms and conditions / Privacy policy
+    
+      #terms-terms
+      
+        .terms-header
+          h2 Terms and conditions
+        
+        .terms-text
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.
+    
+      #terms-privacy
+      
+        .terms-header
+          h2 Privacy Policy
+        
+        .terms-text
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.
+          
+    
+    
+    .section.darker
+      include ../partials/_footer.jade 

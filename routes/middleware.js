@@ -26,8 +26,13 @@ exports.initLocals = function(req, res, next) {
 	var locals = res.locals;
 	
 	locals.navLinks = [
-		{ label: 'Home',		key: 'home',		href: '/' },
-		{ label: 'Yachts',		key: 'yachts',		href: '/yachts' },
+		{ label: 'Home',		key: 'home',   id: "m0",		href: '/' },
+		{ label: 'Yacht brokerage',		key: 'yacht_brokerage',   id: "m1",		href: '/yacht_brokerage' },
+		{ label: 'Yacht charter',		key: 'yacht_charter',   id: "m2",		href: '/yacht_charter' },
+		{ label: 'Bareboat',		key: 'bareboat',   id: "m4",		href: '/bareboat' },
+		{ label: 'Expeditions',		key: 'expeditions_planning',   id: "m5",		href: '/expeditions_planning' },
+		{ label: 'Land & services',		key: 'services',   id: "m6",		href: '/services' },
+		{ label: 'Heritage',		key: 'heritage',   id: "m7",		href: '/heritage' },
 	];
 	
 	locals.user = req.user;

@@ -1,0 +1,218 @@
+@import 'nib'
+@import 'jeet'
+
+yellow = #F4BB3B
+midnight = #091D34
+navy-blue = #103158
+
+
+
+
+h3,h4
+  font-size 1.3em
+
+b
+  font-weight bold
+
+
+
+
+
+
+body, section.center
+  -webkit-print-color-adjust exact
+  width: 100%
+  margin: 0
+  float: none
+  padding 0
+  font-family "Alegreya Sans", "Helvetica Neue", sans-serif
+  //edit()
+
+
+section.center
+  padding 10px 0
+
+ul
+  list-style none
+  margin 0
+  padding 0
+
+@page {
+  margin: 0
+  size: A4 portrait
+  @top-center {
+    content 'Ciao'
+  }
+}
+
+h2, h3
+  page-break-before: always;
+
+p
+  font-size 12px
+
+
+#header
+  position relative
+
+  width 100%
+
+  &.big
+    width 240px
+
+img#logo
+  margin  auto
+  padding-top 15px
+  position relative
+  display block
+#cover
+  img
+    width 100%
+#photo-container
+  color midnight
+  img
+    width 100%
+
+.description-info
+  color midnight
+  p
+    color midnight
+.other-specs-list
+  color midnight
+
+.main-text
+    width: 100%
+    text-align center
+    h1
+      font-size 48px
+      color midnight
+      margin 10px 0
+
+.top-specs
+  width 100%
+  .top-specs-little
+    col(10/12)
+    shift(1/12)
+    height 145px
+    border-bottom 1px solid yellow
+    #top-specs-left
+      col(7/12)
+      margin-right 2%
+      font-size 24px
+      font-weight bold
+      height 130px
+      border-right 1px solid yellow
+      li
+        color midnight
+        span
+          text-transform uppercase
+          font-size 12px
+          font-weight normal
+          display inline-block
+          width 180px
+    #top-specs-right
+      col(5/12)
+      position relative
+      left 74px
+      h3
+        font-color midnight
+        font-size 18px
+        font-weight 400
+        margin-top 0
+        margin-bottom 15px
+      li
+        font-size 24px
+        font-weight bold
+        color midnight
+        span
+          font-weight normal
+          text-transform uppercase
+          display inline-block
+          width 90px
+          font-size 12px
+
+
+
+
+
+
+
+.bottom-specs
+  col(10/12)
+  shift(1/12)
+  color midnight
+  margin-bottom 30px
+  #other-specs
+    h3
+      font-size 18px
+      font-weight 400
+      margin 15px 0
+  .other-specs-list
+    col(6/12)
+    li
+      font-weight bold
+      font-size .8em
+
+      span
+        text-transform uppercase
+        font-weight lighter
+        font-size 1.1em
+        padding-right 4px
+  #message-p
+    col(12/12)
+    
+    margin-top 10px
+    background-color: yellow;
+    p
+      font-size: 1em;
+      font-weight: bold;
+      padding 0 20px
+
+
+
+
+.description
+  col(12/12)
+  #other-description
+    col(8/12)
+    shift(2/12)
+    .description-info
+      h2
+        text-align center
+
+
+
+
+
+p.caption
+  padding 0
+  margin 0
+  width 100%
+  height 13px
+  font-size 12px
+  text-align center
+  &:nth-child(even)
+    padding-bottom 2px
+
+
+
+#footer-wrap
+//  position running(header)
+  col(12/12)
+
+  background navy-blue
+  .footer
+    background navy-blue
+    col(10/12)
+    shift(1/12)
+    padding 19px 0
+    text-align center
+    ul
+
+      color yellow
+      li
+        display inline-block
+        font-size 11px
+    p
+      color white
+      font-size 9px

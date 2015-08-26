@@ -1,0 +1,48 @@
+block section
+  section.center.latest-grid.spacer
+    .main-text.left
+      h1.smaller2
+        block title-smaller2
+          | FEATURED SAILING YACHTS FOR CHARTER :
+    .clear
+    ul.latest-space-yachts
+      each sail in data.sails.results
+        li
+          block photo1
+            if sail.thumbnail.filename
+                img(src="/uploads/images/yachts/thumbnails/"+encodeURIComponent(sail.thumbnail.filename).replace(/\(/g, '%28').replace(/\)/g, '%29'), alt=sail.thumbnail.filename)
+            else 
+                img(src="/images/sprite/placeholder.png" alt="placeholder")
+          h2.main-title
+            block yacht-name1
+              = sail.name
+          ul.vertical-list
+            li
+              if sail["price per week from"] || sail.price
+              li
+                if sail.availability == "Charter"
+                  span
+                    | CHARTER PRICE FROM: 
+                  = numeralFunction(sail["price per week from"]).format('0,0[.]00' )+sail.currency
+                  
+                if sail.availability == "Sale"
+                  if sail.price
+                    span
+                      | SALE PRICE: 
+                    = numeralFunction(sail.price).format('0,0[.]00' )+sail.currency
+            li
+              | <span class="uppercase">Length:</span> 
+              block length1
+                = sail.lenght +"m"
+            li
+              | <span class="uppercase">Built:</span> 
+              block built1
+                = sail.build
+            li
+              | <span class="uppercase">Guests:</span> 
+              block guests1
+                = sail.guests
+            .clear
+          .buttons
+            a.button(href= "/yacht/"+sail.slug) Discover
+      

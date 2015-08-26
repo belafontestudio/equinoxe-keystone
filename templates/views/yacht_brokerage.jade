@@ -1,0 +1,32 @@
+extends ../layouts/default.jade
+block modals
+      include ../partials/_enquire_modal.jade
+      include ../partials/_contact_us_modal.jade
+
+block menu 
+  include ../partials/_menu.jade
+block body
+  #onepage
+    div.main-photo
+      block main-photo
+        div(class="img-holder", data-image="/images/landing/oriz_brokerage.jpg")
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_yacht_brokerage_intro.jade
+          a.down(href="#brokerage_bulletlist")
+    .section.spacer#brokerage_bulletlist
+      include ../partials/_brokerage_bulletlist.jade
+    .section.spacer.darker
+      include ../partials/_latest_yacht_sale.jade
+    .section.spacer
+      include ../partials/_salepurchase_yacht_size.jade
+    .section.spacer.darker#sell-handle
+      include ../partials/_how_to_choose.jade
+    .section.darker
+      include ../partials/_footer.jade 
+    //- div.bottom-spacer
+    //- .section
+    //-   include partials/_quote_brokerage.jade
+    //- div.bottom-spacer

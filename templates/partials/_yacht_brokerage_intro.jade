@@ -1,0 +1,19 @@
+extends ../layouts/_section_intro.jade
+block title 
+  | Yacht brokerage
+block description
+  | As long-time members of the MYBA and CYBA, we are expert worldwide yacht brokers. If you are looking to sell your yacht or purchase your first one, Equinoxe Yachts would be happy to be your partner.
+
+block explain-call
+block call-to-action
+  ul#call-to-action-menu-button
+    li
+      block first-call-to-action
+        a.button(href="/yachts/Sale")
+          block first-button
+            | Buy a yacht
+    li
+      block second-call-to-action
+        a.button(href="/yacht_brokerage#sell-handle")
+          block second-button
+            | Sell a yacht

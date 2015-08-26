@@ -1,0 +1,57 @@
+extends ../layouts/default
+
+block menu 
+  include ../partials/_menu.jade
+block body
+  #onepage
+    div.main-photo
+      block main-photo
+        div(class="img-holder", data-image="/images/landing/DIONE_STAR_10OTT2014_6763.jpg")
+          .reposition
+            section.center-parallax
+              .section#yatch-charter-intro
+                .filtro  
+                include ../partials/_yacht_charter_intro.jade
+
+            a.down(href="#charter_section")
+    .section#charter_section
+      div.main-photo
+        div(class="img-holder", data-image="/images/landing/bad_girl.jpg")
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_power_charter_intro.jade
+    .section.spacer
+      include ../partials/_latest_yacht_power.jade
+    .section
+      div.main-photo
+        div(class="img-holder", data-image="/images/landing/noheea.png")
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_sail_charter_intro.jade
+    .section.spacer
+      include ../partials/_latest_yacht_sail.jade
+    .section
+      div.main-photo
+        div(class="img-holder", data-image="/images/landing/Kaya_Guneri_2_Equinoxe_Yachts_Gulet_Charter.jpg")
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_gulet_charter_intro.jade
+    .section.spacer
+      include ../partials/_latest_yacht_gulet.jade
+    .section.darker
+      include ../partials/_footer.jade 
+    //- div.bottom-spacer
+    //- .section
+    //-   include partials/_yacht_size.jade
+    //- div.bottom-spacer
+    //- .section
+    //-   include partials/_quote_charter.jade
+    //- div.bottom-spacer
+    //- .section.inner-map
+    //-   include partials/_yacht_charter_map.jade

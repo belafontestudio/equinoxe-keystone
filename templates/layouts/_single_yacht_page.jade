@@ -1,0 +1,305 @@
+block section
+  div.main-photo
+    block main-photo
+      
+      if data.yacht.cover.filename
+        div(class="img-holder-scroll", data-image="/uploads/images/yachts/covers/"+data.yacht.cover.filename, alt=data.yacht.cover.filename)
+      else 
+        div(class="img-holder-scroll", data-image="/images/sprite/placeholder_cover.png", alt="placeholder")
+    
+    section.center
+      div#plain-color-background
+        div#container-other-specs
+          .main-text  
+            h1#ombra 
+              block title
+                = data.yacht.name
+          .clear
+          ul#single-yacht-specs
+            if data.yacht.availability == "Charter"
+              if data.yacht["price per week from"]
+                li
+                  span
+                    | Charter price from:
+                  = numeralFunction(data.yacht["price per week from"]).format('0,0[.]00' )+data.yacht.currency
+                      
+              if data.yacht.lenght
+                li
+                  span
+                    | length:
+                  block single-yacht-length
+                    = data.yacht.lenght+"m"
+              if data.yacht.build || data.yacht.refit 
+                li
+                  if data.yacht.refit && data.yacht.build
+                    span
+                      | built:
+                    = data.yacht.build+" / refit "+data.yacht.refit
+                  else
+                      if data.yacht.refit
+                        span
+                          | refit:
+                        = data.yacht.refit
+                      else if data.yacht.build
+                        span
+                          | built:
+                        = data.yacht.build 
+              if data.yacht.guests
+                li
+                  span
+                    | guests:
+                  block single-yacht-guests
+                    = data.yacht.guests
+
+
+            if data.yacht.availability == "Sale"
+              if data.yacht.lenght
+                li
+                  span
+                    | length:
+                  block single-yacht-length
+                    = data.yacht.lenght+"m"
+              if data.yacht.build || data.yacht.refit 
+                li
+                  if data.yacht.refit && data.yacht.build
+                    span
+                      | built:
+                    = data.yacht.build+" / refit "+data.yacht.refit
+                  else
+                      if data.yacht.refit
+                        span
+                          | refit:
+                        = data.yacht.refit
+                      else if data.yacht.build
+                        span
+                          | built:
+                        = data.yacht.build 
+              if data.yacht.builder
+                li
+                  span
+                    | builder:
+                  block single-yacht-builder
+                    = data.yacht.builder
+
+              if data.yacht.price
+                li
+                  if data.yacht.price
+                    span
+                      | Sale price:
+                    = numeralFunction(data.yacht.price).format('0,0[.]00' )+data.yacht.currency
+
+            if data.yacht["message/offers"]
+              li.offer-message#single-msg
+                = data.yacht["message/offers"]
+
+            
+
+
+
+          block explain-call
+            p.call-to-action
+
+          .clear
+          block call-to-action
+            if data.yacht.availability == "Charter"
+              a.button(href="#contact-us-modal", rel="modal:open") Enquire
+
+            if data.yacht.availability == "Sale"
+              a.button(href="#contact-us-modal", rel="modal:open") Request full specs
+          .clear
+          
+          a.back-to-yachts(href="/yachts/#{data.yacht.availability}")
+            i.fa.fa-chevron-left
+            |   Back to yachts
+
+
+    
+    #gallery1
+      #back-arrow.arrow
+      #next-arrow.arrow
+      #slides1.owl-carousel.owl-theme
+        each slide in data.yacht.sortedGalleries
+          if slide.img.filename
+            - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src+')')
+          
+            
+    section.center
+      div#plain-color-background-2
+        div#container-other-specs-2
+            div#other-specs
+              ul.other-specs-list
+                if data.yacht.builder || data.yacht.model || data.yacht.designer || data.yacht.build ||  data.yacht.refit || data.yacht.beam || data.yacht.lenght || data.yacht.draft || data.yacht.displacement || data.yacht.engine || data.yacht["crusing speed"] || data.yacht.consumption
+                  h3
+                    | Specifications</br>—
+                if data.yacht.builder
+                  li
+                    span
+                      | builder:
+                    =data.yacht.builder
+                if data.yacht.model
+                  li
+                    span
+                      | model:
+                    =data.yacht.model  
+                if data.yacht.designer
+                  li
+                    span
+                      | designer:
+                    =data.yacht.designer
+                if data.yacht.build || data.yacht.refit 
+                  li
+                    if data.yacht.refit && data.yacht.build
+                      span
+                        | built:
+                      = data.yacht.build+" / refit "+data.yacht.refit
+                    else
+                        if data.yacht.refit
+                          span
+                            | refit:
+                          = data.yacht.refit
+                        else if data.yacht.build
+                          span
+                            | built:
+                          = data.yacht.build 
+                if data.yacht.lenght
+                  li
+                    span
+                      | length:
+                    block single-yacht-length
+                      = data.yacht.lenght+"m"
+                if data.yacht.beam
+                  li
+                    span
+                      | beam:
+                    =data.yacht.beam
+                if data.yacht.draft
+                  li
+                    span
+                      | draft:
+                    =data.yacht.draft
+                if data.yacht.displacement
+                  li
+                    span
+                      | displacement:
+                    =data.yacht.displacement
+                if data.yacht.engine
+                  li
+                    span
+                      | Engines:
+                    
+                    =data.yacht.engine
+                if data.yacht.consumption
+                  li
+                    span
+                      | Fuel consumption:
+                    =data.yacht.consumption
+                if data.yacht["crusing speed"]
+                  li
+                    span
+                      | cruising speed:
+                    =data.yacht["crusing speed"]
+
+                
+              ul.other-specs-list
+                if data.yacht.cabins || data.yacht["guests cabins"] || data.yacht.guests || data.yacht["crew cabins"] || data.yacht.crew
+                  h3
+                    | Accommodation</br>—
+                if data.yacht.availability == "Charter"
+                  if data.yacht.cabins
+                    li
+                      span
+                        | number of cabins:
+                       =data.yacht.cabins
+                if data.yacht.availability == "Sale"
+                  if data.yacht["guests cabins"]
+                    li
+                      span
+                        | guests cabins:
+                       =data.yacht["guests cabins"]
+                if data.yacht.guests
+                  li
+                    span
+                      | number of guests:
+                     =data.yacht.guests
+                
+                
+                if data.yacht.availability == "Sale"
+                  if data.yacht["crew cabins"]
+                    li
+                      span
+                        | crew cabins:
+                       =data.yacht["crew cabins"]
+                if data.yacht.crew
+                  li
+                    span
+                      | number of crew:
+                     =data.yacht.crew
+
+
+              ul.other-specs-list
+                if data.yacht.location    
+                  li
+                    span
+                      | Location:
+                    =data.yacht.location
+                if data.yacht.availability == "Charter"
+                  if data.yacht["price per week from"]
+                    li
+                      span
+                        | Charter price from:
+                      = numeralFunction(data.yacht["price per week from"]).format('0,0[.]00' )+data.yacht.currency
+                
+                  if data.yacht["price per week low season"]
+                    li
+                      span
+                        | Price Per Week Low Season:
+                      = numeralFunction(data.yacht["price per week low season"]).format('0,0[.]00' )+data.yacht.currency
+
+                  if data.yacht["price per week high season"]
+                    li
+                      span
+                        | Price Per Week High Season:
+                      = numeralFunction(data.yacht["price per week high season"]).format('0,0[.]00' )+data.yacht.currency
+                if data.yacht.availability == "Sale"
+
+                  if data.yacht.price
+                    li
+                      if data.yacht.price
+                        span
+                          | Asking price:
+                        = numeralFunction(data.yacht.price).format('0,0[.]00' )+data.yacht.currency
+                if data.yacht.flag
+                  li
+                    span
+                      | flag:
+                    =data.yacht.flag
+                if data.yacht.vat
+                  li
+                    span
+                      | VAT:
+                    =data.yacht.vat
+                
+                li
+                  block single-yacht-pdf
+                    a.button(href="/generated/pdf/lite/"+data.yacht.slug+".pdf", target="_blank")
+                      i.fa.fa-file-pdf-o
+                      |  PDF
+                li.hidden.availability
+                  =data.yacht.availability 
+
+            div#other-description
+              if data.yacht.content.description
+                div.description-info
+                  !=data.yacht.content.description
+              div.description-info
+                if data.yacht.content["water sports"]
+                  h2 Water Sports
+                !=data.yacht.content["water sports"]
+                if data.yacht.availability == "Charter"
+                  a.button(href="#contact-us-modal", rel="modal:open") Enquire
+
+                if data.yacht.availability == "Sale"
+                  a.button(href="#contact-us-modal", rel="modal:open") Request full specs
+    
+div.gradient-top

@@ -1,0 +1,105 @@
+extends ../layouts/_map.jade
+block title 
+  | There’s a whole world to explore
+block description
+  | See where we can bring you.
+block map 
+  script.
+        // This example creates circles on the map, representing
+        // populations in North America.
+
+        // First, create an object containing LatLng and population for each city.
+        var citymap = {};
+        citymap['Galapagos'] = {
+          center: new google.maps.LatLng(-8.0474555, -104.8756828),
+          population: 100,
+        };
+        citymap['Maldive'] = {
+          center: new google.maps.LatLng(1.977247,73.5361034),
+          population: 100,
+        };
+        citymap['Antartide'] = {
+          center: new google.maps.LatLng(-66.9400838,0),
+          population: 100,
+        };
+        citymap['Artide'] = {
+          center: new google.maps.LatLng(66.9400848,-68.2950541),
+          population: 100,
+        };
+
+        var cityCircle;
+
+        google.maps.event.addDomListener(window, 'load', init);
+        var map;
+        function init() {
+              var mapOptions = {
+                    backgroundColor: "#103158",
+                    center: new google.maps.LatLng(0, 0),
+                    zoom: 2,
+                    zoomControl: true,
+                    disableDoubleClickZoom: true,
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    scrollwheel: false,
+                    panControl: false,
+                    streetViewControl: false,
+                    draggable : true,
+                    overviewMapControl: false,
+                    overviewMapControlOptions: {
+                    opened: false,
+              },
+              mapTypeId: google.maps.MapTypeId.SATELLITE,
+        }
+        var mapElement = document.getElementById('expedition-map');
+        var map = new google.maps.Map(mapElement, mapOptions);
+        var locations = [];
+        // Construct the circle for each value in citymap.
+        // Note: We scale the area of the circle based on the population.
+        for (var city in citymap) {
+              
+              var populationOptions = {
+                    strokeColor: '#F4BB3B',
+                    strokeOpacity: 0,
+                    strokeWeight: 0,
+                    fillColor: '#F4BB3B',
+                    fillOpacity: 0.5,
+                    map: map,
+                    center: citymap[city].center,
+                    radius: citymap[city].population * 10000
+              };
+              // Add the circle for this city to the map.
+              cityCircle = new google.maps.Circle(populationOptions);
+        }
+
+        for (i = 0; i < locations.length; i++) {
+              if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+              if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+              if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+              if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+              if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+              marker = new google.maps.Marker({
+                    icon: markericon,
+                    position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+                    map: map,
+                    title: locations[i][0],
+                    desc: description,
+                    tel: telephone,
+                    email: email,
+                    web: web
+              });
+              link = '';     
+              }
+        }
+  block section
+    section.center
+      .main-text.onmap
+        h1 
+          block title
+            | There’s a whole world to explore
+
+        p
+          block description
+            | See where we can bring you.
+  
+  #expedition-map.map.filtro-map
+    

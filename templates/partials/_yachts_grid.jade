@@ -1,0 +1,35 @@
+block section
+  section.center#yatch-grid-container
+    .main-text
+      h1 
+        if data.yachts.availability == "Sale"
+          | Yachts sale
+        else if data.yachts.availability == "Charter"
+          | Yachts charter  
+      p
+        block description
+    block explain-call
+    include _filter.jade
+
+    .clear
+    if data.yachts.results.length
+      if data.yachts.totalPages > 1
+        //- h4.text-weight-normal Showing 
+        //-   strong #{data.yachts.first}
+        //-   |  to 
+        //-   strong #{data.yachts.last}
+        //-   |  of 
+        //-   strong #{data.yachts.total}
+        //-   |  yachts.
+      else
+        //- h4.text-weight-normal Showing #{utils.plural(data.yachts.results.length, '* yacht')}.
+      ul#yachts-list-grid
+        each yacht in data.yachts.results
+          include _card_yacht.jade
+    else
+      ul#yachts-list-grid
+        p#no-yacht-found 
+          | We’re sorry, but we couldn’t find a yacht meeting your requirements.
+          br
+          br
+          | Change filters to try a new search.

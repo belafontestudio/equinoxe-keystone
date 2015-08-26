@@ -1,0 +1,39 @@
+block section
+  section.center
+    .main-text
+      h1.smaller 
+        block title-smaller
+          | Wish to sell? We can handle that.
+    .clear
+    block yacht-size
+      ul#yacht-size
+        li
+          div.container-img
+          h2
+            span.number-list
+              | 1. 
+            | Results
+
+          p.description-text
+            | More than 500 yachts sold over 30 years.
+          block button1
+        li
+          div.container-img
+          h2
+            span.number-list
+              | 2. 
+            | Consultancy
+          p.description-text
+            | General contracting, project management, survey.
+          block button2
+        li
+          div.container-img
+          h2
+            span.number-list
+              | 3. 
+            | Team
+          p.description-text
+            | Our co-founders and partners Corrado Di Majo and Alessandro Ussi are internationally renowned and respected. <a href="/heritage#founders">Get to know us.</a>
+          block button3
+    .buttons
+      a.enquire-button(href="#enquire-modal", rel="modal:open", onclick="document.getElementById('checkboxes-1').checked = true") Sell your yacht with us

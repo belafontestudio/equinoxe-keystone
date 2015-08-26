@@ -1,0 +1,13 @@
+a#simple-menu(href='#sidr')
+  i.fa.fa-bars#hide
+  span Menu
+
+#landing-menu.subMenu
+  block hmenu
+    .center
+      .scroll
+        ul#anchor-menu
+          each link in navLinks
+            li.item(class=(section == link.key ? 'active' : null)): a(href=link.href id=link.id)= link.label
+          li
+            a.enquire-button(href="#enquire-modal", rel="modal:open") Enquire

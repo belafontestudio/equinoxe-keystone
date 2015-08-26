@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block content
+    
+    //- h1= getCatalog()
+    //- h1= setLocale('it')
+    //- h1= __('hello')
+    //- h1= getLocale()
+    
+    block menu 
+      include ../partials/_menu.jade
+    block body
+      h1 Backup
+      a(href="/backup.zip") Backup file
+        

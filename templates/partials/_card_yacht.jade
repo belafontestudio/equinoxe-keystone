@@ -1,0 +1,35 @@
+extends ../layouts/_yacht_card.jade
+
+block img-yacht-card
+    if yacht.thumbnail.filename
+        img(src="/uploads/images/yachts/thumbnails/"+encodeURIComponent(yacht.thumbnail.filename).replace(/\(/g, '%28').replace(/\)/g, '%29'), alt=yacht.thumbnail.filename)
+    else 
+        img(src="/images/sprite/placeholder.png" alt="placeholder")
+block single-yacht-name
+    if yacht.name
+        = yacht.name 
+    else
+        = "missing"
+block single-yacht-charter
+    if yacht["price per week from"]
+        = numeralFunction(yacht["price per week from"]).format('0,0[.]00' )+yacht.currency
+    else
+        = "upon-request"
+block single-yacht-sale
+    if yacht.price
+        = yacht.price+yacht.currency
+    else
+        = "upon-request"
+block single-yacht-length
+    if yacht.lenght
+        = yacht.lenght
+    else
+        = "missing"
+
+
+    
+block single-yacht-guests
+    if yacht.guests
+        = yacht.guests
+    else
+        = "missing"

@@ -1,0 +1,39 @@
+extends ../layouts/default
+block modals
+      include ../partials/_enquire_modal.jade
+      include ../partials/_contact_us_modal.jade
+
+block menu 
+  include ../partials/_menu.jade
+block body
+  #onepage
+    .section.spacer
+      include ../partials/_heritage_info.jade
+
+
+    .section
+      div.main-photo
+        block main-photo
+          div(class="img-holder", data-image="/images/landing/oriz_heritage.jpg")
+            .reposition
+              section.center-parallax
+                .section
+                  .filtro
+                  include ../partials/_heritage_intro.jade
+    .section.spacer#founders
+      include ../partials/_27years_of_experience.jade
+    .section.spacer
+      include ../partials/_team.jade
+    .section.darker
+      include ../partials/_footer.jade 
+    //- div.bottom-spacer
+    //- .section
+    //-   include partials/_27years_of_experience.jade
+    //-   include partials/_team.jade
+    //- div.bottom-spacer
+    //- .section
+    //-   include partials/_quote_equinoxe_experience.jade
+    //- div.bottom-spacer
+    //- .section.inner-map.office
+    //-   img(src='https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284', alt='office')
+    
