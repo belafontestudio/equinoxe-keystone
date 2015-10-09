@@ -18,23 +18,23 @@ output.on('close', function() {
 exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
+
 	view.on('init', function(next) {
 
 		archive.directory(process.env.CLOUD_DIR);
 		archive.pipe(output);
 		archive.finalize();
 
-		 
+
 
 
 		next();
-		
+
 	});
 
-		
-	
+
+
 	// Render the view
 	view.render('mediadownload');
-	
-};	
+
+};
