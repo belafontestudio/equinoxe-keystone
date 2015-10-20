@@ -49,7 +49,7 @@ block content
                 if data.yacht.refit && data.yacht.build
                   span
                     | built:
-                  = data.yacht.build+" / refit "+data.yacht.refit
+                  = data.yacht.build+"/refit "+data.yacht.refit
                 else
                     if data.yacht.refit
                       span
@@ -67,24 +67,37 @@ block content
                   = data.yacht.guests
 
           ul#top-specs-right
-            h3
-              | Accommodation
+            if data.yacht.availability == "Charter"
+              if data.yacht.cabins
+                li
+                  span
+                    | cabins:
+                   =data.yacht.cabins
+            if data.yacht.availability == "Sale"
+              if data.yacht["guests cabins"]
+                li
+                  span
+                    | guests cabins:
+                   =data.yacht["guests cabins"]
             if data.yacht.guests
               li
                 span
                   | guests:
                  =data.yacht.guests
+            
+            
+            if data.yacht.availability == "Sale"
+              if data.yacht["crew cabins"]
+                li
+                  span
+                    | crew cabins:
+                   =data.yacht["crew cabins"]
             if data.yacht.crew
               li
                 span
                   | crew:
                  =data.yacht.crew
-            if data.yacht.cabins
-              li
-                span
-                  | cabins:
-                 =data.yacht.cabins
-        
+    
         
 
        
@@ -94,78 +107,117 @@ block content
               h3
                 | Specifications
               ul.other-specs-list
-                if data.yacht.beam
-                  li
-                    span
-                      | beam:
-                    =data.yacht.beam
-                if data.yacht.crew
-                  li
-                    span
-                      | number of crew:
-                    =data.yacht.crew
                 if data.yacht.builder
                   li
                     span
                       | builder:
                     =data.yacht.builder
+                if data.yacht.model
+                  li
+                    span
+                      | model:
+                    =data.yacht.model  
                 if data.yacht.designer
                   li
                     span
                       | designer:
                     =data.yacht.designer
-                if data.yacht.flag
+                if data.yacht.build || data.yacht.refit 
+                  li
+                    if data.yacht.refit && data.yacht.build
+                      span
+                        | built:
+                      = data.yacht.build+" / refit "+data.yacht.refit
+                    else
+                        if data.yacht.refit
+                          span
+                            | refit:
+                          = data.yacht.refit
+                        else if data.yacht.build
+                          span
+                            | built:
+                          = data.yacht.build 
+                if data.yacht.lenght
                   li
                     span
-                      | flag:
-                    =data.yacht.flag
-                if data.yacht.model
+                      | length:
+                    block single-yacht-length
+                      = data.yacht.lenght+"m"
+                if data.yacht.beam
                   li
                     span
-                      | model:
-                    =data.yacht.model
+                      | beam:
+                    =data.yacht.beam
                 if data.yacht.draft
                   li
                     span
                       | draft:
                     =data.yacht.draft
-              ul.other-specs-list
                 if data.yacht.displacement
                   li
                     span
                       | displacement:
                     =data.yacht.displacement
-                if data.yacht["crusing speed"]
+                if data.yacht.engine
                   li
                     span
-                      | Cruising speed:
-                    =data.yacht["crusing speed"]
+                      | Engines:
+                    
+                    =data.yacht.engine
                 if data.yacht.consumption
                   li
                     span
                       | Fuel consumption:
                     =data.yacht.consumption
+              ul.other-specs-list
+                if data.yacht.consumption
+                  li
+                    span
+                      | Fuel consumption:
+                    =data.yacht.consumption
+                if data.yacht["crusing speed"]
+                  li
+                    span
+                      | cruising speed:
+                    =data.yacht["crusing speed"]
+                if data.yacht.availability == "Charter"
+                  if data.yacht["price per week from"]
+                    li
+                      span
+                        | Charter price from:
+                      = numeralFunction(data.yacht["price per week from"]).format('0,0[.]00' )+data.yacht.currency
+                
+                  if data.yacht["price per week low season"]
+                    li
+                      span
+                        | Price Per Week Low Season:
+                      = numeralFunction(data.yacht["price per week low season"]).format('0,0[.]00' )+data.yacht.currency
+
+                  if data.yacht["price per week high season"]
+                    li
+                      span
+                        | Price Per Week High Season:
+                      = numeralFunction(data.yacht["price per week high season"]).format('0,0[.]00' )+data.yacht.currency
+                if data.yacht.availability == "Sale"
+
+                  if data.yacht.price
+                    li
+                      if data.yacht.price
+                        span
+                          | Asking price:
+                        = numeralFunction(data.yacht.price).format('0,0[.]00' )+data.yacht.currency
+                if data.yacht.flag
+                  li
+                    span
+                      | flag:
+                    =data.yacht.flag
                 if data.yacht.vat
                   li
                     span
                       | VAT:
                     =data.yacht.vat
-                if data.yacht.location    
-                  li
-                    span
-                      | Location:
-                    =data.yacht.location
-                if data.yacht["price per week low season"]
-                  li
-                    span
-                      | Price Per Week Low Season:
-                    = numeralFunction(data.yacht["price per week low season"]).format('0,0[.]00' )+data.yacht.currency
+                
 
-                if data.yacht["price per week high season"]
-                  li
-                    span
-                      | Price Per Week High Season:
-                    = numeralFunction(data.yacht["price per week high season"]).format('0,0[.]00' )+data.yacht.currency
 
             if data.yacht["message/offers"]
               p#message-p

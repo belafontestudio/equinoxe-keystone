@@ -1,7 +1,7 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
 require('dotenv').load();
-
+require('newrelic');
 
 // Require keystone
 var keystone = require('keystone'),
@@ -15,15 +15,16 @@ keystone.init({
 	'mongo': process.env.MONGO_URI || "mongodb://localhost/equinoxe",
 	'name': 'Equinoxe',
 	'brand': 'Equinoxe',
-	
+
 	'sass': 'public',
 	'static': ['public','bower_components',process.env.CLOUD_DIR,process.env.TEMP_DIR],
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
-	
+
 	'auto update': true,
 	'session': true,
+
 	'auth': true,
 	'user model': 'User',
 	'cookie secret': 'Sbbm~T!9?"=iNzpNUb@kL]nT!y2t22TE=#JWSPh&Hb)R{gV,Z/5+~.Ir"SfOpC~r',
@@ -60,7 +61,7 @@ keystone.set('locals', {
 });
 
 // Configure i18n
- 
+
 i18n.configure({
 	locales:['en', 'it'],
 	defaultLocale: 'en',
