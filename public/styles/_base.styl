@@ -92,6 +92,81 @@ input
             li
                 display inline-block
 
+/***************************************************************************
+// * Iubenda Cookie Solution                                               *
+// *                                                                       *
+// * (c) 2015 Iubenda srl <info@iubenda.com>                               *
+// * All Rights Reserved.                                                  *
+// *                                                                       *
+// *************************************************************************
+//
+// CHANGELOG
+// 0.0.1
+// - first implementation of customizable css
+*/
+
+/*  GENERAL CLASS */
+#iubenda-cs-banner{
+
+    bottom: 0px !important;
+
+    left: 0px !important;
+    position: fixed !important;
+    width: 100% !important;
+    z-index: 99999998 !important;
+    background: #091D34;
+    color: #F4BB3B;
+
+}
+
+/*  CONTENT CLASS */
+.iubenda-cs-content{
+    display:block;
+    margin:0 auto;
+    padding: 20px;
+    background: #091D34;
+    color: #F4BB3B;
+    font-family "Alegreya Sans", "Helvetica Neue", sans-serif
+    font-weight 300
+    text-rendering optimizeLegibility
+    width:auto;
+    font-size: 16px;
+}
+.iubenda-banner-content{
+
+}
+
+.iubenda-cs-rationale{
+    max-width: 900px; position:relative; margin: 0 auto;
+}
+
+/*   STYLE FOR TEXT INTERNAL BANNER */
+.iubenda-banner-content > p {
+    font-family "Alegreya Sans", "Helvetica Neue", sans-serif
+    line-height: 1.5;
+}
+
+/*  CLOSE BUTTON. NOTICE: IMAGE FOR BUTTON NOT IMPLEMENTED YET */
+.iubenda-cs-close-btn{
+    margin:0;
+    color: #fff;
+    text-decoration:none;
+    font-size:14px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+}
+
+/*  STYLE FOR TEXT LINK TO PRIVACY POLICY */
+.iubenda-cs-cookie-policy-lnk{
+    text-decoration: underline;
+    color: #F4BB3B;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
 
 //loader
 .loader

@@ -9,8 +9,8 @@
   background-image: url("/images/top.png");
   bottom: 20px;
   right: 20px;
-  width: 38px;
-  height: 38px;
+  width: 38px /* Width of image */;
+  height: 38px /* Height of image */;
   content: '';
 }
 html,
@@ -89,6 +89,52 @@ input .uppercase {
 }
 .subMenu .center ul li {
   display: inline-block;
+}
+#iubenda-cs-banner {
+  bottom: 0px !important;
+  left: 0px !important;
+  position: fixed !important;
+  width: 100% !important;
+  z-index: 99999998 !important;
+  background: #091d34;
+  color: #f4bb3b;
+}
+.iubenda-cs-content {
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  background: #091d34;
+  color: #f4bb3b;
+  font-family: "Alegreya Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  width: auto;
+  font-size: 16px;
+}
+.iubenda-cs-rationale {
+  max-width: 900px;
+  position: relative;
+  margin: 0 auto;
+}
+.iubenda-banner-content > p {
+  font-family: "Alegreya Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+.iubenda-cs-close-btn {
+  margin: 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+}
+.iubenda-cs-cookie-policy-lnk {
+  text-decoration: underline;
+  color: #f4bb3b;
+  font-size: 16px;
+  font-weight: 900;
 }
 .loader {
   position: fixed;
@@ -1220,7 +1266,7 @@ ul.yachts-list-grid {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 65.6666666666667%;
+  width: 65.66666666666666%;
   margin-left: 0%;
   margin-right: 3%;
 }
@@ -1301,7 +1347,7 @@ section.center-parallax:after {
 }
 section.center-parallax a.button {
   position: relative;
-  left: 17.1666666666667%;
+  left: 17.166666666666664%;
 }
 div.filtro {
   background-color: #000;
@@ -1418,12 +1464,12 @@ img.info {
 }
 img#office {
   position: relative;
-  left: 17.1666666666667%;
+  left: 17.166666666666664%;
   *zoom: 1;
   float: left;
   clear: none;
   text-align: inherit;
-  width: 31.3333333333333%;
+  width: 31.33333333333333%;
   margin-left: 0%;
   margin-right: 3%;
   height: auto;
@@ -1441,12 +1487,12 @@ img#office:last-child {
 }
 p.address {
   position: relative;
-  left: 17.1666666666667%;
+  left: 17.166666666666664%;
   *zoom: 1;
   float: left;
   clear: none;
   text-align: inherit;
-  width: 31.3333333333333%;
+  width: 31.33333333333333%;
   margin-left: 0%;
   margin-right: 3%;
   color: #fff;
@@ -1760,11 +1806,11 @@ section.center div.logo {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 65.6666666666667%;
+  width: 65.66666666666666%;
   margin-left: 0%;
   margin-right: 3%;
   position: relative;
-  left: 17.1666666666667%;
+  left: 17.166666666666664%;
 }
 section.center div.logo:before,
 section.center div.logo:after {
@@ -1952,7 +1998,7 @@ section.center ul#call-to-action-menu li {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 31.3333333333333%;
+  width: 31.33333333333333%;
   margin-left: 0%;
   margin-right: 3%;
   padding: 20px 10px;
@@ -2707,11 +2753,11 @@ section.center-parallax div.logo {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 65.6666666666667%;
+  width: 65.66666666666666%;
   margin-left: 0%;
   margin-right: 3%;
   position: relative;
-  left: 17.1666666666667%;
+  left: 17.166666666666664%;
 }
 section.center-parallax div.logo:before,
 section.center-parallax div.logo:after {
@@ -2899,7 +2945,7 @@ section.center-parallax ul#call-to-action-menu li {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 31.3333333333333%;
+  width: 31.33333333333333%;
   margin-left: 0%;
   margin-right: 3%;
   text-align: center !important;
@@ -3563,11 +3609,11 @@ footer .left {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 82.8333333333333%;
+  width: 82.83333333333334%;
   margin-left: 0%;
   margin-right: 3%;
   position: relative;
-  left: 8.5833333333333%;
+  left: 8.583333333333332%;
   text-align: center;
 }
 footer .left:before,
@@ -3605,8 +3651,8 @@ footer .right {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 82.8333333333333%;
-  margin-left: 8.5833333333333%;
+  width: 82.83333333333334%;
+  margin-left: 8.583333333333332%;
   margin-right: 3%;
   padding-bottom: 30px;
 }
@@ -3816,11 +3862,11 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 65.6666666666667%;
+    width: 65.66666666666666%;
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center-parallax div.logo:before,
   section.center-parallax div.logo:after {
@@ -4008,7 +4054,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
     text-align: center !important;
@@ -4937,7 +4983,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
   }
@@ -5118,11 +5164,11 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 39.9166666666667%;
+    width: 39.91666666666667%;
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 8.5833333333333%;
+    left: 8.583333333333332%;
   }
   ul.other-specs-list:before,
   ul.other-specs-list:after {
@@ -5138,7 +5184,7 @@ footer p.secondmenu a:hover {
   #other-description {
     width: 82.8333333333333% !important;
     position: relative;
-    left: 8.5833333333333%;
+    left: 8.583333333333332%;
   }
   footer {
     position: relative;
@@ -5222,8 +5268,8 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 39.9166666666667%;
-    margin-left: 8.5833333333333%;
+    width: 39.91666666666667%;
+    margin-left: 8.583333333333332%;
     margin-right: 3%;
     position: static;
     left: 0;
@@ -5254,8 +5300,8 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
-    margin-left: 8.5833333333333%;
+    width: 31.33333333333333%;
+    margin-left: 8.583333333333332%;
     margin-right: 3%;
     margin-top: 50px;
   }
@@ -5290,11 +5336,11 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 65.6666666666667%;
+    width: 65.66666666666666%;
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   .cta a.button.home:before,
   .cta a.button.home:after {
@@ -5364,11 +5410,11 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 34.3333333333333%;
+    left: 34.33333333333333%;
     margin-top: 20%;
   }
   section.center div.logo:before,
@@ -5410,11 +5456,11 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 65.6666666666667%;
+    width: 65.66666666666666%;
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center ul#anchor-menu:before,
   section.center-parallax ul#anchor-menu:before,
@@ -5441,7 +5487,7 @@ footer p.secondmenu a:hover {
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center ul#call-to-action-menu-button:before,
   section.center-parallax ul#call-to-action-menu-button:before,
@@ -5494,7 +5540,7 @@ footer p.secondmenu a:hover {
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center ul#call-to-action-menu:before,
   section.center-parallax ul#call-to-action-menu:before,
@@ -5517,7 +5563,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
   }
@@ -5546,7 +5592,7 @@ footer p.secondmenu a:hover {
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center div.main-text:before,
   section.center-parallax div.main-text:before,
@@ -5570,11 +5616,11 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 82.8333333333333%;
+    width: 82.83333333333334%;
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center .main-text.info:before,
   section.center-parallax .main-text.info:before,
@@ -5601,7 +5647,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
@@ -5633,7 +5679,7 @@ footer p.secondmenu a:hover {
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center p.call-to-action:before,
   section.center-parallax p.call-to-action:before,
@@ -5656,11 +5702,11 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 65.6666666666667%;
+    width: 65.66666666666666%;
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center div.quote:before,
   section.center-parallax div.quote:before,
@@ -5709,7 +5755,7 @@ footer p.secondmenu a:hover {
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
     text-align: left !important;
     margin-top: -60px;
   }
@@ -5774,7 +5820,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 42.77777777777773%;
+    width: 42.77777777777778%;
     margin-left: 0%;
     margin-right: 3%;
   }
@@ -5836,7 +5882,7 @@ footer p.secondmenu a:hover {
   section.center ul#yacht-size-mobile li.team.second-column,
   section.center-parallax ul#yacht-size-mobile li.team.second-column {
     position: relative;
-    left: 11.444444444444432%;
+    left: 11.444444444444445%;
   }
   section.center ul#yacht-size li.bulletlist,
   section.center-parallax ul#yacht-size li.bulletlist,
@@ -5852,7 +5898,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
   }
@@ -5930,7 +5976,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 42.77777777777773%;
+    width: 42.77777777777778%;
     margin-left: 0%;
     margin-right: 3%;
   }
@@ -6008,7 +6054,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
     text-align: left !important;
@@ -6143,7 +6189,7 @@ footer p.secondmenu a:hover {
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center ul#yachts-list-grid:before,
   section.center-parallax ul#yachts-list-grid:before,
@@ -6176,7 +6222,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 42.77777777777773%;
+    width: 42.77777777777778%;
     margin-left: 0%;
     margin-right: 3%;
     float: left !important;
@@ -6291,7 +6337,7 @@ footer p.secondmenu a:hover {
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center ul#yacht-size.full-team:before,
   section.center-parallax ul#yacht-size.full-team:before,
@@ -6314,7 +6360,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
     padding-left: 80px !important;
@@ -6373,7 +6419,7 @@ footer p.secondmenu a:hover {
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
     padding-top: 60px;
   }
   section.center div#container-other-specs:before,
@@ -6397,7 +6443,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 42.77777777777773%;
+    width: 42.77777777777778%;
     margin-left: 0%;
     margin-right: 3%;
   }
@@ -6422,7 +6468,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 54.22222222222227%;
+    width: 54.22222222222222%;
     margin-left: 0%;
     margin-right: 3%;
   }
@@ -6504,7 +6550,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
   }
@@ -6575,7 +6621,7 @@ footer p.secondmenu a:hover {
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center ul#yachts-list-grid:before,
   section.center-parallax ul#yachts-list-grid:before,
@@ -6608,7 +6654,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
   }
@@ -6760,7 +6806,7 @@ footer p.secondmenu a:hover {
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center div.reset-button:before,
   section.center-parallax div.reset-button:before,
@@ -6801,7 +6847,7 @@ footer p.secondmenu a:hover {
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 8.5833333333333%;
+    left: 8.583333333333332%;
   }
   div#other-specs .other-specs-list:before,
   div#other-specs .other-specs-list:after {
@@ -6951,7 +6997,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
   }
@@ -6978,11 +7024,11 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 65.6666666666667%;
+    width: 65.66666666666666%;
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 17.1666666666667%;
+    left: 17.166666666666664%;
   }
   section.center div#container-other-specs:before,
   section.center-parallax div#container-other-specs:before,
@@ -7189,8 +7235,8 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 39.9166666666667%;
-    margin-left: 17.1666666666667%;
+    width: 39.91666666666667%;
+    margin-left: 17.166666666666664%;
     margin-right: 3%;
     position: static;
     left: 0;
@@ -7221,7 +7267,7 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
     margin-top: 0;
@@ -7309,11 +7355,11 @@ footer p.secondmenu a:hover {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 31.3333333333333%;
+    width: 31.33333333333333%;
     margin-left: 0%;
     margin-right: 3%;
     position: relative;
-    left: 34.3333333333333%;
+    left: 34.33333333333333%;
   }
   section.center div.logo:before,
   section.center-parallax div.logo:before,
