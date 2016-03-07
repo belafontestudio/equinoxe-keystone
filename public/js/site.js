@@ -515,8 +515,8 @@ function updateFilterMenu(){
       }else{
         $("a#f7 span").text(values.z);
       }
-      
-      
+
+
     }
 
   if(values.minl == "0" && values.maxl == "24"){
@@ -659,7 +659,7 @@ function collectFilter(){
             filters.z = "";
             q += "&z="+filters.z;
           }
-          
+
         }
         if(pathname == "/yachts/Sale"){
 
@@ -1221,21 +1221,38 @@ function submitModals(){
         var email = $(".enquire_email").val(); // get email field value
         var name = $(".enquire_name").val(); // get name field value
         var surname = $(".enquire_surname").val(); // get name field value
-        var tomail = ''
+        var number = $(".enquire-phone").val(); // get name field value
+        var tomail = '';
 
-        var check0 = $("#checkboxes-0").val(); // get name field value
-        var check1 = $("#checkboxes-1").val(); // get name field value
-        var check2 = $("#checkboxes-2").val(); // get name field value
-        var check3 = $("#checkboxes-3").val(); // get name field value
-        var check4 = $("#checkboxes-4").val(); // get name field value
+
         if ($("#checkboxes-0").is(":checked") || $("#checkboxes-3").is(":checked")|| $("#checkboxes-4").is(":checked")){
           tomail = "barche@equinoxe.it";
         }else if($("#checkboxes-1").is(":checked") || $("#checkboxes-2").is(":checked")){
-          tomail = "corrado@equinoxe.it";
+          tomail = "corrado.dimajo@equinoxe.it";
+        }else{
+          tomail = "barche@equinoxe.it";
         }
         console.log(tomail);
 
         var msg = $(".enquire_msg").val(); // get message field value
+
+        var mail_text= name +" "+ surname +"\r\n "+ number +"\r\n "+ email+"\r\n services: "
+        if($("#checkboxes-0").is(":checked")){
+          mail_text+=$("#checkboxes-0").val()};
+          mail_text+=" ";
+        if($("#checkboxes-1").is(":checked")){
+          mail_text+=$("#checkboxes-1").val()};
+          mail_text+=" ";
+        if($("#checkboxes-2").is(":checked")){
+          mail_text+=$("#checkboxes-2").val()};
+          mail_text+=" ";
+        if($("#checkboxes-3").is(":checked")){
+          mail_text+=$("#checkboxes-3").val()};
+          mail_text+=" ";
+        if($("#checkboxes-4").is(":checked")){
+          mail_text+=$("#checkboxes-4").val()};
+          mail_text+=" ";
+        mail_text += "\r\n message: "+msg;
         $.ajax(
         {
             type: "POST",
@@ -1249,7 +1266,7 @@ function submitModals(){
                         'Reply-To': email
                     },
                     'subject': name +" "+ surname +' - website',
-                    'text': check0 +" - "+ check1 + " - "+ check2 +" - "+ check3 + " - " + check4 +" - "+msg,
+                    'text': mail_text,
                     'to': [
                     {
                         'email': tomail,
@@ -1264,6 +1281,7 @@ function submitModals(){
             $("#name").val(''); // reset field after successful submission
             $("#email").val(''); // reset field after successful submission
             $("#msg").val(''); // reset field after successful submission
+            $.modal.close();
         })
         .fail(function(response) {
           $('#response-false').fadeIn();
@@ -1277,12 +1295,13 @@ $("#yacht_modal").submit(function()
         var name = $(".modal_name").val(); // get name field value
         var surname = $(".modal_surname").val(); // get name field value
         var tomail = "";
+        var number = $(".modal_phone").val();
         var theyacht = $('h1').text(); // get name field value
         var availability = $("li.availability");
         if(availability == "Sale"){
-          tomail = "corrado@equinoxe.it";
-        }else{
           tomail = "barche@equinoxe.it";
+        }else{
+          tomail = "corrado.dimajo@equinoxe.it";
         }
 
         var msg = $(".modal_msg").val(); // get message field value
@@ -1299,7 +1318,7 @@ $("#yacht_modal").submit(function()
                         'Reply-To': email
                     },
                     'subject': theyacht+ " - "+name +" "+ surname +' - website',
-                    'text':  theyacht +"<br/>   "+name+surname+msg,
+                    'text':  "yacht request: "+theyacht +"   "+name+"  "+surname+"   "+number+"  "+msg,
                     'to': [
                     {
                         'email': tomail,
@@ -1314,6 +1333,7 @@ $("#yacht_modal").submit(function()
             $("#name").val(''); // reset field after successful submission
             $("#email").val(''); // reset field after successful submission
             $("#msg").val(''); // reset field after successful submission
+            $.modal.close();
         })
         .fail(function(response) {
           $('#response-false').fadeIn();

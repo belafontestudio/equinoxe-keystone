@@ -34,7 +34,13 @@ div(id="contact-us-modal", style="display:none;")
           .controls
             textarea#textarea.modal_msg(placeholder='Your message',name='textarea').
         <!-- Button -->
+        #mandrill-response
+          #response-true
+            p
+              | Your message has been sent. Thank you!
+          #response-false
+            p
+              | Error sending message.
         .control-group.submit
           .controls
             input(type="submit" value="Submit")
-
