@@ -1,5 +1,5 @@
 div#toggle-btn
-  i.fa.fa-plus-circle
+  i.iconfilter.fa.fa-minus-circle
     span
       |   Filters
 ul#filter-menu.filter-toggle
@@ -42,11 +42,18 @@ ul#filter-menu.filter-toggle
   li#last-filter
     a.filter#f6(href="#")
       div.icon-filter
-        img(src='../images/sprite/filter_salecharter_icon.svg', alt='Propulsion')
+        img(src='../images/sprite/filter_search.svg', alt='Propulsion')
       h3
-        | Sale / Charter
-      span
-        | Charter
+        | Search by name
+      
+  //- li#last-filter.hide
+  //-   a.filter#f6(href="#")
+  //-     div.icon-filter
+  //-       img(src='../images/sprite/filter_salecharter_icon.svg', alt='Propulsion')
+  //-     h3
+  //-       | Sale / Charter
+  //-     span
+  //-       | Charter
 div.filter-opened-section.filter-toggle-min
   a.close-filter(href="#")
     img(src='../images/sprite/hamburger_close.svg', alt='Close')
@@ -55,7 +62,8 @@ div.filter-opened-section.filter-toggle-min
   include _filter_guests.jade
   include _filter_length.jade
   include _filter_propulsion.jade
-  include _filter_salecharter.jade
+  //include _filter_salecharter.jade
+  include _filter_search.jade
   
   
 div.reset-button.filter-toggle

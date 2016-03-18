@@ -154,8 +154,8 @@ function guestSlider(){
       step: 1,
       values: [ values.ming, values.maxg],
       slide: function( event, ui ) {
-        $( "p.min-guest" ).text( ui.values[ 0 ] + "guests" );
-        $( "p.max-guest" ).text( ui.values[ 1 ] + "guests");
+        $( "p.min-guest" ).text( ui.values[ 0 ] + " guests" );
+        $( "p.max-guest" ).text( ui.values[ 1 ] + " guests");
         $("a#f3 span").text(ui.values[ 0 ]+"-"+ui.values[ 1 ]);
 
       },
@@ -165,8 +165,8 @@ function guestSlider(){
         collectFilter()
       }
     });
-    $( "p.min-guest" ).text( $( "#slider-guest" ).slider( "values", 0 )+ "guests");
-    $( "p.max-guest" ).text( $( "#slider-guest" ).slider( "values", 1 )+ "guests");
+    $( "p.min-guest" ).text( $( "#slider-guest" ).slider( "values", 0 )+ " guests");
+    $( "p.max-guest" ).text( $( "#slider-guest" ).slider( "values", 1 )+ " guests");
 }
 function rangeSliderWeek(){
   $( "#slider-rangeweek" ).slider({
@@ -706,6 +706,20 @@ function rightQuery(){
   }
 }
 
+
+function searchFilter(){
+  $('#f6').click(function(){
+
+    $('html, body').animate({
+        scrollTop: $(".filter-opened-section").offset().top
+    }, 1000);
+
+    $('#input-search').focus();
+
+  })
+}
+
+
 $(document).ready(function() {
       var headhesive = new Headhesive('.subMenu', options);
 
@@ -763,7 +777,8 @@ $(document).ready(function() {
     zoneFilter();
     toggleFilters();
     mediaqueriesjs();
-    clickFilters()
+    clickFilters();
+    searchFilter();
 
     sliderKey();
 
@@ -937,7 +952,7 @@ function homeSlides(){
 
 
     timerSlidesHome();
-    menuSlidesHome()
+    //menuSlidesHome();
 
 }
 
@@ -1009,19 +1024,19 @@ function timerSlidesHome(counter){
         }else if (counter > 3){
 
                     hideSlides(counter);
-                    hideStatements(counter-1);
-                    hideCTA(counter-1);
-                    activeItem(counter-1);
+                    //hideStatements(counter-1);
+                    //hideCTA(counter-1);
+                    //activeItem(counter-1);
 
                 }
 
         else
         {
 
-           hideStatements(counter);
-            hideCTA(counter);
+           //hideStatements(counter);
+            //hideCTA(counter);
             hideSlides(counter);
-            activeItem(counter);
+            //activeItem(counter);
 
         }
 
@@ -1126,10 +1141,21 @@ function populateData(data,q){
 /////////////////////////
 
 function toggleFilters(){
+  var iconafilterToggle = false;
 
   $('#toggle-btn').click(function() {
+    if(iconafilterToggle == false){
+      $('.iconfilter').addClass('fa-plus-circle');
+      $('.iconfilter').removeClass('fa-minus-circle');
+      iconafilterToggle = true;
+      console.log(iconafilterToggle)
+    }else if(iconafilterToggle == true) {
+      $('.iconfilter').removeClass('fa-plus-circle');
+      $('.iconfilter').addClass('fa-minus-circle');
+      iconafilterToggle = false;
+    }
     $('.filter-toggle').slideToggle("fast", function() {
-    // Animation complete.
+
     });
 
     $('.filter-opened-section').fadeOut();
@@ -1225,7 +1251,7 @@ function submitModals(){
         var tomail = '';
 
 
-        if ($("#checkboxes-0").is(":checked") || $("#checkboxes-3").is(":checked")|| $("#checkboxes-4").is(":checked")){
+        if ($("#checkboxes-0").is(":checked") || $("#checkboxes-3").is(":checked")|| $("#checkboxes-4").is(":checked")|| $("#checkboxes-5").is(":checked")){
           tomail = "barche@equinoxe.it";
         }else if($("#checkboxes-1").is(":checked") || $("#checkboxes-2").is(":checked")){
           tomail = "corrado.dimajo@equinoxe.it";
@@ -1252,6 +1278,9 @@ function submitModals(){
         if($("#checkboxes-4").is(":checked")){
           mail_text+=$("#checkboxes-4").val()};
           mail_text+=" ";
+        if($("#checkboxes-5").is(":checked")){
+          mail_text+=$("#checkboxes-5").val()};
+          mail_text+=" ";
         mail_text += "\r\n message: "+msg;
         $.ajax(
         {
@@ -1269,7 +1298,8 @@ function submitModals(){
                     'text': mail_text,
                     'to': [
                     {
-                        'email': tomail,
+                        'email': 'yachts@equinoxe.it',
+                        //'email': tomail,
                         'name': 'Equinoxe yacht',
                         'type': 'to'
                     }]

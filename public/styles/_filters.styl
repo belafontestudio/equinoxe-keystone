@@ -1,3 +1,18 @@
+
+.min-txt
+  position absolute
+  top 25px
+  color white
+  font-size 15px
+  opacity .4
+.max-txt
+  position absolute
+  top 25px
+  right 0
+  color white
+  font-size 15px
+  opacity .4
+
 div.filter-opened-section
   #slider-guest
     div.icon-guest-min, div.icon-guest-max
@@ -159,13 +174,60 @@ section.center
       text-transform uppercase
     p.min-price,p.min-guest,p.min-priceweek
       float left
+
     p.max-price,p.max-guest, p.max-priceweek
       float right
       text-align right
+    p.max-priceweek,p.min-priceweek
+      top: 25px
+
   div#slider, div.slider-bar
     .ui-widget-header
       background yellow
 
+  .more-10ml
+    position absolute
+    width 100px
+    height 30px
+    right 50px
+    border 1px solid #183D79
+    background-color #F4BB3B
+    color white
+    &:hover
+      background none
+      color #F4BB3B
+      border 1px solid #F4BB3B
+    &:pressed
+      opacity .8
+
+  .per-week
+    position: absolute;
+    top: 51px;
+    left: calc(50% - 32px);
+    color: white;
+
+
+.search-yacht
+  #input-search
+    width 100%
+    height 50px
+    background-color #183D79
+    border 2px solid yellow
+    font-size 1.8em
+    color #f4bb3b
+    padding 0 10px
+    transition all .5s ease-in-out
+    &:focus
+      border-color #183D79
+      border-bottom-color yellow
+
+  #input-button
+    position absolute
+    right 10px
+    top 8px
+    height 34px
+    &:hover
+      opacity .7
 
 
 +below(600px)
@@ -253,6 +315,13 @@ section.center
   section.center
     div#slider, div#slider-numbers, div.slider-bar
       max-width 50%
+
++below(1080px)
+  .more-10ml
+    bottom -50px
++above(1080px)
+  .more-10ml
+    bottom -8px
 
 
 +above(1200px)

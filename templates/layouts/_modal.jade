@@ -8,13 +8,13 @@ div(id="enquire-modal", style="display:none;")
         .control-group.name
           label.control-label(for='textinput') Name
           .controls
-            input#textinput.enquire_name.input-xlarge(name='textinput', type='text', placeholder='Marc', required='')
+            input#textinput.enquire_name.input-xlarge(name='textinput', type='text', placeholder='', required='')
             
         // Text input
         .control-group.surname
           label.control-label(for='textinput') Surname
           .controls
-            input#textinput.enquire_surname.input-xlarge(name='textinput', type='text', placeholder='Rosenberg', required='')
+            input#textinput.enquire_surname.input-xlarge(name='textinput', type='text', placeholder='', required='')
           
         // Multiple Checkboxes
         .control-group.checkboxes
@@ -25,7 +25,7 @@ div(id="enquire-modal", style="display:none;")
               | Yacht Charter
             label.checkbox(for='checkboxes-1')
               input#checkboxes-1(type='checkbox', name='checkboxes', value='Yacht Sale')
-              | Yacht Sale
+              | Yacht for Sale
             label.checkbox(for='checkboxes-2')
               input#checkboxes-2(type='checkbox', name='checkboxes', value='Yacht Purchase')
               | Yacht Purchase
@@ -35,17 +35,20 @@ div(id="enquire-modal", style="display:none;")
             label.checkbox(for='checkboxes-4')
               input#checkboxes-4(type='checkbox', name='checkboxes', value='Bareboat')
               | Bareboat
+            label.checkbox(for='checkboxes-5')
+              input#checkboxes-5(type='checkbox', name='checkboxes', value='Land and Services')
+              | Land and Services
         // Text input
         .control-group.phonenum
           label.enquire_phone.control-label(for='textinput') Phone Number
           .controls
-            input#textinput.enquire-phone.input-xlarge(name='textinput', type='phone', placeholder='placeholder', required='')
+            input#textinput.enquire-phone.input-xlarge(name='textinput', type='phone', placeholder='', required='')
             
         // Text input
         .control-group.mail
           label.control-label(for='textinput') Email
           .controls
-            input#textinput.enquire_email.input-xlarge(name='textinput', type='email', placeholder='johnappleseed@yahoo.it', required='')
+            input#textinput.enquire_email.input-xlarge(name='textinput', type='email', placeholder='', required='')
            
         // Textarea
         .control-group.text-area
@@ -63,3 +66,20 @@ div(id="enquire-modal", style="display:none;")
                 | Error sending message.
           .controls
             input#submit-form(type="submit" value="Submit")
+    
+    .form-contacts
+      h4 Alternatively, you can contact our office directly.
+      ul
+        li.bold Equinoxe s.r.l.
+        li 
+          span.bold Phone 
+          a(href="tel:00390118185211") +39 011 8185211
+        li 
+          span.bold Fax 
+          | +39 011 8185221
+        li 
+          span.bold Address 
+          | Via dei Mille, 18 - 10123 Torino, Italy
+        li
+          span.bold Mail
+          a(href="mailto:yachts@equinoxe.it")  yachts@equinoxe.it
