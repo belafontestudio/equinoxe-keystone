@@ -80,10 +80,12 @@ h2{
 
 .offer-inner-image{
   position: relative;
+  max-width: 380px;
 }
 
 .offer-inner-image img{
   vertical-align: middle;
+  max-width: 100%;
 }
 
 .offer-inner-image div{
