@@ -16,6 +16,15 @@ body{
   flex-direction: row-reverse !important;
 }
 
+.sign{
+  width: 100%;
+
+}
+.sign img{
+  max-width: 300px;
+  display:inline-block;
+}
+
 
 h2{
   text-transform: uppercase;
