@@ -75,7 +75,7 @@ h2{
   line-height: 1.5em;
   font-family: 'Alegreya';
   font-style: italic;
-  min-width: 200px;
+  max-width: 250px;
 
 }
 
@@ -105,7 +105,7 @@ h2{
 
 .offer-inner-image{
   position: relative;
-  max-width: 600px;
+  max-width: 300px;
 }
 
 .offer-inner-image img{
@@ -177,7 +177,11 @@ h2{
 
 
 
+  .description-inner-capitain{
 
+    max-width: none;
+
+  }
 
 
 
@@ -214,6 +218,7 @@ h2{
 
   .offer-inner-image{
     margin: 0;
+    max-width: none;
   }
 
   .offer-inner-image > img{
