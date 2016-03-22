@@ -618,6 +618,35 @@ function updateFilterMenu(){
 
 
 }
+function submitSearch(){
+  $("#search-yacht").submit(function(e){
+    if($("#input-search").val().length < 3){
+      e.preventDefault();
+    }else{
+      emptyGrid();
+      var q = "";
+      var searchtearm = $("#input-search").val();
+      if(searchtearm){
+        q += "&s="+searchtearm;
+      }
+
+      if(q != ""){
+        console.log("query filled: " + q);
+        var apiQuery = rightQuery();
+        timer = setTimeout(function () {
+          clearTimeout(timer);
+          $.get( "/api/"+apiQuery+"/search?" + q, function( data ) {
+
+            populateData(data,q);
+          });
+        },2000);
+      }else{
+        console.log("not found");
+      }
+    }
+    return false; // prevent page refresh
+  });
+}
 function collectFilter(){
     emptyGrid();
     timer = setTimeout(function () {
@@ -779,7 +808,7 @@ $(document).ready(function() {
     mediaqueriesjs();
     clickFilters();
     searchFilter();
-
+    submitSearch()
     sliderKey();
 
     owl = $("#slides1");
@@ -1094,12 +1123,13 @@ Handlebars.registerHelper('ifOr', function(v1, v2, options) {
 function emptyGrid(){
 
     var yachts_grid = $("ul#yachts-list-grid");
-    yachts_grid.children().fadeOut(500, function() {
+    yachts_grid.children().fadeOut(100, function() {
         yachts_grid.empty();
     });
 }
 function fillGrid(data,template,q){
     var list = data.list;
+
     list.q= q;
     var data_grid = $("ul#yachts-list-grid");
     if(list.total > 0){
@@ -1131,7 +1161,9 @@ function populateData(data,q){
     if(pathname == "/expeditions"){
       var source   = $("#expedition-card-template").html();
     }
+
     var template = Handlebars.compile(source);
+
     fillGrid(data,template,q)
 }
 
@@ -1254,9 +1286,9 @@ function submitModals(){
         if ($("#checkboxes-0").is(":checked") || $("#checkboxes-3").is(":checked")|| $("#checkboxes-4").is(":checked")|| $("#checkboxes-5").is(":checked")){
           tomail = "barche@equinoxe.it";
         }else if($("#checkboxes-1").is(":checked") || $("#checkboxes-2").is(":checked")){
-          tomail = "corrado.dimajo@equinoxe.it";
+          tomail = "yachts@equinoxe.it";
         }else{
-          tomail = "barche@equinoxe.it";
+          tomail = "yachts@equinoxe.it";
         }
         console.log(tomail);
 
@@ -1329,9 +1361,9 @@ $("#yacht_modal").submit(function()
         var theyacht = $('h1').text(); // get name field value
         var availability = $("li.availability");
         if(availability == "Sale"){
-          tomail = "barche@equinoxe.it";
+          tomail = "yachts@equinoxe.it";
         }else{
-          tomail = "corrado.dimajo@equinoxe.it";
+          tomail = "yachts@equinoxe.it";
         }
 
         var msg = $(".modal_msg").val(); // get message field value

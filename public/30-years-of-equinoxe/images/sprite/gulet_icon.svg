@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100px" height="109px" viewBox="0 0 100 109" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>gulet_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="gulet_icon" sketch:type="MSLayerGroup" transform="translate(2.000000, 2.000000)" stroke="#F4BB3B" stroke-width="4">
+            <path d="M41.6606564,104.297384 L71.7475925,0.18236698 L73.7821079,0.241812724 C73.8706476,0.258143295 74.3566674,0.18988274 75.1535242,0.336857878 C78.6951098,0.990080714 87.3362582,4.00501963 92.0180689,17.8166623 C94.7178736,25.5781994 95.707274,35.7086282 94.9391559,47.7255474 C94.0524507,62.089151 90.7508169,79.3233165 85.0323581,99.1118866 L83.5594216,104.208943 L41.6606564,104.297384 L41.6606564,104.297384 Z" id="Shape-2" sketch:type="MSShapeGroup"></path>
+            <path d="M0.81051775,103.849662 L23.7017268,21.0346063 L25.1857463,21.067993 C25.2501865,21.0804189 25.6055548,21.0225572 26.1855169,21.1343897 C28.7631263,21.6314235 35.0375263,23.9787779 38.3107638,34.9736371 C40.2004085,41.1517893 40.8173695,49.2331029 40.1322677,58.8327536 C39.3363004,70.3068231 36.7483396,84.0894627 32.370279,99.9282647 L31.2425968,104.007956 L0.81051775,103.849662 L0.81051775,103.849662 Z" id="Shape-2" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

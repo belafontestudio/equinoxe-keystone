@@ -92,6 +92,7 @@ exports = module.exports = function(app) {
     app.get('/api/pdf/full/:yacht', keystone.initAPI, routes.api.pdfFull);
     app.get('/api/pdf/lite/:yacht', keystone.initAPI, routes.api.pdfLite);
     app.get('/api/yachts/filter', keystone.initAPI, routes.api.yachts.filter);
+    app.get('/api/yachts/search', keystone.initAPI, routes.api.yachts.search);
     app.get('/api/expeditions/filter', keystone.initAPI, routes.api.expeditions.filter);
 
 

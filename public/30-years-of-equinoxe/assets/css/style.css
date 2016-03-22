@@ -1,0 +1,256 @@
+
+/**{
+  outline: 1px solid red;
+}*/
+
+.hide{
+  display: none;
+}
+
+
+
+.regular{
+  font-family: 'Alegreya';
+  font-style: normal;
+  opacity: .5;
+
+}
+
+body{
+  background-color: #1F4D81;
+  background-image: none;
+  text-rendering: optimizeLegibility;
+}
+
+.responsive-inverted{
+  flex-direction: row-reverse !important;
+}
+
+.sign{
+  width: 100%;
+  opacity: 0;
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+
+.sign img{
+  max-width: 200px;
+  margin: 0 2em;
+  display:inline-block;
+}
+
+
+h2{
+  text-transform: uppercase;
+}
+
+.margin-top{
+  margin-top: 40px !important;
+}
+
+
+.description-inner, .offer-inner{
+  flex-direction: row;
+  display: flex;
+  width: 55em;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+
+.description-inner{
+  margin-top: 70px  ;
+}
+
+.description-inner>p{
+  /*margin-top: 86px;*/
+  padding-right: 50px;
+}
+
+.description-inner-capitain{
+  text-align: center;
+  font-size: .9em;
+  line-height: 1.5em;
+  font-family: 'Alegreya';
+  font-style: italic;
+  min-width: 200px;
+
+}
+
+.sx{
+  margin-right: 50px;
+}
+
+.description-inner-image{
+  width: 110px;
+  margin: 0 auto;
+  border-radius: 100%;
+  margin-bottom: 10px;
+}
+
+.dx-img{
+  margin: 0 0 0 2em;
+}
+
+.sx-img{
+  margin: 0 2em 0 0;
+}
+
+.offer-inner{
+  margin-top: 70px;
+}
+
+
+.offer-inner-image{
+  position: relative;
+  max-width: 380px;
+}
+
+.offer-inner-image img{
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.offer-inner-image div{
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);;
+  text-align: center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  opacity:0;
+  transition: .4s all ease-in-out;
+  font-size: .7em;
+
+}
+
+.offer-inner-image div .fa{
+  font-size: 2em;
+  margin-bottom: 1em;
+  margin-top: .8em;
+}
+
+.offer-inner-image:hover div{
+  opacity: 1;
+}
+
+.button-inner{
+  text-align: center;
+  margin: 3em auto;
+  padding-bottom: 100px
+}
+.button-inner button{
+  margin: 0 auto;
+}
+
+
+.scheda-barca{
+  color: #E4B341;
+  border-bottom: 2px solid #E4B341;
+
+}
+
+@media screen and (max-width: 980px){
+  .description-inner, .offer-inner {
+    padding: 3em 3em 1em 3em;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 736px){
+  .description-inner, .offer-inner {
+      -moz-align-items: -moz-flex-start;
+      -webkit-align-items: -webkit-flex-start;
+      -ms-align-items: -ms-flex-start;
+      align-items: flex-start;
+      padding: 2em 2em 0.1em 2em;
+  }
+}
+
+@media screen and (max-width: 640px){
+
+
+
+
+
+
+
+
+  .trentanni{
+    margin-top: 45px;
+  }
+
+  .sx{
+    margin: 0;
+    order: 2;
+  }
+  .barca-sx{
+    order:1;
+  }
+
+
+
+  .description-inner, .offer-inner {
+    display: block;
+    margin: 0;
+  }
+
+
+
+  .description-inner>p{
+    padding-right: 0;
+    /*margin-top: 45px*/
+  }
+
+  .offer-inner{
+    padding-bottom: 100px;
+  }
+
+  .offer-inner-image{
+    margin: 0;
+  }
+
+  .offer-inner-image > img{
+    width: 100%;
+  }
+
+  .offer-inner p{
+    margin-top: 40px;
+  }
+
+  .button-inner button{
+    padding: 0 2.25em;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+/*******/
+
+.checkboxes{
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+.checkboxes div{
+  min-width: 200px;
+  margin-bottom: .6em;
+}
+
+.control-label{
+  width: 100%;
+}
