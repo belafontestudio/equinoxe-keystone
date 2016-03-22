@@ -7,13 +7,38 @@
   display: none;
 }
 
+
+
+.regular{
+  font-family: 'Alegreya';
+  font-style: normal;
+  opacity: .5;
+
+}
+
 body{
   background-color: #1F4D81;
   background-image: none;
+  text-rendering: optimizeLegibility;
 }
 
 .responsive-inverted{
   flex-direction: row-reverse !important;
+}
+
+.sign{
+  width: 100%;
+  opacity: 0;
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+
+.sign img{
+  max-width: 200px;
+  margin: 0 2em;
+  display:inline-block;
 }
 
 
@@ -74,16 +99,18 @@ h2{
 }
 
 .offer-inner{
-  margin-top: 70px;
+  margin: 70px auto 120px auto;
 }
 
 
 .offer-inner-image{
   position: relative;
+  max-width: 600px;
 }
 
 .offer-inner-image img{
   vertical-align: middle;
+  max-width: 100%;
 }
 
 .offer-inner-image div{
