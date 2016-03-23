@@ -3,11 +3,25 @@
   outline: 1px solid red;
 }*/
 
+.valid{
+  color: #E4B341 !important;
+}
+
+.error{
+  color: #c0392b !important;
+}
+
+
+
 .hide{
   display: none;
 }
 
+.trentanni:before{
+  content:url('images/toast.svg'); /* with class ModalCarrot ??*/
+  position:relative; /*or absolute*/
 
+}
 
 .regular{
   font-family: 'Alegreya';
@@ -62,6 +76,7 @@ h2{
 
 .description-inner{
   margin-top: 70px  ;
+
 }
 
 .description-inner>p{
@@ -75,7 +90,8 @@ h2{
   line-height: 1.5em;
   font-family: 'Alegreya';
   font-style: italic;
-  min-width: 200px;
+  width: 250px;
+  flex-shrink: 0;
 
 }
 
@@ -99,13 +115,15 @@ h2{
 }
 
 .offer-inner{
-  margin-top: 70px;
+  margin: 70px auto 120px auto;
+
 }
 
 
 .offer-inner-image{
   position: relative;
-  max-width: 380px;
+  width: 320px;
+  flex-shrink: 0;
 }
 
 .offer-inner-image img{

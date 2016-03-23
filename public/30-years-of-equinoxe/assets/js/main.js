@@ -165,11 +165,13 @@
 		$('.close').click(function(e){
 			e.preventDefault();
 			$('#enquire-modal').removeClass('animated fadeInUp').addClass('animated fadeOutDown');
+			$("body").css("overflow-y", "auto")
 		});
 
 		$('.open').click(function(e){
 			e.preventDefault();
 			$('#enquire-modal').show().removeClass('animated fadeOutDown').addClass('animated fadeInUp');
+			$("body").css("overflow-y", "hidden");
 		})
 
 
@@ -219,40 +221,40 @@
 
 	          mail_text+=" ";
 	        mail_text += "\r\n message: "+msg;
-	        // $.ajax(
-	        // {
-	        //     type: "POST",
-	        //     url: "https://mandrillapp.com/api/1.0/messages/send.json",
-	        //     data: {
-	        //         'key': 'LSCHLKdc1EZKgi47pzZ7yg',
-	        //         'message': {
-	        //             'from_email': email,
-	        //             'from_name': name+" "+surname,
-	        //             'headers': {
-	        //                 'Reply-To': email
-	        //             },
-	        //             'subject': name +" "+ surname +' - website',
-	        //             'text': mail_text,
-	        //             'to': [
-	        //             {
-	        //                 'email': 'piermaria@belafonte.co',
-	        //                 //'email': tomail,
-	        //                 'name': 'Equinoxe yacht',
-	        //                 'type': 'to'
-	        //             }]
-	        //         }
-	        //     }
-	        // })
-	        // .done(function(response) {
-	        //     $('#response-true').fadeIn(); // show success message
-	        //     $("#name").val(''); // reset field after successful submission
-	        //     $("#email").val(''); // reset field after successful submission
-	        //     $("#msg").val(''); // reset field after successful submission
-	        //     $('#enquire-modal').removeClass('animated fadeInUp').addClass('animated fadeOutDown');
-	        // })
-	        // .fail(function(response) {
-	        //   $('#response-false').fadeIn();
-	        // });
+	        $.ajax(
+	        {
+	            type: "POST",
+	            url: "https://mandrillapp.com/api/1.0/messages/send.json",
+	            data: {
+	                'key': 'LSCHLKdc1EZKgi47pzZ7yg',
+	                'message': {
+	                    'from_email': email,
+	                    'from_name': name+" "+surname,
+	                    'headers': {
+	                        'Reply-To': email
+	                    },
+	                    'subject': name +" "+ surname +' - website',
+	                    'text': mail_text,
+	                    'to': [
+	                    {
+	                        'email': 'yachts@equinoxe.it',
+	                        //'email': tomail,
+	                        'name': 'Equinoxe yacht',
+	                        'type': 'to'
+	                    }]
+	                }
+	            }
+	        })
+	        .done(function(response) {
+	            $('#response-true').fadeIn(); // show success message
+	            $("#name").val(''); // reset field after successful submission
+	            $("#email").val(''); // reset field after successful submission
+	            $("#msg").val(''); // reset field after successful submission
+	            $('#enquire-modal').removeClass('animated fadeInUp').addClass('animated fadeOutDown');
+	        })
+	        .fail(function(response) {
+	          $('#response-false').fadeIn();
+	        });
 	        return false; // prevent page refresh
 	    });
 		}

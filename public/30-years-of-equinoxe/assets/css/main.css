@@ -4088,7 +4088,7 @@ div#contact-us-modal fieldset .control-group.submit input:hover {
 
 
 #submit-form{
-	color: yellow
+	color: white !important;
 }
 
 #enquire-modal{
