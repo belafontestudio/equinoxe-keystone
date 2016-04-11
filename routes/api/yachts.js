@@ -58,3 +58,29 @@ exports.filter = function(req, res) {
 
 
 };
+
+exports.search = function(req, res) {
+		var q = Yachts.paginate({
+				page: req.query.page || 1,
+				perPage: 500,
+				maxPages: 10
+			})
+			.where('state', 'published')
+			.sort('-lenght');
+
+		if (req.query.s) {
+      var regex = new RegExp(req.query.s, 'i');
+			q.where( 'name', regex );
+		}
+
+
+
+		q.exec(function(err, items) {
+			console.log(items);
+			res.apiResponse({
+			list: items
+			});
+		});
+
+
+};

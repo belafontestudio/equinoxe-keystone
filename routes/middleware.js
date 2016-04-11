@@ -31,7 +31,7 @@ exports.initLocals = function(req, res, next) {
 		{ label: 'Yacht charter',		key: 'yacht_charter',   id: "m2",		href: '/yacht_charter' },
 		{ label: 'Bareboat charter',		key: 'bareboat',   id: "m4",		href: '/bareboat' },
 		{ label: 'Expeditions',		key: 'expeditions_planning',   id: "m5",		href: '/expeditions_planning' },
-		{ label: 'Berths',		key: 'berths',   id: "m8",		href: '/berths' },
+		// { label: 'Berths',		key: 'berths',   id: "m8",		href: '/berths' },
 		{ label: 'Land & services',		key: 'services',   id: "m6",		href: '/services' },
 		{ label: 'Heritage',		key: 'heritage',   id: "m7",		href: '/heritage' },
 	];
