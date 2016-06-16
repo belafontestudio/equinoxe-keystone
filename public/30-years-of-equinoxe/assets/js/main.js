@@ -165,98 +165,16 @@
 		$('.close').click(function(e){
 			e.preventDefault();
 			$('#enquire-modal').removeClass('animated fadeInUp').addClass('animated fadeOutDown');
-			$("body").css("overflow-y", "auto")
 		});
 
 		$('.open').click(function(e){
 			e.preventDefault();
 			$('#enquire-modal').show().removeClass('animated fadeOutDown').addClass('animated fadeInUp');
-			$("body").css("overflow-y", "hidden");
 		})
 
-
-
 	});
-		// I only have one form on the page but you can be more specific if need be.
 
-		$('#equinoxe_newsletter').ajaxChimp({
-			url: '//equinoxeyachts.us13.list-manage.com/subscribe/post?u=b339c3a4e555e344d10f41436&amp;id=322fae06dc'
-		});
-	submitModals();
-	function submitModals(){
-	    $("#enquire_form").submit(function(){
-	        var email = $(".enquire_email").val(); // get email field value
-	        var name = $(".enquire_name").val(); // get name field value
-	        var surname = $(".enquire_surname").val(); // get name field value
-	        var number = $(".enquire-phone").val(); // get name field value
-	        var tomail = 'yachts@equinoxe.it';
 
-	        console.log(tomail);
 
-	        var msg = $(".enquire_msg").val(); // get message field value
-
-	        var mail_text= name +" "+ surname +"\r\n "+ number +"\r\n "+ email+"\r\n services: "
-	        if($("#checkbox-0").is(":checked")){
-	          mail_text+=$("#checkbox-6").val()};
-
-	          mail_text+=" ";
-	        if($("#checkbox-1").is(":checked")){
-	          mail_text+=$("#checkbox-1").val()};
-
-	          mail_text+=" ";
-	        if($("#checkbox-2").is(":checked")){
-	          mail_text+=$("#checkbox-2").val()};
-
-	          mail_text+=" ";
-	        if($("#checkbox-3").is(":checked")){
-	          mail_text+=$("#checkbox-3").val()};
-
-	          mail_text+=" ";
-	        if($("#checkbox-4").is(":checked")){
-	          mail_text+=$("#checkbox-4").val()};
-
-	          mail_text+=" ";
-	        if($("#checkbox-5").is(":checked")){
-	          mail_text+=$("#checkbox-5").val()};
-
-	          mail_text+=" ";
-	        mail_text += "\r\n message: "+msg;
-	        $.ajax(
-	        {
-	            type: "POST",
-	            url: "https://mandrillapp.com/api/1.0/messages/send.json",
-	            data: {
-	                'key': 'LSCHLKdc1EZKgi47pzZ7yg',
-	                'message': {
-	                    'from_email': email,
-	                    'from_name': name+" "+surname,
-	                    'headers': {
-	                        'Reply-To': email
-	                    },
-	                    'subject': name +" "+ surname +' - website',
-	                    'text': mail_text,
-	                    'to': [
-	                    {
-	                        'email': 'yachts@equinoxe.it',
-	                        //'email': tomail,
-	                        'name': 'Equinoxe yacht',
-	                        'type': 'to'
-	                    }]
-	                }
-	            }
-	        })
-	        .done(function(response) {
-	            $('#response-true').fadeIn(); // show success message
-	            $("#name").val(''); // reset field after successful submission
-	            $("#email").val(''); // reset field after successful submission
-	            $("#msg").val(''); // reset field after successful submission
-	            $('#enquire-modal').removeClass('animated fadeInUp').addClass('animated fadeOutDown');
-	        })
-	        .fail(function(response) {
-	          $('#response-false').fadeIn();
-	        });
-	        return false; // prevent page refresh
-	    });
-		}
 
 })(jQuery);
