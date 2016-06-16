@@ -77,10 +77,15 @@ exports = module.exports = function(req, res) {
 				results.availability = locals.filters.availability;
 			}
 
+			if (!results || results.availability != "Charter" && results.availability != "Sale") {
+				res.status(404).render('errors/404');
 
-			locals.data.yachts = results;
+			}else{
 
-			next(err);
+				locals.data.yachts = results;
+
+				next(err);
+			}
 		});
 
 	});

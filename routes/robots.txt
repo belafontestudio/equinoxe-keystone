@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /keystone/
+Disallow: /report/
+Disallow: /updates/
+Disallow: /test/
+Disallow: /dump/
+Disallow: /bower_components/

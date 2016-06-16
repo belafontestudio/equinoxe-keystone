@@ -1284,7 +1284,7 @@ function submitModals(){
 
 
         if ($("#checkboxes-0").is(":checked") || $("#checkboxes-3").is(":checked")|| $("#checkboxes-4").is(":checked")|| $("#checkboxes-5").is(":checked")){
-          tomail = "barche@equinoxe.it";
+          tomail = "yachts@equinoxe.it";
         }else if($("#checkboxes-1").is(":checked") || $("#checkboxes-2").is(":checked")){
           tomail = "yachts@equinoxe.it";
         }else{

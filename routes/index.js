@@ -24,7 +24,15 @@ var _ = require('underscore'),
     middleware = require('./middleware'),
     importRoutes = keystone.importer(__dirname),
     serveIndex = require('serve-index'),
+    robots = require('robots.txt'),
 		sitemap = require('keystone-express-sitemap');
+
+    var proxy = require('http-proxy-middleware');
+
+
+
+
+
 
 // Add-in i18n support
 keystone.pre('routes', i18n.init);
@@ -50,11 +58,7 @@ keystone.set('500', function(req, res, next) {
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
-		app.get('/sitemap.xml', function(req, res) {
-		  sitemap.create(keystone, req, res, {
-		      ignore: ['^\/api.*$','^\/media.*$']
-		  });
-		});
+
     // Views
     app.get('/', routes.views.index);
 
@@ -95,7 +99,22 @@ exports = module.exports = function(app) {
     app.get('/api/yachts/search', keystone.initAPI, routes.api.yachts.search);
     app.get('/api/expeditions/filter', keystone.initAPI, routes.api.expeditions.filter);
 
+    app.get('/sitemap.xml', function(req, res) {
+  		sitemap.create(keystone, req, res, { ignore: ['^\/api.*$', '^\/media.*$'] });
+  	});
+  	app.use(robots(__dirname + '/robots.txt'))
 
+    var options = {
+        target: 'http://equinoxe.sailogy.com', // target host
+        changeOrigin: true,               // needed for virtual hosted sites
+        ws: true,                         // proxy websockets
+
+    };
+
+    // create the proxy (without context)
+    var exampleProxy = proxy(options);
+
+    app.use('/noleggio-barche', exampleProxy);
 
 
 

@@ -12,6 +12,27 @@
 }
 
 
+.language{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: .8em;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+
+.language a{
+  opacity: .4;
+  margin: 0px 3px;
+}
+
+.language a:hover{
+  opacity: 1;
+}
+
+#lang-sel{
+  opacity: 1;
+}
 
 .hide{
   display: none;

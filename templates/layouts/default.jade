@@ -90,6 +90,17 @@ html
 
 	//- HTML BODY
 	body
+		block tagmanager
+			// Google Tag Manager
+			noscript
+				iframe(src='//www.googletagmanager.com/ns.html?id=GTM-W3S953', height='0', width='0', style='display:none;visibility:hidden')
+			script.
+				(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','dataLayer','GTM-W3S953');
+			// End Google Tag Manager
 		.loader
 			.loading
 		//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
@@ -173,14 +184,4 @@ html
 		//- Include template-specific javascript files by extending the js block
 		block js
 			
-		block tagmanager
-			// Google Tag Manager
-			noscript
-				iframe(src='//www.googletagmanager.com/ns.html?id=GTM-W3S953', height='0', width='0', style='display:none;visibility:hidden')
-			script.
-				(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-				'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-				})(window,document,'script','dataLayer','GTM-W3S953');
-			// End Google Tag Manager
+		
