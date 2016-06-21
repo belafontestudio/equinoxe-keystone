@@ -61,7 +61,7 @@ exports = module.exports = function(app) {
 
     // Views
     app.get('/', routes.views.index);
-
+    app.get('/:lang', routes.views.index);
     app.get('/yachts/:availability', routes.views.yachts);
     app.get('/yacht/:yacht', routes.views.yacht);
 

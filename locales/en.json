@@ -1,8 +1,10 @@
 {
+	"Mission": "The italian yachting and sailing specialists.<br />Since 1986.",
 	"%d cat": {
 		"one": "%d cat",
 		"other": "%d cats"
 	},
 	"text to test": "text to test",
-	"hello": "hello <b>my friend</b>"
+	"hello": "hello <b>my friend</b>",
+	"Hello": "Hello"
 }

@@ -9,5 +9,6 @@
 		"one": "%d cat",
 		"other": "%d cats"
 	},
-	"Hello": "CIAO"
+	"Hello": "CIAO",
+	"Mission": "Mission"
 }
