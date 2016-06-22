@@ -1,10 +1,10 @@
 extends ../layouts/_section_intro.jade
 block title 
-  | Bareboat
+  != __('Bareboat_title')
 block description
-  | Bareboating is being in command of your own vessel, sailing with no set schedule, raising and lowering the anchor as you see fit and explore as many islands as you wish. The only thing you should look for is a reliable broker.
+  != __('Bareboat_intro')
 
 
 block explain-call
 block call-to-action
-  a.button(href="#enquire-modal", rel="modal:open", onclick="document.getElementById('checkboxes-4').checked = true") Ask more
+  a.button(href="#enquire-modal", rel="modal:open", onclick="document.getElementById('checkboxes-4').checked = true")!= __('Ask_more')

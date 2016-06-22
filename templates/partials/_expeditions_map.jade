@@ -1,8 +1,8 @@
 extends ../layouts/_map.jade
 block title 
-  | There’s a whole world to explore
+  != __('Exp_map_1') 
 block description
-  | See where we can bring you.
+  != __('Exp_map_2') 
 block map 
   script.
         // This example creates circles on the map, representing
@@ -95,11 +95,11 @@ block map
       .main-text.onmap
         h1 
           block title
-            | There’s a whole world to explore
+            != __('Exp_map_1') 
 
         p
           block description
-            | See where we can bring you.
+            != __('Exp_map_2') 
   
   #expedition-map.map.filtro-map
     

@@ -1,8 +1,8 @@
 extends ../layouts/_section_intro.jade
 block title 
-  | Sail
+  != __('Sail')
 block description
-  | From 15 to 90 meters, you can charter monohulls and catamarans, cruisers and racers, motorsailers and classic sailing yachts.
+  != __('Sail_desc')
 
 
 block explain-call
@@ -12,4 +12,4 @@ block call-to-action
       block first-call-to-action
         a.button.btn-min-w(href="/yachts/Charter?t=Sails")
           block first-button
-            | See all sailing yachts
+            != __('Sail_all')

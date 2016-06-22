@@ -1,11 +1,11 @@
 extends ../layouts/_section_intro.jade
 block title 
-  | Heritage
+  != __('Heritage')
 
 block description
-  | Our passions: we take them seriously. When it comes to sailing, we cannot smooth the waves for you, but we will take care of every single other detail.
+  != __('Heritage_desc')
 
 
 block explain-call
 block call-to-action
-  a.button#her-btn(href="#contact-us-modal", rel="modal:open") Ask us anything
+  a.button#her-btn(href="#contact-us-modal", rel="modal:open")!= __('Heritage_cta') 

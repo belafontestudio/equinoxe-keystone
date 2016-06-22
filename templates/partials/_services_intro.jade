@@ -1,8 +1,8 @@
 extends ../layouts/_section_intro.jade
 block title 
-  | Land & services
+  != __('Services_title')
 block description
-  | When you are planning a vacation at sea you shouldn’t worry about hotel booking, flight connections or car rental. We will take care of all the details, just choose your dream yacht, sit back and relax.
+  != __('Services_desc') 
 block explain-call
 block call-to-action
-  a.button(href="#enquire-modal", rel="modal:open", onclick="document.getElementById('checkboxes-5').checked = true") Ask more
+  a.button(href="#enquire-modal", rel="modal:open", onclick="document.getElementById('checkboxes-5').checked = true") != __('Ask_more')

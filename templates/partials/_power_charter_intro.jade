@@ -1,8 +1,8 @@
 extends ../layouts/_section_intro.jade
 block title 
-  | Power
+  != __('Power')
 block description
-  | From 18 to 150 meters, all kinds of power yachts are available: planing or displacement hull, catamarans, classic, open, flying bridge, expedition vessels, explorers, trawlers, low motion, tugboats.
+  != __('Power_desc')
 
 block explain-call
 block call-to-action
@@ -11,4 +11,4 @@ block call-to-action
       block first-call-to-action
         a.button.btn-min-w(href="/yachts/Charter?t=Power")
           block first-button
-            | See all power yachts
+            != __('Power_all')

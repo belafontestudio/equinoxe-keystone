@@ -3,7 +3,7 @@ block section
     .main-text.left
       h1.smaller2
         block title-smaller2
-          | Featured power yachts for charter:
+          != __('Power_feat')
     .clear
     ul.latest-space-yachts
       each power in data.powers.results
@@ -22,27 +22,27 @@ block section
               li
                 if power.availability == "Charter"
                   span
-                    | CHARTER PRICE FROM: 
+                    != __('Charter_price_from')
                   = numeralFunction(power["price per week from"]).format('0,0[.]00' )+power.currency
                   
                 if power.availability == "Sale"
                   if power.price
                     span
-                      | SALE PRICE: 
+                      != __('Sale_price')
                     = numeralFunction(power.price).format('0,0[.]00' )+power.currency
             li
-              | <span class="uppercase">Length:</span> 
+              | <span class="uppercase">!= __('Length')</span> 
               block length1
                 = power.lenght+"m"
             li
-              | <span class="uppercase">Built:</span> 
+              | <span class="uppercase">!= __('Built')</span> 
               block built1
                 = power.build
             li
-              | <span class="uppercase">Guests:</span> 
+              | <span class="uppercase">!= __('Guests')</span> 
               block guests1
                 = power.guests
             .clear
           .buttons
-            a.button(href= "/yacht/"+power.slug) Discover
+            a.button(href= "/yacht/"+power.slug)!= __('Discover')
       

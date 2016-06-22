@@ -2,7 +2,7 @@ block section
   section.center
     .main-text
       h1.smaller 
-        | On land
+        != __('Land')
     .clear
     block yacht-size
       ul#yacht-size
@@ -11,36 +11,36 @@ block section
           h2
             span.number-list
               | 1. 
-            | Land services
+            != __('Land_bulletlist_1_title')
           p.description-text
-            | Everything you may need off the boat: land transfers, food and entertainment, nature explorations, visits to historical sites and landmarks in Italy and everywhere else.
+            != __('Land_bulletlist_1_desc')
           block button1
         li.bulletlist2
           div.container-img
           h2
             span.number-list
               | 2. 
-            | Accommodation
+            != __('Land_bulletlist_2_title')
           p.description-text
-            | You can choose to spend time on land at a top hotel or a charming resort, or opt for your own personal villa.
+            != __('Land_bulletlist_2_desc')
           block button2
         li.bulletlist2
           div.container-img
           h2
             span.number-list
               | 3. 
-            | Availability
+            != __('Land_bulletlist_3_title')
           p.description-text
-            | You can count on us, from before the time you leave home until after you return.
+            != __('Land_bulletlist_3_desc')
           block button3
         li.bulletlist2
           div.container-img
           h2
             span.number-list
               | 4. 
-            | Control
+            != __('Land_bulletlist_4_title')
           p.description-text
-            | We only deal with skilled and trustworthy boat owning companies. We constantly monitor and update our fleet.
+            != __('Land_bulletlist_4_desc')
           block button4
     .buttons
-      a.enquire-button(href="#enquire-modal", rel="modal:open") Tell us what you need
+      a.enquire-button(href="#enquire-modal", rel="modal:open")!= __('Land_cta')

@@ -2,7 +2,7 @@ block section
   section.center
     .main-text
       h1.smaller 
-        | At your service
+        != __('Serv_bllt_title')
     .clear
     block yacht-size
       ul#yacht-size
@@ -11,9 +11,9 @@ block section
           h2
             span.number-list
               | 1. 
-            | Flights
+            != __('Serv_bulletlist_1_title')
           p.description-text
-            | We will take care of organizing all your flights and local transfers with the airline of your choice or private aircraft or jet.
+            != __('Serv_bulletlist_1_desc')
 
           block button1
         li.bulletlist2
@@ -21,9 +21,9 @@ block section
           h2
             span.number-list
               | 2. 
-            | Insurance
+            != __('Serv_bulletlist_2_title')
           p.description-text
-            | We provide a selection of insurance coverage for you, your family and friends; you just need to relax and enjoy your holiday.
+            != __('Serv_bulletlist_2_desc')
 
           block button2
         li.bulletlist2
@@ -31,9 +31,9 @@ block section
           h2
             span.number-list
               | 3. 
-            | Assistance
+            != __('Serv_bulletlist_3_title')
           p.description-text
-            | Chartering a yacht with Equinoxe Yachts guarantees full assistance from a worldwide network of reliable professionals ready at your call.
+            != __('Serv_bulletlist_3_desc')
 
           block button3
         li.bulletlist2
@@ -41,9 +41,9 @@ block section
           h2
             span.number-list
               | 4. 
-            | Control
+            != __('Serv_bulletlist_4_title')
           p.description-text
-            | We only deal with skilled and trustworthy boat owning companies. We constantly monitor and update our fleet.
+            != __('Serv_bulletlist_4_desc')
           block button4
     .buttons
-      a.enquire-button(href="#enquire-modal", rel="modal:open") Tell us what you need
+      a.enquire-button(href="#enquire-modal", rel="modal:open")!= __('Serv_cta')
