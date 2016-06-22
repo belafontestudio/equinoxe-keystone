@@ -16,40 +16,40 @@ block single-yacht
             li
               if yacht.availability == "Charter"
                 span
-                  | Price from:
+                  != __('Price_from')
                 = numeralFunction(yacht["price per week from"]).format('0,0[.]00' )+yacht.currency
               if yacht.availability == "Sale"
                 if yacht.price
                   span
-                    | Price:
+                    != __('Price_y')
                   = numeralFunction(yacht.price).format('0,0[.]00' )+yacht.currency
           if yacht.lenght
             li
               span
-                | length:
+                != __('length')
               = yacht.lenght + " m"
           if yacht.builder && yacht.availability == "Sale"
             li
               span
-                | builder:
+                != __('builder')
               = yacht.builder
           if yacht.build || yacht.refit 
             li
               if yacht.refit && yacht.build
                 span
-                  | built:
+                  != __('built')
                 = yacht.build+" / refit "+yacht.refit
               else
                   if yacht.refit
                     span
-                      | refit:
+                      != __('refit')
                     = yacht.refit
                   else if yacht.build
                     span
-                      | built:
+                      != __('built')
                     = yacht.build 
           li
             span
-              | guests:
+              != __('guests')
             block single-yacht-guests
-              | number
+              != __('number')

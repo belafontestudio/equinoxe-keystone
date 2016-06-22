@@ -30,6 +30,10 @@
 	"min24": "Up to 24.00 m",
 	"24to40": "24.00 m to 40.00 m",
 	"plus40": "Over 40.00 m",
+	"select": "Select",
+	"xweek": "PER WEEK",
+
+
 	"Sell?": "Wish to sell? We can handle that.",
 	"Brokerage_bullet_4_title": "Results",
 	"Brokerage_bullet_4_content": "More than 500 yachts sold over 30 years.",
@@ -46,6 +50,8 @@
 	"Power": "Power",
 	"Sail": "Sail",
 	"Gulet": "Gulets",
+	"Sale":"Sale",
+	"Charter":"Charter",
 	"Power_all": "See all power yachts",
 	"Power_desc": "From 18 to 150 meters, all kinds of power yachts are available: planing or displacement hull, catamarans, classic, open, flying bridge, expedition vessels, explorers, trawlers, low motion, tugboats.",
 	"Power_feat": "Featured power yachts for charter:",
@@ -78,7 +84,7 @@
 
 	"Exp_title":"Expeditions",
 	"Exp_desc":"They say, there’s no such thing as uncharted waters anymore. But adventure at sea is still possible. Exploring Antarctica and the Arctic on an icebreaker. Dive cruising around the Galapagos. Discovering remote reefs in the ocean. We can safely bring you to the end of the world and back.",
-	"Exp_quote":"It is only in adventure that some people succeed in knowing themselves – in finding themselves.",
+	"Exp_quote":"\"It is only in adventure that some people succeed in knowing themselves – in finding themselves.\"",
 	"Exp_map_1":"There’s a whole world to explore",
 	"Exp_map_2":"See where we can bring you.",
 
@@ -134,6 +140,77 @@
 	"direct_info":"Alternatively, you can contact our office directly.",
 	"address":"Address",
 	"phone":"Phone",
+
+
+
+
+
+	"Price_from":"Price from:",
+	"Price_y":"Price:",
+	"length":"length:",
+	"builder":"builder:",
+	"built":"built:",
+	"refit":"refit:",
+	"guests":"guests:",
+	"number":"number:",
+
+
+	"zone":"zone:",
+	"Sale_price":"Sale price:",
+	"back2exp":"Back to expeditions",
+	"exp_specs":"Specifications</br>—",
+	"rates":"rates:",
+	"price_start":"Price starting:",
+
+
+	"ENQUIRE":"Enquire",
+
+
+
+	"syp_charterprice":"Charter price from:",
+	"syp_fullspec":"Request full specs",
+	"syp_back2y":"Back to yachts",
+	"designer":"designer:",
+	"model":"model:",
+	"beam":"beam:",
+	"draft":"draft:",
+	"displacement":"displacement:",
+	"engines":"Engines:",
+	"Fuelconsumption":"Fuel consumption:",
+	"speed":"cruising speed:",
+	"accomodation":"Accommodation</br>—",
+	"cabins":"number of cabins:",
+	"gcabins":"guests cabins:",
+	"totguest":"number of guests:",
+	"ccabins":"crew cabins:",
+	"totcrew":"number of crew:",
+	"locationy":"Location:",
+	"price1":"Charter price from:",
+	"price2":"Price Per Week Low Season:",
+	"price3":"Price Per Week High Season:",
+	"price4":"Asking price:",
+	"flag":"flag:",
+	"VAT":"VAT:",
+
+
+	"filters":"Filters",
+	"pricerange":"Price Range",
+	"guestsU":"Guests",
+	"lengthU":"Length",
+	"typeU":"Type",
+	"searchbyname":"Search by name",
+	"":"",
+	"":"",
+	"":"",
+	"":"",
+	"":"",
+	"":"",
+	"":"",
+	"":"",
+	"":"",
+	"":"",
+	"":"",
+	"":"",
 	"":"",
 	"":"",
 	"":"",

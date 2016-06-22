@@ -54,7 +54,7 @@ div(id="enquire-modal", style="display:none;")
         .control-group.text-area
           label.control-label(for='textarea')!= __('Message')
           .controls
-            textarea#textarea.enquire_msg(placeholder='!= __("yrmsg")',name='textarea').
+            textarea#textarea.enquire_msg(placeholder=' != __("yrmsg")',name='textarea').
         <!-- Button -->
         .control-group.submit
           #mandrill-response
@@ -68,7 +68,7 @@ div(id="enquire-modal", style="display:none;")
             input#submit-form(type="submit" value="!= __('Submit')")
     
     .form-contacts
-      h4 != __('direct_info') 
+      h4!= __('direct_info') 
       ul
         li.bold Equinoxe s.r.l.
         li 

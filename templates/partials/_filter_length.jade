@@ -7,25 +7,25 @@ block section
           //-   img.yacht(src='../images/sprite/icon_select_yacht.svg', alt='Yacht')
           h2 Yacht
           p
-            | Up to 24.00 m
+            != __('min24')
           block button1
-            a#small.button(href="#") Select
+            a#small.button(href="#")!= __('select')
         li#filter-super-yacht
           //- div.container-img
           //-   img.super-yacht(src='../images/sprite/icon_select_yacht.svg', alt='Super Yacht')
           h2 Super Yacht
           p
-            | 24.00 m to 40.00 m
+            != __('24to40')
           block button2
-            a#super.button(href="#") Select
+            a#super.button(href="#")!= __('select')
         li#filter-mega-yacht
           //- div.container-img
           //-   img.mega-yacht(src='../images/sprite/icon_select_yacht.svg', alt='Mega Yacht')
           h2 Mega Yacht
           p
-            | Over 40.00 m
+            != __('plus40')
           block button3
-            a#mega.button(href="#") Select
+            a#mega.button(href="#")!= __('select')
       .clear
       #slider-single
     .filter-monitor
@@ -35,22 +35,22 @@ block section
             //-   img.yacht(src='../images/sprite/icon_select_yacht.svg', alt='Yacht')
             h2 Yacht
             p
-              | Up to 24.00 m
+              != __('min24')
             block button1
-              a#small.button(href="#") Select
+              a#small.button(href="#")!= __('select')
           li
             //- div.container-img
             //-   img.super-yacht(src='../images/sprite/icon_select_yacht.svg', alt='Super Yacht')
             h2 Super Yacht
             p
-              | 24.00 m to 40.00 m
+              != __('24to40')
             block button2
-              a#super.button(href="#") Select
+              a#super.button(href="#")!= __('select')
           li
             //- div.container-img
             //-   img.mega-yacht(src='../images/sprite/icon_select_yacht.svg', alt='Mega Yacht')
             h2 Mega Yacht
             p
-              | Over 40.00 m
+              != __('plus40')
             block button3
-              a#mega.button(href="#") Select
+              a#mega.button(href="#")!= __('select')

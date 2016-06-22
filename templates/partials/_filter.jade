@@ -1,7 +1,7 @@
 div#toggle-btn
   i.iconfilter.fa.fa-minus-circle
     span
-      |   Filters
+      != __('filters')
 ul#filter-menu.filter-toggle
   //- li
   //-   a.filter#f1(href="#")
@@ -16,35 +16,35 @@ ul#filter-menu.filter-toggle
       div.icon-filter
         img(src='../images/sprite/filter_price_icon.svg', alt='Price')
       h3
-        | Price Range
+        != __('pricerange')
       span
   li
     a.filter#f3(href="#")
       div.icon-filter
         img(src='../images/sprite/filter_guests_icon.svg', alt='Guests')
       h3
-        | Guests
+        != __('guestsU')
       span
   li
     a.filter#f4(href="#")
       div.icon-filter
         img(src='../images/sprite/filter_size_icon.svg', alt='Length')
       h3
-        | Length
+        != __('lengthU')
       span
   li
     a.filter#f5(href="#")
       div.icon-filter
         img(src='../images/sprite/filter_propulsion_icon.svg', alt='Propulsion')
       h3
-        | Type
+        != __('typeU')
       span
   li#last-filter
     a.filter#f6(href="#")
       div.icon-filter
         img(src='../images/sprite/filter_search.svg', alt='Propulsion')
       h3
-        | Search by name
+        != __('searchbyname')
       
   //- li#last-filter.hide
   //-   a.filter#f6(href="#")

@@ -3,9 +3,9 @@ block section
     .main-text
       h1 
         if data.yachts.availability == "Sale"
-          | Yachts sale
+          != __('ysale')
         else if data.yachts.availability == "Charter"
-          | Yachts charter  
+          != __('ycharter')
       p
         block description
     block explain-call
@@ -29,7 +29,4 @@ block section
     else
       ul#yachts-list-grid
         p#no-yacht-found 
-          | We’re sorry, but we couldn’t find a yacht meeting your requirements.
-          br
-          br
-          | Change filters to try a new search.
+          != __('nomatch')

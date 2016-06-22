@@ -9,7 +9,7 @@ block section
       #slider-range.slider-bar
     if data.yachts.availability == "Charter"
       #slider-numbersweek
-        span.per-week PER WEEK
+        span.per-week!= __('xweek')
         p.min-priceweek
         p.max-priceweek
       .clear
