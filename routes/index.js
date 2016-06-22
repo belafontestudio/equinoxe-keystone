@@ -77,8 +77,8 @@ exports = module.exports = function(app) {
 
 
 
-
     app.get('/yacht_brokerage', routes.views.yachtBrokerage);
+    app.get('/yacht_brokerage/:lang', routes.views.yachtBrokerage);
     app.get('/yacht_charter', routes.views.yachtCharter);
     app.get('/expeditions_planning', routes.views.expeditionsPlanning);
     app.get('/bareboat', routes.views.bareboat);
