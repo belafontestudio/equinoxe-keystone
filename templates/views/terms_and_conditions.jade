@@ -10,25 +10,25 @@ block body
     
     .terms-wrapper
     
-      h1 Terms and conditions / Privacy policy
+      h1!= __('tc-pp')
     
       #terms-terms
       
         .terms-header
-          h2 Terms and conditions
+          h2!= __('tc')
         
         .terms-text
           p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.
+            != __('tc_content')
     
       #terms-privacy
       
         .terms-header
-          h2 Privacy Policy
+          h2!= __('pp')
         
         .terms-text
           p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.
+            != __('pp_content')
           
     
     

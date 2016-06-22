@@ -199,6 +199,12 @@
 	"lengthU":"Length",
 	"typeU":"Type",
 	"searchbyname":"Search by name",
+
+
+
+	"nomatch":"We’re sorry, but we couldn’t find a yacht meeting your requirements.<br><br>Change filters to try a new search.",
+	"ysale":"Yachts sale",
+	"ycharter":"Yachts charter ",
 	"":"",
 	"":"",
 	"":"",
@@ -210,11 +216,14 @@
 	"":"",
 	"":"",
 	"":"",
-	"":"",
-	"":"",
-	"":"",
-	"":"",
-	"":""
+
+
+
+	"tc-pp":"Terms and conditions / Privacy policy",
+	"tc":"Terms and conditions",
+	"tc_content":"Lorem Ipsum",
+	"pp":"Privacy Policy",
+	"pp_content":"Lorem Ipsum"
 
 
 
