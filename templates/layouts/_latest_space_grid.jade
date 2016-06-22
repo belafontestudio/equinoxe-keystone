@@ -3,7 +3,7 @@ block section
     .main-text.left
       h1.smaller2
         block title-smaller2
-          | Featured yachts for sale:
+          != __('Featured_y_for_sale')
     .clear
     ul.latest-space-yachts
       each featured in data.featured.results
@@ -22,27 +22,27 @@ block section
               li
                 if featured.availability == "Charter"
                   span
-                    | CHARTER PRICE FROM: 
+                    != __('Charter_price_from')
                   = numeralFunction(featured["price per week from"]).format('0,0[.]00' )+featured.currency
                   
                 if featured.availability == "Sale"
                   if featured.price
                     span
-                      | SALE PRICE: 
+                      != __('Sale_price')
                     = numeralFunction(featured.price).format('0,0[.]00' )+featured.currency
             li
-              | <span class="uppercase">Length:</span> 
+              | <span class="uppercase">!= __('Length')</span> 
               block length1
                 = featured.lenght+"m"
             li
-              | <span class="uppercase">Built:</span> 
+              | <span class="uppercase">!= __('Built')</span> 
               block built1
                 = featured.build
             li
-              | <span class="uppercase">Guests:</span> 
+              | <span class="uppercase">!= __('Guests')</span> 
               block guests1
                 = featured.guests
             .clear
           .buttons
-            a.button(href= "/yacht/"+featured.slug) Discover
+            a.button(href= "/yacht/"+featured.slug)!= __('Discover_button')
       

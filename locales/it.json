@@ -10,5 +10,20 @@
 		"other": "%d cats"
 	},
 	"Hello": "CIAO",
-	"Mission": "The ITALIANO yachting and sailing specialists.<br />Since 1986."
+	"Mission": "The ITALIANO yachting and sailing specialists.<br />Since 1986.",
+	"Home_phone": "Tel +39 011 8185211",
+	"Home_piva": "P.IVA IT05094070017",
+	"Sale_title": "Sale_titleeee",
+	"Sale_intro": "Sale_intro",
+	"Button_buy": "Button_buy",
+	"Button_sell": "Button_sell",
+	"Claim_brokerage": "Claim_brokerage",
+	"Brokerage_bullet_1_title": "Brokerage_bullet_1_title",
+	"Brokerage_bullet_1_content": "Brokerage_bullet_1_content",
+	"Brokerage_bullet_2_title": "Brokerage_bullet_2_title",
+	"Brokerage_bullet_2_content": "Brokerage_bullet_2_content",
+	"Brokerage_bullet_3_title": "Brokerage_bullet_3_title",
+	"Brokerage_bullet_3_content": "Brokerage_bullet_3_content",
+	"Brokerage_bullet_enquire": "Brokerage_bullet_enquire",
+	"Featured_y_for_sale": "Featured_y_for_sale"
 }

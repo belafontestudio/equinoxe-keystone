@@ -2,7 +2,7 @@ block section
   section.center
     .main-text
       h1.smaller 
-        | You desire, we provide.
+        != __('Claim_brokerage')
     .clear
     block yacht-size
       ul#yacht-size
@@ -11,27 +11,27 @@ block section
           h2
             span.number-list
               | 1. 
-            | Experience
+            != __('Brokerage_bullet_1_title')
           p.description-text
-            | We have been helping sea lovers buy and sell over 500 yachts since 1986.
+            != __('Brokerage_bullet_1_content')
           block button1
         li.bulletlist
           div.container-img
           h2
             span.number-list
               | 2. 
-            | Network
+            != __('Brokerage_bullet_2_title')
           p.description-text
-            | We have been members of MYBA (The Worldwide Yachting Association) and CYBA (Charter Yacht Brokers Association), the largest and most respected professional yachting organizations in the world, since the beginning.
+            != __('Brokerage_bullet_2_content')
           block button2
         li.bulletlist
           div.container-img
           h2
             span.number-list
               | 3. 
-            | Collaboration
+            != __('Brokerage_bullet_3_title')
           p.description-text
-            | We have been working with the greatest yacht manufacturers – such as Azimut Yachts, Ferretti, Beneteau – even as dealers.
+            != __('Brokerage_bullet_3_content')
           block button3
   .buttons
-    a.enquire-button(href="/yachts/Sale") See all available yachts for sale
+    a.enquire-button(href="/yachts/Sale")!= __('Brokerage_bullet_enquire')

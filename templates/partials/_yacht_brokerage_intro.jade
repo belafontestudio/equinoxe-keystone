@@ -1,8 +1,8 @@
 extends ../layouts/_section_intro.jade
 block title 
-  | Yacht sale
+  != __('Sale_title')
 block description
-  | As long-time members of the MYBA and CYBA, we are expert worldwide yacht brokers. If you are looking to sell your yacht or purchase your first one, Equinoxe Yachts would be happy to be your partner.
+  != __('Sale_intro')
 
 block explain-call
 block call-to-action
@@ -11,9 +11,9 @@ block call-to-action
       block first-call-to-action
         a.button(href="/yachts/Sale")
           block first-button
-            | Buy a yacht
+            != __('Button_buy')
     li
       block second-call-to-action
         a.button(href="/yacht_brokerage#sell-handle")
           block second-button
-            | Sell a yacht
+            != __('Button_sell')

@@ -5,7 +5,7 @@ exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res),
 		locals = res.locals;
 
-		req.setLocale("en");
+		req.setLocale('en');
 
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
