@@ -6,19 +6,19 @@ div(id="contact-us-modal", style="display:none;")
       fieldset
         // Text input
         .control-group.name
-          label.control-label(for='textinput') Name
+          label.control-label(for='textinput')!= __('Name')
           .controls
             input#textinput.modal_name.input-xlarge(name='textinput', type='text', placeholder='', required='')
             
         // Text input
         .control-group.surname
-          label.control-label(for='textinput') Surname
+          label.control-label(for='textinput')!= __('Surname')
           .controls
             input#textinput.modal_surname.input-xlarge(name='textinput', type='text', placeholder='', required='')
           
         // Text input
         .control-group.phonenum
-          label.control-label(for='textinput') Phone Number
+          label.control-label(for='textinput')!= __('Phonenum')
           .controls
             input#textinput.modal_phone.input-xlarge(name='textinput', type='text', placeholder='', required='')
             
@@ -30,34 +30,34 @@ div(id="contact-us-modal", style="display:none;")
            
         // Textarea
         .control-group.text-area
-          label.control-label(for='textarea') Message
+          label.control-label(for='textarea')!= __('Message')
           .controls
-            textarea#textarea.modal_msg(placeholder='Your message',name='textarea').
+            textarea#textarea.modal_msg(placeholder='!= __("yrmsg")',name='textarea').
         <!-- Button -->
         #mandrill-response
           #response-true
             p
-              | Your message has been sent. Thank you!
+              != __('msg_success')
           #response-false
             p
-              | Error sending message.
+              != __('msg_fail')
         .control-group.submit
           .controls
-            input(type="submit" value="Submit")
+            input(type="submit" value="!= __('Submit')")
 
 
     .form-contacts
-      h4 Alternatively, you can contact our office directly.
+      h4!= __('direct_info') 
       ul
         li.bold Equinoxe s.r.l.
         li 
-          span.bold Phone 
+          span.bold!= __('phone')
           a(href="tel:00390118185211") +39 011 8185211
         li 
           span.bold Fax 
           | +39 011 8185221
         li 
-          span.bold Address 
+          span.bold!= __('address') 
           | Via dei Mille, 18 - 10123 Torino, Italy
         li
           span.bold Mail

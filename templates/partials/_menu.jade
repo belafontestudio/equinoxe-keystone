@@ -10,4 +10,4 @@ a#simple-menu(href='#sidr')
           each link in navLinks
             li.item(class=(section == link.key ? 'active' : null)): a(href=link.href id=link.id)= link.label
           li
-            a(href="#enquire-modal", rel="modal:open") Contacts
+            a(href="#enquire-modal", rel="modal:open")!= __('contacts')

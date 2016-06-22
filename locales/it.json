@@ -123,5 +123,8 @@
 	"typeU": "typeU",
 	"searchbyname": "searchbyname",
 	"xweek": "xweek",
-	"select": "select"
+	"select": "select",
+	"ycharter": "ycharter",
+	"nomatch": "nomatch",
+	"contacts": "contacts"
 }
