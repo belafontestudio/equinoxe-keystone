@@ -126,5 +126,8 @@
 	"select": "select",
 	"ycharter": "ycharter",
 	"nomatch": "nomatch",
-	"contacts": "contacts"
+	"contacts": "contacts",
+	"Exp_quote": "Exp_quote",
+	"yrmsg": "yrmsg",
+	"Submit": "Submit"
 }

@@ -20,9 +20,9 @@
 
 	"Charter_price_from": "CHARTER PRICE FROM:",
 	"Sale_price": "SALE PRICE: ",
-	"Length": "Length:",
-	"Built": "Built:",
-	"Guests": "Guests:",
+	"Length": "<span class=\"uppercase\">Length:</span> ",
+	"Built": "<span class=\"uppercase\">Built:</span> ",
+	"Guests": "<span class=\"uppercase\">Guests:</span> ",
 
 	"Discover_button": "Discover",
 	"Salepurchase": "Own a yacht tailored to your dreams:",
