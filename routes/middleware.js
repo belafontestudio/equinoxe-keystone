@@ -10,7 +10,8 @@
 
 var _ = require('underscore'),
 	querystring = require('querystring'),
-	keystone = require('keystone');
+	keystone = require('keystone'),
+	i18n= require('i18n');
 
 
 /**
@@ -27,7 +28,7 @@ exports.initLocals = function(req, res, next) {
 
 	locals.navLinks = [
 		{ label: 'Home',		key: 'home',   id: "m0",		href: '/' },
-		{ label: 'Yacht sale',		key: 'yacht_brokerage',   id: "m1",		href: '/yacht_brokerage' },
+		{ label: req.__("Menu.item2"),		key: 'yacht_brokerage',   id: "m1",		href: '/yacht_brokerage' },
 		{ label: 'Yacht charter',		key: 'yacht_charter',   id: "m2",		href: '/yacht_charter' },
 		{ label: 'Bareboat charter',		key: 'bareboat',   id: "m4",		href: '/bareboat' },
 		{ label: 'Expeditions',		key: 'expeditions_planning',   id: "m5",		href: '/expeditions_planning' },
