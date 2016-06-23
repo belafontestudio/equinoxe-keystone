@@ -31,15 +31,15 @@ block section
                       != __('Sale_price')
                     = numeralFunction(sail.price).format('0,0[.]00' )+sail.currency
             li
-              | <span class="uppercase">!= __('Length')</span> 
+              != __('Length')
               block length1
                 = sail.lenght +"m"
             li
-              | <span class="uppercase">!= __('Built')</span> 
+              != __('Built')
               block built1
                 = sail.build
             li
-              | <span class="uppercase">!= __('Guests')</span> 
+              != __('Guests')
               block guests1
                 = sail.guests
             .clear

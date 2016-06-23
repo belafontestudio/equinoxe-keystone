@@ -54,7 +54,7 @@ div(id="enquire-modal", style="display:none;")
         .control-group.text-area
           label.control-label(for='textarea')!= __('Message')
           .controls
-            textarea#textarea.enquire_msg(placeholder=' != __("yrmsg")',name='textarea').
+            textarea#textarea.enquire_msg(placeholder='#{__("yrmsg")}',name='textarea').
         <!-- Button -->
         .control-group.submit
           #mandrill-response
@@ -65,7 +65,7 @@ div(id="enquire-modal", style="display:none;")
               p
                 != __('msg_fail')
           .controls
-            input#submit-form(type="submit" value=" != __('Submit') ")
+            input#submit-form(type="submit" value="#{__('Submit')}")
     
     .form-contacts
       h4!= __('direct_info') 

@@ -31,15 +31,15 @@ block section
                       != __('Sale_price')
                     = numeralFunction(power.price).format('0,0[.]00' )+power.currency
             li
-              | <span class="uppercase">!= __('Length')</span> 
+              != __('Length')
               block length1
                 = power.lenght+"m"
             li
-              | <span class="uppercase">!= __('Built')</span> 
+              != __('Built')
               block built1
                 = power.build
             li
-              | <span class="uppercase">!= __('Guests')</span> 
+              != __('Guests') 
               block guests1
                 = power.guests
             .clear
