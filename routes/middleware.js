@@ -10,8 +10,7 @@
 
 var _ = require('underscore'),
 	querystring = require('querystring'),
-	keystone = require('keystone'),
-	i18n= require('i18n');
+	keystone = require('keystone');
 
 
 /**
@@ -28,13 +27,13 @@ exports.initLocals = function(req, res, next) {
 
 	locals.navLinks = [
 		{ label: 'Home',		key: 'home',   id: "m0",		href: '/' },
-		{ label: req.__("Menu.item2"),		key: 'yacht_brokerage',   id: "m1",		href: '/yacht_brokerage' },
-		{ label: 'Yacht charter',		key: 'yacht_charter',   id: "m2",		href: '/yacht_charter' },
-		{ label: 'Bareboat charter',		key: 'bareboat',   id: "m4",		href: '/bareboat' },
-		{ label: 'Expeditions',		key: 'expeditions_planning',   id: "m5",		href: '/expeditions_planning' },
+		{ label: req.__("menu2"),		key: 'yacht_brokerage',   id: "m1",		href: '/yacht_brokerage' },
+		{ label: req.__("menu3"),		key: 'yacht_charter',   id: "m2",		href: '/yacht_charter' },
+		{ label: req.__("menu4"),		key: 'bareboat',   id: "m4",		href: '/bareboat' },
+		{ label: req.__("menu5"),		key: 'expeditions_planning',   id: "m5",		href: '/expeditions_planning' },
 		// { label: 'Berths',		key: 'berths',   id: "m8",		href: '/berths' },
-		{ label: 'Land & services',		key: 'services',   id: "m6",		href: '/services' },
-		{ label: 'Heritage',		key: 'heritage',   id: "m7",		href: '/heritage' },
+		{ label: req.__("menu6"),		key: 'services',   id: "m6",		href: '/services' },
+		{ label: req.__("menu7"),		key: 'heritage',   id: "m7",		href: '/heritage' },
 	];
 
 	locals.user = req.user;
