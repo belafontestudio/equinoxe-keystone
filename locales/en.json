@@ -19,7 +19,7 @@
 	"Button_sell": "Sell a yacht",
 	"Claim_brokerage": "You desire, we provide.",
 	"Brokerage_bullet_1_title": "Experience",
-	"Brokerage_bullet_1_content": "We have been helping sea lovers buy and sell over 500 yachts since 1986.",
+	"Brokerage_bullet_1_content": "We have been helping sea lovers buy and sell new and second-hand yachts since 1986.",
 	"Brokerage_bullet_2_title": "Network",
 	"Brokerage_bullet_2_content": "We have been members of MYBA (The Worldwide Yachting Association) and CYBA (Charter Yacht Brokers Association), the largest and most respected professional yachting organizations in the world, since the beginning.",
 	"Brokerage_bullet_3_title": "Collaboration",
@@ -92,7 +92,7 @@
 
 
 	"Exp_title":"Expeditions",
-	"Exp_desc":"They say, there’s no such thing as uncharted waters anymore. But adventure at sea is still possible. Exploring Antarctica and the Arctic on an icebreaker. Dive cruising around the Galapagos. Discovering remote reefs in the ocean. We can safely bring you to the end of the world and back.",
+	"Exp_desc":"They say, there’s no such thing as uncharted waters anymore. But adventure at sea is still possible. Exploring Antarctica and the Arctic on an icebreaker. Cruising around the Galapagos. Discovering remote reefs in the ocean. We can safely bring you to the end of the world and back.",
 	"Exp_quote":"\"It is only in adventure that some people succeed in knowing themselves – in finding themselves.\"",
 	"Exp_map_1":"There’s a whole world to explore",
 	"Exp_map_2":"See where we can bring you.",
@@ -104,10 +104,10 @@
 	"Land_bulletlist_1_desc":"Everything you may need off the boat: land transfers, food and entertainment, nature explorations, visits to historical sites and landmarks in Italy and everywhere else.",
 	"Land_bulletlist_2_title":"Accommodation",
 	"Land_bulletlist_2_desc":"You can choose to spend time on land at a top hotel or a charming resort, or opt for your own personal villa.",
-	"Land_bulletlist_3_title":"Availability",
+	"Land_bulletlist_3_title":"Assistence",
 	"Land_bulletlist_3_desc":"You can count on us, from before the time you leave home until after you return.",
 	"Land_bulletlist_4_title":"Control",
-	"Land_bulletlist_4_desc":"We only deal with skilled and trustworthy boat owning companies. We constantly monitor and update our fleet.",
+	"Land_bulletlist_4_desc":"We only deal with skilled and trustworthy boat owning companies. We constantly monitor and update our suppliers.",
 	"Land_cta":"Tell us what you need",
 	"Serv_bllt_title":"At your service",
 	"Serv_bulletlist_1_title":"Flights",
@@ -213,7 +213,7 @@
 
 
 	"nomatch":"We’re sorry, but we couldn’t find a yacht meeting your requirements.<br><br>Change filters to try a new search.",
-	"ysale":"Yachts sale",
+	"ysale":"Yachts for sale",
 	"ycharter":"Yachts charter ",
 	"":"",
 	"":"",
