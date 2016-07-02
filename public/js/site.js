@@ -1202,13 +1202,17 @@ function mediaqueriesjs(){
 
   enquire.register("screen and (max-width:600px)", {
     match : function() {
-      $('#heritage-img').attr('src', 'images/equinoxe_infografica-mobile.png');
+
+      $('#heritage-img-mob').show();
+      $('#heritage-img-web').hide();
+
       $('.enquire-button').on('click', function(){
         $.scrollUp();
       })
     },
     unmatch : function() {
-      $('#heritage-img').attr('src', 'images/equinoxe_infografica.png');
+      $('#heritage-img-web').show();
+      $('#heritage-img-mob').hide();
     }
   });
 

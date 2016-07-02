@@ -5,7 +5,10 @@ block section
         block title
           != __('Heritage_why')
 
-  img.info#heritage-img(src="/images/equinoxe_infografica.png")
+  img.info#heritage-img-web(src='#{__("info-web")}')
+  img.info#heritage-img-mob(style="display: none")(src='#{__("info-mob")}')
+  
+  
   section.center
     .main-text.info(style="left: 8%;")
       p(style="text-align: center")
