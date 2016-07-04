@@ -7,16 +7,12 @@ exports = module.exports = function(req, res) {
 
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-
-	// Set locals
-	locals.section = 'expedition';
-	locals.filters = {
-		expedition: req.params.expedition
-	};
+	locals.section = req.__("menu5");
 
 	locals.data = {
 		expeditions: []
 	};
+
 
 	// Load the current post
 	view.on('init', function(next) {

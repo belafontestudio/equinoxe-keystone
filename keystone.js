@@ -64,8 +64,8 @@ keystone.set('locals', {
 
 i18n.configure({
 	locales:['en', 'it'],
-	defaultLocale: 'it',
 	objectNotation: true,
+	cookie: 'equionoxeyachts_language',
 	directory: __dirname + '/locales'
 });
 

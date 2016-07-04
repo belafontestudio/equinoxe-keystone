@@ -22,18 +22,17 @@ var _ = require('underscore'),
 */
 
 exports.initLocals = function(req, res, next) {
-
 	var locals = res.locals;
 
 	locals.navLinks = [
-		{ label: 'Home',		key: 'home',   id: "m0",		href: '/' },
-		{ label: req.__("menu2"),		key: 'yacht_brokerage',   id: "m1",		href: '/yacht_brokerage' },
-		{ label: req.__("menu3"),		key: 'yacht_charter',   id: "m2",		href: '/yacht_charter' },
-		{ label: req.__("menu4"),		key: 'bareboat',   id: "m4",		href: '/bareboat' },
-		{ label: req.__("menu5"),		key: 'expeditions_planning',   id: "m5",		href: '/expeditions_planning' },
+		{ label: req.__("menu1"),		key: req.__("menu1"),   id: "m0",		href: req.__("url2") },
+		{ label: req.__("menu2"),		key: req.__("menu2"),   id: "m1",		href: req.__("url2") },
+		{ label: req.__("menu3"),		key: req.__("menu3"),   id: "m2",		href: req.__("url3") },
+		{ label: req.__("menu4"),		key: req.__("menu4"),   id: "m4",		href: req.__("url4") },
+		{ label: req.__("menu5"),		key: req.__("menu5"),   id: "m5",		href: req.__("url5") },
 		// { label: 'Berths',		key: 'berths',   id: "m8",		href: '/berths' },
-		{ label: req.__("menu6"),		key: 'services',   id: "m6",		href: '/services' },
-		{ label: req.__("menu7"),		key: 'heritage',   id: "m7",		href: '/heritage' },
+		{ label: req.__("menu6"),		key: req.__("menu6"),   id: "m6",		href: req.__("url6") },
+		{ label: req.__("menu7"),		key: req.__("menu7"),   id: "m7",		href: req.__("url7") },
 	];
 
 	locals.user = req.user;

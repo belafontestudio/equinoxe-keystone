@@ -22,6 +22,7 @@ var _ = require('underscore'),
     keystone = require('keystone'),
     i18n = require("i18n"),
     middleware = require('./middleware'),
+    helpers = require('./helpers'),
     importRoutes = keystone.importer(__dirname),
     serveIndex = require('serve-index'),
     robots = require('robots.txt'),
@@ -39,7 +40,10 @@ keystone.pre('routes', i18n.init);
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
+keystone.pre('routes', helpers.language);
+keystone.pre('render', helpers.menu);
 keystone.pre('render', middleware.flashMessages);
+
 
 // Import Route Controllers
 var routes = {
@@ -59,14 +63,32 @@ keystone.set('500', function(req, res, next) {
 // Setup Route Bindings
 exports = module.exports = function(app) {
 
-    // Views
-    app.get('/', routes.views.index);
-    //app.get('/:lang', routes.views.index);
+    app.get('/ita', function(req,res){
+      req.setLocale("it");
+      res.cookie('equionoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
+      res.redirect('/');
+    });
+    app.get('/eng', function(req,res){
+      req.setLocale("en");
+      res.cookie('equionoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
+      res.redirect('/');
+    });
+
     app.get('/yachts/:availability', routes.views.yachts);
     app.get('/yacht/:yacht', routes.views.yacht);
 
 
-    app.get('/expeditions', routes.views.expeditions);
+    app.get('/expeditions', function(req,res){
+      req.setLocale("en");
+      routes.views.expeditions(req,res)
+    });
+    app.get('/spedizioni', function(req,res){
+      req.setLocale("it");
+      routes.views.expeditions(req,res)
+    });
+
+
+
     app.get('/expedition/:expedition', routes.views.expedition);
 
     app.use('/app-storage',serveIndex(process.env.CLOUD_DIR, {'icons': true}));
@@ -75,16 +97,72 @@ exports = module.exports = function(app) {
     app.use('/temp',serveIndex(process.env.TEMP_DIR, {'icons': true}));
     app.get('/temp', middleware.requireUser);
 
+    // Views
+    app.get('/', routes.views.index);
+
+    app.get('/yacht-brokerage', function(req,res){
+      req.setLocale("en");
+      routes.views.yachtBrokerage(req,res)
+    });
+    app.get('/vendita-yacht', function(req,res){
+      req.setLocale("it");
+      routes.views.yachtBrokerage(req,res)
+    });
+    app.get('/yacht_brokerage', function(req,res){
+      res.redirect('/yacht-brokerage');
+    });
+
+    app.get('/yacht-charter', function(req,res){
+      req.setLocale("en");
+      routes.views.yachtCharter(req,res)
+    });
+    app.get('/noleggio-yacht-con-equipaggio', function(req,res){
+      req.setLocale("it");
+      routes.views.yachtCharter(req,res)
+    });
+    app.get('/yacht_charter', function(req,res){
+      res.redirect('/yacht-charter');
+    });
+
+    app.get('/expeditions-planning', function(req,res){
+      req.setLocale("en");
+      routes.views.expeditionsPlanning(req,res)
+    });
+    app.get('/programma-spedizioni', function(req,res){
+      req.setLocale("it");
+      routes.views.expeditionsPlanning(req,res)
+    });
+    app.get('/expeditions_planning', function(req,res){
+      res.redirect('/expeditions-planning');
+    });
+
+    app.get('/bareboat', function(req,res){
+      req.setLocale("en");
+      routes.views.bareboat(req,res)
+    });
+    app.get('/noleggio-yacht-senza-equipaggio', function(req,res){
+      req.setLocale("it");
+      routes.views.bareboat(req,res)
+    });
 
 
-    app.get('/yacht_brokerage', routes.views.yachtBrokerage);
-    //app.get('/yacht_brokerage/:lang', routes.views.yachtBrokerage);
-    app.get('/yacht_charter', routes.views.yachtCharter);
-    app.get('/expeditions_planning', routes.views.expeditionsPlanning);
-    app.get('/bareboat', routes.views.bareboat);
-    app.get('/services', routes.views.services);
-    app.get('/heritage', routes.views.heritage);
+    app.get('/services', function(req,res){
+      req.setLocale("en");
+      routes.views.services(req,res)
+    });
+    app.get('/servizi', function(req,res){
+      req.setLocale("it");
+      routes.views.services(req,res)
+    });
 
+    app.get('/heritage', function(req,res){
+      req.setLocale("en");
+      routes.views.heritage(req,res)
+    });
+    app.get('/chi-siamo', function(req,res){
+      req.setLocale("it");
+      routes.views.heritage(req,res)
+    });
 
     //API
     //app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
@@ -108,13 +186,12 @@ exports = module.exports = function(app) {
         target: 'http://equinoxe.sailogy.com', // target host
         changeOrigin: true,               // needed for virtual hosted sites
         ws: true,                         // proxy websockets
-
     };
 
     // create the proxy (without context)
-    var exampleProxy = proxy(options);
+    var sailogyProxy = proxy(options);
 
-    app.use('/noleggio-barche', exampleProxy);
+    app.use('/noleggio-barche', sailogyProxy);
 
 
 

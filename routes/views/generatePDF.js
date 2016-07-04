@@ -9,6 +9,7 @@ _ = require('underscore');
 exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res),
 		locals = res.locals;
+
 	var slugs = [];
 	locals.filters = {
 		availability: req.params.availability,
