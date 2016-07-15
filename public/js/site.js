@@ -1134,7 +1134,8 @@ function fillGrid(data,template,q){
     var data_grid = $("ul#yachts-list-grid");
     if(list.total > 0){
 
-      data_grid.html(template(list)).fadeIn(500);
+      data_grid.html(template(data)).fadeIn(500);
+
     }else{
       if(pathname == "/yachts/Charter"){
         data_grid.html('<p id="no-yacht-found">We’re sorry, but we couldn’t find a yacht meeting your requirements.<br><br>Change filters to try a new search.</p>').fadeIn(500);

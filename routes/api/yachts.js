@@ -5,6 +5,7 @@ var async = require('async'),
 
 
 exports.filter = function(req, res) {
+
 		var q = Yachts.paginate({
 				page: req.query.page || 1,
 				perPage: 500,
@@ -52,7 +53,8 @@ exports.filter = function(req, res) {
 
 		q.exec(function(err, items) {
 			res.apiResponse({
-			list: items
+			list: items,
+			translation: req.getCatalog()
 			});
 		});
 
@@ -78,7 +80,8 @@ exports.search = function(req, res) {
 		q.exec(function(err, items) {
 			console.log(items);
 			res.apiResponse({
-			list: items
+			list: items,
+			translation: req.getCatalog()
 			});
 		});
 
