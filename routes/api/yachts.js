@@ -52,6 +52,7 @@ exports.filter = function(req, res) {
 
 
 		q.exec(function(err, items) {
+			console.log("query items done");
 			res.apiResponse({
 			list: items,
 			translation: req.getCatalog()

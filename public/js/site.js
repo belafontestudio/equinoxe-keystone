@@ -1128,9 +1128,11 @@ function emptyGrid(){
     });
 }
 function fillGrid(data,template,q){
+
     var list = data.list;
 
     list.q= q;
+    console.log(list)
     var data_grid = $("ul#yachts-list-grid");
     if(list.total > 0){
 
