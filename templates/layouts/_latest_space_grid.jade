@@ -31,15 +31,18 @@ block section
                       != __('Sale_price')
                     = numeralFunction(featured.price).format('0,0[.]00' )+featured.currency
             li
-              | <span class="uppercase">!= __('Length')</span> 
+              span.uppercase
+                !=__('Length')
               block length1
                 = featured.lenght+"m"
             li
-              | <span class="uppercase">!= __('Built')</span> 
+              span.uppercase
+                !=__('Built')
               block built1
                 = featured.build
             li
-              | <span class="uppercase">!= __('Guests')</span> 
+              span.uppercase
+                !=__('Guests') 
               block guests1
                 = featured.guests
             .clear

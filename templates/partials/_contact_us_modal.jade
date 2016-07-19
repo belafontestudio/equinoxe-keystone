@@ -32,18 +32,16 @@ div(id="contact-us-modal", style="display:none;")
         .control-group.text-area
           label.control-label(for='textarea')!= __('Message')
           .controls
-            textarea#textarea.modal_msg(placeholder='!= __("yrmsg")',name='textarea').
+            textarea#textarea.modal_msg(placeholder='#{__("yrmsg")}',name='textarea').
         <!-- Button -->
         #mandrill-response
           #response-true
-            p
-              != __('msg_success')
+            p!= __('msg_success')
           #response-false
-            p
-              != __('msg_fail')
+            p!= __('msg_fail')
         .control-group.submit
           .controls
-            input(type="submit" value="!= __('Submit')")
+            input(type="submit" value="#{__('Submit')}")
 
 
     .form-contacts

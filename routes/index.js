@@ -74,8 +74,31 @@ exports = module.exports = function(app) {
       res.redirect('/');
     });
 
-    app.get('/yachts/:availability', routes.views.yachts);
-    app.get('/yacht/:yacht', routes.views.yacht);
+    app.get('/yachts/:availability', function(req,res){
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "it"){
+          req.setLocale("it");
+        }else{
+          req.setLocale("en");
+        }
+
+      }else{
+        req.setLocale("en");
+      }
+      routes.views.yachts(req,res)
+    });
+    app.get('/yacht/:yacht', function(req,res){
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "it"){
+          req.setLocale("it");
+        }else{
+          req.setLocale("en");
+        }
+      }else{
+        req.setLocale("en");
+      }
+      routes.views.yacht(req,res)
+    });
 
 
     app.get('/expeditions', function(req,res){
@@ -101,66 +124,160 @@ exports = module.exports = function(app) {
     app.get('/', routes.views.index);
 
     app.get('/yacht-brokerage', function(req,res){
-      req.setLocale("en");
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "it"){
+          res.redirect('/vendita-yacht');
+        }
+      }else{
+        req.setLocale("en");
+      }
       routes.views.yachtBrokerage(req,res)
     });
     app.get('/vendita-yacht', function(req,res){
-      req.setLocale("it");
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "en"){
+          res.redirect('/yacht-brokerage');
+        }
+      }else{
+        req.setLocale("it");
+      }
       routes.views.yachtBrokerage(req,res)
     });
     app.get('/yacht_brokerage', function(req,res){
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "it"){
+          res.redirect('/noleggio-yacht-senza-equipaggio');
+        }
+      }else{
+        req.setLocale("en");
+      }
       res.redirect('/yacht-brokerage');
     });
 
     app.get('/yacht-charter', function(req,res){
-      req.setLocale("en");
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "it"){
+          res.redirect('/noleggio-yacht-con-equipaggio');
+        }
+      }else{
+        req.setLocale("en");
+      }
+
       routes.views.yachtCharter(req,res)
     });
     app.get('/noleggio-yacht-con-equipaggio', function(req,res){
-      req.setLocale("it");
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "en"){
+          res.redirect('/yacht_charter');
+        }
+      }else{
+        req.setLocale("it");
+      }
       routes.views.yachtCharter(req,res)
     });
     app.get('/yacht_charter', function(req,res){
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "it"){
+          res.redirect('/noleggio-yacht-con-equipaggio');
+        }
+      }else{
+        req.setLocale("en");
+      }
       res.redirect('/yacht-charter');
     });
 
     app.get('/expeditions-planning', function(req,res){
-      req.setLocale("en");
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "it"){
+          res.redirect('/programma-spedizioni');
+        }
+      }else{
+        req.setLocale("en");
+      }
       routes.views.expeditionsPlanning(req,res)
     });
     app.get('/programma-spedizioni', function(req,res){
-      req.setLocale("it");
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "en"){
+          res.redirect('/expeditions-planning');
+        }
+      }else{
+        req.setLocale("it");
+      }
       routes.views.expeditionsPlanning(req,res)
     });
     app.get('/expeditions_planning', function(req,res){
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "it"){
+          res.redirect('/programma-spedizioni');
+        }
+      }else{
+        req.setLocale("en");
+      }
       res.redirect('/expeditions-planning');
     });
 
     app.get('/bareboat', function(req,res){
-      req.setLocale("en");
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "it"){
+          res.redirect('/noleggio-yacht-senza-equipaggio');
+        }
+      }else{
+        req.setLocale("en");
+      }
       routes.views.bareboat(req,res)
     });
     app.get('/noleggio-yacht-senza-equipaggio', function(req,res){
-      req.setLocale("it");
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "en"){
+          res.redirect('/bareboat');
+        }
+      }else{
+        req.setLocale("it");
+      }
       routes.views.bareboat(req,res)
     });
 
 
     app.get('/services', function(req,res){
-      req.setLocale("en");
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "it"){
+          res.redirect('/servizi');
+        }
+      }else{
+        req.setLocale("en");
+      }
       routes.views.services(req,res)
     });
     app.get('/servizi', function(req,res){
-      req.setLocale("it");
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "en"){
+          res.redirect('/services');
+        }
+      }else{
+        req.setLocale("it");
+      }
       routes.views.services(req,res)
     });
 
     app.get('/heritage', function(req,res){
-      req.setLocale("en");
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "it"){
+          res.redirect('/chi-siamo');
+        }
+      }else{
+        req.setLocale("en");
+      }
       routes.views.heritage(req,res)
     });
     app.get('/chi-siamo', function(req,res){
-      req.setLocale("it");
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "en"){
+          res.redirect('/heritage');
+        }
+      }else{
+        req.setLocale("it");
+      }
       routes.views.heritage(req,res)
     });
 
