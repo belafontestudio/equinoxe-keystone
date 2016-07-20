@@ -2,7 +2,7 @@
 var slidesInterval, filters = {}, values= {};
 var timer, timer2;
 values.minp = 100000;
-values.maxp = 100000000;
+values.maxp = 10000000;
 values.minpw = 5000;
 values.maxpw = 900000;
 values.ming = 1;
@@ -193,7 +193,7 @@ function rangeSlider(){
     $( "#slider-range" ).slider({
       range: true,
       min: 100000,
-      max: 100000000,
+      max: 10000000,
       step: 1000,
       values: [ values.minp, values.maxp ],
       slide: function( event, ui ) {
@@ -209,7 +209,7 @@ function rangeSlider(){
     });
 
     $( "p.min-price" ).text( "€" + numeral("100000").format('0,0[.]00' ));
-    $( "p.max-price" ).text( "€" + numeral("100000000").format('0,0[.]00' ));
+    $( "p.max-price" ).text( "€" + numeral("10000000").format('0,0[.]00' ));
 
 }
 
@@ -236,7 +236,7 @@ function resetFilters(){
   $(document).on('click', '.reset-button a', function(e) {
             e.preventDefault();
             values.minp = 100000;
-            values.maxp = 100000000;
+            values.maxp = 10000000;
             values.minpw = 500;
             values.maxpw = 900000;
             values.ming = 1;
@@ -260,7 +260,7 @@ function resetFilters(){
 
             updateFilterMenu();
             $( "#slider-guest" ).slider({values: [ 1, 34]});
-            $( "#slider-range" ).slider({values: [ 100000, 100000000]});
+            $( "#slider-range" ).slider({values: [ 100000, 10000000]});
             $( "#slider-rangeweek" ).slider({values: [ 500, 900000]});
 
             $("a#small").removeClass("active");

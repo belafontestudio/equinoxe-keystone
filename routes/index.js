@@ -66,12 +66,12 @@ exports = module.exports = function(app) {
     app.get('/ita', function(req,res){
       req.setLocale("it");
       res.cookie('equionoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
-      res.redirect('/');
+      res.redirect('equinoxe.it');
     });
     app.get('/eng', function(req,res){
       req.setLocale("en");
       res.cookie('equionoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
-      res.redirect('/');
+      res.redirect('equinoxeyachts.com');
     });
 
     app.get('/yachts/:availability', function(req,res){
