@@ -25,7 +25,6 @@ exports.language = function(req, res, next) {
 
 	switch(domain){
 		case "equinoxe.it":
-    case "localhost:3000":
 		case "equinoxeyachts.it":
 		case "www.equinoxe.it":
 		case "www.equinoxeyachts.it":

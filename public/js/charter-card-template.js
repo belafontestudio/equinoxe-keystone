@@ -1,4 +1,4 @@
-{{#each results}}
+{{#each list.results}}
        <li class="card"><a href="/yacht/{{slug}}?{{../q}}"></a>
 
         <div class="container-yachtcard-img">
@@ -9,7 +9,7 @@
             {{/if}}
             {{#if thumbnail.filename}}
               <img src="/uploads/images/yachts/thumbnails/{{thumbnail.filename}}" alt={{thumbnail.filename}}/>
-            {{else}} 
+            {{else}}
               <img src="/images/sprite/placeholder.png" alt="placeholder"/>
             {{/if}}
         </div>
@@ -18,44 +18,44 @@
               {{name}}
             {{else}}
               = "missing"
-            {{/if}} 
+            {{/if}}
         </h3>
         <ul class="yacht-specs">
 
-          <li><span>Price from:</span>{{{numeral [price per week from] currency}}}
+          <li><span>{{../translation.Price_from}}</span>{{{numeral [price per week from] currency}}}
           </li>
-          <li><span>length:</span>
+          <li><span>{{../translation.length}}</span>
             {{#if lenght}}
               {{lenght}} m
             {{else}}
               = "-"
             {{/if}}
-            
+
           </li>
 
           {{#ifOr build refit }}
           <li>
             {{#ifCond build refit }}
-                  <span>built:</span> 
+                  <span>{{../../../translation.built}}</span>
                   {{build}}" / refit "{{refit}}
             {{else}}
                   {{#if refit }}
-                  <span>refit:</span> 
+                  <span>refit:</span>
                    {{refit}}
                   {{/if}}
                   {{#if build }}
-                  <span>built:</span> 
+                  <span>{{../../../translation.built}}</span>
                    {{build}}
                   {{/if}}
             {{/ifCond}}
           </li>
-          {{/ifOr}} 
-          <li><span>guests:</span>
+          {{/ifOr}}
+          <li><span>{{../translation.guests}}:</span>
             {{#if guests}}
               {{guests}}
             {{else}}
               = "-"
-            {{/if}} 
+            {{/if}}
           </li>
         </ul>
       </li>
