@@ -11,6 +11,8 @@ var browserify = require('gulp-browserify')
 var gulpFilter = require('gulp-filter')
 var watch = require('gulp-watch')
 var rename = require('gulp-rename')
+var jeet = require('jeet');
+var nib = require('nib');
 
 var src = {
   styl: ['public/**/*.styl'],

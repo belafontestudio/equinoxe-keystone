@@ -154,8 +154,8 @@ function guestSlider(){
       step: 1,
       values: [ values.ming, values.maxg],
       slide: function( event, ui ) {
-        $( "p.min-guest" ).text( ui.values[ 0 ] + " guests" );
-        $( "p.max-guest" ).text( ui.values[ 1 ] + " guests");
+        $( "p.min-guest" ).text( ui.values[ 0 ]);
+        $( "p.max-guest" ).text( ui.values[ 1 ]);
         $("a#f3 span").text(ui.values[ 0 ]+"-"+ui.values[ 1 ]);
 
       },
@@ -165,8 +165,8 @@ function guestSlider(){
         collectFilter()
       }
     });
-    $( "p.min-guest" ).text( $( "#slider-guest" ).slider( "values", 0 )+ " guests");
-    $( "p.max-guest" ).text( $( "#slider-guest" ).slider( "values", 1 )+ " guests");
+    $( "p.min-guest" ).text( $( "#slider-guest" ).slider( "values", 0 ));
+    $( "p.max-guest" ).text( $( "#slider-guest" ).slider( "values", 1 ));
 }
 function rangeSliderWeek(){
   $( "#slider-rangeweek" ).slider({
@@ -283,8 +283,8 @@ function resetFilters(){
             $( "p.max-price" ).text( "€" + $( "#slider-range" ).slider( "values", 1 ));
             $( "p.min-priceweek" ).text( "€" + $( "#slider-rangeweek" ).slider( "values", 0 ));
             $( "p.max-priceweek" ).text( "€" + $( "#slider-rangeweek" ).slider( "values", 1 ));
-            $( "p.min-guest" ).text( $( "#slider-guest" ).slider( "values", 0 )+ "guests");
-            $( "p.max-guest" ).text( $( "#slider-guest" ).slider( "values", 1 )+ "guests");
+            $( "p.min-guest" ).text( $( "#slider-guest" ).slider( "values", 0 ));
+            $( "p.max-guest" ).text( $( "#slider-guest" ).slider( "values", 1 ));
             collectFilter();
         });
 }
@@ -330,7 +330,13 @@ function typeFilter(){
             $("a#gulet").removeClass("active");
             filters.t = "Power";
             collectFilter();
-            $("a#f5 span").text(filters.t);
+            console.log(location.hostname);
+            if(location.hostname ==  "equinoxe.it"){
+              $("a#f5 span").text("Motore");
+            }else if(location.hostname ==  "equinoxeyachts.com"){
+              $("a#f5 span").text("Power");
+            }
+
         });
   $(document).on('click', 'a#sail', function(e) {
             e.preventDefault();
@@ -339,7 +345,12 @@ function typeFilter(){
             $("a#gulet").removeClass("active");
             filters.t = "Sails";
             collectFilter();
-            $("a#f5 span").text(filters.t);
+            if(location.hostname ==  "equinoxe.it"){
+              $("a#f5 span").text("Vela");
+            }else if(location.hostname ==  "equinoxeyachts.com"){
+              $("a#f5 span").text("Sails");
+            }
+
         });
   $(document).on('click', 'a#gulet', function(e) {
             e.preventDefault();
@@ -348,7 +359,12 @@ function typeFilter(){
             $(this).addClass("active");
             filters.t = "Gulet";
             collectFilter();
-            $("a#f5 span").text(filters.t);
+            if(location.hostname ==  "equinoxe.it"){
+              $("a#f5 span").text("Caicchi");
+            }else if(location.hostname ==  "equinoxeyachts.com"){
+              $("a#f5 span").text("Gulet");
+            }
+
         });
 }
 
