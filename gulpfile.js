@@ -39,7 +39,13 @@ var dist = {
 gulp.task('bower', function() {
   const jsFilter = filter('**/*.js', {restore: true})
   const cssFilter = filter('**/*.css', {restore: true})
-  return gulp.src(bower())
+  return gulp.src(bower({
+    paths: {
+        bowerDirectory: './bower_components',
+        bowerrc: './.bowerrc',
+        bowerJson: './bower.json'
+    }
+}))
     .pipe(jsFilter)
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest(dist.js))

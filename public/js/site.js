@@ -324,48 +324,52 @@ function lenghtFilter(){
 
 function typeFilter(){
   $(document).on('click', 'a#motor', function(e) {
-            e.preventDefault();
-            $(this).addClass("active");
-            $("a#sail").removeClass("active");
-            $("a#gulet").removeClass("active");
-            filters.t = "Power";
-            collectFilter();
-            console.log(location.hostname);
-            if(location.hostname ==  "equinoxe.it"){
-              $("a#f5 span").text("Motore");
-            }else if(location.hostname ==  "equinoxeyachts.com"){
-              $("a#f5 span").text("Power");
-            }
+    e.preventDefault();
+    $(this).addClass("active");
+    $("a#sail").removeClass("active");
+    $("a#gulet").removeClass("active");
 
-        });
+    collectFilter();
+
+    if(location.hostname ==  "equinoxe.it"){
+      filters.t = "Motore";
+    }else if(location.hostname ==  "equinoxeyachts.com"){
+      filters.t = "Power";
+    }
+
+    $("a#f5 span").text(filters.t);
+
+  });
   $(document).on('click', 'a#sail', function(e) {
-            e.preventDefault();
-            $("a#motor").removeClass("active");
-            $(this).addClass("active");
-            $("a#gulet").removeClass("active");
-            filters.t = "Sails";
-            collectFilter();
-            if(location.hostname ==  "equinoxe.it"){
-              $("a#f5 span").text("Vela");
-            }else if(location.hostname ==  "equinoxeyachts.com"){
-              $("a#f5 span").text("Sails");
-            }
+    e.preventDefault();
+    $("a#motor").removeClass("active");
+    $(this).addClass("active");
+    $("a#gulet").removeClass("active");
 
-        });
+    collectFilter();
+    if(location.hostname ==  "equinoxe.it"){
+      filters.t = "Vela";
+    }else if(location.hostname ==  "equinoxeyachts.com"){
+      filters.t = "Sails";
+    }
+    $("a#f5 span").text(filters.t);
+
+  });
   $(document).on('click', 'a#gulet', function(e) {
-            e.preventDefault();
-            $("a#motor").removeClass("active");
-            $("a#sail").removeClass("active");
-            $(this).addClass("active");
-            filters.t = "Gulet";
-            collectFilter();
-            if(location.hostname ==  "equinoxe.it"){
-              $("a#f5 span").text("Caicchi");
-            }else if(location.hostname ==  "equinoxeyachts.com"){
-              $("a#f5 span").text("Gulet");
-            }
+    e.preventDefault();
+    $("a#motor").removeClass("active");
+    $("a#sail").removeClass("active");
+    $(this).addClass("active");
 
-        });
+    collectFilter();
+    if(location.hostname ==  "equinoxe.it"){
+      filters.t = "Caicchi";
+    }else if(location.hostname ==  "equinoxeyachts.com"){
+      filters.t = "Gulet";
+    }
+    $("a#f5 span").text(filters.t);
+
+  });
 }
 
 function zoneFilter(){
@@ -629,8 +633,19 @@ function updateFilterMenu(){
 
   $("a#f3 span").text(values.ming+"-"+values.maxg);
   $("a#f6 span").text(values.a);
+  if(location.hostname ==  "equinoxe.it"){
+    if(values.t == "Sails"){
+      $("a#f5 span").text("Vela");
+    }else if(values.t == "Power"){
+      $("a#f5 span").text("Motore");
+    }else if(values.t == "Gulet"){
+      $("a#f5 span").text("Caicchi");
+    }
 
-  $("a#f5 span").text(values.t);
+  }else if(location.hostname ==  "equinoxeyachts.com"){
+    $("a#f5 span").text(values.t);
+  }
+
 
 
 }
