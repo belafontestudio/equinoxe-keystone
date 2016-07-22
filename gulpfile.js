@@ -2,13 +2,13 @@ var BatchStream = require('batch-stream2')
 var gulp = require('gulp')
 var uglify = require('gulp-uglify')
 var cssmin = require('gulp-minify-css')
-var bower = require('gulp-bower-files')
+var bower = require('main-bower-files')
 var stylus = require('gulp-stylus')
 var livereload = require('gulp-livereload')
 var include = require('gulp-include')
 var concat = require('gulp-concat')
 var browserify = require('gulp-browserify')
-var gulpFilter = require('gulp-filter')
+var filter = require('gulp-filter')
 var watch = require('gulp-watch')
 var rename = require('gulp-rename')
 var jeet = require('jeet');
@@ -37,17 +37,17 @@ var dist = {
 // rename fonts to `fonts/*.*`
 //
 gulp.task('bower', function() {
-  var jsFilter = gulpFilter('**/*.js')
-  var cssFilter = gulpFilter('**/*.css')
-  return bower()
+  const jsFilter = filter('**/*.js', {restore: true})
+  const cssFilter = filter('**/*.css', {restore: true})
+  return gulp.src(bower())
     .pipe(jsFilter)
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest(dist.js))
-    .pipe(jsFilter.restore())
+    .pipe(jsFilter.restore)
     .pipe(cssFilter)
     .pipe(concat('vendor.css'))
     .pipe(gulp.dest(dist.css))
-    .pipe(cssFilter.restore())
+    .pipe(cssFilter.restore)
     .pipe(rename(function(path) {
       if (~path.dirname.indexOf('fonts')) {
         path.dirname = '/fonts'
@@ -64,7 +64,7 @@ function buildCSS() {
 }
 
 function buildJS() {
-  return gulp.src(src.scripts)
+  return gulp.src(src.js)
     .pipe(include())
     .pipe(browserify({
       insertGlobals: true,
