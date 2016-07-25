@@ -232,22 +232,22 @@ Yacht.schema.pre('save', function(next) {
 	if(yacht.pdf){
 		pdfToGenerate += 1;
 	}
-	// if(yacht.state != "draft"){
-	// 	pdfToGenerate += 1;
-	// }
-	// console.log("pdf 2 generate "+pdfToGenerate);
-	// if (yacht.state != "draft"){
-	// var finished = _.after(pdfToGenerate, next);
-	// }else{
-	// 	next();
-	// }
-next();
+	if(yacht.state != "draft"){
+		pdfToGenerate += 1;
+	}
+	console.log("pdf 2 generate "+pdfToGenerate);
+	if (yacht.state != "draft"){
+	var finished = _.after(pdfToGenerate, next);
+	}else{
+		next();
+	}
+
 	if ( yacht.pdf == true ) {
 		pdfFull(finished,yacht);
 	}
-	// if(yacht.state != "draft"){
-	// 	pdfLite(finished,yacht);
-	// }
+	if(yacht.state != "draft"){
+		pdfLite(finished,yacht);
+	}
 	if ( yacht.pdfNoLogo  == true ) {
 		pdfFullNoLogo(finished,yacht);
 	}
