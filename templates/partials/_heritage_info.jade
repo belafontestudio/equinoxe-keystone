@@ -4,10 +4,9 @@ block section
       h1(style="text-align: center")
         block title
           != __('Heritage_why')
-
-  img.info#heritage-img-web(src='#{__("info-web")}')
-  img.info#heritage-img-mob(style="display: none")(src='#{__("info-mob")}')
   
+  img.info#heritage-img-web(src='#{__("info-web")}')
+  img.info#heritage-img-mob(style="display: none", src='#{__("info-mob")}')
   
   section.center
     .main-text.info(style="left: 8%;")
@@ -15,3 +14,6 @@ block section
         != __('Heritage_trust')
         br
         != __('Heritage_choose')
+  section.center
+    .main-text.explain
+      != __("Heritage_explain")

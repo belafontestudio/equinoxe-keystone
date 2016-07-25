@@ -66,12 +66,25 @@ exports = module.exports = function(app) {
     app.get('/ita', function(req,res){
       req.setLocale("it");
       res.cookie('equionoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
-      res.redirect('http://equinoxe.it');
+      var host = req.get('host');
+
+      if(host == "localhost:3000"){
+        res.redirect('/');
+      }else{
+        res.redirect('http://equinoxe.it');
+      }
+
     });
     app.get('/eng', function(req,res){
       req.setLocale("en");
       res.cookie('equionoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
-      res.redirect('http://equinoxeyachts.com');
+      var host = req.get('host');
+
+      if(host == "localhost:3000"){
+        res.redirect('/');
+      }else{
+        res.redirect('http://equinoxeyachts.com');
+      }
     });
 
     app.get('/yachts/:availability', function(req,res){

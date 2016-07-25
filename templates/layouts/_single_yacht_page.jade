@@ -291,11 +291,28 @@ block section
             div#other-description
               if data.yacht.content.description
                 div.description-info
-                  !=data.yacht.content.description
+                  - var lang=getLocale()
+                  if lang == "it"
+                    if data.yacht.content.descrizione
+                      !=data.yacht.content.descrizione
+                    else
+                      !=data.yacht.content.description
+                  else 
+                    !=data.yacht.content.description
               div.description-info
-                if data.yacht.content["water sports"]
-                  h2 Water Sports
-                !=data.yacht.content["water sports"]
+                if lang == "it"
+                  if data.yacht.content["sport acquatici"]
+                    h2 Sport Acquatici
+                    !=data.yacht.content["sport acquatici"]
+                  else
+                    if data.yacht.content["water sports"]
+                      h2 Water Sports
+                    !=data.yacht.content["water sports"]
+                else 
+                  if data.yacht.content["water sports"]
+                    h2 Water Sports
+                  !=data.yacht.content["water sports"]
+                
                 if data.yacht.availability == "Charter"
                   a.button(href="#contact-us-modal", rel="modal:open")!= __('ENQUIRE')
 

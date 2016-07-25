@@ -19,6 +19,7 @@
     "node-sass": "~3.4.2",
     "node-sass-middleware": "^0.9.7",
     "numeral": "^1.5.3",
+    "phantom": "^2.1.13",
     "request": "^2.57.0",
     "robots.txt": "^1.1.0",
     "serve-index": "^1.6.3",

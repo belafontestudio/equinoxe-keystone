@@ -13,6 +13,7 @@ var watch = require('gulp-watch')
 var rename = require('gulp-rename')
 var jeet = require('jeet');
 var nib = require('nib');
+var rupture = require('rupture');
 
 var src = {
   styl: ['public/**/*.styl'],
@@ -64,7 +65,7 @@ gulp.task('bower', function() {
 
 function buildCSS() {
   return gulp.src(src.styles)
-    .pipe(stylus({use: [jeet(),nib()]}))
+    .pipe(stylus({use: [jeet(),nib(), rupture()]}))
     .pipe(concat('app.css'))
     .pipe(gulp.dest(dist.css))
 }
