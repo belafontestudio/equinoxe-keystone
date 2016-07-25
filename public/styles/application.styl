@@ -10,8 +10,31 @@
 @import '_filters'
 
 
-// body
-//   overflow scroll !important
+
+
+
+
+.language
+  position absolute
+  right 10px
+  top 10px
+  z-index 1000
+  width 40px
+  a
+    display block
+  img
+    max-width: 100%
+
++above(480px)
+  .language
+    top 16px
+
++above(1200px)
+  .language
+    top 40px
+
+
+
 .main-text.explain
   ul
     list-style-type:  disc
@@ -100,7 +123,7 @@ ul.yachts-list-grid
 
 .section
     column(12/12)
-.down
+    // .down
     // display: none !important
     // width: 30px
     // height: 30px
@@ -1403,7 +1426,6 @@ footer
 
 
 
-///////////////////////////////////////////////////////////////////
 +below(480px)
 
 
@@ -1458,7 +1480,6 @@ footer
         font-size .75rem
       span
         font-size 1rem !important
-///////////////////////////////////////////////////////////////////
 +above(480px)
 
 
@@ -1922,7 +1943,6 @@ footer
 
 
 
-///////////////////////////////////////////////////////////////////
 +below(600px)
   // section.center, section.center-parallax
   //     center(600px, 80px)
@@ -2568,8 +2588,12 @@ footer
       display: none
   .subMenu
       display: block
+
       #anchor-menu
         display block !important
+  // .subMenu
+  //   .center
+  //     max-width: 1200px !important
 
   .footer-home
     display block
@@ -2677,17 +2701,3 @@ footer
 
 #heritage-img-mob
   display none
-
-
-
-
-
-
-
-/*************/
-
-.language
-  position absolute
-  right 10px
-  top 10px
-  z-index 1000

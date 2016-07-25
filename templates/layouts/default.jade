@@ -91,7 +91,9 @@ html
 	//- HTML BODY
 	body
 		.language
-			img(src="images/gb.png", alt="")
+			a(href='#{__("lang-link")}')
+				img(src='images/#{__("lang")}.png', alt="")
+			
 		block tagmanager
 			// Google Tag Manager
 			noscript
