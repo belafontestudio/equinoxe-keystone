@@ -11,7 +11,7 @@ var browserify = require('gulp-browserify')
 var filter = require('gulp-filter')
 var watch = require('gulp-watch')
 var rename = require('gulp-rename')
-var jeet = require('./node_modules/jeet');
+var jeet = require('jeet');
 var nib = require('nib');
 var rupture = require('rupture');
 
