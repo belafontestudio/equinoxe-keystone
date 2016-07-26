@@ -134,7 +134,18 @@ exports = module.exports = function(app) {
     app.get('/temp', middleware.requireUser);
 
     // Views
-    app.get('/', routes.views.index);
+    app.get('/', function(req,res){
+      if(req.cookies.equionoxeyachts_language){
+        if(req.cookies.equionoxeyachts_language == "it"){
+          req.setLocale("it");
+        }else{
+          req.setLocale("en");
+        }
+      }else{
+        req.setLocale("en");
+      }
+      routes.views.index(req,res)
+    });
 
     app.get('/yacht-brokerage', function(req,res){
       if(req.cookies.equionoxeyachts_language){
