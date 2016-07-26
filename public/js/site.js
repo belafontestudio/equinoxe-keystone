@@ -332,12 +332,14 @@ function typeFilter(){
     collectFilter();
 
     if(location.hostname ==  "equinoxe.it"){
-      filters.t = "Motore";
+
+      $("a#f5 span").text("Motore");
     }else if(location.hostname ==  "equinoxeyachts.com"){
-      filters.t = "Power";
+
+      $("a#f5 span").text("Power");
     }
 
-    $("a#f5 span").text(filters.t);
+    filters.t = "Power";
 
   });
   $(document).on('click', 'a#sail', function(e) {
@@ -348,11 +350,13 @@ function typeFilter(){
 
     collectFilter();
     if(location.hostname ==  "equinoxe.it"){
-      filters.t = "Vela";
+
+      $("a#f5 span").text("Vela");
     }else if(location.hostname ==  "equinoxeyachts.com"){
-      filters.t = "Sails";
+
+      $("a#f5 span").text("Sails");
     }
-    $("a#f5 span").text(filters.t);
+    filters.t = "Sails";
 
   });
   $(document).on('click', 'a#gulet', function(e) {
@@ -363,11 +367,12 @@ function typeFilter(){
 
     collectFilter();
     if(location.hostname ==  "equinoxe.it"){
-      filters.t = "Caicchi";
+      $("a#f5 span").text("Caicchi");
     }else if(location.hostname ==  "equinoxeyachts.com"){
-      filters.t = "Gulet";
+
+      $("a#f5 span").text("Gulet");
     }
-    $("a#f5 span").text(filters.t);
+    filters.t = "Gulet";
 
   });
 }
