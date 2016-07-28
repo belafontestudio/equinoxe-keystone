@@ -40,5 +40,45 @@
     "slimScroll": "~1.3.3",
     "skippr": "~1.1.0",
     "scrollup": "^2.4.1"
+  },
+  "overrides": {
+  "jqueryui": {
+    "main": [
+      "./themes/sunny/jquery-ui.css",
+      "./jquery-ui.js"
+    ]
+  },
+  "owlcarousel": {
+    "main": [
+      "./owl-carousel/owl.carousel.css",
+      "./owl-carousel/owl.theme.css",
+      "./owl-carousel/owl.transitions.css",
+      "./owl-carousel/owl.carousel.js"
+    ]
+  },
+  "jquery-modal": {
+    "main": [
+      "./jquery.modal.js",
+      "./jquery.modal.css"
+    ]
+  },
+  "Parallax-ImageScroll": {
+    "main": [
+      "./jquery.imageScroll.js"
+    ]
+  },
+  "font-awesome": {
+    "main": [
+      "fonts",
+      "css"
+    ]
+  },
+  "swag": {
+    "dependencies": {}
   }
+},
+"resolutions": {
+  "jquery": "~2.1.3"
+}
+
 }
