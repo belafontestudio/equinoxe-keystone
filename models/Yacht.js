@@ -206,6 +206,8 @@ Yacht.add({
 		pos10: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap10 : { type: Types.Text},
 
+		return '<div class="cropper"><img src="'+file.href+'" style="max-width: 300px"></div>'
+	}},
 
 	},
 	content: {
