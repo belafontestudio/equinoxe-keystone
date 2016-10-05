@@ -6,7 +6,7 @@ block modals
 block menu 
   include ../partials/_menu.jade
 block body
-  #onepage
+  #onepage(class="#{locals.data.lang}")
     .section.spacer
       include ../partials/_yachts_grid.jade
       

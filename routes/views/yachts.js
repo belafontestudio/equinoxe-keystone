@@ -22,7 +22,8 @@ exports = module.exports = function(req, res) {
 		type: req.query.t,
 	};
 	locals.data = {
-		yachts: []
+		yachts: [],
+		lang:[]
 	};
 
 	// Load the posts
@@ -84,7 +85,7 @@ exports = module.exports = function(req, res) {
 			}else{
 
 				locals.data.yachts = results;
-
+				locals.data.lang= req.cookies.equinoxeyachts_language;
 				next(err);
 			}
 		});

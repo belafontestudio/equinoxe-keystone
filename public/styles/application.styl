@@ -240,7 +240,7 @@ img.info
     z-index 4
     position relative
 #enquire-modal, #contact-us-modal
-    z-index 4 !important
+    z-index 2000 !important
 
 .cta
     text-align: center
@@ -711,7 +711,7 @@ section.center
                 padding-right -20px
                 min-height 115px
                 li
-                    padding-left 192px
+                    padding-left 175px
                     margin-bottom 0
                     background-color transparent
                     span
@@ -1135,7 +1135,7 @@ section.center-parallax
               padding-right -20px
               min-height 115px
               li
-                  padding-left 192px
+                  padding-left 125px
                   margin-bottom 0
                   background-color transparent
                   span
@@ -1714,7 +1714,7 @@ footer
                   padding-right -20px
                   min-height 115px
                   li
-                      padding-left 192px
+                      padding-left 125px
                       margin-bottom 0
                       background-color transparent
                       span
@@ -2280,15 +2280,15 @@ footer
                     left 0
         ul#yachts-list-grid, ul#filter-menu
             margin-top 60px
-            column(9/12)
-            shift(2/12)
+            column(10/12)
+            shift(1/12)
             li.card
-                column(4/9,cycle:2)
+                column(5/10,cycle:2)
                 float left !important
                 ul.yacht-specs
-                    column(4/4)
+                    column(6/6)
                     li
-                        column(4/4)
+                        column(6/6)
         ul#yacht-size.full-team
             column(9/12)
             shift(2/12)
@@ -2398,11 +2398,11 @@ footer
             column(9/12)
             shift(2/12)
             li.card
-                column(3/9,uncycle:2,cycle:3)
+                column(6/12,cycle:2)
                 ul.yacht-specs
-                    column(3/3)
+                    column(6/6)
                     li
-                        column(3/3)
+                        column(6/6)
         ul#filter-menu
             height 130px
             margin-top 0
@@ -2599,7 +2599,14 @@ footer
   // .subMenu
   //   .center
   //     max-width: 1200px !important
-
+  section.center, section.center-parallax
+    ul#yachts-list-grid, ul#filter-menu
+      li.card
+          column(3/9,uncycle:2,cycle:3)
+          ul.yacht-specs
+              column(3/3)
+              li
+                  column(3/3)
   .footer-home
     display block
     position fixed

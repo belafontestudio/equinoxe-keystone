@@ -1,14 +1,14 @@
 include ../mixins/flash-messages
 
 doctype html
-html
+html(lang='#{__("language")}')
 
 	//- HTML HEADER
 	head
 		meta(charset="utf-8")
 		meta(content="IE=edge,chrome=1", http-equiv="X-UA-Compatible")
 		
-		meta(content="The best yachts for sale and charter from 10 to 150 meters. All kinds of sailing yachts, power yachts with planing or displacement hulls, catamarans, gulets, classics, opens, flying bridges, expedition vessels, explorers, trawlers, low motions or tugboats. Our experiences for your unique sea holiday in Italy, in the Mediterranean or all over the world. Equinoxe Yachts, flawless since 1986.", name="description")
+		meta(content='#{__("description")}', name="description")
 		meta(content="width=device-width, initial-scale=1, maximum-scale=1", name="viewport")
 		meta(name="apple-mobile-web-app-capable", content = "yes")
 		meta(name="apple-mobile-web-app-status-bar-style", content ="black")

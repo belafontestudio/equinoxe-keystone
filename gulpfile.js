@@ -7,7 +7,7 @@ var stylus = require('gulp-stylus')
 var livereload = require('gulp-livereload')
 var include = require('gulp-include')
 var concat = require('gulp-concat')
-var browserify = require('gulp-browserify')
+var browserify = require('browserify');
 var filter = require('gulp-filter')
 var watch = require('gulp-watch')
 var rename = require('gulp-rename')
@@ -16,9 +16,9 @@ var nib = require('nib');
 var rupture = require('rupture');
 
 var src = {
-  styl: ['public/**/*.styl'],
+  styl: ['public/styles/application.styl'],
   css: ['public/**/*.css'],
-  js: ['public/**/*.js'],
+  js: ['public/js/*.js'],
   bower: ['bower.json', '.bowerrc']
 }
 src.styles = src.styl.concat(src.css)
@@ -64,7 +64,7 @@ gulp.task('bower', function() {
 })
 
 function buildCSS() {
-  return gulp.src(src.styles)
+  return gulp.src(src.styl)
     .pipe(stylus({use: [jeet(),nib(), rupture()]}))
     .pipe(concat('app.css'))
     .pipe(gulp.dest(dist.css))
@@ -73,10 +73,7 @@ function buildCSS() {
 function buildJS() {
   return gulp.src(src.js)
     .pipe(include())
-    .pipe(browserify({
-      insertGlobals: true,
-      debug: true
-    }))
+
     .pipe(concat('app.js'))
     .pipe(gulp.dest(dist.js))
 }

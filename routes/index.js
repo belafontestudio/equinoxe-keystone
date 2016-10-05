@@ -65,7 +65,7 @@ exports = module.exports = function(app) {
 
     app.get('/ita', function(req,res){
       res.setLocale("it");
-      res.cookie('equionoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
+      res.cookie('equinoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
       var host = req.get('host');
 
       if(host == "localhost:3000"){
@@ -77,7 +77,7 @@ exports = module.exports = function(app) {
     });
     app.get('/eng', function(req,res){
       res.setLocale("en");
-      res.cookie('equionoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
+      res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
       var host = req.get('host');
 
       if(host == "localhost:3000"){
@@ -88,26 +88,30 @@ exports = module.exports = function(app) {
     });
 
     app.get('/yachts/:availability', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "it"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "it"){
           res.setLocale("it");
         }else{
+          res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
           res.setLocale("en");
         }
 
       }else{
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
         res.setLocale("en");
       }
       routes.views.yachts(req,res)
     });
     app.get('/yacht/:yacht', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "it"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "it"){
           res.setLocale("it");
         }else{
+          res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
           res.setLocale("en");
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
         res.setLocale("en");
       }
       routes.views.yacht(req,res)
@@ -135,174 +139,207 @@ exports = module.exports = function(app) {
 
     // Views
     app.get('/', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "it"){
-          res.setLocale("it");
-        }else{
-          res.setLocale("en");
-        }
-      }else{
+      var host = req.get('host');
+
+      if(host == "equinoxe.it"){
+        res.setLocale("it");
+        res.cookie('equinoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
+      }else if(host == "equinoxeyachts.com"){
         res.setLocale("en");
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
+      }else if(host == "equinoxeyachts.it"){
+        res.setLocale("it");
+        res.cookie('equinoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
+      }else {
+        res.setLocale("en");
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
       }
       routes.views.index(req,res)
     });
 
     app.get('/yacht-brokerage', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "it"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "it"){
           res.redirect('/vendita-yacht');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
         res.setLocale("en");
+        routes.views.yachtBrokerage(req,res)
       }
-      routes.views.yachtBrokerage(req,res)
+
     });
     app.get('/vendita-yacht', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "en"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "en"){
           res.redirect('/yacht-brokerage');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
         res.setLocale("it");
+        routes.views.yachtBrokerage(req,res)
       }
-      routes.views.yachtBrokerage(req,res)
+
     });
     app.get('/yacht_brokerage', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "it"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "it"){
           res.redirect('/noleggio-yacht-senza-equipaggio');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
         res.setLocale("en");
+        routes.views.yachtBrokerage(req,res)
       }
-      res.redirect('/yacht-brokerage');
+
     });
 
     app.get('/yacht-charter', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "it"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "it"){
           res.redirect('/noleggio-yacht-con-equipaggio');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
         res.setLocale("en");
+        routes.views.yachtCharter(req,res)
       }
-
-      routes.views.yachtCharter(req,res)
     });
     app.get('/noleggio-yacht-con-equipaggio', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "en"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "en"){
           res.redirect('/yacht_charter');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
         res.setLocale("it");
+        routes.views.yachtCharter(req,res)
       }
-      routes.views.yachtCharter(req,res)
+
     });
     app.get('/yacht_charter', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "it"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "it"){
           res.redirect('/noleggio-yacht-con-equipaggio');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
         res.setLocale("en");
+        res.redirect('/yacht-charter');
       }
-      res.redirect('/yacht-charter');
+
     });
 
     app.get('/expeditions-planning', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "it"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "it"){
           res.redirect('/programma-spedizioni');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
         res.setLocale("en");
+        routes.views.expeditionsPlanning(req,res)
       }
-      routes.views.expeditionsPlanning(req,res)
+
     });
     app.get('/programma-spedizioni', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "en"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "en"){
           res.redirect('/expeditions-planning');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
         res.setLocale("it");
+        routes.views.expeditionsPlanning(req,res)
       }
-      routes.views.expeditionsPlanning(req,res)
+
     });
     app.get('/expeditions_planning', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "it"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "it"){
           res.redirect('/programma-spedizioni');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
         res.setLocale("en");
+        res.redirect('/expeditions-planning');
       }
-      res.redirect('/expeditions-planning');
+
     });
 
     app.get('/bareboat', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "it"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "it"){
           res.redirect('/noleggio-yacht-senza-equipaggio');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
         res.setLocale("en");
+        routes.views.bareboat(req,res)
       }
-      routes.views.bareboat(req,res)
+
     });
     app.get('/noleggio-yacht-senza-equipaggio', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "en"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "en"){
           res.redirect('/bareboat');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
         res.setLocale("it");
+        routes.views.bareboat(req,res)
       }
-      routes.views.bareboat(req,res)
+
     });
 
 
     app.get('/services', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "it"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "it"){
           res.redirect('/servizi');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
         res.setLocale("en");
+        routes.views.services(req,res)
       }
-      routes.views.services(req,res)
     });
     app.get('/servizi', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "en"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "en"){
           res.redirect('/services');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
         res.setLocale("it");
+        routes.views.services(req,res)
       }
-      routes.views.services(req,res)
+
     });
 
     app.get('/heritage', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "it"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "it"){
           res.redirect('/chi-siamo');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
         res.setLocale("en");
+        routes.views.heritage(req,res)
       }
-      routes.views.heritage(req,res)
+
     });
     app.get('/chi-siamo', function(req,res){
-      if(req.cookies.equionoxeyachts_language){
-        if(req.cookies.equionoxeyachts_language == "en"){
+      if(req.cookies.equinoxeyachts_language){
+        if(req.cookies.equinoxeyachts_language == "en"){
           res.redirect('/heritage');
         }
       }else{
+        res.cookie('equinoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
         res.setLocale("it");
+        routes.views.heritage(req,res)
       }
-      routes.views.heritage(req,res)
+
     });
 
     //API
@@ -311,7 +348,8 @@ exports = module.exports = function(app) {
     app.get('/media/backup', middleware.requireUser, routes.views.mediadownload);
     app.get('/media/generate/pdfLite', middleware.requireUser, routes.views.generatePDF);
 
-
+    app.post('/api/mail/send', keystone.initAPI, routes.api.mail.send);
+    app.post('/api/mail/yacht', keystone.initAPI, routes.api.mail.yacht);
     app.get('/api/pdf/full/:yacht', keystone.initAPI, routes.api.pdfFull);
     app.get('/api/pdf/lite/:yacht', keystone.initAPI, routes.api.pdfLite);
     app.get('/api/yachts/filter', keystone.initAPI, routes.api.yachts.filter);

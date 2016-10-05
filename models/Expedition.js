@@ -1,8 +1,8 @@
 var keystone = require('keystone'),
 	pdf = require('html-pdf'),
 	request = require('request'),
-	Types = keystone.Field.Types;
-
+	Types = keystone.Field.Types,
+	_ = require("underscore");
 /**
  * Post Model
  * ==========
@@ -17,6 +17,8 @@ Expedition.add({
 
 	name: { type: Types.Text, required: true },
 
+
+
 	cover: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/expeditions/covers', prefix: '/uploads/images/expeditions/covers', allowedTypes: ['image/jpeg','image/gif','image/png'],
 	pre: {width:1920,height:1080},format: function(item, file){
 
@@ -25,12 +27,11 @@ Expedition.add({
 
 	thumbnail: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/expeditions/thumbnails', prefix: '/uploads/images/expeditions/thumbnails/', allowedTypes: ['image/jpeg','image/gif','image/png'],
 	pre: {width:480,height:270},format: function(item, file){
-
-		return '<img src="'+file.href+'" style="max-width: 250px">'}},
-
+		return '<img src="'+file.href+'" style="max-width: 250px">'}
+	},
 
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
-	zone: { type: Types.Select, options: 'Arctic, Antarctic, Galapagos, Patagonia, Maldives,New Zeland, Australia', default: 'Artic', index: true },
+	zone: { type: Types.Select, options: 'Arctic, Antarctic, Galapagos, Patagonia, Maldives,New Zeland, Australia', default: 'Arctic', index: true },
 	price: { type: Types.Number, index: true },
 	rates: { type: Types.Html, wysiwyg: true, height: 400 },
 	currency: { type: Types.Select, options: '€,$', default: '€', index: true },
@@ -170,8 +171,7 @@ Expedition.add({
 		cap10 : { type: Types.Text},
 
 
-	},
-
+	}
 
 	})
 

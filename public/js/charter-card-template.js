@@ -21,9 +21,14 @@
             {{/if}}
         </h3>
         <ul class="yacht-specs">
-
-          <li><span>{{../translation.Price_from}}</span>{{{numeral [price per week from] currency}}}
-          </li>
+          {{#if [price per week from]}}
+            <li><span>{{../../translation.Price_from}}</span>{{{numeral [price per week from] currency}}}
+            </li>
+          {{/if}}
+          {{#if price}}
+            <li><span>{{../../translation.Price_y}}</span>{{{numeral price currency}}}
+            </li>
+          {{/if}}
           <li><span>{{../translation.length}}</span>
             {{#if lenght}}
               {{lenght}} m
@@ -40,7 +45,7 @@
                   {{build}}" / refit "{{refit}}
             {{else}}
                   {{#if refit }}
-                  <span>refit:</span>
+                  <span>{{../../../translation.refit}}</span>
                    {{refit}}
                   {{/if}}
                   {{#if build }}
