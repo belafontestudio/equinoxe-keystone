@@ -1,0 +1,62 @@
+div(id="expedition_modal", style="display:none;")
+    .logo
+      img(src='../images/sprite/logo.svg', alt='Equinoxe-Logo')
+    .clear
+    form#yacht_modal.form-horizontal
+      fieldset
+        // Text input
+        .control-group.name
+          label.control-label(for='textinput')!= __('Name')
+          .controls
+            input#textinput.modal_name.input-xlarge(name='textinput', type='text', placeholder='', required='')
+            
+        // Text input
+        .control-group.surname
+          label.control-label(for='textinput')!= __('Surname')
+          .controls
+            input#textinput.modal_surname.input-xlarge(name='textinput', type='text', placeholder='', required='')
+          
+        // Text input
+        .control-group.phonenum
+          label.control-label(for='textinput')!= __('Phonenum')
+          .controls
+            input#textinput.modal_phone.input-xlarge(name='textinput', type='text', placeholder='', required='')
+            
+        // Text input
+        .control-group.mail
+          label.control-label(for='textinput') Email
+          .controls
+            input#textinput.modal_email.input-xlarge(name='textinput', type='text', placeholder='', required='')
+           
+        // Textarea
+        .control-group.text-area
+          label.control-label(for='textarea')!= __('Message')
+          .controls
+            textarea#textarea.modal_msg(placeholder='#{__("yrmsg")}',name='textarea').
+        <!-- Button -->
+        #mandrill-response
+          #response-true
+            p!= __('msg_success')
+          #response-false
+            p!= __('msg_fail')
+        .control-group.submit
+          .controls
+            input(type="submit" value="#{__('Submit')}")
+
+
+    .form-contacts
+      h4!= __('direct_info') 
+      ul
+        li.bold Equinoxe s.r.l.
+        li 
+          span.bold!= __('phone')
+          a(href="tel:00390118185211") +39 011 8185211
+        li 
+          span.bold Fax 
+          | +39 011 8185221
+        li 
+          span.bold!= __('address') 
+          | Via dei Mille, 18 - 10123 Torino, Italy
+        li
+          span.bold Mail
+          a(href="mailto:yachts@equinoxe.it")  yachts@equinoxe.it

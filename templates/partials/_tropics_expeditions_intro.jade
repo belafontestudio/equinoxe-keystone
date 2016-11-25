@@ -1,0 +1,16 @@
+extends ../layouts/_section_intro.jade
+block title 
+  != __('Tropics')
+block description
+  != __('Tropics_desc')
+
+
+
+block explain-call
+block call-to-action
+  ul#call-to-action-menu-button
+    li
+      block first-call-to-action
+        a.exps.button.btn-min-w(href="#tropics-expeditions")
+          block first-button
+            != __('Tropics_all')

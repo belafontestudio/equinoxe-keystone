@@ -31,7 +31,7 @@ keystone.init({
 	'wysiwyg override toolbar': true,
 	'wysiwyg menubar': false,
 	'wysiwyg skin': 'lightgray',
-	'wysiwyg additional buttons': 'styleselect,pastetext,paste',
+	'wysiwyg additional buttons': 'styleselect,pastetext,paste,link',
 	'wysiwyg additional plugins': 'paste',
 	'wysiwyg additional options': {"paste_retain_style_properties": "color font-size",  style_formats: [
 
@@ -65,7 +65,7 @@ keystone.set('locals', {
 i18n.configure({
 	locales:['en', 'it'],
 	objectNotation: true,
-	cookie: 'equionoxeyachts_language',
+	cookie: 'equinoxeyachts_language',
 	directory: __dirname + '/locales'
 });
 
@@ -80,7 +80,8 @@ keystone.set('routes', require('./routes'));
 
 keystone.set('nav', {
 	'users': 'users',
-	'yachts': 'yachts'
+	'yachts': 'yachts',
+	'expeditions': 'expeditions'
 });
 
 // Start Keystone to connect to your database and initialise the web server

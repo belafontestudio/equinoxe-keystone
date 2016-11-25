@@ -3,6 +3,7 @@ var _ = require('underscore'),
 	keystone = require('keystone');
 
 exports.menu = function(req, res, next) {
+	console.log("getlang "+req.getLocale());
 	locals = res.locals;
 	locals.navLinks = [
 		{ label: req.__("menu1"),		key: req.__("menu1"),   id: "m0",		href: req.__("url1") },
@@ -28,12 +29,14 @@ exports.language = function(req, res, next) {
 		case "equinoxeyachts.it":
 		case "www.equinoxe.it":
 		case "www.equinoxeyachts.it":
-			res.cookie('equionoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
+			res.cookie('equinoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
+			req.setLocale("it");
 			console.log("it");
 		break;
 		case "equinoxeyachts.com":
 		case "www.equinoxeyachts.com":
-			res.cookie('equionoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
+			res.cookie('equinoxeyachts_language', 'en', { maxAge: 900000, httpOnly: true });
+			req.setLocale("en");
 			console.log("en");
 		break;
 	}

@@ -9,10 +9,14 @@
 @import '_map'
 @import '_filters'
 
+div#other-description.wider
+  width 100% !important
+div#container-other-specs
+  #expeditions-margin.main-text
+    margin-top: -220px !important
 
-
-
-
+img.map
+  width 100%
 
 .language
   position absolute
@@ -72,8 +76,6 @@
   margin-top 10px
 
 
-#gallery1
-  position relative
 
 .arrow
   width 19px
@@ -83,10 +85,10 @@
   z-index 2000
   top 45%
   cursor pointer
-#next-arrow
+#next-arrow,#next-arrow2,#next-arrow3
   background url('/images/next-arrow.png')
   right 10px
-#back-arrow
+#back-arrow,#back-arrow2,#back-arrow3
   background url('/images/back-arrow.png')
   left 10px
 
@@ -95,7 +97,7 @@
   display none
 
 
-#gallery1, #gallery2
+#gallery1, #gallery2,#gallery3
     width: 100%;
     //height: 750px;
     position: relative;
@@ -195,7 +197,7 @@ div.filtro
     right 0
     bottom 0
     z-index 1
-    opacity 0.4
+    opacity 0.3
     min-height 600px
 
 
@@ -531,6 +533,8 @@ section.center
         font-size rem(30px) !important
         line-height rem(31px) !important
         margin-bottom 20px !important
+    h2.main-title.smaller
+        font-size rem(24px) !important
     p
 
         font-size rem(16px)
@@ -552,7 +556,7 @@ section.center
         column(12/12)
         text-transform uppercase
         font-style italic
-        margin-bottom 30px
+        margin-bottom 5px
 
     ul#call-to-action-menu-button
         column(12/12)
@@ -570,6 +574,40 @@ section.center
                 -webkit-transform: translateZ(1px)
                 &.active
                     color yellow
+    ul#call-to-action-menu-exp
+      column(12/12)
+      list-style-type none
+      padding 0 10px
+      li
+          column(6/12,cycle:2)
+          margin-bottom  10px
+          text-align center !important
+
+          &:hover
+            background rgba(255,255,255,.3)
+            color yellow
+
+          img.arctic
+              width 100%
+          img.antarctic
+              width 100%
+          img.galapagos
+              width 100%
+          img.tropics
+              width 100%
+              position relative
+              left 5%
+      a.link
+          text-transform uppercase
+          text-decoration none
+          font-size rem(12px)
+          line-height rem(14px)
+          display block
+          &.link:hover, &:active
+              color yellow
+          &:visited
+              opacity 0.5
+          img
     ul#call-to-action-menu
         column(12/12)
         list-style-type none
@@ -829,9 +867,14 @@ section.center
                 line-height rem(29px)
                 margin 0
                 margin-bottom 18px
-            li
-              font-size 1.2em
+            li,p,ul
+              font-size rem(18px)
               font-weight normal
+            ul
+              list-style-type:  disc
+
+              margin-left: 1em !important
+              margin-right: 1em !important
             li span
                 font-size .80em
                 //text-decoration underline
@@ -983,7 +1026,7 @@ section.center-parallax
       column(12/12)
       text-transform uppercase
       font-style italic
-      margin-bottom 30px
+      margin-bottom 10px
 
   ul#call-to-action-menu-button
       column(12/12)
@@ -1001,6 +1044,7 @@ section.center-parallax
               -webkit-transform: translateZ(1px)
               &.active
                   color yellow
+
   ul#call-to-action-menu
       column(12/12)
       list-style-type none
@@ -1173,7 +1217,7 @@ section.center-parallax
   div.main-text
       column(12/12)
       margin-top 12px
-      margin-bottom 30px
+      margin-bottom 10px
 
   div.main-text.home
       margin-top 40px
@@ -1378,6 +1422,18 @@ footer
   .img
     background-position: center center;
     background-size cover
+#slides2,#slides3
+  .owl-item
+    .img
+      background-position: center center;
+      background-size cover
+      height 300px !important
+div#other-description.wider
+  #slides2,#slides3
+    .owl-item
+      .img
+        height 550px !important
+
 
 
 
@@ -1397,7 +1453,7 @@ footer
   display none
 
 
-.back-to-yachts
+.back-to-yachts,.back-to-expeditions
   position relative
   bottom 25px
 
@@ -1444,8 +1500,32 @@ footer
         display inline-block
     .scroll
         display none
+    ul#call-to-action-menu-exp
+      li
+        border 1px solid yellow
+        padding 6px 12px
+        text-align center
 
+        -webkit-transition: all .3s ease-in;
+        -moz-transition: all .3s ease-in;
+        -ms-transition: all .3s ease-in;
+        -o-transition: all .3s ease-in;
+        transition: all .3s ease-in;
+
+        &:hover
+          background rgba(0,0,0,.5)
+          cursor pointer
+        img
+          height 30px
+          float clear
+          margin-bottom 10px
+        a
+          color yellow
+          text-decoration none
+          // position relative
+          // top 20px
     #yatch-charter-intro
+
       ul#call-to-action-menu
         li
           border 1px solid yellow
@@ -1577,6 +1657,7 @@ footer
                   -webkit-transform: translateZ(1px)
                   &.active
                       color yellow
+
       ul#call-to-action-menu
           column(12/12)
           list-style-type none
@@ -1918,8 +1999,30 @@ footer
           border-top 1px solid navy-blue
 
 
+  ul#call-to-action-menu-exp
+    li
+      border 1px solid yellow
+      padding 8px 14px
+      text-align center
 
+      -webkit-transition: all .3s ease-in;
+      -moz-transition: all .3s ease-in;
+      -ms-transition: all .3s ease-in;
+      -o-transition: all .3s ease-in;
+      transition: all .3s ease-in;
 
+      &:hover
+        background rgba(0,0,0,.5)
+        cursor pointer
+      img
+        height 55px
+        float clear
+        margin-bottom 10px
+      a
+        color yellow
+        text-decoration none
+        // position relative
+        // top 20px
   #yatch-charter-intro
     ul#call-to-action-menu
       li
@@ -1953,6 +2056,7 @@ footer
   //     center(600px, 80px)
   section.center-parallax
     margin-top 50px
+
   #yatch-charter-intro
     ul#call-to-action-menu
       li
@@ -2064,7 +2168,7 @@ footer
 
         .latest-space-yachts
           li
-            column(4/12)
+            column(4/12,cycle:3)
 
         ul#yachts-list-grid, ul#filter-menu
             column(12/12)
@@ -2209,6 +2313,14 @@ footer
             li
                 column(3/6)
                 margin-bottom 0
+        ul#call-to-action-menu-exp
+            column(8/12)
+            shift(2/12)
+            li
+                column(2/8,uncycle:2)
+            a.link
+                font-size rem(16px)
+                line-height rem(20px)
         ul#call-to-action-menu
             column(6/12)
             shift(2/12)
@@ -2469,6 +2581,10 @@ footer
         h1.smaller2
             font-size rem(22px)
             line-height rem(22px)
+        ul#call-to-action-menu-exp
+            a
+                font-size rem(20px)
+                line-height rem(28px)
         ul#call-to-action-menu
             a
                 font-size rem(20px)
@@ -2658,6 +2774,10 @@ footer
             p
                 font-size rem(24px) !important
                 line-height rem(34px) !important
+        ul#call-to-action-menu-exp
+            a
+                font-size rem(26px)
+                line-height rem(33px)
         ul#call-to-action-menu
             a
                 font-size rem(26px)

@@ -806,6 +806,19 @@ $(document).ready(function() {
             scrollTop: $( $(this).attr('href') ).offset().top - top_ofset
           }, 1000);
         });
+        $(document).on('click', 'a.exp-sec', function(e) {
+            e.preventDefault();
+            $('html, body').animate({
+            scrollTop: $( $(this).attr('href') ).offset().top - top_ofset
+          }, 1000);
+        });
+        $(document).on('click', 'a.exps', function(e) {
+            e.preventDefault();
+            $('html, body').animate({
+            scrollTop: $( $(this).attr('href') ).offset().top - top_ofset
+          }, 1000);
+        });
+
 
         // $("#gallery1 #slides1").skippr();
         // $("#gallery2 #slides2").skippr();
@@ -817,7 +830,7 @@ $(document).ready(function() {
 
     imgLoad.on( 'done', function( instance ) {
         $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0, touch: touch,holderMinHeight: 600});
-        $('.img-holder-scroll').imageScroll({coverRatio: 0.7,extraHeight: 0, touch: touch, holderMinHeight: 600});
+        $('.img-holder-scroll').imageScroll({coverRatio: 0.9,extraHeight: 0, touch: touch, holderMinHeight: 600});
 
     });
 
@@ -853,8 +866,25 @@ $(document).ready(function() {
     sliderKey();
 
     owl = $("#slides1");
+    owl2 = $("#slides2");
+    owl3 = $("#slides3");
+
 
     owl.owlCarousel({
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+      lazyLoad : true,
+      rewindNav : true
+    });
+    owl2.owlCarousel({
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+      lazyLoad : true,
+      rewindNav : true
+    });
+    owl3.owlCarousel({
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true,
@@ -867,6 +897,19 @@ $(document).ready(function() {
     });
     $("#back-arrow").click(function(){
       owl.trigger('owl.prev');
+    });
+
+    $("#next-arrow2").click(function(){
+      owl2.trigger('owl.next');
+    });
+    $("#back-arrow2").click(function(){
+      owl2.trigger('owl.prev');
+    });
+    $("#next-arrow3").click(function(){
+      owl3.trigger('owl.next');
+    });
+    $("#back-arrow3").click(function(){
+      owl3.trigger('owl.prev');
     });
 
     $('#simple-menu').sidr(
@@ -1421,7 +1464,37 @@ function submitModals(){
         });
         return false; // prevent page refresh
     });
+  $("#expedition_modal").submit(function()
+    {
+        var email = $(".modal_email").val(); // get email field value
+        var name = $(".modal_name").val(); // get name field value
+        var surname = $(".modal_surname").val(); // get name field value
+        var tomail = "";
+        var number = $(".modal_phone").val();
+        var theexpedition = $('h1').text(); // get name field value
 
+
+        tomail = "yachts@equinoxe.it";
+        var msg = $(".modal_msg").val(); // get message field value
+        var mail_text = "expedition request: "+theexpedition +"   "+name+"  "+surname+"   "+number+"  "+msg;
+        $.ajax({
+            type: "POST",
+            url: "/api/mail/yacht?t="+tomail+"&e="+email+"&n="+name+"&s="+surname+"&y="+theexpedition+"&m="+mail_text
+        })
+        .done(function(err,res) {
+            // console.log(err,res)
+            $('#response-true').fadeIn(); // show success message
+            $("#name").val(''); // reset field after successful submission
+            $("#email").val(''); // reset field after successful submission
+            $("#msg").val(''); // reset field after successful submission
+            $.modal.close();
+        })
+        .fail(function(err,res) {
+          // console.log(err,res)
+          $('#response-false').fadeIn();
+        });
+        return false; // prevent page refresh
+    });
 $("#yacht_modal").submit(function()
     {
         var email = $(".modal_email").val(); // get email field value
@@ -1444,7 +1517,7 @@ $("#yacht_modal").submit(function()
             url: "/api/mail/yacht?t="+tomail+"&e="+email+"&n="+name+"&s="+surname+"&y="+theyacht+"&m="+mail_text
         })
         .done(function(err,res) {
-            console.log(err,res)
+            // console.log(err,res)
             $('#response-true').fadeIn(); // show success message
             $("#name").val(''); // reset field after successful submission
             $("#email").val(''); // reset field after successful submission
@@ -1452,7 +1525,7 @@ $("#yacht_modal").submit(function()
             $.modal.close();
         })
         .fail(function(err,res) {
-          console.log(err,res)
+          // console.log(err,res)
           $('#response-false').fadeIn();
         });
         return false; // prevent page refresh

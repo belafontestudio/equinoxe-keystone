@@ -1,0 +1,16 @@
+extends ../layouts/_section_intro.jade
+block title 
+  != __('Galapagos')
+block description
+  != __('Galapagos_desc')
+
+
+
+block explain-call
+block call-to-action
+  ul#call-to-action-menu-button
+    li
+      block first-call-to-action
+        a.exps.button.btn-min-w(href="#galapagos-expeditions")
+          block first-button
+            != __('Galapagos_all')

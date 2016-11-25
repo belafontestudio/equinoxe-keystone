@@ -17,6 +17,7 @@ var rupture = require('rupture');
 
 var src = {
   styl: ['public/styles/application.styl'],
+  print: ['public/styles/print.styl'],
   css: ['public/**/*.css'],
   js: ['public/js/*.js'],
   bower: ['bower.json', '.bowerrc']
@@ -70,6 +71,13 @@ function buildCSS() {
     .pipe(gulp.dest(dist.css))
 }
 
+function printCSS() {
+  return gulp.src(src.print)
+    .pipe(stylus({use: [jeet(),nib()]}))
+    .pipe(concat('print.css'))
+    .pipe(gulp.dest(dist.css))
+}
+
 function buildJS() {
   return gulp.src(src.js)
     .pipe(include())
@@ -79,6 +87,7 @@ function buildJS() {
 }
 
 gulp.task('css', buildCSS)
+gulp.task('print', printCSS)
 gulp.task('js', buildJS)
 
 // gulp.task('watch', function() {

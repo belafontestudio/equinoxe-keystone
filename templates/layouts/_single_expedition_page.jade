@@ -1,44 +1,71 @@
+- var lang=getLocale()
 block section
   div.main-photo
     block main-photo
-      
+
       if data.expedition.cover.filename
         div(class="img-holder-scroll", data-image="/uploads/images/expeditions/covers/"+data.expedition.cover.filename, alt=data.expedition.cover.filename)
-      else 
+      else
         div(class="img-holder-scroll", data-image="/images/sprite/placeholder_cover.png", alt="placeholder")
-    
+
     section.center
       div#plain-color-background
         div#container-other-specs
-          .main-text  
-            h1#ombra 
+          #expeditions-margin.main-text
+            h1#ombra
               block title
-                = data.expedition.name
+                if lang == "it"
+                  = data.expedition.nome
+                else
+                  = data.expedition.name
           .clear
           ul#single-yacht-specs
-
-              if data.expedition.zone
+              if data.expedition["rates from"]
                 li
                   span
-                    != __('zone')
-                  block single-yacht-guests
-                    = data.expedition.zone
+                    != __('rates_from')
+                  block single-exp-rates
+                    = numeralFunction(data.expedition["rates from"]).format('0,0[.]00' )+data.expedition.currency
 
-
-          
-
-              if data.expedition.price
+              if data.expedition["from to"]
                 li
-                  if data.expedition.price
-                    span
-                      != __('Sale_price')
-                    = numeralFunction(data.expedition.price).format('0,0[.]00' )+data.expedition.currency
+                  span
+                    != __('from_to')
+                  block single-exp-from
+                    if lang == "it"
+                      = data.expedition["da a"]
+                    else
+                      = data.expedition["from to"]
 
-            if data.expedition["message/offers"]
-              li.offer-message
-                = data.expedition["message/offers"]
 
-            
+
+              if data.expedition.duration
+                li
+                  span
+                    != __('duration')
+
+                  if lang == "it"
+                    = data.expedition.durata
+                  else
+                    = data.expedition.duration
+              if data.expedition.departures
+                li
+                  span
+                    != __('departures')
+
+                  if lang == "it"
+                    = data.expedition.partenze
+                  else
+                    = data.expedition.departures
+
+              if data.expedition["message/offers"]
+                li.offer-message
+                  if lang == "it"
+                    = data.expedition["messaggi/offerte"]
+                  else
+                    = data.expedition["message/offers"]
+
+
 
 
 
@@ -49,12 +76,12 @@ block section
           block call-to-action
             a.button(href="#contact-us-modal", rel="modal:open") Enquire
           .clear
-          
-          a.back-to-yachts(href="/expeditions?z=#{data.expedition.zone}")
+
+          a.back-to-expeditions(href="/expeditions-planning/##{data.expedition.zone.toLowerCase()}-expeditions")
             i.fa.fa-chevron-left
             != __('back2exp')
 
-    
+
     #gallery1
       #back-arrow.arrow
       #next-arrow.arrow
@@ -62,50 +89,197 @@ block section
         each slide in data.expedition.sortedGalleries
           if slide.img.filename
             - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-            .img(style='background-image: url(/uploads/images/yachts/galleries/'+src+')')
-          
-            
+            .img(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')')
+
+
     section.center
       div#plain-color-background-2
         div#container-other-specs-2
+          if data.expedition["from to"] || data.expedition["da a"] || data.expedition.duration || data.expedition.departures || data.expedition.accomodations || data.expedition.comforts
             div#other-specs
               ul.other-specs-list
-                h3
-                  != __('exp_specs')
-                if data.expedition.zone
+                //- h3
+                //-   != __('exp_specs')
+                if data.expedition["rates from"]
                   li
                     span
-                      != __('zone') 
-                    =data.expedition.zone
-                if data.expedition.periods
-                  li
-                    span
-                      != __('zone')
-                    !=data.expedition.periods
-                if data.expedition.rates
-                  li
-                    span
-                      != __('rtes')
-                    !=data.expedition.rates
-                if data.expedition.price
-                  li
-                    if data.expedition.price
-                      span
-                        != __('price_start')
-                      = numeralFunction(data.expedition.price).format('0,0[.]00' )+data.expedition.currency
+                      != __('rates_from')
+                    block single-exp-rates
+                      = numeralFunction(data.expedition["rates from"]).format('0,0[.]00' )+data.expedition.currency
 
+                if data.expedition["from to"] || data.expedition["da a"]
+                  if lang == "it"
+                    if data.expedition["da a"]
+                      li
+                        span
+                          != __('from_to')
+                        block single-exp-from
+                          != data.expedition["da a"]
+                  else
+                    if data.expedition["from to"]
+                      li
+                        span
+                          != __('from_to')
+                        block single-exp-from
+                          != data.expedition["from to"]
+
+                if data.expedition.duration || data.expedition.durata
+                  if lang == "it"
+                    if data.expedition.durata
+                      li
+                        span
+                          != __('duration')
+                        != data.expedition.durata
+                  else
+                    if data.expedition.duration
+                      li
+                        span
+                          != __('duration')
+                        != data.expedition.duration
+                if data.expedition.departures || data.expedition.partenze
+                  if lang == "it"
+                    if data.expedition.partenze
+                      li
+                        span
+                          != __('departures')
+                        != data.expedition.partenze
+                  else
+                    if data.expedition.departures
+                      li
+                        span
+                          != __('departures')
+                        != data.expedition.departures
+
+              ul.other-specs-list
+                //- h3
+                //-   != __('yacht_spec')
+                if data.expedition["yacht"]
+                  li
+                    span
+                      != __('ship')
+                    != data.expedition["yacht"]
+
+                if data.expedition["boat type"] || data.expedition["tipo barca"]
+                  if lang == "it"
+                    if data.expedition["tipo barca"]
+                      li
+                        span
+                          != __('boat_type')
+                        != data.expedition["tipo barca"]
+                  else
+                    if data.expedition["boat type"]
+                      li
+                        span
+                          != __('boat_type')
+                        != data.expedition["boat type"]
+                if data.expedition.accomodations || data.expedition.sistemazioni
+                  if lang == "it"
+                    if data.expedition.sistemazioni
+                      li
+                        span
+                          != __('accomodations')
+                        != data.expedition.sistemazioni
+                  else
+                    if data.expedition.accomodations
+                      li
+                        span
+                          != __('accomodations')
+                        != data.expedition.accomodations
+                if data.expedition.crew || data.expedition.equipaggio
+                  if lang == "it"
+                    if data.expedition.equipaggio
+                      li
+                        span
+                          != __('crew')
+                        != data.expedition.equipaggio
+                  else
+                    if data.expedition.crew
+                      li
+                        span
+                          != __('crew')
+                        != data.expedition.crew
+                if data.expedition.dingies
+                  li
+                    span
+                      != __('dingies')
+                    != data.expedition.dingies
+
+                if data.expedition.comforts || data.expedition.vantaggi
+                  if lang == "it"
+                    if data.expedition.vantaggi
+                      li
+                        span
+                          != __('comforts')
+                        != data.expedition.vantaggi
+                  else
+                    if data.expedition.comforts
+                      li
+                        span
+                          != __('comforts')
+                        != data.expedition.comforts
+                        
                 li.hidden.availability
-                  =data.expedition.zone 
-
-            div#other-description
-              if data.expedition.description
+                  =data.expedition.zone
+          if data.expedition.itinerary
+            if data.expedition["from to"] || data.expedition["da a"] || data.expedition.duration || data.expedition.departures || data.expedition.accomodations || data.expedition.comforts
+              -var size = "small";
+            else
+              -var size = "wider";
+            div#other-description(class="#{size}")
+              if data.expedition.itinerary || data.expedition.itinerari
                 div.description-info
-                  !=data.expedition.description
-              if data.expedition.program
-                div.description-info
-                  !=data.expedition.program
-              
+                  if lang == "it"
+                    !=data.expedition.itinerari
+                  else
+                    !=data.expedition.itinerary
+                  if data.expedition["duration descriptive"] || data.expedition["durata descrittiva"]
 
+                    if lang == "it"
+                      !=data.expedition["durata descrittiva"]
+                    else
+                      !=data.expedition["duration descriptive"]
+                  if data.expedition.map.img1.filename || data.expedition.map.img2.filename
+                    img.map(src="/uploads/images/expeditions/galleries/"+data.expedition.map.img1.filename, alt=data.expedition.map.img1.filename)
+                div.description-info
+                  if data.expedition.yacht
+                    h2
+                      !=data.expedition.yacht
+                  if data.expedition["yacht descriptive"] || data.expedition["yacht descrittiva"]
+                    if lang == "it"
+                      !=data.expedition["yacht descrittiva"]
+                    else
+                      !=data.expedition["yacht descriptive"]
+                  if data.expedition.gallery2.img1.filename
+                    #gallery2
+                      #back-arrow2.arrow
+                      #next-arrow2.arrow
+                      #slides2.owl-carousel.owl-theme
+                        each slide in data.expedition.sortedGalleries2
+                          if slide.img.filename
+                            - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                            .img(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')')
+                if data.expedition["other yachts title"] || data.expedition["other yachts"] || data.expedition["altri yachts"] || data.expedition["altri yachts titolo"]
+                  div.description-info
+                    h2
+                      if lang == "it"
+                        !=data.expedition["altri yachts titolo"]
+                      else
+                        !=data.expedition["other yachts title"]
+                    if lang == "it"
+                      !=data.expedition["altri yachts"]
+                    else
+                      !=data.expedition["other yachts"]
+                    if data.expedition.gallery3.img1.filename || data.expedition.gallery3.img2.filename
+                      #gallery3
+                        #back-arrow3.arrow
+                        #next-arrow3.arrow
+                        #slides3.owl-carousel.owl-theme
+                          each slide in data.expedition.sortedGalleries3
+                            if slide.img.filename
+                              - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                              .img(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')')
+                if data.expedition["url yacht"]
+                  a.button(target="_blank",href="#{data.expedition['url yacht']}")!= __('Yacht page')
                 a.button(href="#contact-us-modal", rel="modal:open")!= __('ENQUIRE')
-    
+
 div.gradient-top

@@ -5,6 +5,9 @@ h4 {
 b {
   font-weight: bold;
 }
+.spacer {
+  min-height: 200px;
+}
 body,
 section.center {
   -webkit-print-color-adjust: exact;
@@ -85,11 +88,11 @@ img#logo {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 82.8333333333333%;
+  width: 82.83333333333334%;
   margin-left: 0%;
   margin-right: 3%;
   position: relative;
-  left: 8.5833333333333%;
+  left: 8.583333333333332%;
   height: 145px;
   border-bottom: 1px solid #f4bb3b;
 }
@@ -109,11 +112,11 @@ img#logo {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 57.0833333333333%;
+  width: 57.083333333333336%;
   margin-left: 0%;
   margin-right: 3%;
   margin-right: 2%;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   height: 130px;
   border-right: 1px solid #f4bb3b;
@@ -144,7 +147,7 @@ img#logo {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 39.9166666666667%;
+  width: 39.91666666666667%;
   margin-left: 0%;
   margin-right: 3%;
   position: relative;
@@ -169,7 +172,7 @@ img#logo {
   margin-bottom: 15px;
 }
 .top-specs .top-specs-little #top-specs-right li {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color: #091d34;
 }
@@ -185,13 +188,13 @@ img#logo {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 82.8333333333333%;
+  width: 82.83333333333334%;
   margin-left: 0%;
   margin-right: 3%;
   position: relative;
-  left: 8.5833333333333%;
+  left: 8.583333333333332%;
   color: #091d34;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .bottom-specs:before,
 .bottom-specs:after {
@@ -231,12 +234,12 @@ img#logo {
 }
 .bottom-specs .other-specs-list li {
   font-weight: bold;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 .bottom-specs .other-specs-list li span {
   text-transform: uppercase;
   font-weight: lighter;
-  font-size: 1.1em;
+  font-size: 0.8em;
   padding-right: 4px;
 }
 .bottom-specs #message-p {
@@ -291,11 +294,11 @@ img#logo {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 65.6666666666667%;
+  width: 65.66666666666666%;
   margin-left: 0%;
   margin-right: 3%;
   position: relative;
-  left: 17.1666666666667%;
+  left: 17.166666666666664%;
 }
 .description #other-description:before,
 .description #other-description:after {
@@ -315,12 +318,9 @@ p.caption {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 13px;
+  height: 11px;
   font-size: 12px;
   text-align: center;
-}
-p.caption:nth-child(even) {
-  padding-bottom: 2px;
 }
 #footer-wrap {
   *zoom: 1;
@@ -349,11 +349,11 @@ p.caption:nth-child(even) {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 82.8333333333333%;
+  width: 82.83333333333334%;
   margin-left: 0%;
   margin-right: 3%;
   position: relative;
-  left: 8.5833333333333%;
+  left: 8.583333333333332%;
   padding: 19px 0;
   text-align: center;
 }

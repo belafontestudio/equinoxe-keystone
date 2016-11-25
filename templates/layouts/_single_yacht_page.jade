@@ -1,3 +1,4 @@
+- var lang=getLocale()
 block section
   div.main-photo
     block main-photo
@@ -22,6 +23,10 @@ block section
                   span
                     != __('syp_charterprice')
                   = numeralFunction(data.yacht["price per week from"]).format('0,0[.]00' )+data.yacht.currency
+                  if lang == "it"
+                    = " "+data.yacht["prezzo extra"]
+                  else
+                    = " "+data.yacht["price extra"]
                       
               if data.yacht.lenght
                 li
@@ -249,6 +254,10 @@ block section
                       span
                         != __('price1')
                       = numeralFunction(data.yacht["price per week from"]).format('0,0[.]00' )+data.yacht.currency
+                      if lang == "it"
+                        = " "+data.yacht["prezzo extra"]
+                      else
+                        = " "+data.yacht["price extra"]
                 
                   if data.yacht["price per week low season"]
                     li

@@ -32,7 +32,7 @@ exports = module.exports = function(req, res) {
 			var arrCap = [];
 			var arrPos = [];
 			var galleries = [];
-			
+
 			arrImg.push(result.gallery1.img1);
 			arrImg.push(result.gallery1.img2);
 			arrImg.push(result.gallery1.img3);

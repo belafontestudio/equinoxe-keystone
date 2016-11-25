@@ -1,0 +1,30 @@
+- var lang=getLocale()
+block section
+  section.center.latest-grid.spacer
+    .main-text.left
+      h1.smaller2
+        block title-smaller2
+          != __('tropics_feat')
+    .clear
+    if data.tropics.results
+      ul.latest-space-yachts
+        each expedition in data.tropics.results
+          li
+            block photo1
+              a(href= "/expedition/"+expedition.slug)
+                if expedition.thumbnail.filename
+                    img(src="/uploads/images/expeditions/thumbnails/"+encodeURIComponent(expedition.thumbnail.filename).replace(/\(/g, '%28').replace(/\)/g, '%29'), alt=expedition.thumbnail.filename)
+                else 
+                    img(src="/images/sprite/placeholder.png" alt="placeholder")
+            h2.main-title.smaller
+              block yacht-name1
+                if lang == "it"
+                  = expedition.nome
+                else
+                  = expedition.name
+
+              .clear
+            .buttons
+              a.button(href= "/expedition/"+expedition.slug)!= __('Explore')
+            
+      

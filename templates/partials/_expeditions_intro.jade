@@ -1,8 +1,35 @@
-extends ../layouts/_section_intro.jade
+extends ../layouts/_section_expeditions_intro.jade
 block title 
   != __('Exp_title')
 block description
   != __('Exp_desc')
-block explain-call
-block call-to-action
-  //a.button(href="../pages/expeditions_planning.html") Pick your expedition
+block explain-call-text
+  != __('Exp_select')
+block first-call-to-action
+  a.link.exp-sec(href="#arctic-section") 
+    block first-icon
+     img.exp-sec(src='../images/expeditions/arctic.svg', alt='Arctic')
+    a.link.exp-sec(href="#arctic-section") 
+      block first-button
+        != __('Arctic')
+block second-call-to-action
+  a.link.exp-sec(href="#antarctic-section") 
+    block second-icon
+      img.antarctic(src='../images/expeditions/antarctic.svg', alt='Antarctic')
+    a.link.exp-sec(href="#antarctic-section") 
+      block second-button
+        != __('Antarctic')
+block third-call-to-action
+  a.link.exp-sec(href="#galapagos-section") 
+    block third-icon
+     img.galapagos(src='../images/expeditions/galapagos.svg', alt='Galapagos')
+    a.link.exp-sec(href="#galapagos-section") 
+      block third-button
+        != __('Galapagos')
+block fourth-call-to-action
+  a.link.exp-sec(href="#tropics-section") 
+    block fourth-icon
+     img.tropics(src='../images/expeditions/tropics.svg', alt='Tropics')
+    a.link.exp-sec(href="#tropics-section") 
+      block fourth-button
+        != __('Tropics')

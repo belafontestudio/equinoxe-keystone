@@ -1340,6 +1340,15 @@ section.center .per-week {
     width: 100%;
   }
 }
+div#other-description.wider {
+  width: 100% !important;
+}
+div#container-other-specs #expeditions-margin.main-text {
+  margin-top: -220px !important;
+}
+img.map {
+  width: 100%;
+}
 .language {
   position: absolute;
   right: 10px;
@@ -1401,9 +1410,6 @@ section.center .per-week {
 #single-msg {
   margin-top: 10px;
 }
-#gallery1 {
-  position: relative;
-}
 .arrow {
   width: 19px;
   height: 41px;
@@ -1413,11 +1419,15 @@ section.center .per-week {
   top: 45%;
   cursor: pointer;
 }
-#next-arrow {
+#next-arrow,
+#next-arrow2,
+#next-arrow3 {
   background: url("/images/next-arrow.png");
   right: 10px;
 }
-#back-arrow {
+#back-arrow,
+#back-arrow2,
+#back-arrow3 {
   background: url("/images/back-arrow.png");
   left: 10px;
 }
@@ -1425,7 +1435,8 @@ section.center .per-week {
   display: none;
 }
 #gallery1,
-#gallery2 {
+#gallery2,
+#gallery3 {
   width: 100%;
   position: relative;
 }
@@ -1573,9 +1584,9 @@ div.filtro {
   right: 0;
   bottom: 0;
   z-index: 1;
-  opacity: 0.4;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-  filter: alpha(opacity=40);
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
   min-height: 600px;
 }
 div.filtro-map {
@@ -2084,6 +2095,10 @@ section.center h2.main-title {
   line-height: 1.9375rem !important;
   margin-bottom: 20px !important;
 }
+section.center h2.main-title.smaller {
+  font-size: 24px !important;
+  font-size: 1.5rem !important;
+}
 section.center p {
   font-size: 16px;
   font-size: 1rem;
@@ -2120,7 +2135,7 @@ section.center p.call-to-action {
   margin-right: 3%;
   text-transform: uppercase;
   font-style: italic;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 section.center p.call-to-action:before,
 section.center p.call-to-action:after {
@@ -2186,6 +2201,91 @@ section.center ul#call-to-action-menu-button li a {
 }
 section.center ul#call-to-action-menu-button li a.active {
   color: #f4bb3b;
+}
+section.center ul#call-to-action-menu-exp {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+  list-style-type: none;
+  padding: 0 10px;
+}
+section.center ul#call-to-action-menu-exp:before,
+section.center ul#call-to-action-menu-exp:after {
+  content: '';
+  display: table;
+}
+section.center ul#call-to-action-menu-exp:after {
+  clear: both;
+}
+section.center ul#call-to-action-menu-exp:last-child {
+  margin-right: 0%;
+}
+section.center ul#call-to-action-menu-exp li {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+  margin-bottom: 10px;
+  text-align: center !important;
+}
+section.center ul#call-to-action-menu-exp li:before,
+section.center ul#call-to-action-menu-exp li:after {
+  content: '';
+  display: table;
+}
+section.center ul#call-to-action-menu-exp li:after {
+  clear: both;
+}
+section.center ul#call-to-action-menu-exp li:nth-child(2n) {
+  margin-right: 0%;
+  float: right;
+}
+section.center ul#call-to-action-menu-exp li:nth-child(2n+1) {
+  clear: both;
+}
+section.center ul#call-to-action-menu-exp li:hover {
+  background: rgba(255,255,255,0.3);
+  color: #f4bb3b;
+}
+section.center ul#call-to-action-menu-exp li img.arctic {
+  width: 100%;
+}
+section.center ul#call-to-action-menu-exp li img.antarctic {
+  width: 100%;
+}
+section.center ul#call-to-action-menu-exp li img.galapagos {
+  width: 100%;
+}
+section.center ul#call-to-action-menu-exp li img.tropics {
+  width: 100%;
+  position: relative;
+  left: 5%;
+}
+section.center ul#call-to-action-menu-exp a.link {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 14px;
+  line-height: 0.875rem;
+  display: block;
+img
+}
+section.center ul#call-to-action-menu-exp a.link.link:hover,
+section.center ul#call-to-action-menu-exp a.link:active {
+  color: #f4bb3b;
+}
+section.center ul#call-to-action-menu-exp a.link:visited {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
 }
 section.center ul#call-to-action-menu {
   *zoom: 1;
@@ -2785,9 +2885,17 @@ section.center div#other-specs ul.other-specs-list h3 {
   margin: 0;
   margin-bottom: 18px;
 }
-section.center div#other-specs ul.other-specs-list li {
-  font-size: 1.2em;
+section.center div#other-specs ul.other-specs-list li,
+section.center div#other-specs ul.other-specs-list p,
+section.center div#other-specs ul.other-specs-list ul {
+  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: normal;
+}
+section.center div#other-specs ul.other-specs-list ul {
+  list-style-type: disc;
+  margin-left: 1em !important;
+  margin-right: 1em !important;
 }
 section.center div#other-specs ul.other-specs-list li span {
   font-size: 0.8em;
@@ -3067,7 +3175,7 @@ section.center-parallax p.call-to-action {
   margin-right: 3%;
   text-transform: uppercase;
   font-style: italic;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 section.center-parallax p.call-to-action:before,
 section.center-parallax p.call-to-action:after {
@@ -3529,7 +3637,7 @@ section.center-parallax div.main-text {
   margin-left: 0%;
   margin-right: 3%;
   margin-top: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 section.center-parallax div.main-text:before,
 section.center-parallax div.main-text:after {
@@ -3942,6 +4050,18 @@ footer p.secondmenu a:hover {
   -moz-background-size: cover;
   background-size: cover;
 }
+#slides2 .owl-item .img,
+#slides3 .owl-item .img {
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 300px !important;
+}
+div#other-description.wider #slides2 .owl-item .img,
+div#other-description.wider #slides3 .owl-item .img {
+  height: 550px !important;
+}
 #toggle-btn {
   color: #fff;
   cursor: pointer;
@@ -3956,11 +4076,13 @@ footer p.secondmenu a:hover {
 .reset-button {
   display: none;
 }
-.back-to-yachts {
+.back-to-yachts,
+.back-to-expeditions {
   position: relative;
   bottom: 25px;
 }
-.back-to-yachts:hover {
+.back-to-yachts:hover,
+.back-to-expeditions:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
@@ -3993,6 +4115,33 @@ footer p.secondmenu a:hover {
   }
   .scroll {
     display: none;
+  }
+  ul#call-to-action-menu-exp li {
+    border: 1px solid #f4bb3b;
+    padding: 6px 12px;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+  }
+  ul#call-to-action-menu-exp li:hover {
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+  }
+  ul#call-to-action-menu-exp li img {
+    height: 30px;
+    float: clear;
+    margin-bottom: 10px;
+  }
+  ul#call-to-action-menu-exp li a {
+    color: #f4bb3b;
+    text-decoration: none;
   }
   #yatch-charter-intro ul#call-to-action-menu li {
     border: 1px solid #f4bb3b;
@@ -5002,6 +5151,33 @@ footer p.secondmenu a:hover {
   section.center-parallax div.filter-opened-section:last-child {
     margin-right: 0%;
   }
+  ul#call-to-action-menu-exp li {
+    border: 1px solid #f4bb3b;
+    padding: 8px 14px;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+  }
+  ul#call-to-action-menu-exp li:hover {
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+  }
+  ul#call-to-action-menu-exp li img {
+    height: 55px;
+    float: clear;
+    margin-bottom: 10px;
+  }
+  ul#call-to-action-menu-exp li a {
+    color: #f4bb3b;
+    text-decoration: none;
+  }
   #yatch-charter-intro ul#call-to-action-menu li {
     border: 1px solid #f4bb3b;
     padding: 8px 14px;
@@ -5238,9 +5414,14 @@ footer p.secondmenu a:hover {
   section.center-parallax .latest-space-yachts li:after {
     clear: both;
   }
-  section.center .latest-space-yachts li:last-child,
-  section.center-parallax .latest-space-yachts li:last-child {
+  section.center .latest-space-yachts li:nth-child(3n),
+  section.center-parallax .latest-space-yachts li:nth-child(3n) {
     margin-right: 0%;
+    float: right;
+  }
+  section.center .latest-space-yachts li:nth-child(3n+1),
+  section.center-parallax .latest-space-yachts li:nth-child(3n+1) {
+    clear: both;
   }
   section.center ul#yachts-list-grid,
   section.center-parallax ul#yachts-list-grid,
@@ -5769,6 +5950,74 @@ footer p.secondmenu a:hover {
   section.center ul#call-to-action-menu-button li:last-child,
   section.center-parallax ul#call-to-action-menu-button li:last-child {
     margin-right: 0%;
+  }
+  section.center ul#call-to-action-menu-exp,
+  section.center-parallax ul#call-to-action-menu-exp {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 65.66666666666666%;
+    margin-left: 0%;
+    margin-right: 3%;
+    position: relative;
+    left: 17.166666666666664%;
+  }
+  section.center ul#call-to-action-menu-exp:before,
+  section.center-parallax ul#call-to-action-menu-exp:before,
+  section.center ul#call-to-action-menu-exp:after,
+  section.center-parallax ul#call-to-action-menu-exp:after {
+    content: '';
+    display: table;
+  }
+  section.center ul#call-to-action-menu-exp:after,
+  section.center-parallax ul#call-to-action-menu-exp:after {
+    clear: both;
+  }
+  section.center ul#call-to-action-menu-exp:last-child,
+  section.center-parallax ul#call-to-action-menu-exp:last-child {
+    margin-right: 0%;
+  }
+  section.center ul#call-to-action-menu-exp li,
+  section.center-parallax ul#call-to-action-menu-exp li {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 22.75%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  section.center ul#call-to-action-menu-exp li:before,
+  section.center-parallax ul#call-to-action-menu-exp li:before,
+  section.center ul#call-to-action-menu-exp li:after,
+  section.center-parallax ul#call-to-action-menu-exp li:after {
+    content: '';
+    display: table;
+  }
+  section.center ul#call-to-action-menu-exp li:after,
+  section.center-parallax ul#call-to-action-menu-exp li:after {
+    clear: both;
+  }
+  section.center ul#call-to-action-menu-exp li:nth-child(2n),
+  section.center-parallax ul#call-to-action-menu-exp li:nth-child(2n) {
+    margin-right: 3%;
+    float: left;
+  }
+  section.center ul#call-to-action-menu-exp li:nth-child(2n+1),
+  section.center-parallax ul#call-to-action-menu-exp li:nth-child(2n+1) {
+    clear: none;
+  }
+  section.center ul#call-to-action-menu-exp li:last-child,
+  section.center-parallax ul#call-to-action-menu-exp li:last-child {
+    margin-right: 0%;
+  }
+  section.center ul#call-to-action-menu-exp a.link,
+  section.center-parallax ul#call-to-action-menu-exp a.link {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 20px;
+    line-height: 1.25rem;
   }
   section.center ul#call-to-action-menu,
   section.center-parallax ul#call-to-action-menu {
@@ -7158,6 +7407,13 @@ footer p.secondmenu a:hover {
     line-height: 22px;
     line-height: 1.375rem;
   }
+  section.center ul#call-to-action-menu-exp a,
+  section.center-parallax ul#call-to-action-menu-exp a {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 28px;
+    line-height: 1.75rem;
+  }
   section.center ul#call-to-action-menu a,
   section.center-parallax ul#call-to-action-menu a {
     font-size: 20px;
@@ -7750,6 +8006,13 @@ footer p.secondmenu a:hover {
     font-size: 1.5rem !important;
     line-height: 34px !important;
     line-height: 2.125rem !important;
+  }
+  section.center ul#call-to-action-menu-exp a,
+  section.center-parallax ul#call-to-action-menu-exp a {
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 33px;
+    line-height: 2.0625rem;
   }
   section.center ul#call-to-action-menu a,
   section.center-parallax ul#call-to-action-menu a {

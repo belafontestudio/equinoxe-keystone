@@ -138,9 +138,6 @@ html(lang='#{__("language")}')
 				a#simple-menu(href='#sidr') Menu
 		block sidemenu
 			include ../partials/_side_menu.jade
-
-
-
 		//- The Intro block appears above flash messages (used for temporary information display)
 		block intro
 
@@ -160,19 +157,19 @@ html(lang='#{__("language")}')
 	
 		//- and the KeystoneJS Content Editor. If you are not targeting IE8,
 		//- you can upgrade to 2.1.1 (also bundled) for better performance.
-		script(src='/js/lib/jquery/jquery-2.1.1.min.js')
+		script(src='/js/lib/jquery/jquery-2.1.1.min.js').
 		
 
 		//- Customise which Bootstrap javascript files are served by including
 		//- them specifically here, instead of bootstrap-3.2.0.min.js
 
-		script(src='/static/vendor.js')
-		script(src='/js/site.js')
+		script(src='/static/vendor.js').
+		script(src='/js/site.js').
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone
 		if user && user.canAccessKeystone
-			script(src='/keystone/js/content/editor.js')
+			script(src='/keystone/js/content/editor.js').
 
 		//- Add scripts that are globally required by your site here.
 		script.

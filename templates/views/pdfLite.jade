@@ -79,24 +79,20 @@ block content
                   span
                     | guests cabins:
                    =data.yacht["guests cabins"]
-            if data.yacht.guests
+            
+            
+            if data.yacht.crew
               li
                 span
-                  | guests:
-                 =data.yacht.guests
-            
-            
+                  | crew:
+                =data.yacht.crew
             if data.yacht.availability == "Sale"
               if data.yacht["crew cabins"]
                 li
                   span
                     | crew cabins:
                    =data.yacht["crew cabins"]
-            if data.yacht.crew
-              li
-                span
-                  | crew:
-                 =data.yacht.crew
+            
     
         
 
@@ -148,6 +144,8 @@ block content
                     span
                       | beam:
                     =data.yacht.beam
+                
+              ul.other-specs-list
                 if data.yacht.draft
                   li
                     span
@@ -169,7 +167,6 @@ block content
                     span
                       | Fuel consumption:
                     =data.yacht.consumption
-              ul.other-specs-list
                 if data.yacht.consumption
                   li
                     span
@@ -204,7 +201,7 @@ block content
                     li
                       if data.yacht.price
                         span
-                          | Asking price:
+                          | Sale price:
                         = numeralFunction(data.yacht.price).format('0,0[.]00' )+data.yacht.currency
                 if data.yacht.flag
                   li
@@ -230,9 +227,10 @@ block content
       each slide in data.yacht.sortedGalleries
           if slide.img.filename
             - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-            img(src=data.url+'/uploads/images/yachts/galleries/'+src)
-            p.caption
-              =slide.cap
+            .spacer
+              img(src=data.url+'/uploads/images/yachts/galleries/'+src)
+              p.caption
+                =slide.cap
     
     
   

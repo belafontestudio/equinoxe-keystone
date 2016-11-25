@@ -1,0 +1,16 @@
+extends ../layouts/_section_intro.jade
+block title 
+  != __('Antarctic')
+block description
+  != __('Antarctic_desc')
+
+
+
+block explain-call
+block call-to-action
+  ul#call-to-action-menu-button
+    li
+      block first-call-to-action
+        a.exps.button.btn-min-w(href="#antarctic-expeditions")
+          block first-button
+            != __('Antarctic_all')

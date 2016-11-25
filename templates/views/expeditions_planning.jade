@@ -1,27 +1,64 @@
 extends ../layouts/default
 block modals
       include ../partials/_enquire_modal.jade
-      include ../partials/_contact_us_modal.jade
-block external-scripts
-  script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBl3hDHGkv8Ohrz_AY7vlWRNSB_W5Esa9M&sensor=false&extension=.js') 
-  script(src="js/maplabel.js") 
+      include ../partials/_expeditions_modal.jade
+
 block menu 
   include ../partials/_menu.jade
 block body
   #onepage
     div.main-photo
       block main-photo
-        div(class="img-holder", data-image="/images/landing/oriz_expedition.jpg")
+        div(class="img-holder", data-image="/images/landing/wale.jpg")
           .reposition
             section.center-parallax
               .section
                 .filtro
                 include ../partials/_expeditions_intro.jade
           a.down(href="#expeditions_section")
-    .section.spacer#expeditions_section
+    .section#expeditions_section
+      div.main-photo
+        div(class="img-holder", data-image="/images/landing/artide.jpg")
+          .reposition
+            section.center-parallax#arctic-section
+              .section
+                .filtro
+                include ../partials/_arctic_expeditions_intro.jade
+      .section.spacer#arctic-expeditions
+        include ../partials/_arctic_expeditions.jade
+    .section#antarctic-section
+      div.main-photo
+        div(class="img-holder", data-image="/images/landing/antartide.jpg")
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_antarctic_expeditions_intro.jade
+      .section.spacer#antarctic-expeditions
+        include ../partials/_antarctic_expeditions.jade
+    .section#galapagos-section
+      div.main-photo
+        div(class="img-holder", data-image="/images/landing/galapagos.jpg")
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_galapagos_expeditions_intro.jade
+      .section.spacer#galapagos-expeditions
+        include ../partials/_galapagos_expeditions.jade
+    .section#tropics-section
+      div.main-photo
+        div(class="img-holder", data-image="/images/landing/tropics.jpg")
+          .reposition
+            section.center-parallax
+              .section
+                .filtro
+                include ../partials/_tropics_expeditions_intro.jade
+      .section.spacer#tropics-expeditions
+        include ../partials/_tropics_expeditions.jade
+    .section.spacer
       include ../partials/_quote_expeditions.jade
-    .section.inner-map
-      include ../partials/_expeditions_map.jade
+    
     .section.darker
       include ../partials/_footer.jade 
 
