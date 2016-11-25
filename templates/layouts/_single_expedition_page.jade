@@ -257,7 +257,8 @@ block section
                         each slide in data.expedition.sortedGalleries2
                           if slide.img.filename
                             - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                            .img(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')')
+                            a(data-lightbox="gallery-2",href="/uploads/images/expeditions/galleries/"+src)
+                              .img(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')')
                 if data.expedition["other yachts title"] || data.expedition["other yachts"] || data.expedition["altri yachts"] || data.expedition["altri yachts titolo"]
                   div.description-info
                     h2
@@ -277,7 +278,8 @@ block section
                           each slide in data.expedition.sortedGalleries3
                             if slide.img.filename
                               - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
-                              .img(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')')
+                              a(data-lightbox="gallery-3",href="/uploads/images/expeditions/galleries/"+src)
+                                .img(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')')
                 if data.expedition["url yacht"]
                   a.button(target="_blank",href="#{data.expedition['url yacht']}")!= __('Yacht page')
                 a.button(href="#contact-us-modal", rel="modal:open")!= __('ENQUIRE')
