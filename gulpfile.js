@@ -1,7 +1,7 @@
 var BatchStream = require('batch-stream2')
 var gulp = require('gulp')
 var uglify = require('gulp-uglify')
-var cssmin = require('gulp-minify-css')
+var cleanCSS = require('gulp-clean-css');
 var bower = require('main-bower-files')
 var stylus = require('gulp-stylus')
 var livereload = require('gulp-livereload')
@@ -14,15 +14,17 @@ var rename = require('gulp-rename')
 var jeet = require('jeet');
 var nib = require('nib');
 var rupture = require('rupture');
+var sourcemaps = require('gulp-sourcemaps');
 
 var src = {
   styl: ['public/styles/application.styl'],
   print: ['public/styles/print.styl'],
-  css: ['public/**/*.css'],
-  js: ['public/js/*.js'],
+  css: ['public/static/*.css'],
+  js: ['public/js/site.js'],
+  script: ['public/static/*.js'],
   bower: ['bower.json', '.bowerrc']
 }
-src.styles = src.styl.concat(src.css)
+
 
 
 var publishdir = 'public'
@@ -85,10 +87,18 @@ function buildJS() {
     .pipe(concat('app.js'))
     .pipe(gulp.dest(dist.js))
 }
+function mergeJS(){
+  return gulp.src(src.script)
+    .pipe(include())
+
+    .pipe(concat('app.min.js'))
+    .pipe(gulp.dest(dist.js))
+}
 
 gulp.task('css', buildCSS)
 gulp.task('print', printCSS)
 gulp.task('js', buildJS)
+gulp.task('merge-js', mergeJS)
 
 // gulp.task('watch', function() {
 //   gulp.watch(src.bower, ['bower'])
@@ -113,12 +123,14 @@ gulp.task('js', buildJS)
 //   })
 // })
 gulp.task('compress-css', ['css'], function() {
-  return gulp.src(dist.css)
-    .pipe(cssmin())
-    .pipe(gulp.dest(dist.css))
+  return gulp.src(src.css)
+        .pipe(sourcemaps.init())
+        .pipe(cleanCSS())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(dist.css));
 })
 gulp.task('compress-js', ['js'], function() {
-  return gulp.src(dist.js)
+  return gulp.src(src.script)
     .pipe(uglify())
     .pipe(gulp.dest(dist.js))
 })

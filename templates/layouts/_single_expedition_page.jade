@@ -26,6 +26,12 @@ block section
                     != __('rates_from')
                   block single-exp-rates
                     = numeralFunction(data.expedition["rates from"]).format('0,0[.]00' )+data.expedition.currency
+                    if lang == "it"
+                      if data.expedition["prezzo extra"]
+                        = " "+data.expedition["prezzo extra"]
+                    else
+                      if data.expedition["price extra"]
+                        = " "+data.expedition["price extra"]
 
               if data.expedition["from to"]
                 li
@@ -106,6 +112,10 @@ block section
                       != __('rates_from')
                     block single-exp-rates
                       = numeralFunction(data.expedition["rates from"]).format('0,0[.]00' )+data.expedition.currency
+                      if lang == "it"
+                        = " "+data.expedition["prezzo extra"]
+                      else
+                        = " "+data.expedition["price extra"]
 
                 if data.expedition["from to"] || data.expedition["da a"]
                   if lang == "it"
@@ -217,7 +227,7 @@ block section
                         span
                           != __('comforts')
                         != data.expedition.comforts
-                        
+
                 li.hidden.availability
                   =data.expedition.zone
           if data.expedition.itinerary
@@ -238,17 +248,30 @@ block section
                       !=data.expedition["durata descrittiva"]
                     else
                       !=data.expedition["duration descriptive"]
-                  if data.expedition.map.img1.filename || data.expedition.map.img2.filename
-                    img.map(src="/uploads/images/expeditions/galleries/"+data.expedition.map.img1.filename, alt=data.expedition.map.img1.filename)
+                  if data.expedition.galleriesmap[0].img.filename || data.expedition.galleriesmap[1].img.filename
+                    #gallerymap
+                      #back-arrowmap.arrow
+                      #next-arrowmap.arrow
+                      #slidesmap.owl-carousel.owl-theme
+                        each map in data.expedition.galleriesmap
+                          if map.img.filename
+                            - var src = encodeURIComponent(map.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                            a(data-lightbox="map",href="/uploads/images/expeditions/galleries/"+src)
+                              .img.map(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')',alt=data.expedition.map.img1.filename)
+
                 div.description-info
                   if data.expedition.yacht
                     h2
                       !=data.expedition.yacht
+                  if data.expedition["yacht2 name"] || data.expedition["yacht2a name"]
+                    h2
+                      !=data.expedition["yacht2 name"]+" & "+data.expedition["yacht2a name"]
                   if data.expedition["yacht descriptive"] || data.expedition["yacht descrittiva"]
                     if lang == "it"
                       !=data.expedition["yacht descrittiva"]
                     else
                       !=data.expedition["yacht descriptive"]
+
                   if data.expedition.gallery2.img1.filename
                     #gallery2
                       #back-arrow2.arrow
@@ -259,13 +282,22 @@ block section
                             - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
                             a(data-lightbox="gallery-2",href="/uploads/images/expeditions/galleries/"+src)
                               .img(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')')
-                if data.expedition["other yachts title"] || data.expedition["other yachts"] || data.expedition["altri yachts"] || data.expedition["altri yachts titolo"]
+                  if data.expedition["yacht2 url"] && data.expedition["yacht2 name"]
+                    a.button(target="_blank",href="#{data.expedition['yacht2 url']}")!=data.expedition["yacht2 name"]+" "+__('Yacht page')
+                  if data.expedition["yacht2a url"] && data.expedition["yacht2a name"]
+                    a.button(target="_blank",href="#{data.expedition['yacht2a url']}")!=data.expedition["yacht2a name"]+" "+__('Yacht page')
+                if data.expedition["other yachts title"] || data.expedition["other yachts"] || data.expedition["altri yachts"] || data.expedition["altri yachts titolo"] || data.expedition["extra yacht4"] || data.expedition.gallery4.img1.filename || data.expedition.gallery4.img2.filename || data.expedition.gallery5.img1.filename || data.expedition.gallery5.img2.filename || data.expedition.gallery3.img1.filename || data.expedition.gallery3.img2.filename
                   div.description-info
                     h2
                       if lang == "it"
-                        !=data.expedition["altri yachts titolo"]
+                        if data.expedition["altri yachts titolo"]
+                          !=data.expedition["altri yachts titolo"]
                       else
-                        !=data.expedition["other yachts title"]
+                        if data.expedition["other yachts title"]
+                          !=data.expedition["other yachts title"]
+                      if data.expedition["yacht3 name"]
+                        !=data.expedition["yacht3 name"]
+
                     if lang == "it"
                       !=data.expedition["altri yachts"]
                     else
@@ -280,6 +312,48 @@ block section
                               - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
                               a(data-lightbox="gallery-3",href="/uploads/images/expeditions/galleries/"+src)
                                 .img(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')')
+                    if data.expedition["yacht3 url"] && data.expedition["yacht3 name"]
+                      a.button(target="_blank",href="#{data.expedition['yacht3 url']}")!=data.expedition["yacht3 name"]+" "+__('Yacht page')
+                    if data.expedition["yacht4 name"]
+                      h2
+                        !=data.expedition["yacht4 name"]
+                    if lang == "it"
+                      !=data.expedition["extra barca4"]
+                    else
+                      !=data.expedition["extra yacht4"]
+                    if data.expedition.gallery4.img1.filename || data.expedition.gallery4.img2.filename
+                      #gallery4
+                        #back-arrow4.arrow
+                        #next-arrow4.arrow
+                        #slides4.owl-carousel.owl-theme
+                          each slide in data.expedition.sortedGalleries4
+                            if slide.img.filename
+                              - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                              a(data-lightbox="gallery-4",href="/uploads/images/expeditions/galleries/"+src)
+                                .img(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')')
+                    if data.expedition["yacht4 url"] && data.expedition["yacht4 name"]
+                      a.button(target="_blank",href="#{data.expedition['yacht4 url']}")!=data.expedition["yacht4 name"]+" "+__('Yacht page')
+                    if data.expedition["yacht5 name"]
+                      h2
+                        !=data.expedition["yacht5 name"]
+                    if lang == "it"
+                      if data.expedition["extra barca5"]
+                        !=data.expedition["extra barca5"]
+                    else
+                      if data.expedition["extra yacht5"]
+                        !=data.expedition["extra yacht5"]
+                    if data.expedition.gallery5.img1.filename || data.expedition.gallery5.img2.filename
+                      #gallery5
+                        #back-arrow5.arrow
+                        #next-arrow5.arrow
+                        #slides5.owl-carousel.owl-theme
+                          each slide in data.expedition.sortedGalleries5
+                            if slide.img.filename
+                              - var src = encodeURIComponent(slide.img.filename).replace(/\(/g, '%28').replace(/\)/g, '%29')
+                              a(data-lightbox="gallery-5",href="/uploads/images/expeditions/galleries/"+src)
+                                .img(style='background-image: url(/uploads/images/expeditions/galleries/'+src+')')
+                    if data.expedition["yacht5 url"] && data.expedition["yacht5 name"]
+                      a.button(target="_blank",href="#{data.expedition['yacht5 url']}")!=data.expedition["yacht5 name"]+" "+__('Yacht page')
                 if data.expedition["url yacht"]
                   a.button(target="_blank",href="#{data.expedition['url yacht']}")!= __('Yacht page')
                 a.button(href="#contact-us-modal", rel="modal:open")!= __('ENQUIRE')

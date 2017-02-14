@@ -829,8 +829,8 @@ $(document).ready(function() {
 
 
     imgLoad.on( 'done', function( instance ) {
-        $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0, touch: touch,holderMinHeight: 600});
-        $('.img-holder-scroll').imageScroll({coverRatio: 0.9,extraHeight: 0, touch: touch, holderMinHeight: 600});
+        $('.img-holder').imageScroll({coverRatio: 1,extraHeight: 0, touch: touch,holderMinHeight: 670});
+        $('.img-holder-scroll').imageScroll({coverRatio: 1,extraHeight: 0, touch: touch, holderMinHeight: 670});
 
     });
 
@@ -868,6 +868,9 @@ $(document).ready(function() {
     owl = $("#slides1");
     owl2 = $("#slides2");
     owl3 = $("#slides3");
+    owl4 = $("#slides4");
+    owl5 = $("#slides5");
+    owlmap = $("#slidesmap");
 
 
     owl.owlCarousel({
@@ -885,6 +888,27 @@ $(document).ready(function() {
       rewindNav : true
     });
     owl3.owlCarousel({
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+      lazyLoad : true,
+      rewindNav : true
+    });
+    owl4.owlCarousel({
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+      lazyLoad : true,
+      rewindNav : true
+    });
+    owl5.owlCarousel({
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+      lazyLoad : true,
+      rewindNav : true
+    });
+    owlmap.owlCarousel({
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true,
@@ -910,6 +934,24 @@ $(document).ready(function() {
     });
     $("#back-arrow3").click(function(){
       owl3.trigger('owl.prev');
+    });
+    $("#next-arrow4").click(function(){
+      owl4.trigger('owl.next');
+    });
+    $("#back-arrow4").click(function(){
+      owl4.trigger('owl.prev');
+    });
+    $("#next-arrow5").click(function(){
+      owl5.trigger('owl.next');
+    });
+    $("#back-arrow5").click(function(){
+      owl5.trigger('owl.prev');
+    });
+    $("#next-arrowmap").click(function(){
+      owlmap.trigger('owl.next');
+    });
+    $("#back-arrowmap").click(function(){
+      owlmap.trigger('owl.prev');
     });
 
     $('#simple-menu').sidr(

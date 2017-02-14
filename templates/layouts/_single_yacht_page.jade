@@ -24,10 +24,11 @@ block section
                     != __('syp_charterprice')
                   = numeralFunction(data.yacht["price per week from"]).format('0,0[.]00' )+data.yacht.currency
                   if lang == "it"
-                    = " "+data.yacht["prezzo extra"]
+                    if data.yacht["prezzo extra"]
+                      = " "+data.yacht["prezzo extra"]
                   else
-                    = " "+data.yacht["price extra"]
-                      
+                    if data.yacht["price extra"]
+                      = " "+data.yacht["price extra"]
               if data.yacht.lenght
                 li
                   span

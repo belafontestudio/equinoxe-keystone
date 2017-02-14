@@ -20,7 +20,7 @@ exports = module.exports = function(req, res) {
 				maxPages: 1
 			})
 			.where('state', 'published')
-			.sort({ 'rates from': 1 })
+			.sort('sortOrder')
 			.where('zone').equals("Arctic")
 
 
@@ -30,7 +30,7 @@ exports = module.exports = function(req, res) {
 				maxPages: 1
 			})
 			.where('state', 'published')
-			.sort({ 'rates from': 1 })
+			.sort('sortOrder')
 			.where('zone').equals("Antarctic")
 
 
@@ -40,7 +40,7 @@ exports = module.exports = function(req, res) {
 				maxPages: 1
 			})
 			.where('state', 'published')
-			.sort({ 'rates from': 1 })
+			.sort('sortOrder')
 			.where('zone').equals("Galapagos")
 
 		var t = keystone.list('Expedition').paginate({
@@ -49,7 +49,7 @@ exports = module.exports = function(req, res) {
 				maxPages: 1
 			})
 			.where('state', 'published')
-			.sort({ 'rates from': 1 })
+			.sort('sortOrder')
 			.where('zone').equals("Tropics")
 
 

@@ -45,6 +45,17 @@ exports = module.exports = function(req, res) {
 				var arrCap3 = [];
 				var arrPos3 = [];
 				var galleries3 = [];
+				var arrImg4 = [];
+				var arrCap4 = [];
+				var arrPos4 = [];
+				var galleries4 = [];
+				var arrImg5 = [];
+				var arrCap5 = [];
+				var arrPos5 = [];
+				var galleries5 = [];
+				var arrImgmap = [];
+
+				var galleriesmap = [];
 				if( typeof result.gallery1 !== 'undefined' || typeof result.gallery1 !== 'null') {
 					if(result.gallery1){
 					arrImg.push(result.gallery1.img1);
@@ -153,6 +164,93 @@ exports = module.exports = function(req, res) {
 						arrPos3.push(result.gallery3.pos10);
 					}
 				}
+				if( typeof result.gallery4 !== 'undefined' || typeof result.gallery4 !== 'null') {
+					if(result.gallery4){
+						arrImg4.push(result.gallery4.img1);
+						arrImg4.push(result.gallery4.img2);
+						arrImg4.push(result.gallery4.img3);
+						arrImg4.push(result.gallery4.img4);
+						arrImg4.push(result.gallery4.img5);
+						arrImg4.push(result.gallery4.img6);
+						arrImg4.push(result.gallery4.img7);
+						arrImg4.push(result.gallery4.img8);
+						arrImg4.push(result.gallery4.img9);
+						arrImg4.push(result.gallery4.img10);
+
+						arrCap4.push(result.gallery4.cap1);
+						arrCap4.push(result.gallery4.cap2);
+						arrCap4.push(result.gallery4.cap3);
+						arrCap4.push(result.gallery4.cap4);
+						arrCap4.push(result.gallery4.cap5);
+						arrCap4.push(result.gallery4.cap6);
+						arrCap4.push(result.gallery4.cap7);
+						arrCap4.push(result.gallery4.cap8);
+						arrCap4.push(result.gallery4.cap9);
+						arrCap4.push(result.gallery4.cap10);
+
+						arrPos4.push(result.gallery4.pos1);
+						arrPos4.push(result.gallery4.pos2);
+						arrPos4.push(result.gallery4.pos3);
+						arrPos4.push(result.gallery4.pos4);
+						arrPos4.push(result.gallery4.pos5);
+						arrPos4.push(result.gallery4.pos6);
+						arrPos4.push(result.gallery4.pos7);
+						arrPos4.push(result.gallery4.pos8);
+						arrPos4.push(result.gallery4.pos9);
+						arrPos4.push(result.gallery4.pos10);
+					}
+				}
+				if( typeof result.gallery5 !== 'undefined' || typeof result.gallery5 !== 'null') {
+					if(result.gallery5){
+						arrImg5.push(result.gallery5.img1);
+						arrImg5.push(result.gallery5.img2);
+						arrImg5.push(result.gallery5.img3);
+						arrImg5.push(result.gallery5.img4);
+						arrImg5.push(result.gallery5.img5);
+						arrImg5.push(result.gallery5.img6);
+						arrImg5.push(result.gallery5.img7);
+						arrImg5.push(result.gallery5.img8);
+						arrImg5.push(result.gallery5.img9);
+						arrImg5.push(result.gallery5.img10);
+
+						arrCap5.push(result.gallery5.cap1);
+						arrCap5.push(result.gallery5.cap2);
+						arrCap5.push(result.gallery5.cap3);
+						arrCap5.push(result.gallery5.cap4);
+						arrCap5.push(result.gallery5.cap5);
+						arrCap5.push(result.gallery5.cap6);
+						arrCap5.push(result.gallery5.cap7);
+						arrCap5.push(result.gallery5.cap8);
+						arrCap5.push(result.gallery5.cap9);
+						arrCap5.push(result.gallery5.cap10);
+
+						arrPos5.push(result.gallery5.pos1);
+						arrPos5.push(result.gallery5.pos2);
+						arrPos5.push(result.gallery5.pos3);
+						arrPos5.push(result.gallery5.pos4);
+						arrPos5.push(result.gallery5.pos5);
+						arrPos5.push(result.gallery5.pos6);
+						arrPos5.push(result.gallery5.pos7);
+						arrPos5.push(result.gallery5.pos8);
+						arrPos5.push(result.gallery5.pos9);
+						arrPos5.push(result.gallery5.pos10);
+					}
+				}
+				if( typeof result.gallerymap !== 'undefined' || typeof result.gallerymap !== 'null') {
+					if(result.map){
+						arrImgmap.push(result.map.img1);
+						arrImgmap.push(result.map.img2);
+						arrImgmap.push(result.map.img3);
+						arrImgmap.push(result.map.img4);
+						arrImgmap.push(result.map.img5);
+						arrImgmap.push(result.map.img6);
+						arrImgmap.push(result.map.img7);
+						arrImgmap.push(result.map.img8);
+						arrImgmap.push(result.map.img9);
+						arrImgmap.push(result.map.img10);
+
+					}
+				}
 				for (i = 0; i < 10; i++) {
 					galleries.push({img:arrImg[i],cap:arrCap[i],pos:arrPos[i]})
 				}
@@ -162,12 +260,27 @@ exports = module.exports = function(req, res) {
 				for (j = 0; j < 10; j++) {
 					galleries3.push({img:arrImg3[j],cap:arrCap3[j],pos:arrPos3[j]})
 				}
+				for (t = 0; t < 10; t++) {
+					galleriesmap.push({img:arrImgmap[t]})
+				}
+				for (l = 0; l < 10; l++) {
+					galleries4.push({img:arrImg4[l],cap:arrCap4[l],pos:arrPos4[l]})
+				}
+				for (r = 0; r < 10; r++) {
+					galleries5.push({img:arrImg5[r],cap:arrCap5[r],pos:arrPos5[r]})
+				}
+
 				var sortedGalleries = _.sortBy( galleries, "pos" );
 				var sortedGalleries2 = _.sortBy( galleries2, "pos" );
 				var sortedGalleries3 = _.sortBy( galleries3, "pos" );
+				var sortedGalleries4 = _.sortBy( galleries4, "pos" );
+				var sortedGalleries5 = _.sortBy( galleries5, "pos" );
 				result["sortedGalleries"] = sortedGalleries;
 				result["sortedGalleries2"] = sortedGalleries2;
 				result["sortedGalleries3"] = sortedGalleries3;
+				result["sortedGalleries4"] = sortedGalleries4;
+				result["sortedGalleries5"] = sortedGalleries5;
+				result["galleriesmap"] = galleriesmap;
 
 				locals.data.expedition = result;
 				next(err);
