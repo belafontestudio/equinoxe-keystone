@@ -15,6 +15,7 @@ var jeet = require('jeet');
 var nib = require('nib');
 var rupture = require('rupture');
 var sourcemaps = require('gulp-sourcemaps');
+var order = require("gulp-order");
 
 var src = {
   styl: ['public/styles/application.styl'],
@@ -50,7 +51,15 @@ gulp.task('bower', function() {
         bowerJson: './bower.json'
     }
 }))
+  
     .pipe(jsFilter)
+    .pipe(order([
+    "bower_components/jquery/**/*.js", 
+    "bower_components/jquery-ui/**/*.js", 
+    "bower_components/jquery-ui-touch-punch/**/*.js",
+    "bower_components/**/*.js" 
+    ], { base: './' })
+  )
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest(dist.js))
     .pipe(jsFilter.restore)

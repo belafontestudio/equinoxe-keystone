@@ -58,7 +58,7 @@ keystone.set('500', function(req, res, next) {
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
-
+    
     app.get('/ita', function(req,res){
       res.setLocale("it");
       res.cookie('equinoxeyachts_language', 'it', { maxAge: 900000, httpOnly: true });
@@ -129,9 +129,9 @@ exports = module.exports = function(app) {
 
     app.use('/app-storage',serveIndex(process.env.CLOUD_DIR, {'icons': true}));
 
-    app.get('/app-storage', middleware.requireUser);
+    app.get('/app-storage');
     app.use('/temp',serveIndex(process.env.TEMP_DIR, {'icons': true}));
-    app.get('/temp', middleware.requireUser);
+    app.get('/temp');
 
     // Views
     app.get('/', function(req,res){
@@ -334,18 +334,18 @@ exports = module.exports = function(app) {
     });
 
     //API
-    //app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
-    app.get('/media/list', middleware.requireUser, routes.views.medialist);
-    app.get('/media/backup', middleware.requireUser, routes.views.mediadownload);
-    app.get('/media/generate/pdfLite', middleware.requireUser, routes.views.generatePDF);
+    // app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
+    // app.get('/media/list', middleware.requireUser, routes.views.medialist);
+    // app.get('/media/backup', middleware.requireUser, routes.views.mediadownload);
+    // app.get('/media/generate/pdfLite', middleware.requireUser, routes.views.generatePDF);
 
-    app.post('/api/mail/send', keystone.initAPI, routes.api.mail.send);
-    app.post('/api/mail/yacht', keystone.initAPI, routes.api.mail.yacht);
-    app.get('/api/pdf/full/:yacht', keystone.initAPI, routes.api.pdfFull);
-    app.get('/api/pdf/lite/:yacht', keystone.initAPI, routes.api.pdfLite);
-    app.get('/api/yachts/filter', keystone.initAPI, routes.api.yachts.filter);
-    app.get('/api/yachts/search', keystone.initAPI, routes.api.yachts.search);
-    // app.get('/api/expeditions/filter', keystone.initAPI, routes.api.expeditions.filter);
+    app.post('/api/mail/send', keystone.middleware.api, routes.api.mail.send);
+    app.post('/api/mail/yacht', keystone.middleware.api, routes.api.mail.yacht);
+    app.get('/api/pdf/full/:yacht', keystone.middleware.api, routes.api.pdfFull);
+    app.get('/api/pdf/lite/:yacht', keystone.middleware.api, routes.api.pdfLite);
+    app.get('/api/yachts/filter', keystone.middleware.api, routes.api.yachts.filter);
+    app.get('/api/yachts/search', keystone.middleware.api, routes.api.yachts.search);
+    app.get('/api/expeditions/filter', keystone.middleware.api, routes.api.expeditions.filter);
 
     app.get('/sitemap.xml', function(req, res) {
   		sitemap.create(keystone, req, res, { ignore: ['^\/api.*$', '^\/media.*$'] });

@@ -12,18 +12,39 @@ var Yacht = new keystone.List('Yacht', {
 	map: { name: 'name' },
 	autokey: { path: 'slug', from: 'name', unique: true }
 });
+var coverStorage = new keystone.Storage({
+  adapter: keystone.Storage.Adapters.FS,
+  fs: {
+    path: process.env.CLOUD_DIR+'/uploads/images/yachts/covers',
+    publicPath: '/uploads/images/yachts/covers',
+  	},
+});
+var thumbStorage = new keystone.Storage({
+  adapter: keystone.Storage.Adapters.FS,
+  fs: {
+    path: process.env.CLOUD_DIR+'/uploads/images/yachts/thumbnails',
+    publicPath: '/uploads/images/yachts/thumbnails/',
+  	},
+});
 
+var galleryStorage = new keystone.Storage({
+  adapter: keystone.Storage.Adapters.FS,
+  fs: {
+    path: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries',
+    publicPath: '/uploads/images/yachts/galleries/',
+  	},
+});
 Yacht.add({
 
 	name: { type: Types.Text, required: true },
 
-	cover: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/covers', prefix: '/uploads/images/yachts/covers', allowedTypes: ['image/jpeg','image/gif','image/png'],
+	cover: { type: Types.File, storage: coverStorage,
 	pre: {width:1920,height:1080},format: function(item, file){
 
 		return '<img src="'+file.href+'" style="max-width: 250px">'
 	}},
 
-	thumbnail: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/thumbnails', prefix: '/uploads/images/yachts/thumbnails/', allowedTypes: ['image/jpeg','image/gif','image/png'],
+	thumbnail: { type: Types.File, storage: thumbStorage,
 	pre: {width:480,height:270},format: function(item, file){
 		return '<img src="'+file.href+'" style="max-width: 250px">'}
 	},
@@ -81,62 +102,62 @@ Yacht.add({
 
 	gallery1: {
 
-		img1: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img1: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos1: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap1 : { type: Types.Text},
 
-		img2: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img2: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos2: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap2 : { type: Types.Text},
 
-		img3: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img3: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos3: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap3 : { type: Types.Text},
 
-		img4: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img4: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos4: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap4 : { type: Types.Text},
 
-		img5: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img5: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos5: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap5 : { type: Types.Text},
 
-		img6: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img6: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos6: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap6 : { type: Types.Text},
 
-		img7: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img7: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos7: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap7 : { type: Types.Text},
 
-		img8: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img8: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos8: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap8 : { type: Types.Text},
 
-		img9: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img9: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos9: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap9 : { type: Types.Text},
 
 
-		img10: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img10: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos10: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
@@ -146,62 +167,62 @@ Yacht.add({
 
 	gallery2: {
 
-		img1: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img1: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos1: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap1 : { type: Types.Text},
 
-		img2: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img2: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos2: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap2 : { type: Types.Text},
 
-		img3: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img3: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos3: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap3 : { type: Types.Text},
 
-		img4: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img4: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos4: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap4 : { type: Types.Text},
 
-		img5: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img5: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos5: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap5 : { type: Types.Text},
 
-		img6: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img6: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos6: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap6 : { type: Types.Text},
 
-		img7: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img7: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos7: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap7 : { type: Types.Text},
 
-		img8: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img8: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos8: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap8 : { type: Types.Text},
 
-		img9: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img9: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos9: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
 		cap9 : { type: Types.Text},
 
 
-		img10: { type: Types.LocalImage, dest: process.env.CLOUD_DIR+'/uploads/images/yachts/galleries', prefix: '/uploads/images/yachts/galleries', allowedTypes: ['image/jpeg','image/gif','image/png'],
+		img10: { type: Types.File, storage: galleryStorage,
 		pre: {width:1920,height:1080},format: function(item, file){
 			return '<img src="'+file.href+'" style="max-width: 300px">'}},
 		pos10: { type: Types.Select, options: '1,2,3,4,5,6,7,8,9,10', default: '5'},
@@ -340,5 +361,5 @@ Yacht.schema.virtual('content.full').get(function() {
 	return this.content.extended || this.content.brief;
 });
 
-Yacht.defaultColumns = 'title, price|20%, type|20%, availability|20%';
+Yacht.defaultColumns = 'name, price|20%, type|20%, availability|20%';
 Yacht.register();
