@@ -16,6 +16,7 @@ var Expedition = new keystone.List('Expedition', { sortable: true ,
 var coverStorage = new keystone.Storage({
   adapter: keystone.Storage.Adapters.FS,
   fs: {
+  	generateFilename: keystone.Storage.originalFilename,
     path: process.env.CLOUD_DIR+'/uploads/images/expeditions/covers',
     publicPath: '/uploads/images/expeditions/covers',
   	},
@@ -23,6 +24,7 @@ var coverStorage = new keystone.Storage({
 var thumbStorage = new keystone.Storage({
   adapter: keystone.Storage.Adapters.FS,
   fs: {
+  	generateFilename: keystone.Storage.originalFilename,
     path: process.env.CLOUD_DIR+'/uploads/images/expeditions/thumbnails',
     publicPath: '/uploads/images/expeditions/thumbnails/',
   	},
@@ -30,6 +32,7 @@ var thumbStorage = new keystone.Storage({
 var galleryStorage = new keystone.Storage({
   adapter: keystone.Storage.Adapters.FS,
   fs: {
+  	generateFilename: keystone.Storage.originalFilename,
     path: process.env.CLOUD_DIR+'/uploads/images/expeditions/galleries',
     publicPath: '/uploads/images/expeditions/galleries/',
   	},

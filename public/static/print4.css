@@ -340,7 +340,7 @@ p.caption {
   color: #103158 !important;
 }
 #footer-wrap p {
-  font-size: 9px !important;
+  font-size: 7px !important;
 }
 #footer-wrap .footer {
   width: 70% !important;
@@ -356,5 +356,8 @@ p.caption {
 }
 #footer-wrap .footer ul li {
   display: inline-block !important;
-  font-size: 9px !important;
+  font-size: 7px !important;
+}
+#footer-wrap .footer ul li p {
+  font-size: 7px !important;
 }

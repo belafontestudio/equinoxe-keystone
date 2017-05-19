@@ -18,7 +18,7 @@ keystone.init({
 	'brand': 'Equinoxe',
 
 	'sass': 'public',
-	'static': ['public','bower_components',process.env.CLOUD_DIR,process.env.TEMP_DIR],
+	'static': ['public','bower_components'],
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',

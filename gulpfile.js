@@ -19,7 +19,7 @@ var order = require("gulp-order");
 
 var src = {
   styl: ['public/styles/application.styl'],
-  print: ['public/styles/print.styl'],
+  print: ['public/styles/print4.styl'],
   css: ['public/static/*.css'],
   js: ['public/js/site.js'],
   script: ['public/static/*.js'],
@@ -85,7 +85,7 @@ function buildCSS() {
 function printCSS() {
   return gulp.src(src.print)
     .pipe(stylus({use: [jeet(),nib()]}))
-    .pipe(concat('print.css'))
+    .pipe(concat('print4.css'))
     .pipe(gulp.dest(dist.css))
 }
 

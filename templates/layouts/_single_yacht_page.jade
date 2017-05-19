@@ -289,10 +289,10 @@ block section
                     span
                       != __('VAT')
                     =data.yacht.vat
-                
+                - var pdf = data.yacht["pdfLite url"] 
                 li
                   block single-yacht-pdf
-                    a.button(href="/generated/pdf/lite/"+data.yacht.slug+".pdf", target="_blank")
+                    a.button(href="#{pdf}", target="_blank")
                       i.fa.fa-file-pdf-o
                       |  PDF
                 li.hidden.availability

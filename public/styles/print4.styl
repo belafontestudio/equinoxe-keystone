@@ -99,7 +99,7 @@ img#logo
     #top-specs-left
       col(7/12)
       margin-right 2%
-      font-size 18px
+      font-size 16px
       font-weight bold
       height 130px
       border-right 1px solid yellow
@@ -110,7 +110,7 @@ img#logo
           font-size 12px
           font-weight normal
           display inline-block
-          width 180px
+          width 140px
     #top-specs-right
       col(5/12)
       position relative
@@ -153,7 +153,8 @@ img#logo
     li
       font-weight bold
       font-size .7em
-
+      &.pri
+        margin-top 10px
       span
         text-transform uppercase
         font-weight lighter
@@ -194,25 +195,38 @@ p.caption
   text-align center
 
 
-
-
 #footer-wrap
-//  position running(header)
-  col(12/12)
-
-  background navy-blue
+  height:18mm !important
+  border-top:1px solid #103158 !important;
+  background: #FFFFFF !important;
+  float: left !important;
+  clear: none !important;
+  text-align: inherit !important;
+  width: 810px !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left:-20px !important;
+  padding-left:20px !important;
+  color:#103158 !important;
+  p
+    font-size: 7px !important;
   .footer
-    background navy-blue
-    col(10/12)
-    shift(1/12)
-    padding 19px 0
-    text-align center
-    ul
+    width: 70% !important;
+    margin-left: 10px !important;
+    position: absolute !important;
+    bottom:0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    font-size: 7px !important;
+    ul 
+      list-style: none !important;
+      li 
+        display: inline-block !important;
+        font-size: 7px !important;
+        p
+          font-size: 7px !important;
+        
+    
 
-      color yellow
-      li
-        display inline-block
-        font-size 11px
-    p
-      color white
-      font-size 9px
+
+

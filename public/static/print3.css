@@ -358,3 +358,6 @@ p.caption {
   display: inline-block !important;
   font-size: 9px !important;
 }
+#footer-wrap .footer ul li p {
+  font-size: 9px !important;
+}

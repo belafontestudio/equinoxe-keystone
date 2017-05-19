@@ -25,6 +25,7 @@ var _ = require('underscore'),
     helpers = require('./helpers'),
     importRoutes = keystone.importer(__dirname),
     serveIndex = require('serve-index'),
+    serveStatic = require('serve-static'),
     robots = require('robots.txt'),
 		sitemap = require('keystone-express-sitemap');
 
@@ -128,8 +129,12 @@ exports = module.exports = function(app) {
     app.get('/expedition/:expedition', routes.views.expedition);
 
     app.use('/app-storage',serveIndex(process.env.CLOUD_DIR, {'icons': true}));
-
-    app.get('/app-storage');
+    app.use(serveStatic(process.env.CLOUD_DIR,{
+      maxage: '1d'
+    }));
+    app.use('/app-storage',serveStatic(process.env.CLOUD_DIR,{
+      maxage: '1d'
+    }));
     app.use('/temp',serveIndex(process.env.TEMP_DIR, {'icons': true}));
     app.get('/temp');
 
@@ -334,10 +339,11 @@ exports = module.exports = function(app) {
     });
 
     //API
-    // app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
-    // app.get('/media/list', middleware.requireUser, routes.views.medialist);
-    // app.get('/media/backup', middleware.requireUser, routes.views.mediadownload);
-    // app.get('/media/generate/pdfLite', middleware.requireUser, routes.views.generatePDF);
+    app.get('/media/clean', middleware.requireUser, routes.views.mediaclean);
+    app.get('/media/list', middleware.requireUser, routes.views.medialist);
+    app.get('/media/backup', middleware.requireUser, routes.views.mediadownload);
+    app.get('/media/generate/pdfLite', middleware.requireUser, routes.views.generatePDF);
+    app.get('/media/delete/file/:file', middleware.requireUser, routes.views.deleteFile);
 
     app.post('/api/mail/send', keystone.middleware.api, routes.api.mail.send);
     app.post('/api/mail/yacht', keystone.middleware.api, routes.api.mail.yacht);
